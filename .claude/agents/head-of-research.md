@@ -29,6 +29,13 @@ Read every file in `.claude/research/`. Note which researchers ran, what sources
 
 Check the `knowledge/` folder for any files the user has manually dropped in. These may be PDFs, markdown files, text documents, or notes. Read them and extract anything relevant to the article topic.
 
+**SEO data (priority — read if present):**
+
+- `knowledge/gsc/search-analytics.md` — real Google Search Console data: queries driving traffic to krashenayadoska.ru, CTR, positions, top pages. Use to align the article with queries the site already ranks for or should capture.
+- `knowledge/wordstat/wordstat-data.md` — Yandex Wordstat frequencies for seed phrases from the brief. Use to validate Top Topics priority, suggest natural keyword variants, and flag high-volume associations vs. niche `results`.
+
+Cross-reference GSC + Wordstat with brief Top Topics and Frequent Questions. Note mismatches (e.g. brief targets a low-volume phrase while Wordstat shows a much higher association).
+
 **Priority rule:** Any proprietary data, statistics, or founder-attributed quotes found in the knowledge folder must be added directly to the Quotes & Stats Bank and flagged as high priority in the Strategic Guidance section. These are original assets the writer must use — they do not exist in competitor content.
 
 ### 3. Build the competitor URL list
@@ -103,6 +110,15 @@ Brief: [title from Article Summary]
 
 ## Strategic Guidance for the Writer
 [5-10 specific, actionable bullet points for the writer — what to feature, what angle to take, which data to use, which questions to answer]
+
+## SEO Intelligence (GSC + Wordstat)
+[If knowledge/gsc/ or knowledge/wordstat/ data exists — summarize in 5-8 bullets:]
+[- Top GSC queries relevant to this topic — clicks, impressions, position]
+[- GSC pages to reinforce or avoid cannibalizing]
+[- Wordstat totalCount and top `results` for main seed phrases]
+[- High-volume `associations` worth using vs. off-topic associations to ignore]
+[- Recommended primary keyword lemma for Zipf / H1 alignment]
+[If SEO files missing: "SEO export not available — rely on brief Top Topics only"]
 
 ---
 

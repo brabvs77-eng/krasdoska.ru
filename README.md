@@ -20,9 +20,12 @@
 | `.claude/agents/` | 6 специализированных агентов |
 | `GUIDELINE.md` | Голос и правила бренда «Крашеная доска» |
 | `GUIDELINE_MAKER.md` | Интервью для обновления `GUIDELINE.md` |
-| `knowledge/` | Справочные материалы (бренд, продукты, GSC) |
+| `knowledge/` | Справочные материалы (бренд, продукты, GSC, аудит, контент-план) |
 | `gsc/` | Python-модуль Google Search Console API |
+| `wordstat/` | Python-модуль Yandex Wordstat API (Search API v2) |
 | `scripts/gsc_cli.py` | CLI: статус и топ запросов из GSC |
+| `scripts/wordstat_cli.py` | CLI: статус и частотность из Wordstat |
+| `scripts/seo_export.py` | Экспорт GSC + Wordstat перед пайплайном |
 | `briefs/` | Брифы из thruuu |
 | `drafts/` | Готовые черновики статей |
 
@@ -46,7 +49,32 @@ python3 scripts/gsc_cli.py queries     # топ запросов
 python3 scripts/gsc_export.py          # экспорт в knowledge/gsc/
 ```
 
-Настройка доступа: `knowledge/gsc-setup.md`. Переменные — в `.env.example`.
+Настройка: `knowledge/gsc-setup.md`. Переменные — в `.env.example`.
+
+## Yandex Wordstat API
+
+```bash
+python3 scripts/wordstat_cli.py status           # проверка API-ключа
+python3 scripts/wordstat_cli.py top "крашеная доска"
+python3 scripts/wordstat_export.py --brief briefs/my-brief.md
+```
+
+Настройка: `knowledge/wordstat-setup.md`. Секрет `YANDEX_SEARCH_API_KEY` в Cloud Agent.
+
+## SEO-экспорт перед статьёй
+
+Оркестратор (шаг 5b в `CLAUDE.md`) запускает оба источника одной командой:
+
+```bash
+python3 scripts/seo_export.py --brief briefs/my-brief.md
+```
+
+Данные попадают в `knowledge/gsc/` и `knowledge/wordstat/` — их читает **head-of-research**.
+
+## Аудит и контент-план
+
+- `knowledge/site-audit.md` — технический и SEO-аудит сайта
+- `knowledge/content-plan.md` — план переписывания блога и правки текстов страниц
 
 ## Сайт
 

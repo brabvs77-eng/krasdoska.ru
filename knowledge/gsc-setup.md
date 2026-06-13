@@ -53,4 +53,6 @@ python3 scripts/gsc_export.py
 
 ## Использование в пайплайне
 
-Файлы в `knowledge/gsc/` (после `gsc_export.py`) читаются агентом **head-of-research** как приоритетный контекст для SEO-статей: реальные запросы, страницы, CTR и позиции из GSC.
+Файлы в `knowledge/gsc/` (после `gsc_export.py` или `seo_export.py`) читаются агентом **head-of-research** как приоритетный контекст для SEO-статей: реальные запросы, страницы, CTR и позиции из GSC.
+
+Перед пайплайном предпочтительно запускать `python3 scripts/seo_export.py --brief briefs/...` — вместе с Wordstat (см. `knowledge/wordstat-setup.md`).
