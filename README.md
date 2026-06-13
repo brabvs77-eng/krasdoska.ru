@@ -20,7 +20,7 @@
 | `.claude/agents/` | 6 специализированных агентов |
 | `GUIDELINE.md` | Голос и правила бренда «Крашеная доска» |
 | `GUIDELINE_MAKER.md` | Интервью для обновления `GUIDELINE.md` |
-| `knowledge/` | Справочные материалы (бренд, продукты, GSC) |
+| `knowledge/` | Справочные материалы (бренд, продукты, GSC, аудит, контент-план) |
 | `gsc/` | Python-модуль Google Search Console API |
 | `wordstat/` | Python-модуль Yandex Wordstat API (Search API v2) |
 | `scripts/gsc_cli.py` | CLI: статус и топ запросов из GSC |
@@ -70,6 +70,11 @@ python3 scripts/seo_export.py --brief briefs/my-brief.md
 ```
 
 Данные попадают в `knowledge/gsc/` и `knowledge/wordstat/` — их читает **head-of-research**.
+
+## Аудит и контент-план
+
+- `knowledge/site-audit.md` — технический и SEO-аудит сайта
+- `knowledge/content-plan.md` — план переписывания блога и правки текстов страниц
 
 ## Сайт
 
