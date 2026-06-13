@@ -16,8 +16,16 @@ logs
 # Node (если установлен Claude Code)
 node_modules/
 
+# Python
+__pycache__/
+*.pyc
+
 !.env.example
 
 # GSC exports (генерируются scripts/gsc_export.py)
 knowledge/gsc/*
 !knowledge/gsc/.gitkeep
+
+# Wordstat exports (генерируются scripts/wordstat_export.py)
+knowledge/wordstat/*
+!knowledge/wordstat/.gitkeep
