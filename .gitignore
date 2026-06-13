@@ -16,6 +16,8 @@ logs
 # Node (если установлен Claude Code)
 node_modules/
 
-# Env
-.env
-.env.*
+!.env.example
+
+# GSC exports (генерируются scripts/gsc_export.py)
+knowledge/gsc/*
+!knowledge/gsc/.gitkeep
