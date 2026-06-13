@@ -20,7 +20,9 @@
 | `.claude/agents/` | 6 специализированных агентов |
 | `GUIDELINE.md` | Голос и правила бренда «Крашеная доска» |
 | `GUIDELINE_MAKER.md` | Интервью для обновления `GUIDELINE.md` |
-| `knowledge/` | Справочные материалы (бренд, продукты) |
+| `knowledge/` | Справочные материалы (бренд, продукты, GSC) |
+| `gsc/` | Python-модуль Google Search Console API |
+| `scripts/gsc_cli.py` | CLI: статус и топ запросов из GSC |
 | `briefs/` | Брифы из thruuu |
 | `drafts/` | Готовые черновики статей |
 
@@ -34,6 +36,17 @@
 ```
 researcher (×N) → head-of-research → writer → humanizer → linker → editor-in-chief
 ```
+
+## Google Search Console API
+
+```bash
+pip install -r requirements.txt
+python3 scripts/gsc_cli.py status      # проверка подключения
+python3 scripts/gsc_cli.py queries     # топ запросов
+python3 scripts/gsc_export.py          # экспорт в knowledge/gsc/
+```
+
+Настройка доступа: `knowledge/gsc-setup.md`. Переменные — в `.env.example`.
 
 ## Сайт
 
