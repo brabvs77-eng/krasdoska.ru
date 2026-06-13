@@ -1,0 +1,21 @@
+# Личные рабочие файлы пайплайна
+briefs/*
+!briefs/.gitkeep
+drafts/*
+!drafts/.gitkeep
+.claude/research
+.claude/agent-memory
+
+# Логи
+logs
+*.log
+
+# OS
+.DS_Store
+
+# Node (если установлен Claude Code)
+node_modules/
+
+# Env
+.env
+.env.*
