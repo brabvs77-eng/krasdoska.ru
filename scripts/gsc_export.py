@@ -11,14 +11,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-_env = ROOT / ".env"
-if _env.is_file():
-    import os
-    for line in _env.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
-        if line and not line.startswith("#") and "=" in line:
-            k, _, v = line.partition("=")
-            os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
+from scripts._env import load_env
+
+load_env()
 
 from gsc.client import get_site_url, query_search_analytics
 
