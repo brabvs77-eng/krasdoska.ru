@@ -16,6 +16,14 @@ logs
 # Node (если установлен Claude Code)
 node_modules/
 
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Env
+.env
+.env.local
 !.env.example
 
 # GSC exports (генерируются scripts/gsc_export.py)
