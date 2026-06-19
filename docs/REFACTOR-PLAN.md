@@ -96,7 +96,7 @@ krashenayadoska/
 
 ### Фаза 0 — Подготовка (1–2 недели)
 
-- [x] Создать GitHub-репозиторий `krashenayadoska` (monorepo сайта) — scaffold в `site/`
+- [x] GitHub-репозиторий [`brabvs77-eng/krasdoska.ru`](https://github.com/brabvs77-eng/krasdoska.ru) — monorepo (сайт в `site/` + SEO-пайплайн)
 - [x] Инициализировать Next.js + Tailwind + ESLint
 - [x] Настроить `next.config.ts`: `output: 'export'`, `trailingSlash: true`, `images: { unoptimized: true }`
 - [x] Скрипт `scripts/migrate-content.ps1` / `migrate-content.mjs` → `content/`
@@ -186,7 +186,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy out --project-name=krashenayadoska
+          command: pages deploy out --project-name=krasdoska
 ```
 
 **Секреты:** `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`.
