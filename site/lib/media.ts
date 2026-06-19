@@ -3,8 +3,14 @@ const UPLOADS = "/uploads";
 export const PAGE_HERO_BG = `${UPLOADS}/2025/04/frist-screen.png`;
 export const WOOD_TEXTURE_BG = `${UPLOADS}/2025/04/top-view-light-wood-wallpaper-1-1.png`;
 
-export const HERO_IMAGE = `${UPLOADS}/2025/04/photo_2025-04-26_20-30-22-1024x825.jpg`;
-export const HERO_IMAGE_ALT = `${UPLOADS}/2025/04/099057a2-33ce-491e-af16-1198cfa85b67-1024x581.jpg`;
+export const HERO_IMAGE = `${UPLOADS}/2025/05/photo_2025-05-30_23-49-23.jpg`;
+
+const HERO_SLIDE_IMAGES = {
+  idealColor: `${UPLOADS}/2025/05/photo_2025-05-30_23-49-23.jpg`,
+  housePainting: `${UPLOADS}/2025/05/dsc_5305-scaled.jpg`,
+  personalApproach: `${UPLOADS}/2025/05/hnj84hc5vyfbpdgkf2vy8q0j71gcxydbiyj9p9hshwwlfgtdp4a-ea7-s0ersdz75lbzc7a398lmbqohdddh7g-scaled.jpg`,
+  quality: `${UPLOADS}/2025/05/photo_2025-05-17_23-36-40.jpg`,
+} as const;
 
 export type HeroSlide = {
   title: string;
@@ -15,20 +21,23 @@ export type HeroSlide = {
 
 export const HERO_SLIDES: HeroSlide[] = [
   {
-    eyebrow: "Лучшие идеи — лучшее решение — лучшие результаты",
     title: "Идеальный цвет\nдля каждой детали",
-    image: HERO_IMAGE,
+    subtitle: "Лучшие идеи — Лучшее решение — Лучшие результаты",
+    image: HERO_SLIDE_IMAGES.idealColor,
   },
   {
-    eyebrow: "Персональный подход",
     title: "Профессиональная покраска деревянных домов",
-    subtitle: "Ваш комфорт — наша приоритетная задача.",
-    image: HERO_IMAGE_ALT,
+    image: HERO_SLIDE_IMAGES.housePainting,
+  },
+  {
+    title: "Персональный подход",
+    subtitle: "Ваш комфорт — Наша приоритетная задача",
+    image: HERO_SLIDE_IMAGES.personalApproach,
   },
   {
     title: "Исключительное качество",
-    subtitle: "Гарантия долговечности и эстетики.",
-    image: WOOD_TEXTURE_BG,
+    subtitle: "Гарантия долговечности и эстетики",
+    image: HERO_SLIDE_IMAGES.quality,
   },
 ];
 
