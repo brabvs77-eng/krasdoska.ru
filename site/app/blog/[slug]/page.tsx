@@ -1,4 +1,6 @@
 import { HtmlContent } from "@/components/content/HtmlContent";
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
+import { CtaSection } from "@/components/sections/HomeSections";
 import { PageHero } from "@/components/sections/PageHero";
 import { buildPageMetadata } from "@/lib/metadata";
 import { getBlogPost, getBlogSlugs, getExcerpt } from "@/lib/content";
@@ -38,8 +40,18 @@ export default async function BlogPostPage({ params }: Props) {
     <>
       <PageHero title={post.title} description={getExcerpt(post)} />
       <article className="container-content py-12">
-        <HtmlContent html={post.content} />
+        <Breadcrumbs
+          items={[
+            { label: "Главная", href: "/" },
+            { label: "Блог", href: "/blog/" },
+            { label: post.title },
+          ]}
+        />
+        <div className="mt-8">
+          <HtmlContent html={post.content} />
+        </div>
       </article>
+      <CtaSection />
     </>
   );
 }

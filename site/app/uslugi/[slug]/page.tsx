@@ -26,5 +26,15 @@ export default async function ServiceDetailPage({ params }: Props) {
     return null;
   }
 
-  return <WpPage page={service} />;
+  return (
+    <WpPage
+      page={service}
+      withMarketingFooter
+      breadcrumbs={[
+        { label: "Главная", href: "/" },
+        { label: "Услуги", href: "/uslugi/" },
+        { label: service.title },
+      ]}
+    />
+  );
 }

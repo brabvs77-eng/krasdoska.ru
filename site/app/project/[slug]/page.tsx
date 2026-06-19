@@ -1,4 +1,6 @@
 import { HtmlContent } from "@/components/content/HtmlContent";
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
+import { CtaSection } from "@/components/sections/HomeSections";
 import { PageHero } from "@/components/sections/PageHero";
 import { buildPageMetadata } from "@/lib/metadata";
 import { getExcerpt, getProject, getProjectSlugs } from "@/lib/content";
@@ -38,8 +40,18 @@ export default async function ProjectPage({ params }: Props) {
     <>
       <PageHero title={project.title} description={getExcerpt(project)} />
       <article className="container-content py-12">
-        <HtmlContent html={project.content} />
+        <Breadcrumbs
+          items={[
+            { label: "Главная", href: "/" },
+            { label: "Проекты", href: "/project/" },
+            { label: project.title },
+          ]}
+        />
+        <div className="mt-8">
+          <HtmlContent html={project.content} />
+        </div>
       </article>
+      <CtaSection />
     </>
   );
 }

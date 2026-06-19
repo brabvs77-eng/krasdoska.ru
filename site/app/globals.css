@@ -108,4 +108,30 @@ body {
   .wp-content video {
     @apply my-6 w-full max-w-full rounded-lg;
   }
+
+  .wp-content-dark {
+    @apply text-white/85;
+  }
+
+  .wp-content-dark h2,
+  .wp-content-dark h3 {
+    @apply text-white;
+  }
+
+  .wp-content-dark a {
+    @apply text-accent hover:text-white;
+  }
+
+  .wp-content-dark table {
+    @apply my-6 w-full border-collapse text-sm;
+  }
+
+  .wp-content-dark th,
+  .wp-content-dark td {
+    @apply border border-white/20 px-3 py-2 text-left;
+  }
+
+  .wp-content-dark th {
+    @apply bg-white/10 font-semibold text-white;
+  }
 }

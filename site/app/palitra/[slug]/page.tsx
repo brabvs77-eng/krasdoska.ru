@@ -26,5 +26,15 @@ export default async function PaletteSubPage({ params }: Props) {
     return null;
   }
 
-  return <WpPage page={page} />;
+  return (
+    <WpPage
+      page={page}
+      withMarketingFooter
+      breadcrumbs={[
+        { label: "Главная", href: "/" },
+        { label: "Палитра", href: "/palitra/" },
+        { label: page.title },
+      ]}
+    />
+  );
 }

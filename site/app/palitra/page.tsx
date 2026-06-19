@@ -1,8 +1,7 @@
-import { ContentList } from "@/components/content/ContentList";
-import { ColorsSection, CtaSection, PartnersSection } from "@/components/sections/HomeSections";
+import { ColorsSection } from "@/components/sections/HomeSections";
+import { MarketingPageFooter } from "@/components/sections/MarketingPageFooter";
 import { PageHero } from "@/components/sections/PageHero";
-import { FaqAccordion } from "@/components/ui/FaqAccordion";
-import { CATALOG_FAQ } from "@/lib/catalog-faq";
+import { ContentList } from "@/components/content/ContentList";
 import { buildPageMetadata } from "@/lib/metadata";
 import { getAllPalettePages, getExcerpt, getPage } from "@/lib/content";
 
@@ -43,13 +42,7 @@ export default function PalettePage() {
           />
         </div>
       </section>
-      <section className="section-dark pb-16 sm:pb-20">
-        <div className="container-content">
-          <FaqAccordion items={CATALOG_FAQ} title="Часто задаваемые вопросы" variant="dark" />
-        </div>
-      </section>
-      <PartnersSection />
-      <CtaSection />
+      <MarketingPageFooter />
     </>
   );
 }
