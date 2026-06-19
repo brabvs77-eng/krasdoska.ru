@@ -38,6 +38,7 @@ export const SERVICES_IMAGE = `${UPLOADS}/2025/03/Frame-19.png`;
 
 export type CatalogPreviewItem = {
   slug: string;
+  href: string;
   title: string;
   image: string;
 };
@@ -45,61 +46,73 @@ export type CatalogPreviewItem = {
 export const CATALOG_PREVIEW: CatalogPreviewItem[] = [
   {
     slug: "krashenaja-vagonka",
+    href: "/katalog/krashenaja-vagonka/",
     title: "Крашеная вагонка",
     image: `${UPLOADS}/2025/04/photo_2025-04-26_23-25-05-225x300.webp`,
   },
   {
     slug: "krashenaja-imitacija-brusa",
+    href: "/katalog/krashenaja-imitacija-brusa/",
     title: "Крашеная имитация бруса",
     image: `${UPLOADS}/2025/04/photo_2025-04-26_23-25-21-225x300.jpg`,
   },
   {
     slug: "planken",
+    href: "/katalog/planken/",
     title: "Крашеный планкен",
     image: `${UPLOADS}/2025/04/photo_2025-04-26_23-25-38-225x300.jpg`,
   },
   {
     slug: "skandinavskaja-doska",
+    href: "/katalog/skandinavskaja-doska/",
     title: "Крашеная скандинавская доска",
     image: `${UPLOADS}/2025/04/photo_2025-04-26_23-25-51-225x300.jpg`,
   },
   {
     slug: "krashenaja-doska",
+    href: "/katalog/krashenaja-doska/",
     title: "Крашеная доска пола",
     image: `${UPLOADS}/2025/04/photo_2025-04-26_23-26-02-225x300.jpg`,
   },
   {
     slug: "krashenaja-doska",
+    href: "/katalog/krashenaja-doska/",
     title: "Крашеная паркетная доска",
     image: `${UPLOADS}/2025/04/photo_2025-04-26_23-26-37-225x300.jpg`,
   },
   {
     slug: "krashenaja-doska",
+    href: "/katalog/krashenaja-doska/",
     title: "Крашеная фасадная доска",
     image: `${UPLOADS}/2025/04/photo_2025-04-26_23-26-46-225x300.jpg`,
   },
   {
     slug: "krashenaja-doska",
+    href: "/katalog/krashenaja-doska/",
     title: "Крашеный массив пола",
     image: `${UPLOADS}/2025/04/photo_2025-04-26_23-26-58-225x300.jpg`,
   },
   {
     slug: "terrasnaja-doska",
+    href: "/katalog/terrasnaja-doska/",
     title: "Крашеная террасная доска",
     image: `${UPLOADS}/2025/04/photo_2025-04-26_23-27-07-225x300.jpg`,
   },
   {
     slug: "krashenaja-doska",
+    href: "/katalog/krashenaja-doska/",
     title: "Палубная доска",
     image: `${UPLOADS}/2025/04/photo_2025-04-26_23-27-21-225x300.jpg`,
   },
   {
     slug: "krashenaja-imitacija-brusa",
+    href: "/katalog/krashenaja-imitacija-brusa/",
     title: "Имитация бруса — карельский профиль",
     image: `${UPLOADS}/2025/04/photo_2025-04-26_23-27-40-225x300.jpg`,
   },
   {
     slug: "imitacija-brusa",
+    href: "/katalog/imitacija-brusa/",
     title: "Блок-хаус",
     image: `${UPLOADS}/2025/04/photo_2025-04-26_23-27-56-225x300.jpg`,
   },

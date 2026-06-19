@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { ContactForm } from "@/components/forms/ContactForm";
 import { HtmlContent } from "@/components/content/HtmlContent";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { PageHero } from "@/components/sections/PageHero";
@@ -70,13 +70,18 @@ export function TechnologyContent({ page }: TechnologyContentProps) {
 
         <FaqAccordion items={TECHNOLOGY_FAQ} />
 
-        <div className="mt-12 rounded-2xl bg-surface-muted px-6 py-10 text-center">
-          <h2 className="text-xl font-bold text-neutral-900">Остались вопросы?</h2>
-          <p className="mt-2 text-neutral-600">Оставьте заявку — поможем с подбором материала и цвета.</p>
-          <Link href="/kontakty/" className="btn-primary mt-6">
-            Связаться с нами
-          </Link>
-        </div>
+        <section className="section-dark mt-12 rounded-2xl px-6 py-10 sm:px-10">
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
+            <div>
+              <h2 className="section-title">Делаем объём без потери качества</h2>
+              <p className="section-subtitle mt-4">
+                Мы гордимся тем, что наши заказчики остаются довольны результатом, и продолжаем
+                внедрять новейшие технологии покраски древесины любых пород.
+              </p>
+            </div>
+            <ContactForm />
+          </div>
+        </section>
       </article>
     </>
   );

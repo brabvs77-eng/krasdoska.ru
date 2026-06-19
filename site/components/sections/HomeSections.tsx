@@ -3,7 +3,8 @@ import Link from "next/link";
 import { ProductCard } from "@/components/cards/ProductCard";
 import { ContentList } from "@/components/content/ContentList";
 import { ArrowLink } from "@/components/ui/ArrowLink";
-import { getAllBlogPosts, getAllProjects, getExcerpt } from "@/lib/content";
+import { getBlogPost, getExcerpt, getProject } from "@/lib/content";
+import { HOME_BLOG_DATES, HOME_BLOG_SLUGS, HOME_PROJECT_SLUGS, HOME_PROJECT_TAGS } from "@/lib/home-content";
 import { getContentImage } from "@/lib/product-media";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { HOME_COMPANY_BLOCKS } from "@/lib/home-footer";
@@ -122,8 +123,8 @@ export function CatalogPreviewSection() {
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {CATALOG_PREVIEW.map((item) => (
             <ProductCard
-              key={`${item.slug}-${item.title}`}
-              href={`/katalog/${item.slug}/`}
+              key={`${item.href}-${item.title}`}
+              href={item.href}
               title={item.title}
               image={item.image}
               variant="dark"
@@ -318,7 +319,9 @@ export function BottomBarSection() {
 }
 
 export function HomeProjectsSection() {
-  const projects = getAllProjects();
+  const projects = HOME_PROJECT_SLUGS.map((slug) => getProject(slug)).filter(
+    (project): project is NonNullable<typeof project> => project !== null,
+  );
 
   if (projects.length === 0) return null;
 
@@ -341,6 +344,8 @@ export function HomeProjectsSection() {
             excerpt: getExcerpt(project),
             image: getContentImage(project),
             href: `/project/${project.slug}/`,
+            tag: HOME_PROJECT_TAGS[project.slug],
+            cta: "Подробнее об услуге",
           }))}
         />
       </div>
@@ -349,7 +354,9 @@ export function HomeProjectsSection() {
 }
 
 export function HomeBlogSection() {
-  const posts = getAllBlogPosts().slice(0, 4);
+  const posts = HOME_BLOG_SLUGS.map((slug) => getBlogPost(slug)).filter(
+    (post): post is NonNullable<typeof post> => post !== null,
+  );
 
   if (posts.length === 0) return null;
 
@@ -370,6 +377,7 @@ export function HomeBlogSection() {
             excerpt: getExcerpt(post),
             image: getContentImage(post),
             href: `/blog/${post.slug}/`,
+            meta: HOME_BLOG_DATES[post.slug],
           }))}
         />
       </div>

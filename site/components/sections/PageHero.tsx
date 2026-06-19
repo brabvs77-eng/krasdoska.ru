@@ -1,12 +1,14 @@
 import Image from "next/image";
+import Link from "next/link";
 import { PAGE_HERO_BG } from "@/lib/media";
 
 type PageHeroProps = {
   title: string;
   description?: string;
+  action?: { href: string; label: string };
 };
 
-export function PageHero({ title, description }: PageHeroProps) {
+export function PageHero({ title, description, action }: PageHeroProps) {
   return (
     <section className="relative overflow-hidden border-b border-brand-dark/30">
       <Image
@@ -23,6 +25,11 @@ export function PageHero({ title, description }: PageHeroProps) {
         <h1 className="section-title max-w-4xl text-white">{title}</h1>
         {description && (
           <p className="section-subtitle mt-4 max-w-2xl text-white/85">{description}</p>
+        )}
+        {action && (
+          <Link href={action.href} className="btn-primary mt-8">
+            {action.label}
+          </Link>
         )}
       </div>
     </section>

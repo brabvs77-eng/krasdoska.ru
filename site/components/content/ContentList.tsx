@@ -7,6 +7,9 @@ type ContentListItem = {
   excerpt?: string;
   image?: string;
   href: string;
+  tag?: string;
+  meta?: string;
+  cta?: string;
 };
 
 type ContentListProps = {
@@ -77,6 +80,11 @@ export function ContentList({
               <div className="aspect-[16/10] bg-gradient-to-br from-brand/10 to-accent/15" />
             )}
             <div className="p-5">
+              {item.tag && (
+                <p className="mb-2 text-xs font-medium uppercase tracking-wide text-accent">
+                  {item.tag}
+                </p>
+              )}
               <h2
                 className={`text-lg font-semibold ${
                   isDark ? "text-white group-hover:text-accent" : "text-neutral-900 group-hover:text-brand"
@@ -88,6 +96,12 @@ export function ContentList({
                 <p className={`mt-2 line-clamp-3 text-sm ${isDark ? "text-white/75" : "text-neutral-600"}`}>
                   {item.excerpt}
                 </p>
+              )}
+              {item.meta && (
+                <p className={`mt-3 text-xs ${isDark ? "text-white/60" : "text-neutral-500"}`}>{item.meta}</p>
+              )}
+              {item.cta && (
+                <p className="mt-3 text-sm font-semibold text-accent">{item.cta}</p>
               )}
             </div>
           </Link>
