@@ -65,6 +65,23 @@ export const CATALOG_SHOWCASE: CatalogShowcaseItem[] = [
     ],
   },
   {
+    title: "Имитация бруса",
+    tagline: "Профиль UTVF для внутренней отделки — шлифовка, воск и лак в цеху",
+    href: "/katalog/imitacija-brusa/",
+    image: `${UPLOADS}/2025/11/14.jpg`,
+    priceFrom: "от 1436 руб/м²",
+    specs: [
+      { label: "Сорт", value: "АВ" },
+      { label: "Порода", value: "ель (северная, камерной сушки)" },
+      { label: "Поверхность", value: "Глубокая шлифовка" },
+      { label: "Толщина", value: "23 мм" },
+      { label: "Ширина", value: "196 мм" },
+      { label: "Длина", value: "6000 мм" },
+      { label: "Покрытие", value: "Воск + лак Sirca" },
+      { label: "Применение", value: "Внутренние работы" },
+    ],
+  },
+  {
     title: "Крашеная имитация бруса — карельский профиль",
     href: "/katalog/krashenaja-imitacija-brusa/",
     image: `${UPLOADS}/2025/11/14.jpg`,

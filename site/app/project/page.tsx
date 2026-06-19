@@ -1,5 +1,5 @@
 import { ContentList } from "@/components/content/ContentList";
-import { CtaSection } from "@/components/sections/HomeSections";
+import { MarketingPageFooter } from "@/components/sections/MarketingPageFooter";
 import { PageHero } from "@/components/sections/PageHero";
 import { buildPageMetadata } from "@/lib/metadata";
 import { getExcerpt, getProject } from "@/lib/content";
@@ -38,7 +38,7 @@ export default function ProjectsIndexPage() {
           />
         </div>
       </section>
-      <CtaSection />
+      <MarketingPageFooter />
     </>
   );
 }

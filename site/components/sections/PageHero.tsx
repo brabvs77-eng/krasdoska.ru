@@ -22,7 +22,9 @@ export function PageHero({ title, description, action }: PageHeroProps) {
       />
       <div className="absolute inset-0 bg-brand-dark/60" />
       <div className="container-content relative py-20 text-white sm:py-24 lg:py-28">
-        <h1 className="section-title max-w-4xl text-white">{title}</h1>
+        <h1 className="max-w-4xl text-3xl font-semibold uppercase tracking-tight text-white sm:text-4xl lg:text-[50px] lg:leading-[1.1]">
+          {title}
+        </h1>
         {description && (
           <p className="section-subtitle mt-4 max-w-2xl text-white/85">{description}</p>
         )}

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowLink } from "@/components/ui/ArrowLink";
 import { CATALOG_SHOWCASE } from "@/lib/catalog-showcase";
 

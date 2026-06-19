@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { getCatalogShowcaseForSlug } from "./catalog-showcase";
 import { normalizeWpHtml } from "./wp-content";
 
 const CONTENT_DIR = path.join(process.cwd(), "content");
@@ -84,12 +85,28 @@ export function getCatalogSlugs(): string[] {
   return fromContent.length > 0 ? fromContent : FALLBACK_CATALOG_SLUGS;
 }
 
+const CATEGORY_CONTENT_ALIASES: Record<string, string> = {
+  vagonka: "krashenaja-vagonka",
+};
+
 export function getCatalogCategory(slug: string): CatalogCategory | null {
-  const category = readJsonFile<CatalogCategory>("catalog/categories", slug);
-  if (!category) return null;
+  const base = readJsonFile<CatalogCategory>("catalog/categories", slug);
+  const contentAlias = CATEGORY_CONTENT_ALIASES[slug];
+  const contentSource =
+    contentAlias && contentAlias !== slug
+      ? readJsonFile<CatalogCategory>("catalog/categories", contentAlias)
+      : null;
+
+  if (!base && !contentSource) return null;
+
+  const showcase = getCatalogShowcaseForSlug(slug);
+  const rawContent = base?.content?.trim() || contentSource?.content?.trim();
+
   return {
-    ...category,
-    content: category.content ? normalizeWpHtml(category.content) : undefined,
+    slug,
+    title: base?.title ?? contentSource?.title ?? showcase?.title ?? slug.replace(/-/g, " "),
+    description: base?.description ?? contentSource?.description ?? showcase?.tagline,
+    content: rawContent ? normalizeWpHtml(rawContent) : undefined,
   };
 }
 
