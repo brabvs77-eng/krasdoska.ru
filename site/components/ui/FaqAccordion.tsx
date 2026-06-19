@@ -20,9 +20,7 @@ export function FaqAccordion({
   return (
     <section className={isDark ? undefined : "mt-12"}>
       <h2
-        className={`text-2xl font-semibold uppercase tracking-tight ${
-          isDark ? "text-white" : "text-neutral-900"
-        }`}
+        className={`section-title ${isDark ? "text-white" : ""}`}
       >
         {title}
       </h2>

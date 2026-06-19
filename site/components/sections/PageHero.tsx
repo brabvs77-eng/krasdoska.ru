@@ -21,7 +21,7 @@ export function PageHero({ title, description, action }: PageHeroProps) {
         unoptimized
       />
       <div className="absolute inset-0 bg-brand-dark/60" />
-      <div className="container-content relative py-20 text-white sm:py-24 lg:py-28">
+      <div className="container-content relative py-20 pt-28 text-white sm:py-24 sm:pt-32 lg:py-28 lg:pt-36">
         <h1 className="max-w-4xl text-3xl font-semibold uppercase tracking-tight text-white sm:text-4xl lg:text-[50px] lg:leading-[1.1]">
           {title}
         </h1>

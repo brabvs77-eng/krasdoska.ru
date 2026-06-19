@@ -109,13 +109,11 @@ export function CatalogPreviewSection() {
     <section className="section-dark py-16 sm:py-20">
       <div className="container-content">
         <div className="flex flex-wrap items-end justify-between gap-4">
-          <div>
+          <div className="max-w-3xl">
             <h2 className="section-title">
-              Крашеная доска в наличии и под заказ
+              Крашеная доска в наличии и под заказ. Ассортимент высококачественной доски с точным
+              соответствием сорту.
             </h2>
-            <p className="section-subtitle">
-              Ассортимент высококачественной доски с точным соответствием сорту.
-            </p>
           </div>
           <Link href="/katalog/" className="btn-primary">
             Купить по лучшей цене
@@ -319,7 +317,7 @@ export function BottomBarSection() {
         <p className="text-lg font-semibold sm:text-xl">
           Широкий ассортимент, выгодные цены и быстрая доставка
         </p>
-        <Link href="/kontakty/" className="btn-outline-light shrink-0">
+        <Link href="/#form" className="btn-outline-light shrink-0">
           Заказать звонок
         </Link>
       </div>

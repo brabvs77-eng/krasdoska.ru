@@ -2,24 +2,15 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { getSiteSettings } from "@/lib/site";
 
 export function Header() {
-  const pathname = usePathname();
-  const isHome = pathname === "/";
   const { site, navigation, contacts } = getSiteSettings();
   const phone = contacts.phones[0];
   const logo = site.logo;
 
   return (
-    <header
-      className={
-        isHome
-          ? "absolute inset-x-0 top-0 z-50 bg-brand/50 text-white backdrop-blur-sm"
-          : "sticky top-0 z-50 bg-brand text-white shadow-md"
-      }
-    >
+    <header className="absolute inset-x-0 top-0 z-50 bg-brand/85 text-white backdrop-blur-sm">
       <div className="container-content flex h-16 items-center justify-between gap-4 lg:h-20">
         <Link href="/" className="flex shrink-0 items-center gap-3">
           {logo ? (
@@ -39,7 +30,7 @@ export function Header() {
           <span className="hidden font-bold sm:inline">{site.name}</span>
         </Link>
 
-        <nav className="hidden items-center gap-5 xl:gap-6 lg:flex" aria-label="Основное меню">
+        <nav className="hidden items-center gap-5 lg:flex xl:gap-6" aria-label="Основное меню">
           {navigation.map((item) => (
             <Link
               key={item.href}
@@ -60,7 +51,7 @@ export function Header() {
               {phone}
             </a>
           )}
-          <Link href="/kontakty/" className="btn-primary hidden sm:inline-flex">
+          <Link href="/#form" className="btn-primary hidden sm:inline-flex">
             Заказать звонок
           </Link>
           <MobileNav />
@@ -92,10 +83,10 @@ function MobileNav() {
           </Link>
         ))}
         <Link
-          href="/kontakty/"
+          href="/#form"
           className="mt-1 block rounded-md px-3 py-2 text-sm font-semibold text-accent hover:bg-surface-muted"
         >
-          Контакты
+          Заказать звонок
         </Link>
       </nav>
     </details>

@@ -55,6 +55,7 @@ export default async function CatalogProductPage({ params }: Props) {
       <article className="section-dark py-12 sm:py-16">
         <div className="container-content">
           <Breadcrumbs
+            variant="dark"
             items={[
               { label: "Главная", href: "/" },
               { label: "Каталог", href: "/katalog/" },

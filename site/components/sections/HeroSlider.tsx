@@ -39,7 +39,12 @@ export function HeroSlider({ slides }: HeroSliderProps) {
         ))}
       </div>
       <div className="absolute inset-0 bg-black/50" />
-      <div className="container-content relative flex min-h-[700px] items-end pb-16 pt-28 sm:pb-20 lg:pb-24">
+      <div className="container-content relative flex min-h-[700px] flex-col justify-end pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pb-24 lg:pt-36">
+        {slides.length > 1 && (
+          <p className="absolute right-4 top-28 text-sm font-semibold tracking-widest text-white/90 sm:right-6 sm:top-32 lg:top-36">
+            {String(index + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")}
+          </p>
+        )}
         <div className="max-w-4xl">
           {slide.eyebrow && (
             <p className="text-sm font-medium uppercase tracking-[0.12em] text-white/90 sm:text-base">
@@ -52,11 +57,6 @@ export function HeroSlider({ slides }: HeroSliderProps) {
           {slide.subtitle && (
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/90 sm:text-lg">
               {slide.subtitle}
-            </p>
-          )}
-          {slides.length > 1 && (
-            <p className="mt-10 text-sm font-medium text-white/80">
-              {String(index + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")}
             </p>
           )}
         </div>

@@ -21,7 +21,7 @@ export function ProductCard({
   return (
     <Link href={href} className="group block">
       <div
-        className={`relative aspect-[3/4] overflow-hidden ${
+        className={`relative aspect-[225/300] overflow-hidden ${
           isDark ? "rounded-lg bg-white/5" : "rounded-2xl border border-neutral-200 bg-surface-muted shadow-sm"
         }`}
       >
@@ -35,7 +35,7 @@ export function ProductCard({
         />
       </div>
       <h3
-        className={`mt-4 text-base font-semibold leading-snug sm:text-lg ${
+        className={`mt-3 text-sm font-semibold uppercase leading-snug tracking-tight sm:text-base ${
           isDark ? "text-white group-hover:text-accent" : "text-neutral-900 group-hover:text-brand"
         }`}
       >
