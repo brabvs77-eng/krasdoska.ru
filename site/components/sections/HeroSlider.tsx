@@ -41,7 +41,7 @@ export function HeroSlider({ slides, primaryCta, secondaryCta }: HeroSliderProps
           />
         ))}
       </div>
-      <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/95 via-brand/85 to-brand/55" />
+      <div className="absolute inset-0 bg-black/50" />
       <div className="container-content relative py-16 sm:py-20 lg:py-28">
         <div className="max-w-3xl">
           {slide.eyebrow && (
@@ -57,7 +57,7 @@ export function HeroSlider({ slides, primaryCta, secondaryCta }: HeroSliderProps
             {primaryCta && (
               <Link
                 href={primaryCta.href}
-                className="btn-primary bg-accent text-surface-dark hover:bg-accent-dark"
+                className="btn-primary"
               >
                 {primaryCta.label}
               </Link>

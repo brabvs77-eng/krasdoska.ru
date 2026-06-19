@@ -1,6 +1,10 @@
 const UPLOADS = "/uploads";
 
+export const PAGE_HERO_BG = `${UPLOADS}/2025/04/frist-screen.png`;
+export const WOOD_TEXTURE_BG = `${UPLOADS}/2025/04/top-view-light-wood-wallpaper-1-1.png`;
+
 export const HERO_IMAGE = `${UPLOADS}/2025/04/photo_2025-04-26_20-30-22-1024x825.jpg`;
+export const HERO_IMAGE_ALT = `${UPLOADS}/2025/04/099057a2-33ce-491e-af16-1198cfa85b67-1024x581.jpg`;
 
 export type HeroSlide = {
   title: string;
@@ -19,12 +23,12 @@ export const HERO_SLIDES: HeroSlide[] = [
   {
     title: "Профессиональная покраска деревянных домов",
     subtitle: "Ваш комфорт — наша приоритетная задача.",
-    image: HERO_IMAGE,
+    image: HERO_IMAGE_ALT,
   },
   {
     title: "Исключительное качество",
     subtitle: "Гарантия долговечности и эстетики.",
-    image: `${UPLOADS}/2025/04/top-view-light-wood-wallpaper-1-1.png`,
+    image: WOOD_TEXTURE_BG,
   },
 ];
 
@@ -65,11 +69,50 @@ export const CATALOG_PREVIEW: CatalogPreviewItem[] = [
     image: `${UPLOADS}/2025/04/photo_2025-04-26_23-26-02-225x300.jpg`,
   },
   {
+    slug: "krashenaja-doska",
+    title: "Крашеная паркетная доска",
+    image: `${UPLOADS}/2025/04/photo_2025-04-26_23-26-37-225x300.jpg`,
+  },
+  {
+    slug: "krashenaja-doska",
+    title: "Крашеная фасадная доска",
+    image: `${UPLOADS}/2025/04/photo_2025-04-26_23-26-46-225x300.jpg`,
+  },
+  {
+    slug: "krashenaja-doska",
+    title: "Крашеный массив пола",
+    image: `${UPLOADS}/2025/04/photo_2025-04-26_23-26-58-225x300.jpg`,
+  },
+  {
     slug: "terrasnaja-doska",
     title: "Крашеная террасная доска",
     image: `${UPLOADS}/2025/04/photo_2025-04-26_23-27-07-225x300.jpg`,
   },
+  {
+    slug: "krashenaja-doska",
+    title: "Палубная доска",
+    image: `${UPLOADS}/2025/04/photo_2025-04-26_23-27-21-225x300.jpg`,
+  },
+  {
+    slug: "krashenaja-imitacija-brusa",
+    title: "Имитация бруса — карельский профиль",
+    image: `${UPLOADS}/2025/04/photo_2025-04-26_23-27-40-225x300.jpg`,
+  },
+  {
+    slug: "imitacija-brusa",
+    title: "Блок-хаус",
+    image: `${UPLOADS}/2025/04/photo_2025-04-26_23-27-56-225x300.jpg`,
+  },
 ];
+
+export const ADVANTAGE_ICONS = [
+  `${UPLOADS}/2025/04/frame-10-1.png`,
+  `${UPLOADS}/2025/04/frame-10-2.png`,
+  `${UPLOADS}/2025/04/frame-10-1.png`,
+  `${UPLOADS}/2025/04/frame-10-2.png`,
+  `${UPLOADS}/2025/04/frame-10-1.png`,
+  `${UPLOADS}/2025/04/frame-10-2.png`,
+] as const;
 
 export const COLOR_SWATCHES = [
   { code: "KD-25", image: `${UPLOADS}/2025/03/Mask-group-1.png` },

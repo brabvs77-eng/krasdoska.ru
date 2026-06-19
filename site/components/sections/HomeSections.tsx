@@ -6,11 +6,13 @@ import { ArrowLink } from "@/components/ui/ArrowLink";
 import { getAllBlogPosts, getAllProjects, getExcerpt } from "@/lib/content";
 import { getContentImage } from "@/lib/product-media";
 import {
+  ADVANTAGE_ICONS,
   CATALOG_PREVIEW,
   COLOR_SWATCHES,
   PARTNERS,
   PRODUCTION_IMAGE,
   SERVICES_IMAGE,
+  WOOD_TEXTURE_BG,
 } from "@/lib/media";
 
 const advantages = [
@@ -70,16 +72,26 @@ export function ProductionIntroSection() {
 
 export function AdvantagesSection() {
   return (
-    <section className="py-16 sm:py-20">
+    <section className="section-dark py-16 sm:py-20">
       <div className="container-content">
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {advantages.map((item) => (
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {advantages.map((item, index) => (
             <article
               key={item.title}
-              className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm"
+              className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm"
             >
-              <h3 className="text-lg font-semibold text-brand">{item.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-neutral-600">{item.text}</p>
+              <div className="relative mb-4 h-12 w-12">
+                <Image
+                  src={ADVANTAGE_ICONS[index] ?? ADVANTAGE_ICONS[0]}
+                  alt=""
+                  fill
+                  sizes="48px"
+                  className="object-contain"
+                  unoptimized
+                />
+              </div>
+              <h3 className="text-lg font-semibold text-accent">{item.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-white/80">{item.text}</p>
             </article>
           ))}
         </div>
@@ -90,7 +102,7 @@ export function AdvantagesSection() {
 
 export function CatalogPreviewSection() {
   return (
-    <section className="bg-surface-muted py-16 sm:py-20">
+    <section className="section-dark py-16 sm:py-20">
       <div className="container-content">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
@@ -105,10 +117,10 @@ export function CatalogPreviewSection() {
             Купить по лучшей цене
           </Link>
         </div>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {CATALOG_PREVIEW.map((item) => (
             <ProductCard
-              key={item.slug}
+              key={`${item.slug}-${item.title}`}
               href={`/katalog/${item.slug}/`}
               title={item.title}
               image={item.image}
@@ -140,7 +152,7 @@ const services = [
 
 export function ServicesPreviewSection() {
   return (
-    <section className="py-16 sm:py-20">
+    <section className="bg-surface-muted py-16 sm:py-20">
       <div className="container-content">
         <h2 className="section-title">Наши услуги</h2>
         <div className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,1fr)_360px]">
@@ -157,7 +169,7 @@ export function ServicesPreviewSection() {
               </article>
             ))}
           </div>
-          <div className="relative hidden min-h-[280px] overflow-hidden rounded-2xl bg-surface-muted lg:block">
+          <div className="relative hidden min-h-[280px] overflow-hidden rounded-2xl bg-brand-dark lg:block">
             <Image
               src={SERVICES_IMAGE}
               alt="Услуги покраски дерева"
@@ -199,10 +211,7 @@ export function ColorsSection() {
             </div>
           ))}
         </div>
-        <Link
-          href="/palitra/"
-          className="btn-primary mt-10 bg-accent text-surface-dark hover:bg-accent-dark"
-        >
+        <Link href="/palitra/" className="btn-primary mt-10">
           Узнать подробнее
         </Link>
       </div>
@@ -212,8 +221,16 @@ export function ColorsSection() {
 
 export function PartnersSection() {
   return (
-    <section className="border-t border-neutral-200 bg-white py-16 sm:py-20">
-      <div className="container-content">
+    <section className="section-dark relative overflow-hidden py-16 sm:py-20">
+      <Image
+        src={WOOD_TEXTURE_BG}
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover opacity-20"
+        unoptimized
+      />
+      <div className="container-content relative">
         <h2 className="section-title">Партнеры и бренды</h2>
         <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {PARTNERS.map((partner) => (
@@ -222,7 +239,7 @@ export function PartnersSection() {
               href={partner.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-28 items-center justify-center rounded-2xl border border-neutral-200 bg-surface-muted p-4 transition hover:border-brand/30 hover:shadow-sm"
+              className="flex h-28 items-center justify-center rounded-2xl border border-white/15 bg-white/95 p-4 transition hover:shadow-md"
             >
               <div className="relative h-full w-full">
                 <Image
@@ -244,8 +261,8 @@ export function PartnersSection() {
 
 export function CtaSection() {
   return (
-    <section className="py-16 sm:py-20">
-      <div className="container-content rounded-3xl bg-surface-muted px-6 py-12 text-center sm:px-12">
+    <section className="section-dark py-16 sm:py-20">
+      <div className="container-content text-center">
         <h2 className="section-title">Остались вопросы?</h2>
         <p className="section-subtitle mx-auto">
           Заполните простую форму — мы свяжемся с вами и поможем подобрать подходящие решения.
@@ -264,11 +281,11 @@ export function HomeProjectsSection() {
   if (projects.length === 0) return null;
 
   return (
-    <section className="bg-surface-muted py-16 sm:py-20">
+    <section className="section-dark py-16 sm:py-20">
       <div className="container-content">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <h2 className="section-title">Выполненные работы</h2>
-          <Link href="/project/" className="btn-outline">
+          <Link href="/project/" className="btn-outline-light">
             Все проекты
           </Link>
         </div>
@@ -293,7 +310,7 @@ export function HomeBlogSection() {
   if (posts.length === 0) return null;
 
   return (
-    <section className="py-16 sm:py-20">
+    <section className="bg-surface-muted py-16 sm:py-20">
       <div className="container-content">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <h2 className="section-title">Новости и статьи</h2>

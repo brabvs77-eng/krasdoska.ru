@@ -1,3 +1,6 @@
+import Image from "next/image";
+import { PAGE_HERO_BG } from "@/lib/media";
+
 type PageHeroProps = {
   title: string;
   description?: string;
@@ -5,10 +8,22 @@ type PageHeroProps = {
 
 export function PageHero({ title, description }: PageHeroProps) {
   return (
-    <section className="border-b border-neutral-200 bg-surface-muted py-12 sm:py-16">
-      <div className="container-content">
-        <h1 className="section-title">{title}</h1>
-        {description && <p className="section-subtitle">{description}</p>}
+    <section className="relative overflow-hidden border-b border-brand-dark/30">
+      <Image
+        src={PAGE_HERO_BG}
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover"
+        unoptimized
+      />
+      <div className="absolute inset-0 bg-brand-dark/60" />
+      <div className="container-content relative py-20 text-white sm:py-24 lg:py-28">
+        <h1 className="section-title max-w-4xl text-white">{title}</h1>
+        {description && (
+          <p className="section-subtitle mt-4 max-w-2xl text-white/85">{description}</p>
+        )}
       </div>
     </section>
   );

@@ -8,7 +8,7 @@ export function Header() {
   const logo = site.logo;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-neutral-200/80 bg-white/95 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-brand/90 text-white backdrop-blur-md">
       <div className="container-content flex h-16 items-center justify-between gap-4 lg:h-20">
         <Link href="/" className="flex shrink-0 items-center gap-3">
           {logo ? (
@@ -21,11 +21,11 @@ export function Header() {
               unoptimized
             />
           ) : (
-            <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand text-sm font-bold text-white">
+            <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent text-sm font-bold text-white">
               KD
             </span>
           )}
-          <span className="hidden font-bold text-brand sm:inline">{site.name}</span>
+          <span className="hidden font-bold sm:inline">{site.name}</span>
         </Link>
 
         <nav className="hidden items-center gap-6 lg:flex" aria-label="Основное меню">
@@ -33,7 +33,7 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-neutral-700 transition-colors hover:text-brand"
+              className="text-sm font-medium text-white/85 transition-colors hover:text-accent"
             >
               {item.label}
             </Link>
@@ -44,7 +44,7 @@ export function Header() {
           {phone && (
             <a
               href={`tel:${phone.replace(/\s|\(|\)|-/g, "")}`}
-              className="hidden text-sm font-semibold text-brand md:inline"
+              className="hidden text-sm font-semibold text-white md:inline"
             >
               {phone}
             </a>
@@ -64,11 +64,11 @@ function MobileNav() {
 
   return (
     <details className="relative lg:hidden">
-      <summary className="flex cursor-pointer list-none items-center rounded-lg border border-neutral-200 px-3 py-2 text-sm font-medium">
+      <summary className="flex cursor-pointer list-none items-center rounded-lg border border-white/25 px-3 py-2 text-sm font-medium text-white">
         Меню
       </summary>
       <nav
-        className="absolute right-0 top-full mt-2 min-w-48 rounded-lg border border-neutral-200 bg-white p-2 shadow-lg"
+        className="absolute right-0 top-full mt-2 min-w-48 rounded-lg border border-neutral-200 bg-white p-2 text-surface-dark shadow-lg"
         aria-label="Мобильное меню"
       >
         {navigation.map((item) => (
@@ -82,7 +82,7 @@ function MobileNav() {
         ))}
         <Link
           href="/kontakty/"
-          className="mt-1 block rounded-md px-3 py-2 text-sm font-semibold text-brand hover:bg-surface-muted"
+          className="mt-1 block rounded-md px-3 py-2 text-sm font-semibold text-accent hover:bg-surface-muted"
         >
           Контакты
         </Link>

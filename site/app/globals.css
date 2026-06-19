@@ -6,6 +6,12 @@
 
 :root {
   --font-manrope: "Manrope", system-ui, sans-serif;
+  --kd-white: #ffffff;
+  --kd-orange: #fe772b;
+  --kd-dark: #252330;
+  --kd-texur: #18110d;
+  --kd-bg: #f8f7f3;
+  --kd-text: #111111;
 }
 
 html {
@@ -28,6 +34,31 @@ body {
 
   .btn-outline {
     @apply inline-flex items-center justify-center rounded-lg border border-brand px-6 py-3 text-sm font-semibold uppercase tracking-wide text-brand transition-colors hover:bg-brand hover:text-white;
+  }
+
+  .btn-outline-light {
+    @apply inline-flex items-center justify-center rounded-lg border border-white/50 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-colors hover:border-white hover:bg-white/10;
+  }
+
+  .section-dark {
+    @apply bg-brand-dark text-white;
+  }
+
+  .section-dark .section-title {
+    @apply text-white;
+  }
+
+  .section-dark .section-subtitle {
+    @apply text-white/80;
+  }
+
+  .orange-list ul {
+    @apply list-none space-y-2 pl-0;
+  }
+
+  .orange-list ul li::before {
+    content: "•";
+    @apply mr-2 text-accent;
   }
 
   .section-title {

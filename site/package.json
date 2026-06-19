@@ -4,11 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/prepare-uploads.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "migrate:content": "node scripts/migrate-content.mjs",
-    "sync:uploads": "node scripts/sync-uploads.mjs"
+    "sync:uploads": "node scripts/sync-uploads.mjs",
+    "fetch:uploads": "node scripts/fetch-uploads.mjs",
+    "prepare:uploads": "node scripts/prepare-uploads.mjs"
   },
   "dependencies": {
     "next": "^15.3.3",

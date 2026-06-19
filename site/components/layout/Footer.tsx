@@ -5,7 +5,7 @@ export function Footer() {
   const { site, contacts, navigation } = getSiteSettings();
 
   return (
-    <footer className="mt-auto border-t border-neutral-200 bg-surface-dark text-neutral-300">
+    <footer className="mt-auto border-t border-white/10 bg-brand-dark text-neutral-300">
       <div className="container-content grid gap-10 py-12 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <p className="text-lg font-bold text-white">{site.name}</p>
