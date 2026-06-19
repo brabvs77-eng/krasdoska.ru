@@ -1,0 +1,27 @@
+{
+  "site": {
+    "name": "Крашеная доска",
+    "url": "https://krashenayadoska.ru",
+    "description": "Производитель крашеной доски — Москва / Истра"
+  },
+  "contacts": {
+    "phones": ["+7 (495) 000-00-00"],
+    "email": "admin@krashenayadoska.ru",
+    "address": "Московская область, Истра",
+    "inn": "9715482912",
+    "kpp": "771501001"
+  },
+  "integrations": {
+    "yandexMetrikaId": "",
+    "googleAnalyticsId": "",
+    "marquizId": "6a1226b74922200019dd589d"
+  },
+  "navigation": [
+    { "href": "/uslugi/", "label": "Услуги" },
+    { "href": "/o-kompanii/", "label": "О компании" },
+    { "href": "/blog/", "label": "Блог" },
+    { "href": "/kontakty/", "label": "Контакты" },
+    { "href": "/katalog/", "label": "Каталог" },
+    { "href": "/palitra/", "label": "Палитра" }
+  ]
+}

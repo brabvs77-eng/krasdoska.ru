@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+.next/
+out/
+
+# Env
+.env
+.env*.local
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Media (sync via npm run sync:uploads — не коммитить весь архив)
+public/uploads/
+
+# Debug
+npm-debug.log*
