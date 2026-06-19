@@ -1,4 +1,3 @@
-import { Hero } from "@/components/sections/Hero";
 import {
   AdvantagesSection,
   CatalogPreviewSection,
@@ -6,8 +5,11 @@ import {
   CtaSection,
   HomeBlogSection,
   HomeProjectsSection,
+  PartnersSection,
+  ProductionIntroSection,
   ServicesPreviewSection,
 } from "@/components/sections/HomeSections";
+import { Hero } from "@/components/sections/Hero";
 import { buildPageMetadata } from "@/lib/metadata";
 import { getExcerpt, getPage } from "@/lib/content";
 
@@ -36,12 +38,14 @@ export default function HomePage() {
         primaryCta={{ href: "/katalog/", label: "Смотреть каталог" }}
         secondaryCta={{ href: "/kontakty/", label: "Получить консультацию" }}
       />
+      <ProductionIntroSection />
       <AdvantagesSection />
       <CatalogPreviewSection />
       <ServicesPreviewSection />
       <ColorsSection />
-      <HomeProjectsSection />
       <HomeBlogSection />
+      <HomeProjectsSection />
+      <PartnersSection />
       <CtaSection />
     </>
   );

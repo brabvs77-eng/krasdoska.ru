@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+import { HERO_IMAGE } from "@/lib/media";
 
 type HeroProps = {
   title: string;
@@ -9,12 +11,21 @@ type HeroProps = {
 
 export function Hero({ title, subtitle, primaryCta, secondaryCta }: HeroProps) {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-brand-dark via-brand to-brand-light text-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(196,163,90,0.25),transparent_50%)]" />
+    <section className="relative overflow-hidden text-white">
+      <Image
+        src={HERO_IMAGE}
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover"
+        unoptimized
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/95 via-brand/85 to-brand/60" />
       <div className="container-content relative py-16 sm:py-20 lg:py-28">
         <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-wider text-accent">
-            Производитель крашеной доски
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
+            Лучшие идеи — лучшее решение — лучшие результаты
           </p>
           <h1 className="mt-4 text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">
             {title}
@@ -22,7 +33,10 @@ export function Hero({ title, subtitle, primaryCta, secondaryCta }: HeroProps) {
           <p className="mt-6 text-base leading-relaxed text-white/90 sm:text-lg">{subtitle}</p>
           <div className="mt-8 flex flex-wrap gap-4">
             {primaryCta && (
-              <Link href={primaryCta.href} className="btn-primary bg-accent text-surface-dark hover:bg-accent-dark">
+              <Link
+                href={primaryCta.href}
+                className="btn-primary bg-accent text-surface-dark hover:bg-accent-dark"
+              >
                 {primaryCta.label}
               </Link>
             )}

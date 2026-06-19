@@ -1,7 +1,10 @@
 import { HtmlContent } from "@/components/content/HtmlContent";
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { PageHero } from "@/components/sections/PageHero";
 import { buildPageMetadata } from "@/lib/metadata";
 import { getCatalogCategory, getCatalogSlugs } from "@/lib/content";
+import { getCatalogImage } from "@/lib/media";
+import Image from "next/image";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -23,6 +26,7 @@ export default async function CatalogCategoryPage({ params }: Props) {
   const { slug } = await params;
   const category = getCatalogCategory(slug);
   const title = category?.title ?? slug.replace(/-/g, " ");
+  const image = getCatalogImage(slug);
 
   return (
     <>
@@ -31,6 +35,18 @@ export default async function CatalogCategoryPage({ params }: Props) {
         description={category?.description ?? `Категория каталога: ${title}`}
       />
       <article className="container-content py-12">
+        <Breadcrumbs
+          items={[
+            { label: "Главная", href: "/" },
+            { label: "Каталог", href: "/katalog/" },
+            { label: title },
+          ]}
+        />
+        {image && (
+          <div className="relative mb-10 aspect-[3/4] max-w-xs overflow-hidden rounded-2xl bg-surface-muted">
+            <Image src={image} alt={title} fill sizes="320px" className="object-cover" unoptimized />
+          </div>
+        )}
         <HtmlContent html={category?.content} />
       </article>
     </>

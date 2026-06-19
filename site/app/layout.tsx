@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { SiteIntegrations } from "@/components/integrations/SiteIntegrations";
 import { CookieNotice } from "@/components/integrations/CookieNotice";
 import { MarquizWidget } from "@/components/integrations/MarquizWidget";
+import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { buildPageMetadata } from "@/lib/metadata";
 import "./globals.css";
 
@@ -26,6 +27,7 @@ export default function RootLayout({
         <SiteIntegrations />
         <MarquizWidget />
         <CookieNotice />
+        <ScrollToTop />
       </body>
     </html>
   );

@@ -1,4 +1,5 @@
 import { HtmlContent } from "@/components/content/HtmlContent";
+import { Breadcrumbs, type BreadcrumbItem } from "@/components/layout/Breadcrumbs";
 import { PageHero } from "@/components/sections/PageHero";
 import type { ContentItem } from "@/lib/content";
 import { getExcerpt } from "@/lib/content";
@@ -6,9 +7,10 @@ import { getExcerpt } from "@/lib/content";
 type WpPageProps = {
   page: ContentItem;
   fallbackDescription?: string;
+  breadcrumbs?: BreadcrumbItem[];
 };
 
-export function WpPage({ page, fallbackDescription }: WpPageProps) {
+export function WpPage({ page, fallbackDescription, breadcrumbs }: WpPageProps) {
   return (
     <>
       <PageHero
@@ -16,6 +18,7 @@ export function WpPage({ page, fallbackDescription }: WpPageProps) {
         description={getExcerpt(page) ?? fallbackDescription}
       />
       <article className="container-content py-12">
+        {breadcrumbs && breadcrumbs.length > 0 && <Breadcrumbs items={breadcrumbs} />}
         <HtmlContent html={page.content} />
       </article>
     </>

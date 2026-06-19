@@ -102,6 +102,7 @@ krashenayadoska/
 - [x] Скрипт `scripts/migrate-content.ps1` / `migrate-content.mjs` → `content/`
 - [x] Перенести медиа: `extracted/uploads` → `public/uploads` (скрипт `sync-uploads.ps1`, 1643 файла)
 - [ ] Design tokens из Figma: цвета, типографика, отступы
+- [x] Главная: hero с фото, карточки каталога, палитра KD, партнёры (пути `/uploads/`)
 - [x] Базовые layout: `Header`, `Footer`
 
 ### Фаза 1 — Каркас и главная (2 недели)

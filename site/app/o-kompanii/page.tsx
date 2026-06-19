@@ -16,5 +16,14 @@ export default function AboutPage() {
   if (!page) {
     return null;
   }
-  return <WpPage page={page} fallbackDescription="Производство крашеной доски в Московской области." />;
+  return (
+    <WpPage
+      page={page}
+      fallbackDescription="Производство крашеной доски в Московской области."
+      breadcrumbs={[
+        { label: "Главная", href: "/" },
+        { label: page.title },
+      ]}
+    />
+  );
 }
