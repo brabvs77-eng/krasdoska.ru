@@ -9,9 +9,10 @@ import {
   ProductionIntroSection,
   ServicesPreviewSection,
 } from "@/components/sections/HomeSections";
-import { Hero } from "@/components/sections/Hero";
+import { HeroSlider } from "@/components/sections/HeroSlider";
 import { buildPageMetadata } from "@/lib/metadata";
 import { getExcerpt, getPage } from "@/lib/content";
+import { HERO_SLIDES } from "@/lib/media";
 
 export async function generateMetadata() {
   const page = getPage("glavnaja");
@@ -25,16 +26,10 @@ export async function generateMetadata() {
 }
 
 export default function HomePage() {
-  const page = getPage("glavnaja");
-
   return (
     <>
-      <Hero
-        title="Идеальный цвет для каждой детали"
-        subtitle={
-          getExcerpt(page) ??
-          "Производим и окрашиваем пиломатериалы на автоматизированном станке. Гарантия качества, индивидуальные цвета и поставки по России."
-        }
+      <HeroSlider
+        slides={HERO_SLIDES}
         primaryCta={{ href: "/katalog/", label: "Смотреть каталог" }}
         secondaryCta={{ href: "/kontakty/", label: "Получить консультацию" }}
       />

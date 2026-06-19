@@ -20,6 +20,12 @@ export type CatalogCategory = {
   content?: string;
 };
 
+export type CatalogProduct = ContentItem & {
+  category: string;
+  categories?: string[];
+  image?: string;
+};
+
 function readJsonDir(subdir: string): string[] {
   const dir = path.join(CONTENT_DIR, subdir);
   if (!fs.existsSync(dir)) return [];
@@ -85,6 +91,36 @@ export function getAllCatalogCategories(): CatalogCategory[] {
   return getCatalogSlugs()
     .map((slug) => getCatalogCategory(slug))
     .filter((item): item is CatalogCategory => item !== null);
+}
+
+export function getProductSlugs(): string[] {
+  return readJsonDir("catalog/products");
+}
+
+export function getProduct(slug: string): CatalogProduct | null {
+  const product = readJsonFile<CatalogProduct>("catalog/products", slug);
+  if (!product) return null;
+  return { ...product, content: normalizeWpHtml(product.content) };
+}
+
+export function getAllProducts(): CatalogProduct[] {
+  return readAllJson<CatalogProduct>("catalog/products");
+}
+
+export function getProductsByCategory(categorySlug: string): CatalogProduct[] {
+  return getAllProducts()
+    .filter(
+      (product) =>
+        product.category === categorySlug || product.categories?.includes(categorySlug),
+    )
+    .sort((a, b) => a.title.localeCompare(b.title, "ru"));
+}
+
+export function getProductStaticParams(): { slug: string; productSlug: string }[] {
+  return getAllProducts().map((product) => ({
+    slug: product.category,
+    productSlug: product.slug,
+  }));
 }
 
 export function getBlogSlugs(): string[] {

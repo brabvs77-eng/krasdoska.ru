@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import settings from "@/content/settings.json";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SiteIntegrations } from "@/components/integrations/SiteIntegrations";
@@ -10,7 +11,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   ...buildPageMetadata({}),
-  icons: { icon: "/favicon.svg" },
+  icons: settings.site.favicon ? { icon: settings.site.favicon } : { icon: "/favicon.svg" },
 };
 
 export default function RootLayout({

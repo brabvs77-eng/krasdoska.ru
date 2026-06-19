@@ -1,17 +1,30 @@
+import Image from "next/image";
 import Link from "next/link";
 import { getSiteSettings } from "@/lib/site";
 
 export function Header() {
   const { site, navigation, contacts } = getSiteSettings();
   const phone = contacts.phones[0];
+  const logo = site.logo;
 
   return (
     <header className="sticky top-0 z-50 border-b border-neutral-200/80 bg-white/95 backdrop-blur">
       <div className="container-content flex h-16 items-center justify-between gap-4 lg:h-20">
         <Link href="/" className="flex shrink-0 items-center gap-3">
-          <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand text-sm font-bold text-white">
-            KD
-          </span>
+          {logo ? (
+            <Image
+              src={logo}
+              alt={site.name}
+              width={48}
+              height={48}
+              className="h-10 w-10 rounded-lg object-contain"
+              unoptimized
+            />
+          ) : (
+            <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand text-sm font-bold text-white">
+              KD
+            </span>
+          )}
           <span className="hidden font-bold text-brand sm:inline">{site.name}</span>
         </Link>
 

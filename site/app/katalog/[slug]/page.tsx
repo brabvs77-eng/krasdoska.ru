@@ -1,9 +1,11 @@
 import { HtmlContent } from "@/components/content/HtmlContent";
+import { ProductCard } from "@/components/cards/ProductCard";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { PageHero } from "@/components/sections/PageHero";
 import { buildPageMetadata } from "@/lib/metadata";
-import { getCatalogCategory, getCatalogSlugs } from "@/lib/content";
+import { getCatalogCategory, getCatalogSlugs, getProductsByCategory } from "@/lib/content";
 import { getCatalogImage } from "@/lib/media";
+import { getProductImage } from "@/lib/product-media";
 import Image from "next/image";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -27,6 +29,7 @@ export default async function CatalogCategoryPage({ params }: Props) {
   const category = getCatalogCategory(slug);
   const title = category?.title ?? slug.replace(/-/g, " ");
   const image = getCatalogImage(slug);
+  const products = getProductsByCategory(slug);
 
   return (
     <>
@@ -46,6 +49,21 @@ export default async function CatalogCategoryPage({ params }: Props) {
           <div className="relative mb-10 aspect-[3/4] max-w-xs overflow-hidden rounded-2xl bg-surface-muted">
             <Image src={image} alt={title} fill sizes="320px" className="object-cover" unoptimized />
           </div>
+        )}
+        {products.length > 0 && (
+          <section className="mb-12">
+            <h2 className="mb-6 text-2xl font-bold text-neutral-900">Товары</h2>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {products.map((product) => (
+                <ProductCard
+                  key={product.slug}
+                  href={`/katalog/${slug}/${product.slug}/`}
+                  title={product.title}
+                  image={getProductImage(product)}
+                />
+              ))}
+            </div>
+          </section>
         )}
         <HtmlContent html={category?.content} />
       </article>

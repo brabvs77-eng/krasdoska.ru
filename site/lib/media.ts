@@ -2,6 +2,32 @@ const UPLOADS = "/uploads";
 
 export const HERO_IMAGE = `${UPLOADS}/2025/04/photo_2025-04-26_20-30-22-1024x825.jpg`;
 
+export type HeroSlide = {
+  title: string;
+  subtitle?: string;
+  eyebrow?: string;
+  image: string;
+};
+
+export const HERO_SLIDES: HeroSlide[] = [
+  {
+    eyebrow: "Лучшие идеи — лучшее решение — лучшие результаты",
+    title: "Идеальный цвет\nдля каждой детали",
+    subtitle: "Преобразите свой дом: яркая покраска для деревянных фасадов.",
+    image: HERO_IMAGE,
+  },
+  {
+    title: "Профессиональная покраска деревянных домов",
+    subtitle: "Ваш комфорт — наша приоритетная задача.",
+    image: HERO_IMAGE,
+  },
+  {
+    title: "Исключительное качество",
+    subtitle: "Гарантия долговечности и эстетики.",
+    image: `${UPLOADS}/2025/04/top-view-light-wood-wallpaper-1-1.png`,
+  },
+];
+
 export const PRODUCTION_IMAGE = `${UPLOADS}/2025/04/photo_2025-04-26_20-30-22-300x242.jpg`;
 
 export const SERVICES_IMAGE = `${UPLOADS}/2025/03/Frame-19.png`;

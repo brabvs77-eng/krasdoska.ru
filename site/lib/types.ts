@@ -10,6 +10,8 @@ export const SiteSettingsSchema = z.object({
     name: z.string(),
     url: z.string().url(),
     description: z.string(),
+    logo: z.string().optional(),
+    favicon: z.string().optional(),
   }),
   contacts: z.object({
     phones: z.array(z.string()),
