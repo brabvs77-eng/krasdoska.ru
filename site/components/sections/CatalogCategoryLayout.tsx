@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ProductCard } from "@/components/cards/ProductCard";
 import { HtmlContent } from "@/components/content/HtmlContent";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
-import { CtaSection } from "@/components/sections/HomeSections";
+import { MarketingPageFooter } from "@/components/sections/MarketingPageFooter";
 import { PageHero } from "@/components/sections/PageHero";
 import type { CatalogCategory, CatalogProduct } from "@/lib/content";
 import type { CatalogShowcaseItem } from "@/lib/catalog-showcase";
@@ -120,7 +120,7 @@ export function CatalogCategoryLayout({
         </div>
       </section>
 
-      <CtaSection />
+      <MarketingPageFooter />
     </>
   );
 }

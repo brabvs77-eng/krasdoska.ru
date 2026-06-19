@@ -1,12 +1,10 @@
 {
-    "id":  "3820",
-    "slug":  "fasad-iz-plankena-listvennicy",
-    "title":  "Фасад из планкена лиственницы",
-    "excerpt":  "",
-    "content":  "",
-    "link":  "https://krashenayadoska.ru/project/fasad-iz-plankena-listvennicy/",
-    "image":  "/uploads/2025/10/photo_2025-08-31_19-27-35.webp",
-    "seo":  {
-                "title":  "Фасад из планкена лиственницы"
-            }
+  "id": "3820",
+  "slug": "fasad-iz-plankena-listvennicy",
+  "title": "Фасад из планкена лиственницы",
+  "link": "https://krashenayadoska.ru/project/fasad-iz-plankena-listvennicy/",
+  "seo": {
+    "title": "Фасад из планкена лиственницы"
+  },
+  "image": "/uploads/2025/10/photo_2025-08-31_19-27-35.webp"
 }

@@ -1,12 +1,10 @@
 {
-    "id":  "3810",
-    "slug":  "dostavka-v-regiony",
-    "title":  "Доставка в регионы",
-    "excerpt":  "",
-    "content":  "",
-    "link":  "https://krashenayadoska.ru/blog-post/dostavka-v-regiony/",
-    "image":  "/uploads/2025/07/photo_2025-07-16_23-36-49.jpg",
-    "seo":  {
-                "title":  "Доставка в регионы"
-            }
+  "id": "3810",
+  "slug": "dostavka-v-regiony",
+  "title": "Доставка в регионы",
+  "link": "https://krashenayadoska.ru/blog-post/dostavka-v-regiony/",
+  "seo": {
+    "title": "Доставка в регионы"
+  },
+  "image": "/uploads/2025/07/photo_2025-07-16_23-36-49.jpg"
 }

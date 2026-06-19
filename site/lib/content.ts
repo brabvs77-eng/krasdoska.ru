@@ -85,7 +85,12 @@ export function getCatalogSlugs(): string[] {
 }
 
 export function getCatalogCategory(slug: string): CatalogCategory | null {
-  return readJsonFile<CatalogCategory>("catalog/categories", slug);
+  const category = readJsonFile<CatalogCategory>("catalog/categories", slug);
+  if (!category) return null;
+  return {
+    ...category,
+    content: category.content ? normalizeWpHtml(category.content) : undefined,
+  };
 }
 
 export function getAllCatalogCategories(): CatalogCategory[] {
@@ -108,12 +113,21 @@ export function getAllProducts(): CatalogProduct[] {
   return readAllJson<CatalogProduct>("catalog/products");
 }
 
+const CATEGORY_PRODUCT_ALIASES: Record<string, string[]> = {
+  vagonka: ["vagonka", "krashenaja-vagonka"],
+  "krashenaja-vagonka": ["vagonka", "krashenaja-vagonka"],
+};
+
+function matchesCategory(product: CatalogProduct, categorySlug: string): boolean {
+  const aliases = CATEGORY_PRODUCT_ALIASES[categorySlug] ?? [categorySlug];
+  return aliases.some(
+    (alias) => product.category === alias || product.categories?.includes(alias),
+  );
+}
+
 export function getProductsByCategory(categorySlug: string): CatalogProduct[] {
   return getAllProducts()
-    .filter(
-      (product) =>
-        product.category === categorySlug || product.categories?.includes(categorySlug),
-    )
+    .filter((product) => matchesCategory(product, categorySlug))
     .sort((a, b) => a.title.localeCompare(b.title, "ru"));
 }
 
