@@ -24,7 +24,7 @@ export default function ContactsPage() {
       />
       <div className="container-content py-12">
         {page?.content ? (
-          <HtmlContent html={page.content} />
+          <HtmlContent html={page.content} stripLeadingH1 />
         ) : (
           <p className="text-neutral-600">Контактная информация появится после миграции контента.</p>
         )}

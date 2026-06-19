@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { HtmlContent } from "@/components/content/HtmlContent";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
-import { CtaSection } from "@/components/sections/HomeSections";
+import { MarketingPageFooter } from "@/components/sections/MarketingPageFooter";
 import { PageHero } from "@/components/sections/PageHero";
 import { buildPageMetadata } from "@/lib/metadata";
 import {
@@ -9,6 +9,7 @@ import {
   getExcerpt,
   getProduct,
   getProductStaticParams,
+  matchesCategory,
 } from "@/lib/content";
 import { getProductImage } from "@/lib/product-media";
 
@@ -35,10 +36,7 @@ export default async function CatalogProductPage({ params }: Props) {
   const category = getCatalogCategory(slug);
   const categoryTitle = category?.title ?? slug.replace(/-/g, " ");
 
-  if (
-    !product ||
-    (product.category !== slug && !product.categories?.includes(slug))
-  ) {
+  if (!product || !matchesCategory(product, slug)) {
     return (
       <>
         <PageHero title={productSlug.replace(/-/g, " ")} />
@@ -82,7 +80,7 @@ export default async function CatalogProductPage({ params }: Props) {
           </div>
         </div>
       </article>
-      <CtaSection />
+      <MarketingPageFooter />
     </>
   );
 }

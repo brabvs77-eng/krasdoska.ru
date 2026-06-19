@@ -118,7 +118,7 @@ const CATEGORY_PRODUCT_ALIASES: Record<string, string[]> = {
   "krashenaja-vagonka": ["vagonka", "krashenaja-vagonka"],
 };
 
-function matchesCategory(product: CatalogProduct, categorySlug: string): boolean {
+export function matchesCategory(product: CatalogProduct, categorySlug: string): boolean {
   const aliases = CATEGORY_PRODUCT_ALIASES[categorySlug] ?? [categorySlug];
   return aliases.some(
     (alias) => product.category === alias || product.categories?.includes(alias),
