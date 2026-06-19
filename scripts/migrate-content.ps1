@@ -58,15 +58,15 @@ foreach ($m in $items) {
 
     switch ($type) {
         'page' {
-            Set-Content -Path (Join-Path $out.pages "$slug.json") -Value $json -Encoding UTF8
+            [System.IO.File]::WriteAllText((Join-Path $out.pages "$slug.json"), $json, [System.Text.UTF8Encoding]::new($false))
             $pages++
         }
         'blog-post' {
-            Set-Content -Path (Join-Path $out.blog "$slug.json") -Value $json -Encoding UTF8
+            [System.IO.File]::WriteAllText((Join-Path $out.blog "$slug.json"), $json, [System.Text.UTF8Encoding]::new($false))
             $blog++
         }
         'project' {
-            Set-Content -Path (Join-Path $out.projects "$slug.json") -Value $json -Encoding UTF8
+            [System.IO.File]::WriteAllText((Join-Path $out.projects "$slug.json"), $json, [System.Text.UTF8Encoding]::new($false))
             $projects++
         }
     }
@@ -76,7 +76,8 @@ $categoriesPath = Join-Path $PSScriptRoot 'catalog-categories.json'
 $categories = Get-Content -Raw -Encoding UTF8 $categoriesPath | ConvertFrom-Json
 
 foreach ($c in $categories) {
-    $c | ConvertTo-Json | Set-Content (Join-Path $out.categories "$($c.slug).json") -Encoding UTF8
+    $categoryJson = $c | ConvertTo-Json
+    [System.IO.File]::WriteAllText((Join-Path $out.categories "$($c.slug).json"), $categoryJson, [System.Text.UTF8Encoding]::new($false))
 }
 
 Write-Host "Done: pages=$pages blog=$blog projects=$projects categories=$($categories.Count)"

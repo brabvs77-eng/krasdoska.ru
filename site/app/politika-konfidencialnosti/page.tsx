@@ -1,16 +1,20 @@
-import { PageHero, PagePlaceholder } from "@/components/sections/PageHero";
+import { WpPage } from "@/components/content/WpPage";
 import { buildPageMetadata } from "@/lib/metadata";
+import { getExcerpt, getPage } from "@/lib/content";
 
-export const metadata = buildPageMetadata({
-  title: "Политика конфиденциальности",
-  path: "/politika-konfidencialnosti/",
-});
+export async function generateMetadata() {
+  const page = getPage("politika-konfidencialnosti");
+  return buildPageMetadata({
+    title: page?.seo?.title ?? page?.title ?? "Политика конфиденциальности",
+    description: page ? getExcerpt(page) : undefined,
+    path: "/politika-konfidencialnosti/",
+  });
+}
 
 export default function PrivacyPage() {
-  return (
-    <>
-      <PageHero title="Политика конфиденциальности" />
-      <PagePlaceholder message="Текст политики будет перенесён из WordPress." />
-    </>
-  );
+  const page = getPage("politika-konfidencialnosti");
+  if (!page) {
+    return null;
+  }
+  return <WpPage page={page} />;
 }

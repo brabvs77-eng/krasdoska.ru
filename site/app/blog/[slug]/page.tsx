@@ -1,4 +1,3 @@
-import { ContentList } from "@/components/content/ContentList";
 import { HtmlContent } from "@/components/content/HtmlContent";
 import { PageHero } from "@/components/sections/PageHero";
 import { buildPageMetadata } from "@/lib/metadata";

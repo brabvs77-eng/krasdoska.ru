@@ -1,6 +1,6 @@
-import { PageHero, PagePlaceholder } from "@/components/sections/PageHero";
+import { WpPage } from "@/components/content/WpPage";
 import { buildPageMetadata } from "@/lib/metadata";
-import { getPaletteSlugs } from "@/lib/content";
+import { getExcerpt, getPalettePage, getPaletteSlugs } from "@/lib/content";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -10,19 +10,21 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
+  const page = getPalettePage(slug);
   return buildPageMetadata({
-    title: slug.replace(/-/g, " "),
+    title: page?.seo?.title ?? page?.title ?? slug.replace(/-/g, " "),
+    description: page ? getExcerpt(page) : undefined,
     path: `/palitra/${slug}/`,
   });
 }
 
 export default async function PaletteSubPage({ params }: Props) {
   const { slug } = await params;
+  const page = getPalettePage(slug);
 
-  return (
-    <>
-      <PageHero title={slug.replace(/-/g, " ")} />
-      <PagePlaceholder />
-    </>
-  );
+  if (!page) {
+    return null;
+  }
+
+  return <WpPage page={page} />;
 }

@@ -1,8 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
+import { normalizeWpHtml } from "./wp-content";
 
 const CONTENT_DIR = path.join(process.cwd(), "content");
-
 export type ContentItem = {
   id: string;
   slug: string;
@@ -32,7 +32,8 @@ function readJsonDir(subdir: string): string[] {
 function readJsonFile<T>(subdir: string, slug: string): T | null {
   const file = path.join(CONTENT_DIR, subdir, `${slug}.json`);
   if (!fs.existsSync(file)) return null;
-  return JSON.parse(fs.readFileSync(file, "utf8")) as T;
+  const raw = fs.readFileSync(file, "utf8").replace(/^\uFEFF/, "");
+  return JSON.parse(raw) as T;
 }
 
 function readAllJson<T>(subdir: string): T[] {
@@ -49,7 +50,8 @@ export function stripHtml(html: string): string {
     .trim();
 }
 
-export function getExcerpt(item: Pick<ContentItem, "excerpt" | "content">): string | undefined {
+export function getExcerpt(item: Pick<ContentItem, "excerpt" | "content"> | null | undefined): string | undefined {
+  if (!item) return undefined;
   const fromExcerpt = item.excerpt?.trim();
   if (fromExcerpt) return stripHtml(fromExcerpt);
   if (item.content) {
@@ -113,12 +115,38 @@ export function getAllProjects(): ContentItem[] {
   );
 }
 
+export function getPage(slug: string): ContentItem | null {
+  const page = readJsonFile<ContentItem>("pages", slug);
+  if (!page) return null;
+  return { ...page, content: normalizeWpHtml(page.content) };
+}
+
+const SERVICE_SLUGS = ["pokraska-dereva-na-stanke-metodom-raspyleni"];
+
 export function getServiceSlugs(): string[] {
-  const fromContent = readJsonDir("pages/services");
-  if (fromContent.length > 0) return fromContent;
-  return ["pokraska-dereva-na-stanke-metodom-raspyleni"];
+  return SERVICE_SLUGS;
+}
+
+export function getServicePage(slug: string): ContentItem | null {
+  return getPage(slug);
+}
+
+export function getAllServices(): ContentItem[] {
+  return getServiceSlugs()
+    .map((slug) => getServicePage(slug))
+    .filter((item): item is ContentItem => item !== null);
 }
 
 export function getPaletteSlugs(): string[] {
   return ["palitra-ral", "palitra-ncs", "palitra-cvetov-biofa"];
+}
+
+export function getPalettePage(slug: string): ContentItem | null {
+  return getPage(slug);
+}
+
+export function getAllPalettePages(): ContentItem[] {
+  return getPaletteSlugs()
+    .map((slug) => getPalettePage(slug))
+    .filter((item): item is ContentItem => item !== null);
 }

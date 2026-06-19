@@ -1,20 +1,20 @@
-import { PageHero, PagePlaceholder } from "@/components/sections/PageHero";
+import { WpPage } from "@/components/content/WpPage";
 import { buildPageMetadata } from "@/lib/metadata";
+import { getExcerpt, getPage } from "@/lib/content";
 
-export const metadata = buildPageMetadata({
-  title: "Технология нанесения краски",
-  description: "Этапы производства, видео и ответы на частые вопросы.",
-  path: "/tehnologija-nanesenija-kraski/",
-});
+export async function generateMetadata() {
+  const page = getPage("tehnologija-nanesenija-kraski");
+  return buildPageMetadata({
+    title: page?.seo?.title ?? page?.title ?? "Технология нанесения краски",
+    description: page ? getExcerpt(page) : "Этапы производства, видео и ответы на частые вопросы.",
+    path: "/tehnologija-nanesenija-kraski/",
+  });
+}
 
 export default function TechnologyPage() {
-  return (
-    <>
-      <PageHero
-        title="Технология нанесения краски"
-        description="11 этапов производства, видео с линии и FAQ."
-      />
-      <PagePlaceholder />
-    </>
-  );
+  const page = getPage("tehnologija-nanesenija-kraski");
+  if (!page) {
+    return null;
+  }
+  return <WpPage page={page} fallbackDescription="11 этапов производства, видео с линии и FAQ." />;
 }
