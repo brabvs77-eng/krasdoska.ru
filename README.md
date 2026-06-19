@@ -1,5 +1,7 @@
 # krasdoska.ru
 
+Репозиторий: **https://github.com/brabvs77-eng/krasdoska.ru**
+
 Монорепозиторий проекта **[Крашеная доска](https://krashenayadoska.ru/)**:
 
 | Часть | Каталог | Назначение |
