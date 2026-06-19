@@ -4,23 +4,35 @@ import {
   CatalogPreviewSection,
   ColorsSection,
   CtaSection,
+  HomeBlogSection,
+  HomeProjectsSection,
   ServicesPreviewSection,
 } from "@/components/sections/HomeSections";
 import { buildPageMetadata } from "@/lib/metadata";
+import { getExcerpt, getPage } from "@/lib/content";
 
-export const metadata = buildPageMetadata({
-  title: "Главная",
-  description:
-    "Производитель крашеной доски в Москве и Истре. Каталог, услуги покраски, палитра цветов, проекты и блог.",
-  path: "/",
-});
+export async function generateMetadata() {
+  const page = getPage("glavnaja");
+  return buildPageMetadata({
+    title: page?.seo?.title ?? page?.title ?? "Главная",
+    description:
+      getExcerpt(page) ??
+      "Производитель крашеной доски в Москве и Истре. Каталог, услуги покраски, палитра цветов, проекты и блог.",
+    path: "/",
+  });
+}
 
 export default function HomePage() {
+  const page = getPage("glavnaja");
+
   return (
     <>
       <Hero
-        title="Крашеная доска для фасадов, интерьеров и террас"
-        subtitle="Производим и окрашиваем пиломатериалы на автоматизированном станке. Гарантия качества, индивидуальные цвета и поставки по России."
+        title="Идеальный цвет для каждой детали"
+        subtitle={
+          getExcerpt(page) ??
+          "Производим и окрашиваем пиломатериалы на автоматизированном станке. Гарантия качества, индивидуальные цвета и поставки по России."
+        }
         primaryCta={{ href: "/katalog/", label: "Смотреть каталог" }}
         secondaryCta={{ href: "/kontakty/", label: "Получить консультацию" }}
       />
@@ -28,6 +40,8 @@ export default function HomePage() {
       <CatalogPreviewSection />
       <ServicesPreviewSection />
       <ColorsSection />
+      <HomeProjectsSection />
+      <HomeBlogSection />
       <CtaSection />
     </>
   );

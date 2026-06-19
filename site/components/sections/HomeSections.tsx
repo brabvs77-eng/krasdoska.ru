@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { ContentList } from "@/components/content/ContentList";
+import { getAllBlogPosts, getAllProjects, getExcerpt } from "@/lib/content";
 
 const advantages = [
   {
@@ -149,6 +151,68 @@ export function CtaSection() {
         <Link href="/kontakty/" className="btn-primary mt-8">
           Заказать звонок
         </Link>
+      </div>
+    </section>
+  );
+}
+
+export function HomeProjectsSection() {
+  const projects = getAllProjects().slice(0, 3);
+
+  if (projects.length === 0) return null;
+
+  return (
+    <section className="bg-surface-muted py-16 sm:py-20">
+      <div className="container-content">
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <h2 className="section-title">Выполненные работы</h2>
+            <p className="section-subtitle">Примеры проектов с крашеной доской и пиломатериалами.</p>
+          </div>
+          <Link href="/project/" className="btn-outline">
+            Все проекты
+          </Link>
+        </div>
+        <ContentList
+          embedded
+          items={projects.map((project) => ({
+            slug: project.slug,
+            title: project.title,
+            excerpt: getExcerpt(project),
+            href: `/project/${project.slug}/`,
+          }))}
+        />
+      </div>
+    </section>
+  );
+}
+
+export function HomeBlogSection() {
+  const posts = getAllBlogPosts().slice(0, 3);
+
+  if (posts.length === 0) return null;
+
+  return (
+    <section className="py-16 sm:py-20">
+      <div className="container-content">
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <h2 className="section-title">Новости и статьи</h2>
+            <p className="section-subtitle">Полезные материалы о покраске, уходе и выборе древесины.</p>
+          </div>
+          <Link href="/blog/" className="btn-outline">
+            Весь блог
+          </Link>
+        </div>
+        <ContentList
+          embedded
+          items={posts.map((post) => ({
+            slug: post.slug,
+            title: post.title,
+            excerpt: getExcerpt(post),
+            href: `/blog/${post.slug}/`,
+          }))}
+        />
       </div>
     </section>
   );

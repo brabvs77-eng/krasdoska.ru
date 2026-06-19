@@ -1,0 +1,12 @@
+/blog-post/:slug /blog/:slug 301
+/krashenaja-vagonka/ /katalog/krashenaja-vagonka/ 301
+/krashenaja-imitacija-brusa/ /katalog/krashenaja-imitacija-brusa/ 301
+/krashenyj-planken/ /katalog/planken/ 301
+/skandinavskaja-doska/ /katalog/skandinavskaja-doska/ 301
+/terrasnaja-doska/ /katalog/terrasnaja-doska/ 301
+/doska-pola/ /katalog/krashenaja-doska/ 301
+/parketnaja-doska/ /katalog/krashenaja-doska/ 301
+/fasadnaja-doska/ /katalog/krashenaja-doska/ 301
+/massiv-pola/ /katalog/krashenaja-doska/ 301
+/palubnaja-doska/ /katalog/krashenaja-doska/ 301
+/blok-haus/ /katalog/imitacija-brusa/ 301

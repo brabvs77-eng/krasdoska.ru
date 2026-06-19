@@ -106,7 +106,7 @@ krashenayadoska/
 
 ### Фаза 1 — Каркас и главная (2 недели)
 
-- [x] Главная `/` — базовые секции (hero, преимущества, каталог, услуги, цвета, CTA)
+- [x] Главная `/` — SEO и hero из `glavnaja.json`, превью проектов и блога
 - [x] Header/Footer
 - [ ] Компоненты: полный паритет с продакшеном
 - [x] Cookie-notice (`components/integrations/CookieNotice.tsx`)
@@ -139,7 +139,7 @@ krashenayadoska/
 
 - [ ] Чеклист паритета (§7)
 - [ ] `sitemap.xml`, `robots.txt`, canonical, Open Graph
-- [ ] 301-маппинг только для реально изменённых URL (если будут)
+- [x] 301-маппинг legacy URL (`public/_redirects` для CF Pages)
 - [ ] Lighthouse, мобильная вёрстка, доступность
 
 ### Фаза 6 — Продакшен-переключение (§8)
