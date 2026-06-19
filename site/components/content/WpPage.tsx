@@ -12,6 +12,7 @@ type WpPageProps = {
   breadcrumbs?: BreadcrumbItem[];
   withCta?: boolean;
   withMarketingFooter?: boolean;
+  stripLeadingH1?: boolean;
 };
 
 export function WpPage({
@@ -20,6 +21,7 @@ export function WpPage({
   breadcrumbs,
   withCta,
   withMarketingFooter,
+  stripLeadingH1,
 }: WpPageProps) {
   return (
     <>
@@ -29,7 +31,7 @@ export function WpPage({
       />
       <article className="container-content py-12">
         {breadcrumbs && breadcrumbs.length > 0 && <Breadcrumbs items={breadcrumbs} />}
-        <HtmlContent html={page.content} />
+        <HtmlContent html={page.content} stripLeadingH1={stripLeadingH1} />
       </article>
       {withMarketingFooter && <MarketingPageFooter />}
       {withCta && !withMarketingFooter && <CtaSection />}

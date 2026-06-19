@@ -23,7 +23,7 @@ export default function CatalogPage() {
       <PageHero
         title={page?.title ?? "Каталог крашеной доски"}
         description="Все виды продукции в наличии и под заказ. Не нашли нужный размер? — Звоните, подберём."
-        action={{ href: "/kontakty/", label: "Заказать звонок" }}
+        action={{ href: "/#form", label: "Заказать звонок" }}
       />
       <CatalogShowcaseSection />
       <MarketingPageFooter />

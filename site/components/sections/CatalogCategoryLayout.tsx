@@ -36,7 +36,7 @@ export function CatalogCategoryLayout({
           category?.description ??
           "Продукция в наличии и под заказ с профессиональной покраской на производстве."
         }
-        action={{ href: "/kontakty/", label: "Заказать звонок" }}
+        action={{ href: "/#form", label: "Заказать звонок" }}
       />
 
       <section className="section-dark py-12 sm:py-16">

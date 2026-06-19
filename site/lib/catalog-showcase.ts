@@ -34,6 +34,7 @@ export const CATALOG_SHOWCASE: CatalogShowcaseItem[] = [
   },
   {
     title: "Крашеная фасадная доска",
+    tagline: "Строганая северная сосна с трёхслойным UV-покрытием для фасадов",
     href: "/katalog/krashenaja-doska/",
     image: `${UPLOADS}/2025/11/capture_251107_215619-2.png`,
     priceFrom: "от 1700 руб/м²",

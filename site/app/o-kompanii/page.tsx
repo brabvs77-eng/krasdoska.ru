@@ -21,6 +21,7 @@ export default function AboutPage() {
       page={page}
       fallbackDescription="Производство крашеной доски в Московской области."
       withCta
+      stripLeadingH1
       breadcrumbs={[
         { label: "Главная", href: "/" },
         { label: page.title },

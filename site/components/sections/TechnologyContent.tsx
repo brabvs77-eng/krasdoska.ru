@@ -5,6 +5,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import type { ContentItem } from "@/lib/content";
 import { getExcerpt } from "@/lib/content";
+import { getSiteSettings } from "@/lib/site";
 import {
   PRODUCTION_STEPS,
   TECHNOLOGY_FAQ,
@@ -18,6 +19,9 @@ type TechnologyContentProps = {
 
 export function TechnologyContent({ page }: TechnologyContentProps) {
   const tailHtml = getTechnologyTailHtml(page.content);
+  const { contacts } = getSiteSettings();
+  const phoneDigits = contacts.phones[0]?.replace(/\D/g, "") ?? "88002509055";
+  const phoneHref = phoneDigits ? `tel:${phoneDigits}` : "tel:88002509055";
 
   return (
     <>
@@ -79,7 +83,7 @@ export function TechnologyContent({ page }: TechnologyContentProps) {
                 внедрять новейшие технологии покраски древесины любых пород.
               </p>
             </div>
-            <ContactForm />
+            <ContactForm email={contacts.email} phoneHref={phoneHref} />
           </div>
         </section>
       </article>

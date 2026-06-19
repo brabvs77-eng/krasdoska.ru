@@ -30,6 +30,7 @@ export default async function PaletteSubPage({ params }: Props) {
     <WpPage
       page={page}
       withMarketingFooter
+      stripLeadingH1
       breadcrumbs={[
         { label: "Главная", href: "/" },
         { label: "Палитра", href: "/palitra/" },

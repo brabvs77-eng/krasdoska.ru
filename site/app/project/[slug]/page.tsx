@@ -1,6 +1,6 @@
 import { HtmlContent } from "@/components/content/HtmlContent";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
-import { CtaSection } from "@/components/sections/HomeSections";
+import { MarketingPageFooter } from "@/components/sections/MarketingPageFooter";
 import { PageHero } from "@/components/sections/PageHero";
 import { buildPageMetadata } from "@/lib/metadata";
 import { getExcerpt, getProject, getProjectSlugs } from "@/lib/content";
@@ -51,7 +51,7 @@ export default async function ProjectPage({ params }: Props) {
           <HtmlContent html={project.content} />
         </div>
       </article>
-      <CtaSection />
+      <MarketingPageFooter />
     </>
   );
 }

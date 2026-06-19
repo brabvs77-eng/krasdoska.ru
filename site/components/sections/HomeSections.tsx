@@ -7,6 +7,7 @@ import { getBlogPost, getExcerpt, getProject } from "@/lib/content";
 import { HOME_BLOG_DATES, HOME_BLOG_SLUGS, HOME_PROJECT_SLUGS, HOME_PROJECT_TAGS } from "@/lib/home-content";
 import { getContentImage } from "@/lib/product-media";
 import { ContactForm } from "@/components/forms/ContactForm";
+import { getSiteSettings } from "@/lib/site";
 import { HOME_COMPANY_BLOCKS } from "@/lib/home-footer";
 import {
   ADVANTAGE_ICONS,
@@ -264,8 +265,12 @@ export function PartnersSection() {
 }
 
 export function CtaSection() {
+  const { contacts } = getSiteSettings();
+  const phoneDigits = contacts.phones[0]?.replace(/\D/g, "") ?? "88002509055";
+  const phoneHref = phoneDigits ? `tel:${phoneDigits}` : "tel:88002509055";
+
   return (
-    <section className="section-dark py-16 sm:py-20">
+    <section id="form" className="section-dark scroll-mt-24 py-16 sm:py-20">
       <div className="container-content grid gap-10 lg:grid-cols-2 lg:items-start">
         <div>
           <h2 className="section-title">Остались вопросы?</h2>
@@ -273,7 +278,7 @@ export function CtaSection() {
             Заполните простую форму — мы свяжемся с вами и поможем подобрать подходящие решения.
           </p>
         </div>
-        <ContactForm />
+        <ContactForm email={contacts.email} phoneHref={phoneHref} />
       </div>
     </section>
   );
