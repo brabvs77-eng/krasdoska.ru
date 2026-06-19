@@ -150,3 +150,12 @@ export const CATALOG_SHOWCASE: CatalogShowcaseItem[] = [
     ],
   },
 ];
+
+const SHOWCASE_SLUG_ALIASES: Record<string, string> = {
+  vagonka: "krashenaja-vagonka",
+};
+
+export function getCatalogShowcaseForSlug(slug: string): CatalogShowcaseItem | undefined {
+  const resolved = SHOWCASE_SLUG_ALIASES[slug] ?? slug;
+  return CATALOG_SHOWCASE.find((item) => item.href === `/katalog/${resolved}/`);
+}

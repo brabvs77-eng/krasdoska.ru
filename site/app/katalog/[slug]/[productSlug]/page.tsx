@@ -1,5 +1,7 @@
+import Image from "next/image";
 import { HtmlContent } from "@/components/content/HtmlContent";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
+import { CtaSection } from "@/components/sections/HomeSections";
 import { PageHero } from "@/components/sections/PageHero";
 import { buildPageMetadata } from "@/lib/metadata";
 import {
@@ -9,7 +11,6 @@ import {
   getProductStaticParams,
 } from "@/lib/content";
 import { getProductImage } from "@/lib/product-media";
-import Image from "next/image";
 
 type Props = { params: Promise<{ slug: string; productSlug: string }> };
 
@@ -53,27 +54,35 @@ export default async function CatalogProductPage({ params }: Props) {
   return (
     <>
       <PageHero title={product.title} description={getExcerpt(product)} />
-      <article className="container-content py-12">
-        <Breadcrumbs
-          items={[
-            { label: "Главная", href: "/" },
-            { label: "Каталог", href: "/katalog/" },
-            { label: categoryTitle, href: `/katalog/${slug}/` },
-            { label: product.title },
-          ]}
-        />
-        <div className="relative mb-10 aspect-[3/4] max-w-sm overflow-hidden rounded-2xl bg-surface-muted">
-          <Image
-            src={image}
-            alt={product.title}
-            fill
-            sizes="384px"
-            className="object-cover"
-            unoptimized
+      <article className="section-dark py-12 sm:py-16">
+        <div className="container-content">
+          <Breadcrumbs
+            items={[
+              { label: "Главная", href: "/" },
+              { label: "Каталог", href: "/katalog/" },
+              { label: categoryTitle, href: `/katalog/${slug}/` },
+              { label: product.title },
+            ]}
           />
+          <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,360px)_1fr]">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-white/5">
+              <Image
+                src={image}
+                alt={product.title}
+                fill
+                sizes="360px"
+                className="object-cover"
+                unoptimized
+              />
+            </div>
+            <HtmlContent
+              html={product.content}
+              className="text-white/85 [&_h2]:text-white [&_h3]:text-white [&_h4]:text-white [&_a]:text-accent [&_strong]:text-white"
+            />
+          </div>
         </div>
-        <HtmlContent html={product.content} />
       </article>
+      <CtaSection />
     </>
   );
 }

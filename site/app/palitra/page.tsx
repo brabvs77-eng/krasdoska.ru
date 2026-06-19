@@ -1,6 +1,8 @@
 import { ContentList } from "@/components/content/ContentList";
-import { HtmlContent } from "@/components/content/HtmlContent";
+import { ColorsSection, CtaSection, PartnersSection } from "@/components/sections/HomeSections";
 import { PageHero } from "@/components/sections/PageHero";
+import { FaqAccordion } from "@/components/ui/FaqAccordion";
+import { CATALOG_FAQ } from "@/lib/catalog-faq";
 import { buildPageMetadata } from "@/lib/metadata";
 import { getAllPalettePages, getExcerpt, getPage } from "@/lib/content";
 
@@ -20,22 +22,34 @@ export default function PalettePage() {
   return (
     <>
       <PageHero
-        title={page?.title ?? "Палитра цветов"}
-        description={getExcerpt(page) ?? "Стандартные каталоги и фирменные оттенки KD для вашего проекта."}
+        title={page?.title ?? "Идеальный цвет для каждой детали"}
+        description={
+          getExcerpt(page) ??
+          "Профессиональный подбор оттенков RAL, NCS, BIOFA и фирменных цветов KD."
+        }
       />
-      {page?.content && (
-        <article className="container-content pb-8">
-          <HtmlContent html={page.content} />
-        </article>
-      )}
-      <ContentList
-        items={palettes.map((item) => ({
-          slug: item.slug,
-          title: item.title,
-          excerpt: getExcerpt(item),
-          href: `/palitra/${item.slug}/`,
-        }))}
-      />
+      <ColorsSection />
+      <section className="bg-surface-muted py-16 sm:py-20">
+        <div className="container-content">
+          <h2 className="section-title">Каталоги палитр</h2>
+          <ContentList
+            embedded
+            items={palettes.map((item) => ({
+              slug: item.slug,
+              title: item.title,
+              excerpt: getExcerpt(item),
+              href: `/palitra/${item.slug}/`,
+            }))}
+          />
+        </div>
+      </section>
+      <section className="section-dark pb-16 sm:pb-20">
+        <div className="container-content">
+          <FaqAccordion items={CATALOG_FAQ} title="Часто задаваемые вопросы" variant="dark" />
+        </div>
+      </section>
+      <PartnersSection />
+      <CtaSection />
     </>
   );
 }
