@@ -5,6 +5,8 @@ import { ContentList } from "@/components/content/ContentList";
 import { ArrowLink } from "@/components/ui/ArrowLink";
 import { getAllBlogPosts, getAllProjects, getExcerpt } from "@/lib/content";
 import { getContentImage } from "@/lib/product-media";
+import { ContactForm } from "@/components/forms/ContactForm";
+import { HOME_COMPANY_BLOCKS } from "@/lib/home-footer";
 import {
   ADVANTAGE_ICONS,
   CATALOG_PREVIEW,
@@ -44,7 +46,7 @@ const advantages = [
 
 export function ProductionIntroSection() {
   return (
-    <section className="border-b border-neutral-200 bg-white py-12 sm:py-16">
+    <section className="section-dark border-b border-white/10 py-12 sm:py-16">
       <div className="container-content grid items-center gap-10 lg:grid-cols-[minmax(0,280px)_1fr]">
         <div className="relative mx-auto aspect-[300/242] w-full max-w-xs overflow-hidden rounded-2xl bg-surface-muted lg:mx-0">
           <Image
@@ -57,10 +59,10 @@ export function ProductionIntroSection() {
           />
         </div>
         <div>
-          <h2 className="text-2xl font-bold leading-tight text-neutral-900 sm:text-3xl">
+          <h2 className="text-2xl font-semibold uppercase leading-tight text-white sm:text-3xl lg:text-4xl">
             Производство по изготовлению высококачественных отделочных материалов
           </h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-neutral-600">
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/80">
             Профессиональная покраска деревянных домов с персональным подходом и гарантией
             долговечности и эстетики.
           </p>
@@ -124,6 +126,7 @@ export function CatalogPreviewSection() {
               href={`/katalog/${item.slug}/`}
               title={item.title}
               image={item.image}
+              variant="dark"
             />
           ))}
         </div>
@@ -152,7 +155,7 @@ const services = [
 
 export function ServicesPreviewSection() {
   return (
-    <section className="bg-surface-muted py-16 sm:py-20">
+    <section className="section-dark py-16 sm:py-20">
       <div className="container-content">
         <h2 className="section-title">Наши услуги</h2>
         <div className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,1fr)_360px]">
@@ -160,10 +163,10 @@ export function ServicesPreviewSection() {
             {services.map((item) => (
               <article
                 key={item.title}
-                className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm"
+                className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm"
               >
-                <h3 className="text-lg font-semibold leading-snug">{item.title}</h3>
-                <ArrowLink href={item.href} className="mt-4">
+                <h3 className="text-lg font-semibold leading-snug text-white">{item.title}</h3>
+                <ArrowLink href={item.href} className="mt-4 text-accent">
                   {item.cta}
                 </ArrowLink>
               </article>
@@ -262,12 +265,51 @@ export function PartnersSection() {
 export function CtaSection() {
   return (
     <section className="section-dark py-16 sm:py-20">
-      <div className="container-content text-center">
-        <h2 className="section-title">Остались вопросы?</h2>
-        <p className="section-subtitle mx-auto">
-          Заполните простую форму — мы свяжемся с вами и поможем подобрать подходящие решения.
+      <div className="container-content grid gap-10 lg:grid-cols-2 lg:items-start">
+        <div>
+          <h2 className="section-title">Остались вопросы?</h2>
+          <p className="section-subtitle mt-4">
+            Заполните простую форму — мы свяжемся с вами и поможем подобрать подходящие решения.
+          </p>
+        </div>
+        <ContactForm />
+      </div>
+    </section>
+  );
+}
+
+export function CompanyPreviewSection() {
+  return (
+    <section className="bg-surface-muted py-16 sm:py-20">
+      <div className="container-content max-w-4xl">
+        <h2 className="section-title">ООО «Крашеная доска»</h2>
+        <div className="mt-8 space-y-8">
+          {HOME_COMPANY_BLOCKS.map((block) => (
+            <article key={block.title}>
+              <h3 className="text-lg font-semibold text-brand">
+                <span className="mr-2">{block.icon}</span>
+                {block.title}
+              </h3>
+              <p className="mt-2 text-base leading-relaxed text-neutral-600">{block.text}</p>
+            </article>
+          ))}
+        </div>
+        <Link href="/o-kompanii/" className="btn-outline mt-10">
+          Подробнее о компании
+        </Link>
+      </div>
+    </section>
+  );
+}
+
+export function BottomBarSection() {
+  return (
+    <section className="bg-accent py-8 text-white">
+      <div className="container-content flex flex-wrap items-center justify-between gap-4">
+        <p className="text-lg font-semibold sm:text-xl">
+          Широкий ассортимент, выгодные цены и быстрая доставка
         </p>
-        <Link href="/kontakty/" className="btn-primary mt-8">
+        <Link href="/kontakty/" className="btn-outline-light shrink-0">
           Заказать звонок
         </Link>
       </div>
@@ -276,7 +318,7 @@ export function CtaSection() {
 }
 
 export function HomeProjectsSection() {
-  const projects = getAllProjects().slice(0, 4);
+  const projects = getAllProjects();
 
   if (projects.length === 0) return null;
 
@@ -291,6 +333,8 @@ export function HomeProjectsSection() {
         </div>
         <ContentList
           embedded
+          variant="dark"
+          layout="carousel"
           items={projects.map((project) => ({
             slug: project.slug,
             title: project.title,

@@ -24,6 +24,7 @@
     { "href": "/blog/", "label": "Блог" },
     { "href": "/kontakty/", "label": "Контакты" },
     { "href": "/katalog/", "label": "Каталог" },
-    { "href": "/palitra/", "label": "Палитра" }
+    { "href": "/palitra/", "label": "Палитра" },
+    { "href": "/tehnologija-nanesenija-kraski/", "label": "Технология" }
   ]
 }

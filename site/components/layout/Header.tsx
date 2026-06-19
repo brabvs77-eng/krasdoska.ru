@@ -1,14 +1,25 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { getSiteSettings } from "@/lib/site";
 
 export function Header() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const { site, navigation, contacts } = getSiteSettings();
   const phone = contacts.phones[0];
   const logo = site.logo;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-brand/90 text-white backdrop-blur-md">
+    <header
+      className={
+        isHome
+          ? "absolute inset-x-0 top-0 z-50 bg-brand/50 text-white backdrop-blur-sm"
+          : "sticky top-0 z-50 bg-brand text-white shadow-md"
+      }
+    >
       <div className="container-content flex h-16 items-center justify-between gap-4 lg:h-20">
         <Link href="/" className="flex shrink-0 items-center gap-3">
           {logo ? (
@@ -28,12 +39,12 @@ export function Header() {
           <span className="hidden font-bold sm:inline">{site.name}</span>
         </Link>
 
-        <nav className="hidden items-center gap-6 lg:flex" aria-label="Основное меню">
+        <nav className="hidden items-center gap-5 xl:gap-6 lg:flex" aria-label="Основное меню">
           {navigation.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-white/85 transition-colors hover:text-accent"
+              className="text-sm font-medium text-white/90 transition-colors hover:text-accent"
             >
               {item.label}
             </Link>
@@ -44,7 +55,7 @@ export function Header() {
           {phone && (
             <a
               href={`tel:${phone.replace(/\s|\(|\)|-/g, "")}`}
-              className="hidden text-sm font-semibold text-white md:inline"
+              className="hidden text-sm font-semibold text-white lg:inline"
             >
               {phone}
             </a>

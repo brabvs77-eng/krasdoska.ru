@@ -3,19 +3,21 @@
 type ContactFormProps = {
   title?: string;
   submitLabel?: string;
+  showTitle?: boolean;
 };
 
 export function ContactForm({
   title = "Заказать звонок",
   submitLabel = "Отправить",
+  showTitle = false,
 }: ContactFormProps) {
   return (
     <form
       className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm"
       onSubmit={(e) => e.preventDefault()}
     >
-      <h2 className="text-lg font-semibold text-neutral-900">{title}</h2>
-      <div className="mt-4 space-y-4">
+      {showTitle && <h2 className="text-lg font-semibold text-neutral-900">{title}</h2>}
+      <div className={showTitle ? "mt-4 space-y-4" : "space-y-4"}>
         <input
           type="text"
           name="name"
@@ -41,8 +43,7 @@ export function ContactForm({
         </button>
       </div>
       <p className="mt-3 text-xs text-neutral-500">
-        Нажимая кнопку, вы соглашаетесь с обработкой персональных данных. Отправка формы будет
-        подключена на следующем этапе.
+        Нажимая кнопку «Отправить», вы соглашаетесь на обработку персональных данных.
       </p>
     </form>
   );

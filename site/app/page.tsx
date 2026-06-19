@@ -1,7 +1,9 @@
 import {
   AdvantagesSection,
+  BottomBarSection,
   CatalogPreviewSection,
   ColorsSection,
+  CompanyPreviewSection,
   CtaSection,
   HomeBlogSection,
   HomeProjectsSection,
@@ -28,11 +30,7 @@ export async function generateMetadata() {
 export default function HomePage() {
   return (
     <>
-      <HeroSlider
-        slides={HERO_SLIDES}
-        primaryCta={{ href: "/katalog/", label: "Смотреть каталог" }}
-        secondaryCta={{ href: "/kontakty/", label: "Получить консультацию" }}
-      />
+      <HeroSlider slides={HERO_SLIDES} />
       <ProductionIntroSection />
       <AdvantagesSection />
       <CatalogPreviewSection />
@@ -42,6 +40,8 @@ export default function HomePage() {
       <HomeProjectsSection />
       <PartnersSection />
       <CtaSection />
+      <CompanyPreviewSection />
+      <BottomBarSection />
     </>
   );
 }
