@@ -10,6 +10,7 @@ export type ContentItem = {
   excerpt?: string;
   content?: string;
   link?: string;
+  image?: string;
   seo?: { title?: string; description?: string };
 };
 

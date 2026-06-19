@@ -25,13 +25,22 @@ function rewriteInternalLinks(html: string): string {
   return result;
 }
 
+function embedMediaUrls(html: string): string {
+  return html.replace(
+    /(?:^|[\s>])(https?:\/\/[^\s<]+\.(?:mp4|webm))(?:[\s<]|$)/gi,
+    (match, url) => match.replace(url, `<video controls playsinline preload="metadata" class="wp-video"><source src="${url}" type="video/mp4" /></video>`),
+  );
+}
+
 export function normalizeWpHtml(html?: string): string | undefined {
   if (!html?.trim()) return undefined;
 
-  return rewriteInternalLinks(
-    html
-      .replace(/\[custom_breadcrumbs\]/g, "")
-      .replace(/https?:\/\/krashenayadoska\.ru\/wp-content\/uploads\//gi, "/uploads/")
-      .replace(/\/wp-content\/uploads\//g, "/uploads/"),
+  return embedMediaUrls(
+    rewriteInternalLinks(
+      html
+        .replace(/\[custom_breadcrumbs\]/g, "")
+        .replace(/https?:\/\/krashenayadoska\.ru\/wp-content\/uploads\//gi, "/uploads/")
+        .replace(/\/wp-content\/uploads\//g, "/uploads/"),
+    ),
   );
 }

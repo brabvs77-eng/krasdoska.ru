@@ -2,6 +2,7 @@ import { ContentList } from "@/components/content/ContentList";
 import { PageHero } from "@/components/sections/PageHero";
 import { buildPageMetadata } from "@/lib/metadata";
 import { getAllProjects, getExcerpt } from "@/lib/content";
+import { getContentImage } from "@/lib/product-media";
 
 export const metadata = buildPageMetadata({
   title: "Проекты",
@@ -20,6 +21,7 @@ export default function ProjectsIndexPage() {
           slug: project.slug,
           title: project.title,
           excerpt: getExcerpt(project),
+          image: getContentImage(project),
           href: `/project/${project.slug}/`,
         }))}
         emptyMessage="Проекты появятся после миграции контента."

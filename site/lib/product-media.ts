@@ -1,5 +1,9 @@
 import { CATALOG_PREVIEW, firstImageFromHtml, getCatalogImage } from "@/lib/media";
-import type { CatalogProduct } from "@/lib/content";
+import type { CatalogProduct, ContentItem } from "@/lib/content";
+
+export function getContentImage(item: Pick<ContentItem, "image" | "content">): string | undefined {
+  return item.image ?? firstImageFromHtml(item.content);
+}
 
 export function getProductImage(product: CatalogProduct): string {
   return (

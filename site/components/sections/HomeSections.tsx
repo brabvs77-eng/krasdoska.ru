@@ -4,13 +4,13 @@ import { ProductCard } from "@/components/cards/ProductCard";
 import { ContentList } from "@/components/content/ContentList";
 import { ArrowLink } from "@/components/ui/ArrowLink";
 import { getAllBlogPosts, getAllProjects, getExcerpt } from "@/lib/content";
+import { getContentImage } from "@/lib/product-media";
 import {
   CATALOG_PREVIEW,
   COLOR_SWATCHES,
   PARTNERS,
   PRODUCTION_IMAGE,
   SERVICES_IMAGE,
-  firstImageFromHtml,
 } from "@/lib/media";
 
 const advantages = [
@@ -278,7 +278,7 @@ export function HomeProjectsSection() {
             slug: project.slug,
             title: project.title,
             excerpt: getExcerpt(project),
-            image: firstImageFromHtml(project.content),
+            image: getContentImage(project),
             href: `/project/${project.slug}/`,
           }))}
         />
@@ -307,7 +307,7 @@ export function HomeBlogSection() {
             slug: post.slug,
             title: post.title,
             excerpt: getExcerpt(post),
-            image: firstImageFromHtml(post.content),
+            image: getContentImage(post),
             href: `/blog/${post.slug}/`,
           }))}
         />

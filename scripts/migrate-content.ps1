@@ -53,6 +53,14 @@ function Get-FirstImage([string]$html) {
     return ''
 }
 
+function Get-ItemImage([string]$block, [string]$content) {
+    $thumbId = Get-PostMeta $block '_thumbnail_id'
+    if ($thumbId -and $attachments.ContainsKey($thumbId)) {
+        return $attachments[$thumbId]
+    }
+    return Get-FirstImage $content
+}
+
 if (-not (Test-Path $WxrPath)) { throw "WXR not found: $WxrPath" }
 
 Write-Host "Reading WXR..."
@@ -99,6 +107,7 @@ foreach ($m in $items) {
             $pages++
         }
         'blog-post' {
+            $image = Get-ItemImage $block $content
             $obj = [ordered]@{
                 id = Get-Tag $block 'wp:post_id'
                 slug = $slug
@@ -106,6 +115,7 @@ foreach ($m in $items) {
                 excerpt = (Get-Tag $block 'excerpt:encoded')
                 content = $content
                 link = Get-Tag $block 'link'
+                image = $image
                 seo = @{ title = (Get-Tag $block 'title') }
             }
             $json = $obj | ConvertTo-Json -Depth 5
@@ -113,6 +123,7 @@ foreach ($m in $items) {
             $blog++
         }
         'project' {
+            $image = Get-ItemImage $block $content
             $obj = [ordered]@{
                 id = Get-Tag $block 'wp:post_id'
                 slug = $slug
@@ -120,6 +131,7 @@ foreach ($m in $items) {
                 excerpt = (Get-Tag $block 'excerpt:encoded')
                 content = $content
                 link = Get-Tag $block 'link'
+                image = $image
                 seo = @{ title = (Get-Tag $block 'title') }
             }
             $json = $obj | ConvertTo-Json -Depth 5

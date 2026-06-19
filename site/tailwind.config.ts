@@ -9,18 +9,18 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          DEFAULT: "#2D5A3D",
-          dark: "#1E3D29",
-          light: "#3D7A52",
+          DEFAULT: "#252330",
+          dark: "#18110D",
+          light: "#111111",
         },
         accent: {
-          DEFAULT: "#C4A35A",
-          dark: "#A8873F",
+          DEFAULT: "#FE772B",
+          dark: "#E5651A",
         },
         surface: {
           DEFAULT: "#FFFFFF",
-          muted: "#F5F5F0",
-          dark: "#1A1A1A",
+          muted: "#F8F7F3",
+          dark: "#111111",
         },
       },
       fontFamily: {

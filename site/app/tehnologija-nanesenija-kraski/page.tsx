@@ -1,4 +1,4 @@
-import { WpPage } from "@/components/content/WpPage";
+import { TechnologyContent } from "@/components/sections/TechnologyContent";
 import { buildPageMetadata } from "@/lib/metadata";
 import { getExcerpt, getPage } from "@/lib/content";
 
@@ -16,5 +16,5 @@ export default function TechnologyPage() {
   if (!page) {
     return null;
   }
-  return <WpPage page={page} fallbackDescription="11 этапов производства, видео с линии и FAQ." />;
+  return <TechnologyContent page={page} />;
 }
