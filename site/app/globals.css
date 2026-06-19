@@ -69,4 +69,8 @@ body {
   .wp-content img {
     @apply my-6 h-auto max-w-full rounded-lg;
   }
+
+  .wp-content iframe {
+    @apply my-6 w-full max-w-full rounded-lg;
+  }
 }

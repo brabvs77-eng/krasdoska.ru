@@ -109,7 +109,9 @@ krashenayadoska/
 - [x] Главная `/` — базовые секции (hero, преимущества, каталог, услуги, цвета, CTA)
 - [x] Header/Footer
 - [ ] Компоненты: полный паритет с продакшеном
-- [ ] Подключить Метрику + cookie-notice
+- [x] Cookie-notice (`components/integrations/CookieNotice.tsx`)
+- [ ] Подключить Яндекс.Метрику (ID в `settings.json` пока пустой)
+- [x] Marquiz-квиз (`components/integrations/MarquizWidget.tsx`)
 - [ ] **Деплой на Cloudflare Pages** (workflow готов, нужны секреты + push в `develop`)
 
 ### Фаза 2 — Каталог и услуги (2 недели)
@@ -123,7 +125,8 @@ krashenayadoska/
 
 - [ ] `/palitra/` + RAL / NCS / BIOFA
 - [ ] `/tehnologija-nanesenija-kraski/` (видео, FAQ)
-- [ ] `/o-kompanii/`, `/kontakty/`, `/politika-konfidencialnosti/`
+- [x] `/o-kompanii/`, `/politika-konfidencialnosti/`
+- [x] `/kontakty/` — контакты из `settings.json` + WP-контент (карты Яндекс)
 - [ ] Формы: callback + контакты (endpoint)
 
 ### Фаза 4 — Блог и проекты (1–2 недели)
