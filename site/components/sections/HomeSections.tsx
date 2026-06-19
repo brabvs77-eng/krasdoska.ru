@@ -265,7 +265,7 @@ export function PartnersSection() {
 }
 
 export function CtaSection() {
-  const { contacts } = getSiteSettings();
+  const { contacts, integrations } = getSiteSettings();
   const phoneDigits = contacts.phones[0]?.replace(/\D/g, "") ?? "88002509055";
   const phoneHref = phoneDigits ? `tel:${phoneDigits}` : "tel:88002509055";
 
@@ -278,7 +278,11 @@ export function CtaSection() {
             Заполните простую форму — мы свяжемся с вами и поможем подобрать подходящие решения.
           </p>
         </div>
-        <ContactForm email={contacts.email} phoneHref={phoneHref} />
+        <ContactForm
+          email={contacts.email}
+          phoneHref={phoneHref}
+          formEndpoint={integrations.formEndpoint || undefined}
+        />
       </div>
     </section>
   );

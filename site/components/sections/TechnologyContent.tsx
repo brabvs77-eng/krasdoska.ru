@@ -19,7 +19,7 @@ type TechnologyContentProps = {
 
 export function TechnologyContent({ page }: TechnologyContentProps) {
   const tailHtml = getTechnologyTailHtml(page.content);
-  const { contacts } = getSiteSettings();
+  const { contacts, integrations } = getSiteSettings();
   const phoneDigits = contacts.phones[0]?.replace(/\D/g, "") ?? "88002509055";
   const phoneHref = phoneDigits ? `tel:${phoneDigits}` : "tel:88002509055";
 
@@ -83,7 +83,11 @@ export function TechnologyContent({ page }: TechnologyContentProps) {
                 внедрять новейшие технологии покраски древесины любых пород.
               </p>
             </div>
-            <ContactForm email={contacts.email} phoneHref={phoneHref} />
+            <ContactForm
+              email={contacts.email}
+              phoneHref={phoneHref}
+              formEndpoint={integrations.formEndpoint || undefined}
+            />
           </div>
         </section>
       </article>

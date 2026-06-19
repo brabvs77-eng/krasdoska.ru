@@ -16,5 +16,5 @@ export default function PrivacyPage() {
   if (!page) {
     return null;
   }
-  return <WpPage page={page} withCta />;
+  return <WpPage page={page} withCta stripLeadingH1 />;
 }

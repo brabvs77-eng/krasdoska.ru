@@ -1,4 +1,5 @@
-import { CtaSection, ServicesPreviewSection } from "@/components/sections/HomeSections";
+import { ServicesPreviewSection } from "@/components/sections/HomeSections";
+import { MarketingPageFooter } from "@/components/sections/MarketingPageFooter";
 import { PageHero } from "@/components/sections/PageHero";
 import { buildPageMetadata } from "@/lib/metadata";
 import { getExcerpt, getPage } from "@/lib/content";
@@ -25,7 +26,7 @@ export default function ServicesPage() {
         }
       />
       <ServicesPreviewSection />
-      <CtaSection />
+      <MarketingPageFooter />
     </>
   );
 }

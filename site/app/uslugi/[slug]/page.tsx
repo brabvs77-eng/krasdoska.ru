@@ -30,6 +30,7 @@ export default async function ServiceDetailPage({ params }: Props) {
     <WpPage
       page={service}
       withMarketingFooter
+      stripLeadingH1
       breadcrumbs={[
         { label: "Главная", href: "/" },
         { label: "Услуги", href: "/uslugi/" },

@@ -16,7 +16,8 @@
   "integrations": {
     "yandexMetrikaId": "",
     "googleAnalyticsId": "",
-    "marquizId": "6a1226b74922200019dd589d"
+    "marquizId": "6a1226b74922200019dd589d",
+    "formEndpoint": ""
   },
   "navigation": [
     { "href": "/uslugi/", "label": "Услуги" },

@@ -20,7 +20,7 @@ export default function AboutPage() {
     <WpPage
       page={page}
       fallbackDescription="Производство крашеной доски в Московской области."
-      withCta
+      withMarketingFooter
       stripLeadingH1
       breadcrumbs={[
         { label: "Главная", href: "/" },

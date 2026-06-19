@@ -37,6 +37,10 @@ function rewriteInternalLinks(html: string): string {
   return rewriteProductLinks(result);
 }
 
+function stripTrailingCtaBlock(html: string): string {
+  return html.replace(/<h2[^>]*>\s*Остались вопросы\?[\s\S]*$/i, "").trim();
+}
+
 function stripLeadingHeading(html: string): string {
   return html.replace(/^\s*<h1\b[^>]*>[\s\S]*?<\/h1>\s*/i, "");
 }
@@ -50,6 +54,7 @@ function embedMediaUrls(html: string): string {
 
 type NormalizeWpHtmlOptions = {
   stripLeadingH1?: boolean;
+  stripTrailingCta?: boolean;
 };
 
 export function normalizeWpHtml(
@@ -65,6 +70,10 @@ export function normalizeWpHtml(
 
   if (options?.stripLeadingH1) {
     normalized = stripLeadingHeading(normalized);
+  }
+
+  if (options?.stripTrailingCta) {
+    normalized = stripTrailingCtaBlock(normalized);
   }
 
   return embedMediaUrls(rewriteInternalLinks(normalized));

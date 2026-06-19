@@ -1,5 +1,5 @@
 import { HtmlContent } from "@/components/content/HtmlContent";
-import { CtaSection } from "@/components/sections/HomeSections";
+import { MarketingPageFooter } from "@/components/sections/MarketingPageFooter";
 import { PageHero } from "@/components/sections/PageHero";
 import { buildPageMetadata } from "@/lib/metadata";
 import { getPage } from "@/lib/content";
@@ -24,12 +24,12 @@ export default function ContactsPage() {
       />
       <div className="container-content py-12">
         {page?.content ? (
-          <HtmlContent html={page.content} stripLeadingH1 />
+          <HtmlContent html={page.content} stripLeadingH1 stripTrailingCta />
         ) : (
           <p className="text-neutral-600">Контактная информация появится после миграции контента.</p>
         )}
       </div>
-      <CtaSection />
+      <MarketingPageFooter withFaq={false} />
     </>
   );
 }
