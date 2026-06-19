@@ -3,7 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
-import { collectUploadRefs } from "./fetch-uploads.mjs";
+import { collectUploadRefs, pruneOversizedUploads } from "./fetch-uploads.mjs";
 
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const src = path.join(root, "..", "extracted", "uploads");
@@ -34,4 +34,10 @@ const result = spawnSync(process.execPath, ["scripts/fetch-uploads.mjs"], {
   cwd: root,
   stdio: "inherit",
 });
-process.exit(result.status ?? 1);
+if (result.status !== 0) process.exit(result.status ?? 1);
+
+const pruned = pruneOversizedUploads();
+if (pruned > 0) {
+  console.log(`prepare-uploads: pruned ${pruned} oversized file(s) for Cloudflare Pages`);
+}
+process.exit(0);

@@ -1,4 +1,6 @@
-export const TECHNOLOGY_VIDEO = "/uploads/2026/03/video_2026-03-13_23-56-23.mp4";
+/** Hosted on production CDN — exceeds Cloudflare Pages 25 MiB asset limit */
+export const TECHNOLOGY_VIDEO =
+  "https://krashenayadoska.ru/wp-content/uploads/2026/03/video_2026-03-13_23-56-23.mp4";
 
 export const TECHNOLOGY_IMAGE = "/uploads/2025/04/frame-19-2.png";
 
