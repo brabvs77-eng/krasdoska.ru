@@ -1,9 +1,9 @@
-# Backup & extraction artifacts
+# Backup & extraction artifacts (миграция WP)
 *.wpress
 *.xml
 extracted/
 
-# Dependencies & build
+# Dependencies & build (Next.js)
 node_modules/
 site/node_modules/
 site/.next/
@@ -14,15 +14,30 @@ site/out/
 .env*.local
 site/.env
 site/.env*.local
+!.env.example
 
 # Media (sync via scripts/sync-uploads.ps1)
 site/public/uploads/
+
+# SEO pipeline — личные рабочие файлы
+briefs/*
+!briefs/.gitkeep
+drafts/*
+!drafts/.gitkeep
+.claude/research
+.claude/agent-memory
+
+# GSC exports (генерируются scripts/gsc_export.py)
+knowledge/gsc/*
+!knowledge/gsc/.gitkeep
+
+# Logs
+logs
+*.log
+npm-debug.log*
 
 # OS & IDE
 .DS_Store
 Thumbs.db
 .idea/
 .vscode/
-
-# Debug
-npm-debug.log*

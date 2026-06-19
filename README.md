@@ -1,13 +1,17 @@
-# krashenayadoska.ru — миграция на Next.js
+# krasdoska.ru
 
-Рабочий каталог сайта: **[`site/`](site/)**
+Монорепозиторий проекта **[Крашеная доска](https://krashenayadoska.ru/)**:
 
-## Документация
+| Часть | Каталог | Назначение |
+|-------|---------|------------|
+| **Сайт** | [`site/`](site/) | Миграция WordPress → Next.js (static export) |
+| **SEO-пайплайн** | корень | Генерация статей через Claude Code + GSC |
 
-- [`docs/SITE-INVENTORY.md`](docs/SITE-INVENTORY.md) — инвентаризация WordPress
-- [`docs/REFACTOR-PLAN.md`](docs/REFACTOR-PLAN.md) — план рефакторинга и деплоя
+---
 
-## Быстрый старт
+## Сайт (Next.js)
+
+Документация: [`docs/SITE-INVENTORY.md`](docs/SITE-INVENTORY.md), [`docs/REFACTOR-PLAN.md`](docs/REFACTOR-PLAN.md), [`docs/CLOUDFLARE-PAGES.md`](docs/CLOUDFLARE-PAGES.md).
 
 ```bash
 cd site
@@ -15,7 +19,7 @@ npm install
 npm run dev
 ```
 
-## Деплой
+### Деплой
 
 | Ветка | Workflow | Куда |
 |-------|----------|------|
@@ -23,10 +27,44 @@ npm run dev
 | `main` | `.github/workflows/production.yml` | Основной сервер (после паритета) |
 | любая | `.github/workflows/ci.yml` | Проверка сборки |
 
-## Миграция
+### Миграция контента
+
+```powershell
+.\scripts\migrate-content.ps1   # WXR → site/content/
+.\scripts\sync-uploads.ps1      # extracted/uploads → site/public/uploads/
+```
+
+---
+
+## SEO-пайплайн статей
+
+На базе [thruuu-claude-writer](https://github.com/thruuu/thruuu-claude-writer).
+
+1. Установите [Claude Code](https://docs.anthropic.com/en/docs/claude-code/getting-started)
+2. Запустите `claude` в корне репозитория
+3. Бриф из [thruuu](https://thruuu.com) → `briefs/`
+4. В чате: **create article**
+
+| Файл / папка | Назначение |
+|--------------|------------|
+| `CLAUDE.md` | Оркестратор агентов |
+| `.claude/agents/` | Специализированные агенты |
+| `GUIDELINE.md` | Голос и правила бренда |
+| `knowledge/` | Справочные материалы, GSC |
+| `gsc/` | Google Search Console API |
+| `briefs/`, `drafts/` | Брифы и черновики |
 
 ```bash
-cd site
-npm run migrate:content   # WXR → content/
-npm run sync:uploads      # extracted/uploads → public/uploads
+pip install -r requirements.txt
+python3 scripts/gsc_cli.py status
+python3 scripts/gsc_cli.py queries
+python3 scripts/gsc_export.py
 ```
+
+Настройка GSC: `knowledge/gsc-setup.md`.
+
+---
+
+## Лицензия
+
+MIT (структура SEO-пайплайна — на основе thruuu-claude-writer).
