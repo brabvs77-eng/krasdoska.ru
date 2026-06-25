@@ -19,7 +19,7 @@ export const CATALOG_SHOWCASE: CatalogShowcaseItem[] = [
     title: "Крашеная скандинавская доска",
     tagline: "Палубная доска — дерево, которое не боится воды",
     href: "/katalog/skandinavskaja-doska/",
-    image: `${UPLOADS}/2025/11/capture_251107_215619-2.png`,
+    image: `${UPLOADS}/2025/11/capture_251107_215619-2.webp`,
     priceFrom: "от 1800 руб/м²",
     specs: [
       { label: "Сорт", value: "AB" },
@@ -36,7 +36,7 @@ export const CATALOG_SHOWCASE: CatalogShowcaseItem[] = [
     title: "Крашеная фасадная доска",
     tagline: "Строганая северная сосна с трёхслойным UV-покрытием для фасадов",
     href: "/katalog/krashenaja-doska/",
-    image: `${UPLOADS}/2025/11/capture_251107_215619-2.png`,
+    image: `${UPLOADS}/2025/11/capture_251107_215619-2.webp`,
     priceFrom: "от 1700 руб/м²",
     specs: [
       { label: "Сорт", value: "AB" },
@@ -52,7 +52,7 @@ export const CATALOG_SHOWCASE: CatalogShowcaseItem[] = [
   {
     title: "Крашеная вагонка",
     href: "/katalog/krashenaja-vagonka/",
-    image: `${UPLOADS}/2025/11/14.jpg`,
+    image: `${UPLOADS}/2025/11/14.webp`,
     priceFrom: "от 1850 руб/м²",
     specs: [
       { label: "Сорт", value: "Экстра / A / B / AB / ABC" },
@@ -69,7 +69,7 @@ export const CATALOG_SHOWCASE: CatalogShowcaseItem[] = [
     title: "Имитация бруса",
     tagline: "Профиль UTVF для внутренней отделки — шлифовка, воск и лак в цеху",
     href: "/katalog/imitacija-brusa/",
-    image: `${UPLOADS}/2025/11/14.jpg`,
+    image: `${UPLOADS}/2025/11/14.webp`,
     priceFrom: "от 1436 руб/м²",
     specs: [
       { label: "Сорт", value: "АВ" },
@@ -85,7 +85,7 @@ export const CATALOG_SHOWCASE: CatalogShowcaseItem[] = [
   {
     title: "Крашеная имитация бруса — карельский профиль",
     href: "/katalog/krashenaja-imitacija-brusa/",
-    image: `${UPLOADS}/2025/11/14.jpg`,
+    image: `${UPLOADS}/2025/11/14.webp`,
     priceFrom: "от 1436 руб/м²",
     specs: [
       { label: "Сорт", value: "Экстра / A / B / AB" },
@@ -100,7 +100,7 @@ export const CATALOG_SHOWCASE: CatalogShowcaseItem[] = [
   {
     title: "Крашеная палубная доска",
     href: "/katalog/krashenaja-doska/",
-    image: `${UPLOADS}/2025/11/capture_251107_215619-2.png`,
+    image: `${UPLOADS}/2025/11/capture_251107_215619-2.webp`,
     priceFrom: "от 2500 руб/м²",
     specs: [
       { label: "Сорт", value: "Экстра / A / AB" },
@@ -114,7 +114,7 @@ export const CATALOG_SHOWCASE: CatalogShowcaseItem[] = [
   {
     title: "Крашеная имитация бруса",
     href: "/katalog/krashenaja-imitacija-brusa/",
-    image: `${UPLOADS}/2025/11/14.jpg`,
+    image: `${UPLOADS}/2025/11/14.webp`,
     priceFrom: "от 1436 руб/м²",
     specs: [
       { label: "Сорт", value: "Экстра / A / B / AB" },
@@ -128,7 +128,7 @@ export const CATALOG_SHOWCASE: CatalogShowcaseItem[] = [
   {
     title: "Крашеная паркетная доска",
     href: "/katalog/krashenaja-doska/",
-    image: `${UPLOADS}/2025/11/capture_251107_215619-2.png`,
+    image: `${UPLOADS}/2025/11/capture_251107_215619-2.webp`,
     priceFrom: "от 1800 руб/м²",
     specs: [
       { label: "Сорт", value: "Экстра / Селект / Натурал / АВ / Рустик" },
@@ -141,7 +141,7 @@ export const CATALOG_SHOWCASE: CatalogShowcaseItem[] = [
   {
     title: "Крашеная террасная доска",
     href: "/katalog/terrasnaja-doska/",
-    image: `${UPLOADS}/2025/11/capture_251107_215619-2.png`,
+    image: `${UPLOADS}/2025/11/capture_251107_215619-2.webp`,
     priceFrom: "от 2800 руб/м²",
     specs: [
       { label: "Сорт", value: "Экстра / A / B / AB" },
@@ -155,7 +155,7 @@ export const CATALOG_SHOWCASE: CatalogShowcaseItem[] = [
   {
     title: "Крашеный планкен",
     href: "/katalog/planken/",
-    image: `${UPLOADS}/2025/11/capture_251107_215619-2.png`,
+    image: `${UPLOADS}/2025/11/capture_251107_215619-2.webp`,
     priceFrom: "от 2050 руб/м²",
     specs: [
       { label: "Сорт", value: "Экстра / A / B / AB" },

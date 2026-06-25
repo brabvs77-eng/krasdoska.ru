@@ -16,8 +16,10 @@ site/.env
 site/.env*.local
 !.env.example
 
-# Media (sync via scripts/sync-uploads.ps1)
-site/public/uploads/
+# Media: в git только WebP из site/public/uploads; оригиналы — extracted/ (локально)
+site/public/uploads/**
+!site/public/uploads/**/
+!site/public/uploads/**/*.webp
 
 # SEO pipeline — личные рабочие файлы
 briefs/*

@@ -15,9 +15,12 @@ out/
 .DS_Store
 Thumbs.db
 
-# Media (sync via npm run sync:uploads — не коммитить весь архив)
-public/uploads/
+# Media: в git только оптимизированные WebP; оригиналы — локально / extracted/
+public/uploads/**
+!public/uploads/**/
+!public/uploads/**/*.webp
 
 # Debug
 npm-debug.log*
 *.tsbuildinfo
+scripts/webp-manifest.json

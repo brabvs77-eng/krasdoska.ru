@@ -27,7 +27,7 @@ if (fs.existsSync(src)) {
   console.log("copy from extracted/uploads …");
   copyRecursive(src, dest);
 } else {
-  console.log("extracted/uploads not found, fetching from production");
+  console.log("extracted/uploads not found — using committed WebP + fetch fallback");
 }
 
 const result = spawnSync(process.execPath, ["scripts/fetch-uploads.mjs"], {

@@ -43,7 +43,7 @@ export function TechnologyContent({ page }: TechnologyContentProps) {
             controls
             preload="metadata"
             playsInline
-            poster="/uploads/2025/04/frame-19-2.png"
+            poster="/uploads/2025/04/frame-19-2.webp"
           >
             <source src={TECHNOLOGY_VIDEO} type="video/mp4" />
           </video>
