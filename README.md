@@ -25,8 +25,8 @@ npm run dev
 
 | Ветка | Workflow | Куда |
 |-------|----------|------|
-| `develop` | `.github/workflows/preview.yml` | Cloudflare Pages |
-| `main` | `.github/workflows/production.yml` | Основной сервер (после паритета) |
+| `develop` | `.github/workflows/preview.yml` | Сервер (SSH) |
+| `main` | `.github/workflows/production.yml` | Сервер (SSH) |
 | любая | `.github/workflows/ci.yml` | Проверка сборки |
 
 ### Миграция контента

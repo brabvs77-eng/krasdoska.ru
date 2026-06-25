@@ -1,4 +1,4 @@
-name: Preview (Cloudflare Pages)
+name: Deploy (develop → server)
 
 on:
   push:
@@ -6,10 +6,11 @@ on:
     paths:
       - "site/**"
       - ".github/workflows/preview.yml"
-  pull_request:
-    branches: [main]
-    paths:
-      - "site/**"
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-krashenayadoska-develop
+  cancel-in-progress: false
 
 defaults:
   run:
@@ -18,15 +19,10 @@ defaults:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      deployments: write
-    name: Build and deploy to Cloudflare Pages
     env:
       FETCH_UPLOADS_MAX_MISS: "0"
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Upload refs cache key
         id: uploads-cache-key
@@ -43,24 +39,51 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-uploads-
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: npm
           cache-dependency-path: site/package-lock.json
 
-      - name: Install dependencies
-        run: npm install
+      - run: npm install
+      - run: npm run build
 
-      - name: Build static site
-        run: npm run build
-
-      - name: Deploy to Cloudflare Pages
-        if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
-        uses: cloudflare/wrangler-action@v3
+      - name: Backup current site
+        uses: appleboy/ssh-action@v1.2.0
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          workingDirectory: site
-          command: pages deploy out --project-name=krasdoska --branch=develop
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            BACKUP_DIR=~/backups/krashenayadoska-$(date +%Y%m%d-%H%M%S)
+            mkdir -p "$BACKUP_DIR"
+            cp -a /var/www/u3070106/data/www/krashenayadoska.ru "$BACKUP_DIR/" || true
+
+      - name: Remove old build
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            TARGET=/var/www/u3070106/data/www/krashenayadoska.ru
+            find "$TARGET" -mindepth 1 -maxdepth 1 ! -name '.htaccess' -exec rm -rf {} +
+
+      - name: Deploy static build
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "site/out/*"
+          target: /var/www/u3070106/data/www/krashenayadoska.ru/
+          strip_components: 2
+
+      - name: Fix permissions
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            chown -R u3070106:u3070106 /var/www/u3070106/data/www/krashenayadoska.ru

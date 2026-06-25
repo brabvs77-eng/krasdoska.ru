@@ -1,6 +1,5 @@
 name: Production Deploy
 
-# Включить после чеклиста паритета: убрать `if: false`
 on:
   push:
     branches: [main]
@@ -19,10 +18,26 @@ defaults:
 
 jobs:
   build-and-deploy:
-    if: false # TODO: set to true after parity checklist
     runs-on: ubuntu-latest
+    env:
+      FETCH_UPLOADS_MAX_MISS: "0"
     steps:
       - uses: actions/checkout@v4
+
+      - name: Upload refs cache key
+        id: uploads-cache-key
+        working-directory: site
+        run: |
+          HASH=$(find lib content components app -type f \( -name '*.ts' -o -name '*.tsx' -o -name '*.json' \) -print0 | sort -z | xargs -0 sha256sum | sha256sum | awk '{print $1}')
+          echo "key=uploads-${HASH}" >> "$GITHUB_OUTPUT"
+
+      - name: Restore uploads cache
+        uses: actions/cache@v4
+        with:
+          path: site/public/uploads
+          key: ${{ runner.os }}-${{ steps.uploads-cache-key.outputs.key }}
+          restore-keys: |
+            ${{ runner.os }}-uploads-
 
       - uses: actions/setup-node@v4
         with:
@@ -44,7 +59,7 @@ jobs:
             mkdir -p "$BACKUP_DIR"
             cp -a /var/www/u3070106/data/www/krashenayadoska.ru "$BACKUP_DIR/" || true
 
-      - name: Remove old WordPress build
+      - name: Remove old build
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.SSH_HOST }}
