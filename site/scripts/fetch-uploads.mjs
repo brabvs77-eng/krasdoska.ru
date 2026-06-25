@@ -122,6 +122,12 @@ async function main() {
   console.log(
     `fetch-uploads: downloaded=${ok} cached=${skip} remote=${remote} missing=${miss} pruned=${pruned}`,
   );
+
+  const maxMiss = Number(process.env.FETCH_UPLOADS_MAX_MISS ?? 0);
+  if (miss > maxMiss) {
+    console.error(`fetch-uploads: ${miss} missing assets (limit ${maxMiss}) — fail build`);
+    process.exit(1);
+  }
 }
 
 main().catch((err) => {

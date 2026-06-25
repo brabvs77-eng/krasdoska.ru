@@ -62,7 +62,7 @@ body {
   }
 
   .section-title {
-    @apply text-2xl font-semibold uppercase tracking-tight sm:text-3xl lg:text-4xl;
+    @apply text-2xl font-semibold tracking-tight sm:text-3xl lg:text-4xl;
   }
 
   .section-subtitle {

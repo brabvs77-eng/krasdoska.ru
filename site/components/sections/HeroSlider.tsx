@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { HeroSlide } from "@/lib/media";
 
@@ -51,7 +52,7 @@ export function HeroSlider({ slides }: HeroSliderProps) {
               {slide.eyebrow}
             </p>
           )}
-          <h1 className="mt-3 whitespace-pre-line text-3xl font-semibold uppercase leading-tight sm:text-4xl lg:text-[50px]">
+          <h1 className="mt-3 whitespace-pre-line text-3xl font-semibold leading-tight sm:text-4xl lg:text-[50px]">
             {slide.title}
           </h1>
           {slide.subtitle && (
@@ -59,6 +60,14 @@ export function HeroSlider({ slides }: HeroSliderProps) {
               {slide.subtitle}
             </p>
           )}
+          <div className="mt-8 flex flex-wrap gap-4">
+            <Link href="/#form" className="btn-primary">
+              Получить консультацию
+            </Link>
+            <Link href="/katalog/" className="btn-outline-light">
+              Смотреть каталог
+            </Link>
+          </div>
         </div>
       </div>
     </section>

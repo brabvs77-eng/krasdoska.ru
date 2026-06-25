@@ -5,6 +5,7 @@ on:
     branches: [main, develop]
     paths:
       - "site/**"
+      - ".github/workflows/ci.yml"
   pull_request:
     paths:
       - "site/**"
@@ -16,10 +17,31 @@ defaults:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      FETCH_UPLOADS_MAX_MISS: "0"
     steps:
       - uses: actions/checkout@v4
+
+      - name: Upload refs cache key
+        id: uploads-cache-key
+        working-directory: site
+        run: |
+          HASH=$(find lib content components app -type f \( -name '*.ts' -o -name '*.tsx' -o -name '*.json' \) -print0 | sort -z | xargs -0 sha256sum | sha256sum | awk '{print $1}')
+          echo "key=uploads-${HASH}" >> "$GITHUB_OUTPUT"
+
+      - name: Restore uploads cache
+        uses: actions/cache@v4
+        with:
+          path: site/public/uploads
+          key: ${{ runner.os }}-${{ steps.uploads-cache-key.outputs.key }}
+          restore-keys: |
+            ${{ runner.os }}-uploads-
+
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
       - run: npm install
       - run: npm run build

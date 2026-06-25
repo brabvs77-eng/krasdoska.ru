@@ -22,9 +22,26 @@ jobs:
       contents: read
       deployments: write
     name: Build and deploy to Cloudflare Pages
+    env:
+      FETCH_UPLOADS_MAX_MISS: "0"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Upload refs cache key
+        id: uploads-cache-key
+        working-directory: site
+        run: |
+          HASH=$(find lib content components app -type f \( -name '*.ts' -o -name '*.tsx' -o -name '*.json' \) -print0 | sort -z | xargs -0 sha256sum | sha256sum | awk '{print $1}')
+          echo "key=uploads-${HASH}" >> "$GITHUB_OUTPUT"
+
+      - name: Restore uploads cache
+        uses: actions/cache@v4
+        with:
+          path: site/public/uploads
+          key: ${{ runner.os }}-${{ steps.uploads-cache-key.outputs.key }}
+          restore-keys: |
+            ${{ runner.os }}-uploads-
 
       - name: Setup Node
         uses: actions/setup-node@v4

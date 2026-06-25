@@ -61,7 +61,7 @@ export function ProductionIntroSection() {
           />
         </div>
         <div>
-          <h2 className="text-2xl font-semibold uppercase leading-tight text-white sm:text-3xl lg:text-4xl">
+          <h2 className="text-2xl font-semibold leading-tight text-white sm:text-3xl lg:text-4xl">
             Производство по изготовлению высококачественных отделочных материалов
           </h2>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/80">
@@ -94,7 +94,7 @@ export function AdvantagesSection() {
                   unoptimized
                 />
               </div>
-              <h3 className="text-lg font-semibold text-accent">{item.title}</h3>
+              <h3 className="text-lg font-semibold text-white">{item.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-white/80">{item.text}</p>
             </article>
           ))}
@@ -200,7 +200,7 @@ export function ColorsSection() {
         <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
           {COLOR_SWATCHES.map((swatch) => (
             <div key={swatch.code} className="text-center">
-              <div className="relative mx-auto aspect-square max-w-[132px] overflow-hidden rounded-full border border-white/20">
+              <div className="relative mx-auto aspect-square max-w-[132px] overflow-hidden rounded-2xl border border-white/20">
                 <Image
                   src={swatch.image}
                   alt={swatch.code}
