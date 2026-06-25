@@ -15,11 +15,6 @@ out/
 .DS_Store
 Thumbs.db
 
-# Media: в git только оптимизированные WebP; оригиналы — локально / extracted/
-public/uploads/**
-!public/uploads/**/
-!public/uploads/**/*.webp
-
 # Debug
 npm-debug.log*
 *.tsbuildinfo
