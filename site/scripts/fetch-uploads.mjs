@@ -23,10 +23,16 @@ const REMOTE_ONLY = new Set([
 export function collectUploadRefs() {
   const refs = new Set();
   const re = /\/uploads\/[A-Za-z0-9_./-]+\.(?:jpg|jpeg|png|webp|gif|mp4|svg)/gi;
+  const tplRe = /\$\{UPLOADS\}(\/[A-Za-z0-9_./-]+\.(?:jpg|jpeg|png|webp|gif|mp4|svg))/gi;
+
+  function addRef(raw) {
+    refs.add(raw.startsWith("/uploads/") ? raw : `/uploads${raw}`);
+  }
 
   function scanFile(file) {
     const text = fs.readFileSync(file, "utf8");
-    for (const m of text.matchAll(re)) refs.add(m[0]);
+    for (const m of text.matchAll(re)) addRef(m[0]);
+    for (const m of text.matchAll(tplRe)) addRef(m[1]);
   }
 
   function walk(dir) {
@@ -130,7 +136,12 @@ async function main() {
   }
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+const isDirectRun =
+  process.argv[1] && path.resolve(process.argv[1]) === path.resolve(fileURLToPath(import.meta.url));
+
+if (isDirectRun) {
+  main().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+}

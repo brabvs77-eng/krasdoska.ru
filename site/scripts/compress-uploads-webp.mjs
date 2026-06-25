@@ -15,7 +15,7 @@ const DEST_ROOT = path.join(SITE_ROOT, "public", "uploads");
 const EXTRACTED_ROOT = path.join(SITE_ROOT, "..", "extracted", "uploads");
 const MANIFEST = path.join(SITE_ROOT, "scripts", "webp-manifest.json");
 
-const SKIP_EXT = new Set(["webp", "gif", "svg", "mp4"]);
+const SKIP_EXT = new Set(["gif", "svg", "mp4"]);
 
 function resolveSource(relPath) {
   const inPublic = path.join(DEST_ROOT, relPath);
@@ -25,15 +25,26 @@ function resolveSource(relPath) {
   return null;
 }
 
-function toWebpRef(ref) {
-  return ref.replace(/\.(jpe?g|png)$/i, ".webp");
+function findSourceForRef(ref) {
+  const rel = ref.replace(/^\/uploads\//, "");
+  const direct = resolveSource(rel);
+  if (direct) return direct;
+
+  if (/\.webp$/i.test(rel)) {
+    const base = rel.replace(/\.webp$/i, "");
+    for (const ext of ["png", "jpg", "jpeg"]) {
+      const alt = resolveSource(`${base}.${ext}`);
+      if (alt) return alt;
+    }
+  }
+  return null;
 }
 
 async function convertOne(ref) {
   const ext = ref.split(".").pop()?.toLowerCase() ?? "";
-  if (SKIP_EXT.has(ext)) {
+  if (ext === "gif" || ext === "svg" || ext === "mp4") {
     const rel = ref.replace(/^\/uploads\//, "");
-    const src = resolveSource(rel);
+    const src = findSourceForRef(ref);
     if (!src) return { ref, status: "missing", webpRef: ref };
     const dest = path.join(DEST_ROOT, rel);
     if (path.resolve(src) !== path.resolve(dest)) {
@@ -44,18 +55,23 @@ async function convertOne(ref) {
   }
 
   const rel = ref.replace(/^\/uploads\//, "");
-  const webpRel = rel.replace(/\.(jpe?g|png)$/i, ".webp");
+  const webpRel = rel.replace(/\.(jpe?g|png|webp)$/i, ".webp");
   const webpRef = `/uploads/${webpRel}`;
-  const src = resolveSource(rel);
-  if (!src) return { ref, webpRef, status: "missing" };
-
   const dest = path.join(DEST_ROOT, webpRel);
+
+  if (fs.existsSync(dest) && fs.statSync(dest).size > 0) {
+    return { ref, webpRef, status: "skip" };
+  }
+
+  const srcPath = findSourceForRef(ref);
+  if (!srcPath) return { ref, webpRef, status: "missing" };
+
   fs.mkdirSync(path.dirname(dest), { recursive: true });
 
-  const inputStat = fs.statSync(src);
-  const isPng = /\.png$/i.test(src);
+  const inputStat = fs.statSync(srcPath);
+  const isPng = /\.png$/i.test(srcPath);
 
-  await sharp(src)
+  await sharp(srcPath)
     .webp({
       quality: isPng ? 85 : 80,
       effort: 4,
@@ -67,7 +83,7 @@ async function convertOne(ref) {
   return {
     ref,
     webpRef,
-    status: "converted",
+    status: "ok",
     bytesIn: inputStat.size,
     bytesOut: outStat.size,
   };
@@ -87,11 +103,11 @@ async function main() {
   for (const ref of refs) {
     const result = await convertOne(ref);
     results.push(result);
-    if (result.status === "converted") {
+    if (result.status === "ok") {
       converted++;
       bytesIn += result.bytesIn ?? 0;
       bytesOut += result.bytesOut ?? 0;
-    } else if (result.status === "kept") {
+    } else if (result.status === "skip" || result.status === "kept") {
       kept++;
     } else {
       missing++;
