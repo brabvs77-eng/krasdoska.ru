@@ -75,9 +75,10 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "site/out/*"
+          source: "site/out/"
           target: /var/www/u3070106/data/www/krashenayadoska.ru/
           strip_components: 2
+          overwrite: true
 
       - name: Fix permissions
         uses: appleboy/ssh-action@v1.2.0
