@@ -1,5 +1,4 @@
 import {
-  AdvantagesSection,
   BottomBarSection,
   CatalogPreviewSection,
   ColorsSection,
@@ -32,7 +31,6 @@ export default function HomePage() {
     <>
       <HeroSlider slides={HERO_SLIDES} />
       <ProductionIntroSection />
-      <AdvantagesSection />
       <CatalogPreviewSection />
       <ServicesPreviewSection />
       <ColorsSection />

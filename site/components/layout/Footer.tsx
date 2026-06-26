@@ -3,60 +3,62 @@ import { getSiteSettings } from "@/lib/site";
 
 export function Footer() {
   const { site, contacts, navigation } = getSiteSettings();
+  const phone = contacts.phones[0] ?? "8 (800) 250-90-55";
+  const phoneHref = `tel:${phone.replace(/\s|\(|\)|-/g, "")}`;
 
   return (
     <footer className="mt-auto border-t border-white/10 bg-brand-dark text-neutral-300">
-      <div className="container-content grid gap-10 py-12 md:grid-cols-2 lg:grid-cols-4">
-        <div>
-          <p className="text-lg font-bold text-white">{site.name}</p>
-          <p className="mt-3 text-sm leading-relaxed">{site.description}</p>
+      <div className="container-content py-12">
+        {/* Parity: верхняя строка — логотип слева + крупный телефон справа */}
+        <div className="flex flex-wrap items-center justify-between gap-6 border-b border-white/10 pb-8">
+          <div>
+            <p className="text-xl font-bold text-white">{site.name}</p>
+            <p className="mt-2 max-w-md text-sm leading-relaxed">{site.description}</p>
+          </div>
+          <a
+            href={phoneHref}
+            className="text-3xl font-bold tracking-tight text-white transition hover:text-accent sm:text-4xl"
+          >
+            {phone}
+          </a>
         </div>
 
-        <div>
-          <p className="font-semibold text-white">Навигация</p>
-          <ul className="mt-3 space-y-2 text-sm">
-            {navigation.map((item) => (
-              <li key={item.href}>
-                <Link href={item.href} className="hover:text-white">
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        {/* Строка навигации */}
+        <nav className="flex flex-wrap items-center gap-x-8 gap-y-3 pt-8">
+          {navigation.map((item) => (
+            <Link key={item.href} href={item.href} className="text-sm hover:text-white">
+              {item.label}
+            </Link>
+          ))}
+        </nav>
 
-        <div>
-          <p className="font-semibold text-white">Контакты</p>
-          <ul className="mt-3 space-y-2 text-sm">
-            {contacts.phones.map((phone) => (
-              <li key={phone}>
-                <a href={`tel:${phone.replace(/\s|\(|\)|-/g, "")}`} className="hover:text-white">
-                  {phone}
-                </a>
-              </li>
-            ))}
-            <li>
+        {/* Контакты + реквизиты */}
+        <div className="mt-8 grid gap-6 text-sm sm:grid-cols-2 lg:grid-cols-3">
+          <div>
+            <p className="font-semibold text-white">Контакты</p>
+            <p className="mt-2">
               <a href={`mailto:${contacts.email}`} className="hover:text-white">
                 {contacts.email}
               </a>
-            </li>
-            <li>{contacts.address}</li>
-          </ul>
-        </div>
-
-        <div>
-          <p className="font-semibold text-white">Реквизиты</p>
-          <p className="mt-3 text-sm">
-            ИНН {contacts.inn}
-            <br />
-            КПП {contacts.kpp}
-          </p>
-          <Link
-            href="/politika-konfidencialnosti/"
-            className="mt-4 inline-block text-sm hover:text-white"
-          >
-            Политика конфиденциальности
-          </Link>
+            </p>
+            <p className="mt-1 leading-relaxed">{contacts.address}</p>
+          </div>
+          <div>
+            <p className="font-semibold text-white">Реквизиты</p>
+            <p className="mt-2">
+              ИНН {contacts.inn}
+              <br />
+              КПП {contacts.kpp}
+            </p>
+          </div>
+          <div>
+            <Link
+              href="/politika-konfidencialnosti/"
+              className="inline-block hover:text-white"
+            >
+              Политика конфиденциальности
+            </Link>
+          </div>
         </div>
       </div>
 

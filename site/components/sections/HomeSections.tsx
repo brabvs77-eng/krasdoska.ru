@@ -46,62 +46,53 @@ const advantages = [
   },
 ];
 
+/* Parity: оригинал — одна тёмная секция: слева заголовок + фото,
+   справа сетка преимуществ 2×3 с оранжевыми иконками, без карточек. */
 export function ProductionIntroSection() {
   return (
-    <section className="section-dark border-b border-white/10 py-12 sm:py-16">
-      <div className="container-content grid items-center gap-10 lg:grid-cols-[minmax(0,280px)_1fr]">
-        <div className="relative mx-auto aspect-[300/242] w-full max-w-xs overflow-hidden rounded-2xl bg-surface-muted lg:mx-0">
-          <Image
-            src={PRODUCTION_IMAGE}
-            alt="Производство крашеной доски"
-            fill
-            sizes="280px"
-            className="object-cover"
-            unoptimized
-          />
-        </div>
+    <section className="section-dark py-14 sm:py-20">
+      <div className="container-content grid gap-10 lg:grid-cols-[minmax(0,360px)_1fr] lg:gap-14">
         <div>
-          <h2 className="text-2xl font-semibold leading-tight text-white sm:text-3xl lg:text-4xl">
+          <h2 className="text-2xl font-semibold leading-tight text-white sm:text-3xl lg:text-[34px]">
             Производство по изготовлению высококачественных отделочных материалов
           </h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/80">
-            Профессиональная покраска деревянных домов с персональным подходом и гарантией
-            долговечности и эстетики.
-          </p>
+          <div className="relative mt-7 aspect-[300/242] w-full max-w-sm overflow-hidden rounded-2xl bg-surface-muted">
+            <Image
+              src={PRODUCTION_IMAGE}
+              alt="Производство крашеной доски"
+              fill
+              sizes="360px"
+              className="object-cover"
+              unoptimized
+            />
+          </div>
         </div>
-      </div>
-    </section>
-  );
-}
-
-export function AdvantagesSection() {
-  return (
-    <section className="section-dark py-16 sm:py-20">
-      <div className="container-content">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-x-10 gap-y-9 sm:grid-cols-2">
           {advantages.map((item, index) => (
-            <article
-              key={item.title}
-              className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm"
-            >
-              <div className="relative mb-4 h-12 w-12">
+            <article key={item.title}>
+              <div className="relative h-10 w-10">
                 <Image
                   src={ADVANTAGE_ICONS[index] ?? ADVANTAGE_ICONS[0]}
                   alt=""
                   fill
-                  sizes="48px"
+                  sizes="40px"
                   className="object-contain"
                   unoptimized
                 />
               </div>
-              <h3 className="text-lg font-semibold text-white">{item.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-white/80">{item.text}</p>
+              <h3 className="mt-4 text-base font-semibold text-white">{item.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-white/70">{item.text}</p>
             </article>
           ))}
         </div>
       </div>
     </section>
   );
+}
+
+/* Слита с ProductionIntroSection ради паритета — оставлена пустой для совместимости. */
+export function AdvantagesSection() {
+  return null;
 }
 
 export function CatalogPreviewSection() {
