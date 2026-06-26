@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useRef } from "react";
 
 type ContentListItem = {
   slug: string;
@@ -18,6 +21,7 @@ type ContentListProps = {
   embedded?: boolean;
   variant?: "light" | "dark";
   layout?: "grid" | "carousel";
+  cols?: 3 | 4;
 };
 
 export function ContentList({
@@ -26,9 +30,17 @@ export function ContentList({
   embedded = false,
   variant = "light",
   layout = "grid",
+  cols = 3,
 }: ContentListProps) {
   const isDark = variant === "dark";
   const isCarousel = layout === "carousel";
+  const scroller = useRef<HTMLUListElement>(null);
+
+  const scrollBy = (dir: 1 | -1) => {
+    const el = scroller.current;
+    if (!el) return;
+    el.scrollBy({ left: dir * Math.min(el.clientWidth, 360), behavior: "smooth" });
+  };
 
   if (items.length === 0) {
     return (
@@ -44,18 +56,24 @@ export function ContentList({
     );
   }
 
+  const gridCols =
+    cols === 4
+      ? "grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+      : "grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4";
+
   const list = (
     <ul
+      ref={scroller}
       className={
         isCarousel
-          ? "mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-          : "grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+          ? "flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          : gridCols
       }
     >
       {items.map((item) => (
         <li
           key={item.slug}
-          className={isCarousel ? "w-[min(85vw,320px)] shrink-0 snap-start sm:w-[320px]" : undefined}
+          className={isCarousel ? "w-[min(85vw,360px)] shrink-0 snap-start sm:w-[360px]" : undefined}
         >
           <Link
             href={item.href}
@@ -71,7 +89,7 @@ export function ContentList({
                   src={item.image}
                   alt=""
                   fill
-                  sizes="(max-width: 640px) 85vw, 320px"
+                  sizes="(max-width: 640px) 85vw, 360px"
                   className="object-cover transition duration-300 group-hover:scale-105"
                   unoptimized
                 />
@@ -110,7 +128,36 @@ export function ContentList({
     </ul>
   );
 
-  if (embedded) return <div className={isCarousel ? undefined : "mt-10"}>{list}</div>;
+  // Слайдер со стрелками ‹ › (как в оригинале «Выполненные работы»)
+  const carousel = (
+    <div className="relative">
+      {list}
+      {items.length > 1 && (
+        <div className="mt-6 flex justify-end gap-3">
+          <button
+            type="button"
+            aria-label="Назад"
+            onClick={() => scrollBy(-1)}
+            className="flex h-11 w-11 items-center justify-center rounded-lg border border-white/25 text-white transition hover:border-accent hover:bg-accent hover:text-white"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6" /></svg>
+          </button>
+          <button
+            type="button"
+            aria-label="Вперёд"
+            onClick={() => scrollBy(1)}
+            className="flex h-11 w-11 items-center justify-center rounded-lg border border-white/25 text-white transition hover:border-accent hover:bg-accent hover:text-white"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6" /></svg>
+          </button>
+        </div>
+      )}
+    </div>
+  );
 
-  return <div className="container-content py-12">{list}</div>;
+  const content = isCarousel ? carousel : list;
+
+  if (embedded) return <div className="mt-10">{content}</div>;
+
+  return <div className="container-content py-12">{content}</div>;
 }

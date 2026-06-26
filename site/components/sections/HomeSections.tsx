@@ -47,29 +47,30 @@ const advantages = [
 
 /* Parity: в оригинале — оранжевые линейные иконки (не фото). */
 const iconProps = {
-  width: 40,
-  height: 40,
+  width: 44,
+  height: 44,
   viewBox: "0 0 24 24",
   fill: "none",
-  stroke: "#fe772b",
-  strokeWidth: 1.6,
+  stroke: "#ffffff",
+  strokeWidth: 1.4,
   strokeLinecap: "round" as const,
   strokeLinejoin: "round" as const,
 };
 
+/* Parity: белые линейные иконки, как в оригинале. */
 const advantageIcons = [
-  // Высокое качество — медаль
-  <svg key="i0" {...iconProps}><circle cx="12" cy="9" r="5.5" /><path d="M9.5 13.5 8 21l4-2 4 2-1.5-7.5" /><path d="m10 9 1.4 1.4L14 7.8" /></svg>,
-  // Долговечность — щит
-  <svg key="i1" {...iconProps}><path d="M12 3 5 6v5c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6l-7-3Z" /><path d="m9 12 2 2 4-4" /></svg>,
-  // Контроль — шкала/датчик
-  <svg key="i2" {...iconProps}><path d="M4 15a8 8 0 0 1 16 0" /><path d="M4 15h16" /><path d="m12 15 3.5-4" /><circle cx="12" cy="15" r="1" /></svg>,
-  // Шлифовка — слои
-  <svg key="i3" {...iconProps}><path d="m12 3 9 5-9 5-9-5 9-5Z" /><path d="m3 13 9 5 9-5" /></svg>,
-  // Автоматизация — шестерёнка
-  <svg key="i4" {...iconProps}><circle cx="12" cy="12" r="3" /><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1" /></svg>,
-  // Экологичность — лист
-  <svg key="i5" {...iconProps}><path d="M5 19C5 11 11 5 19 5c0 8-6 14-14 14Z" /><path d="M5 19c3-5 6-8 10-10" /></svg>,
+  // Высокое качество — палец вверх
+  <svg key="i0" {...iconProps}><path d="M7 10v9H4a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1h3Z" /><path d="M7 10l3.5-6.5a1.8 1.8 0 0 1 2.5 1.6V9h5a1.8 1.8 0 0 1 1.8 2.1l-1 6A1.8 1.8 0 0 1 17 19H7" /></svg>,
+  // Долговечность покрытия — бутыль ЛКМ
+  <svg key="i1" {...iconProps}><path d="M10 3h4M11.5 3v2.5M12.5 3v2.5" /><path d="M9 9.5C9 7.6 10.3 6 12 6s3 1.6 3 3.5V18a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2V9.5Z" /><path d="M9 12h6" /></svg>,
+  // Контроль — доски/планки
+  <svg key="i2" {...iconProps}><rect x="3" y="7" width="18" height="4" rx="1" /><rect x="3" y="13" width="18" height="4" rx="1" /><path d="M7 7v4M16 13v4" /></svg>,
+  // Шлифовка — шлифовальный брусок
+  <svg key="i3" {...iconProps}><rect x="3" y="13" width="15" height="5" rx="1" /><path d="M6 13l1.5-3h7L16 13" /><path d="M19 9l2-2M17 8l1.5-1.5M20 11l1.5-1.5" /></svg>,
+  // Автоматизация — дисковая пила
+  <svg key="i4" {...iconProps}><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="1.4" /><path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M18.4 5.6l-1.8 1.8M7.4 16.6l-1.8 1.8" /></svg>,
+  // Экологичность — отпечаток/лист
+  <svg key="i5" {...iconProps}><path d="M4 13a8 8 0 0 1 16 0" /><path d="M7 14a5 5 0 0 1 10 0v3" /><path d="M10 14a2 2 0 0 1 4 0v4" /><path d="M5 18.5c.7 1 1 1.7 1 2.5M19 17v1.5" /></svg>,
 ];
 
 /* Parity: оригинал — одна тёмная секция: слева заголовок + фото,
@@ -93,12 +94,15 @@ export function ProductionIntroSection() {
             />
           </div>
         </div>
-        <div className="grid gap-x-10 gap-y-9 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-x-12 sm:grid-cols-2">
           {advantages.map((item, index) => (
-            <article key={item.title}>
-              <div className="h-10 w-10">{advantageIcons[index]}</div>
-              <h3 className="mt-4 text-base font-semibold text-white">{item.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-white/70">{item.text}</p>
+            <article
+              key={item.title}
+              className={`py-7 ${index >= 2 ? "sm:border-t sm:border-white/10" : ""}`}
+            >
+              <div className="h-11 w-11">{advantageIcons[index]}</div>
+              <h3 className="mt-4 text-lg font-semibold text-white">{item.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-white/65">{item.text}</p>
             </article>
           ))}
         </div>
@@ -391,15 +395,11 @@ export function HomeBlogSection() {
   return (
     <section className="section-dark py-16 sm:py-20">
       <div className="container-content">
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <h2 className="section-title">Новости и статьи</h2>
-          <Link href="/blog/" className="btn-outline-light">
-            Еще больше статей
-          </Link>
-        </div>
+        <h2 className="section-title">Новости и статьи</h2>
         <ContentList
           embedded
           variant="dark"
+          cols={4}
           items={posts.map((post) => ({
             slug: post.slug,
             title: post.title,
@@ -409,6 +409,11 @@ export function HomeBlogSection() {
             meta: HOME_BLOG_DATES[post.slug],
           }))}
         />
+        <div className="mt-10 flex justify-center">
+          <Link href="/blog/" className="btn-outline-light">
+            Читать больше статей
+          </Link>
+        </div>
       </div>
     </section>
   );
