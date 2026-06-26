@@ -41,18 +41,18 @@ export const HERO_SLIDES: HeroSlide[] = [
   },
 ];
 
-export const PRODUCTION_IMAGE = `${UPLOADS}/2025/04/photo_2025-04-26_20-30-22-300x242.webp`;
+export const PRODUCTION_IMAGE = `${UPLOADS}/2025/04/photo_2025-04-26_20-30-22.webp`;
 
 export const SERVICES_IMAGE = `${UPLOADS}/2025/03/Frame-19.webp`;
 
 // Parity: оранжевый лес — фон секции «Эксклюзивные цвета» (как в оригинале)
 export const COLORS_BG = `${UPLOADS}/2025/03/Frame-19.webp`;
 
-// Parity: реальные фоновые фото карточек услуг (тонированы оранжевым)
+// Parity: реальные фото услуг из оригинала (krashenayadoska.ru)
 export const SERVICE_IMAGES = {
-  spray: `${UPLOADS}/2025/04/frame-19-1-300x237.webp`,
-  oil: `${UPLOADS}/2025/04/frame-19-2-300x221.webp`,
-  restoration: `${UPLOADS}/2025/04/frame-53-3-300x191.webp`,
+  spray: `${UPLOADS}/2025/04/photo_2025-05-17_23-20-04.webp`,
+  oil: `${UPLOADS}/2025/04/frame-19-2-768x566.webp`,
+  restoration: `${UPLOADS}/2025/04/photo_2025-05-18_00-25-01.webp`,
 } as const;
 
 export type CatalogPreviewItem = {

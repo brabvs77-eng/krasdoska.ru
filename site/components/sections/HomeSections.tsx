@@ -78,20 +78,24 @@ const advantageIcons = [
 export function ProductionIntroSection() {
   return (
     <section className="section-dark py-14 sm:py-20">
-      <div className="container-content grid gap-10 lg:grid-cols-[minmax(0,360px)_1fr] lg:gap-14">
+      <div className="container-content grid gap-10 lg:grid-cols-[minmax(0,420px)_1fr] lg:gap-14">
         <div>
           <h2 className="text-2xl font-semibold leading-tight text-white sm:text-3xl lg:text-[34px]">
             Производство по изготовлению высококачественных отделочных материалов
           </h2>
-          <div className="relative mt-7 aspect-[300/242] w-full max-w-sm overflow-hidden rounded-2xl bg-surface-muted">
-            <Image
-              src={PRODUCTION_IMAGE}
-              alt="Производство крашеной доски"
-              fill
-              sizes="360px"
-              className="object-cover"
-              unoptimized
-            />
+          {/* Parity: крупное фото с оранжевой подложкой со смещением вправо-вниз */}
+          <div className="relative mt-8 w-full max-w-[400px]">
+            <div className="absolute -bottom-4 -right-4 h-full w-full rounded-2xl bg-accent" aria-hidden="true"></div>
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-surface-muted">
+              <Image
+                src={PRODUCTION_IMAGE}
+                alt="Производство крашеной доски"
+                fill
+                sizes="400px"
+                className="object-cover"
+                unoptimized
+              />
+            </div>
           </div>
         </div>
         <div className="grid grid-cols-1 gap-x-12 sm:grid-cols-2">
