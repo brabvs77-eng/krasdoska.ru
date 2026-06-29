@@ -10,7 +10,7 @@ export function Header() {
   const logo = site.logo;
 
   return (
-    <header className="absolute inset-x-0 top-0 z-50 bg-brand/85 text-white backdrop-blur-sm">
+    <header className="sticky top-0 z-50 bg-brand text-white shadow-sm">
       <div className="container-content flex h-16 items-center justify-between gap-4 lg:h-20">
         <Link href="/" className="flex shrink-0 items-center gap-3">
           {logo ? (
@@ -19,15 +19,15 @@ export function Header() {
               alt={site.name}
               width={48}
               height={48}
-              className="h-10 w-10 rounded-lg object-contain"
+              className="h-11 w-11 rounded-full object-contain"
               unoptimized
             />
           ) : (
-            <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent text-sm font-bold text-white">
+            <span className="flex h-11 w-11 items-center justify-center rounded-full bg-accent text-sm font-bold text-white">
               KD
             </span>
           )}
-          <span className="hidden font-bold sm:inline">{site.name}</span>
+          <span className="hidden text-lg font-bold sm:inline">{site.name}</span>
         </Link>
 
         <nav className="hidden items-center gap-5 lg:flex xl:gap-6" aria-label="Основное меню">

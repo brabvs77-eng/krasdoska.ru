@@ -24,7 +24,7 @@ export function HeroSlider({ slides }: HeroSliderProps) {
   if (!slide) return null;
 
   return (
-    <section className="relative min-h-[700px] overflow-hidden text-white">
+    <section className="relative min-h-[640px] overflow-hidden text-white">
       <div className="absolute inset-0">
         {slides.map((item, i) => (
           <Image
@@ -40,9 +40,9 @@ export function HeroSlider({ slides }: HeroSliderProps) {
         ))}
       </div>
       <div className="absolute inset-0 bg-black/50" />
-      <div className="container-content relative flex min-h-[700px] flex-col justify-end pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pb-24 lg:pt-36">
+      <div className="container-content relative flex min-h-[640px] flex-col justify-end pb-16 pt-16 sm:pb-20 lg:pb-24">
         {slides.length > 1 && (
-          <p className="absolute right-4 top-28 text-sm font-semibold tracking-widest text-white/90 sm:right-6 sm:top-32 lg:top-36">
+          <p className="absolute right-4 top-10 text-sm font-semibold tracking-widest text-white/90 sm:right-6 sm:top-12">
             {String(index + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")}
           </p>
         )}
