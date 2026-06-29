@@ -46,32 +46,31 @@ const advantages = [
   },
 ];
 
-/* Parity: в оригинале — оранжевые линейные иконки (не фото). */
+/* Parity: белые линейные иконки, как в оригинале (Elementor font-icons). */
 const iconProps = {
-  width: 44,
-  height: 44,
+  width: 46,
+  height: 46,
   viewBox: "0 0 24 24",
   fill: "none",
   stroke: "#ffffff",
-  strokeWidth: 1.4,
+  strokeWidth: 1.5,
   strokeLinecap: "round" as const,
   strokeLinejoin: "round" as const,
 };
 
-/* Parity: белые линейные иконки, как в оригинале. */
 const advantageIcons = [
   // Высокое качество — палец вверх
   <svg key="i0" {...iconProps}><path d="M7 10v9H4a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1h3Z" /><path d="M7 10l3.5-6.5a1.8 1.8 0 0 1 2.5 1.6V9h5a1.8 1.8 0 0 1 1.8 2.1l-1 6A1.8 1.8 0 0 1 17 19H7" /></svg>,
-  // Долговечность покрытия — бутыль ЛКМ
-  <svg key="i1" {...iconProps}><path d="M10 3h4M11.5 3v2.5M12.5 3v2.5" /><path d="M9 9.5C9 7.6 10.3 6 12 6s3 1.6 3 3.5V18a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2V9.5Z" /><path d="M9 12h6" /></svg>,
-  // Контроль — доски/планки
-  <svg key="i2" {...iconProps}><rect x="3" y="7" width="18" height="4" rx="1" /><rect x="3" y="13" width="18" height="4" rx="1" /><path d="M7 7v4M16 13v4" /></svg>,
+  // Долговечность покрытия — бутыль ЛКМ (спрей)
+  <svg key="i1" {...iconProps}><path d="M10 3h3M11.5 3v3" /><path d="M9.5 9.2C9.5 7.4 10.6 6 12 6s2.5 1.4 2.5 3.2V18a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2V9.2Z" /><path d="M9.5 12.5h5" /><path d="M16 6.5h3M16 9h3M16.5 4.5l1-1" /></svg>,
+  // Контроль — доски/слои
+  <svg key="i2" {...iconProps}><rect x="3" y="7" width="18" height="3.6" rx="1" /><rect x="3" y="13.4" width="18" height="3.6" rx="1" /><path d="M7 7v3.6M16 13.4V17" /></svg>,
   // Шлифовка — шлифовальный брусок
-  <svg key="i3" {...iconProps}><rect x="3" y="13" width="15" height="5" rx="1" /><path d="M6 13l1.5-3h7L16 13" /><path d="M19 9l2-2M17 8l1.5-1.5M20 11l1.5-1.5" /></svg>,
-  // Автоматизация — дисковая пила
-  <svg key="i4" {...iconProps}><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="1.4" /><path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M18.4 5.6l-1.8 1.8M7.4 16.6l-1.8 1.8" /></svg>,
-  // Экологичность — отпечаток/лист
-  <svg key="i5" {...iconProps}><path d="M4 13a8 8 0 0 1 16 0" /><path d="M7 14a5 5 0 0 1 10 0v3" /><path d="M10 14a2 2 0 0 1 4 0v4" /><path d="M5 18.5c.7 1 1 1.7 1 2.5M19 17v1.5" /></svg>,
+  <svg key="i3" {...iconProps}><rect x="3" y="13" width="15" height="5" rx="1" /><path d="M6 13l1.5-3h7L16 13" /><path d="M19 9l2-2M17 8l1.3-1.3M20.5 10.5l1.3-1.3" /></svg>,
+  // Автоматизация — шестерёнка
+  <svg key="i4" {...iconProps}><path d="M12 2.5l1.6 1 1.9-.4.8 1.8 1.8.8-.4 1.9 1 1.6-1 1.6.4 1.9-1.8.8-.8 1.8-1.9-.4-1.6 1-1.6-1-1.9.4-.8-1.8-1.8-.8.4-1.9-1-1.6 1-1.6-.4-1.9 1.8-.8.8-1.8 1.9.4 1.6-1Z" /><circle cx="12" cy="12" r="3.2" /></svg>,
+  // Экологичность — лист
+  <svg key="i5" {...iconProps}><path d="M4 19C4 10.7 9.8 5 19 5c0 9.2-5.7 14-15 14Z" /><path d="M5.5 17.5C8 13 11.5 10 16 8.5" /></svg>,
 ];
 
 /* Parity: оригинал — одна тёмная секция: слева заголовок + фото,
@@ -103,11 +102,11 @@ export function ProductionIntroSection() {
           {advantages.map((item, index) => (
             <article
               key={item.title}
-              className={`flex flex-col py-7 ${index >= 2 ? "sm:border-t sm:border-white/10" : ""}`}
+              className="flex flex-col border-b border-white/15 py-8"
             >
-              <div className="h-11 w-11">{advantageIcons[index]}</div>
-              <h3 className="mt-4 text-lg font-semibold text-white">{item.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-white/65">{item.text}</p>
+              <div className="h-12 w-12">{advantageIcons[index]}</div>
+              <h3 className="mt-5 text-xl font-semibold text-white">{item.title}</h3>
+              <p className="mt-2.5 text-base leading-relaxed text-white">{item.text}</p>
             </article>
           ))}
         </div>
@@ -212,41 +211,45 @@ export function ServicesPreviewSection() {
 
 export function ColorsSection() {
   return (
-    <section className="relative overflow-hidden bg-brand py-16 text-white sm:py-20">
+    <section className="relative overflow-hidden bg-[#241c19] py-16 text-white sm:py-20">
       <Image
         src={COLORS_BG}
         alt=""
         fill
         sizes="100vw"
-        className="object-cover object-right opacity-30"
+        className="object-cover object-right"
         unoptimized
       />
+      {/* Тёмный градиент: слева плотный, справа лес проступает — как в оригинале */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#1c1512] via-[#1c1512]/95 to-[#1c1512]/40" />
       <div className="container-content relative">
-        <h2 className="section-title text-white">
-          Эксклюзивные цвета
-          <br />
-          в ваших проектах
-        </h2>
-        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+          <h2 className="section-title text-white">
+            Эксклюзивные цвета
+            <br />
+            в ваших проектах
+          </h2>
+          <Link href="/palitra/" className="btn-primary shrink-0">
+            Узнать подробнее
+          </Link>
+        </div>
+        <div className="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
           {COLOR_SWATCHES.map((swatch) => (
             <div key={swatch.code} className="text-center">
-              <div className="relative mx-auto aspect-square max-w-[132px] overflow-hidden rounded-2xl border border-white/20">
+              <div className="relative mx-auto aspect-square max-w-[150px] overflow-hidden rounded-2xl border border-white/15 shadow-lg">
                 <Image
                   src={swatch.image}
                   alt={swatch.code}
                   fill
-                  sizes="132px"
+                  sizes="150px"
                   className="object-cover"
                   unoptimized
                 />
               </div>
-              <p className="mt-3 text-sm font-semibold">{swatch.code}</p>
+              <p className="mt-4 text-sm font-semibold text-white/90">{swatch.code}</p>
             </div>
           ))}
         </div>
-        <Link href="/palitra/" className="btn-primary mt-10">
-          Узнать подробнее
-        </Link>
       </div>
     </section>
   );
@@ -348,10 +351,10 @@ export function BottomBarSection() {
         alt=""
         fill
         sizes="100vw"
-        className="object-cover opacity-25"
+        className="object-cover opacity-40"
         unoptimized
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/85 to-brand-dark/50" />
+      <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/95 via-brand-dark/80 to-brand-dark/45" />
       <div className="container-content relative">
         <h2 className="max-w-2xl text-2xl font-semibold leading-tight sm:text-3xl lg:text-4xl">
           Широкий ассортимент, выгодные цены и быстрая доставка

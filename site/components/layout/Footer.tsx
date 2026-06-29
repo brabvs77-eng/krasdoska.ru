@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { getSiteSettings } from "@/lib/site";
 
@@ -13,10 +14,22 @@ export function Footer() {
       <div className="container-content py-12">
         {/* Верхняя строка: логотип слева — крупный телефон + email справа + «Наверх» */}
         <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
-          <div>
-            <p className="text-xl font-bold tracking-tight text-white">{site.name}</p>
-            <p className="mt-1 text-xs uppercase tracking-[0.18em] text-white/45">Готовое решение</p>
-            <p className="mt-3 text-sm text-white/70">Спасибо, что выбираете нас</p>
+          <div className="flex items-center gap-3">
+            {site.logo ? (
+              <Image
+                src={site.logo}
+                alt={site.name}
+                width={56}
+                height={56}
+                className="h-14 w-14 rounded-full object-contain"
+                unoptimized
+              />
+            ) : null}
+            <div>
+              <p className="text-xl font-bold tracking-tight text-white">{site.name}</p>
+              <p className="mt-1 text-xs uppercase tracking-[0.18em] text-white/45">Готовое решение</p>
+              <p className="mt-2 text-sm text-white/70">Спасибо, что выбираете нас</p>
+            </div>
           </div>
 
           <div className="flex items-start gap-5">
