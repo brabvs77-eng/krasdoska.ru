@@ -1,6 +1,4 @@
-import { HtmlContent } from "@/components/content/HtmlContent";
-import { MarketingPageFooter } from "@/components/sections/MarketingPageFooter";
-import { PageHero } from "@/components/sections/PageHero";
+import { ContactsPageContent } from "@/components/sections/ContactsPageContent";
 import { buildPageMetadata } from "@/lib/metadata";
 import { getPage } from "@/lib/content";
 
@@ -8,28 +6,11 @@ export async function generateMetadata() {
   const page = getPage("kontakty");
   return buildPageMetadata({
     title: page?.title ?? "Контакты",
-    description: "Контакты, адреса офиса и производства, телефон и email.",
+    description: "Контакты, адрес офиса, телефон, email и карта проезда.",
     path: "/kontakty/",
   });
 }
 
 export default function ContactsPage() {
-  const page = getPage("kontakty");
-
-  return (
-    <>
-      <PageHero
-        title={page?.title ?? "Контакты"}
-        description="Свяжитесь с нами для консультации и расчёта заказа."
-      />
-      <div className="container-content py-12">
-        {page?.content ? (
-          <HtmlContent html={page.content} stripLeadingH1 stripTrailingCta className="wp-content-contacts" />
-        ) : (
-          <p className="text-neutral-600">Контактная информация появится после миграции контента.</p>
-        )}
-      </div>
-      <MarketingPageFooter withFaq={false} />
-    </>
-  );
+  return <ContactsPageContent />;
 }

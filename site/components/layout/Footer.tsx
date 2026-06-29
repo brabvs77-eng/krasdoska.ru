@@ -5,8 +5,8 @@ import { getSiteSettings } from "@/lib/site";
 export function Footer() {
   const { site, contacts, navigation } = getSiteSettings();
   const phone = contacts.phones[0] ?? "8 (800) 250-90-55";
-  const phonePlain = phone.replace(/\s|\(|\)|-/g, "");
-  const phoneHref = `tel:${phonePlain}`;
+  const phoneDigits = phone.replace(/\D/g, "");
+  const phoneHref = `tel:${phoneDigits}`;
   const year = new Date().getFullYear();
 
   return (
@@ -38,7 +38,7 @@ export function Footer() {
                 href={phoneHref}
                 className="whitespace-nowrap text-3xl font-bold tracking-tight text-white transition hover:text-accent sm:text-4xl"
               >
-                {phonePlain}
+                {phone}
               </a>
               <a
                 href={`mailto:${contacts.email}`}

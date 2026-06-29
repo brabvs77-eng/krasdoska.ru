@@ -28,6 +28,18 @@ export type CatalogProduct = ContentItem & {
   image?: string;
 };
 
+export type ProjectItem = ContentItem & {
+  image?: string;
+  heroDescription?: string;
+  description?: string;
+  slider?: string[];
+  heroImages?: string[];
+  gallery?: string[];
+  logo?: string;
+  tags?: string[];
+  service?: string;
+};
+
 function readJsonDir(subdir: string): string[] {
   const dir = path.join(CONTENT_DIR, subdir);
   if (!fs.existsSync(dir)) return [];
@@ -173,12 +185,12 @@ export function getProjectSlugs(): string[] {
   return readJsonDir("projects");
 }
 
-export function getProject(slug: string): ContentItem | null {
-  return readJsonFile<ContentItem>("projects", slug);
+export function getProject(slug: string): ProjectItem | null {
+  return readJsonFile<ProjectItem>("projects", slug);
 }
 
-export function getAllProjects(): ContentItem[] {
-  return readAllJson<ContentItem>("projects").sort((a, b) =>
+export function getAllProjects(): ProjectItem[] {
+  return readAllJson<ProjectItem>("projects").sort((a, b) =>
     a.title.localeCompare(b.title, "ru"),
   );
 }

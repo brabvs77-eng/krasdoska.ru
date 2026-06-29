@@ -32,6 +32,19 @@ const CATALOG_SLUGS = [
   "terrasnaja-doska",
 ];
 
+/** Legacy landing slugs (uncategorized in WP) → canonical category slug */
+const LANDING_ALIAS_MAP = {
+  "krashenyj-planken": "planken",
+  "doska-pola": "krashenaja-doska",
+  "parketnaja-doska": "krashenaja-doska",
+  "fasadnaja-doska": "krashenaja-doska",
+  "massiv-pola": "krashenaja-doska",
+  "palubnaja-doska": "krashenaja-doska",
+  "blok-haus": "imitacija-brusa",
+};
+
+const ALL_LANDING_SLUGS = [...CATALOG_SLUGS, ...Object.keys(LANDING_ALIAS_MAP)];
+
 function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
 }
@@ -62,6 +75,19 @@ function getCategories(block) {
   return cats;
 }
 
+function getTaxonomy(block, domain) {
+  const re = new RegExp(
+    `<category domain="${domain}" nicename="([^"]+)">(?:<!\\[CDATA\\[([\\s\\S]*?)\\]\\]>|([^<]*))</category>`,
+    "g",
+  );
+  const items = [];
+  let m;
+  while ((m = re.exec(block))) {
+    items.push({ slug: m[1], label: decodeXml((m[2] || m[3] || "").trim()) });
+  }
+  return items;
+}
+
 function getPostMeta(block, key) {
   const re = new RegExp(
     `<wp:meta_key><!\\[CDATA\\[${key}\\]\\]></wp:meta_key>\\s*<wp:meta_value><!\\[CDATA\\[([\\s\\S]*?)\\]\\]></wp:meta_value>`,
@@ -73,6 +99,23 @@ function getPostMeta(block, key) {
 function normalizeUploadUrl(url) {
   if (!url) return "";
   return url.replace(/https?:\/\/krashenayadoska\.ru\/wp-content\/uploads\//, "/uploads/");
+}
+
+function resolveAttachment(id, attachments) {
+  if (!id) return "";
+  const url = attachments[String(id).trim()];
+  return url ? normalizeUploadUrl(url) : "";
+}
+
+function parsePhpArrayIds(value) {
+  if (!value?.trim()) return [];
+  const ids = [];
+  const re = /s:\d+:"(\d+)"/g;
+  let m;
+  while ((m = re.exec(value))) {
+    ids.push(m[1]);
+  }
+  return ids;
 }
 
 function getFirstImage(html) {
@@ -98,6 +141,8 @@ function extractItems(xml) {
       excerpt: getTag(block, "excerpt:encoded"),
       postId: getTag(block, "wp:post_id"),
       categories: getCategories(block),
+      projectTags: getTaxonomy(block, "project-categoties"),
+      projectService: getTaxonomy(block, "project-parrent"),
     });
   }
   return items;
@@ -123,6 +168,35 @@ function getItemImage(block, content, attachments) {
   return getFirstImage(content);
 }
 
+function extractProjectFields(block, attachments) {
+  const heroDescription = getPostMeta(block, "project-hero-descr")?.trim() || undefined;
+  const description = getPostMeta(block, "project-descr")?.trim() || undefined;
+
+  const sliderIds = parsePhpArrayIds(getPostMeta(block, "project-slider"));
+  const slider = sliderIds.map((id) => resolveAttachment(id, attachments)).filter(Boolean);
+
+  const heroImageIds = parsePhpArrayIds(getPostMeta(block, "project-hero-images"));
+  const heroImages = heroImageIds.map((id) => resolveAttachment(id, attachments)).filter(Boolean);
+
+  const repeaterCount = Number.parseInt(getPostMeta(block, "project-repeater") || "0", 10);
+  const gallery = [];
+  for (let i = 0; i < repeaterCount; i++) {
+    const url = resolveAttachment(getPostMeta(block, `project-repeater_${i}_img`), attachments);
+    if (url) gallery.push(url);
+  }
+
+  const logoUrl = resolveAttachment(getPostMeta(block, "project-hero-logos"), attachments);
+
+  return {
+    heroDescription,
+    description,
+    slider: slider.length ? slider : undefined,
+    heroImages: heroImages.length ? heroImages : undefined,
+    gallery: gallery.length ? gallery : undefined,
+    logo: logoUrl || undefined,
+  };
+}
+
 function loadCatalogDefinitions() {
   if (fs.existsSync(CATALOG_CATEGORIES_PATH)) {
     return JSON.parse(fs.readFileSync(CATALOG_CATEGORIES_PATH, "utf8"));
@@ -131,6 +205,11 @@ function loadCatalogDefinitions() {
     slug,
     title: slug.replace(/-/g, " "),
   }));
+}
+
+function resolveLandingCategory(slug) {
+  if (CATALOG_SLUGS.includes(slug)) return slug;
+  return LANDING_ALIAS_MAP[slug] ?? null;
 }
 
 function main() {
@@ -176,8 +255,9 @@ function main() {
     if (item.type === "page") {
       writeJson(path.join(OUT.pages, `${item.slug}.json`), base);
       pages++;
-      if (CATALOG_SLUGS.includes(item.slug)) {
-        catalogLandings.set(item.slug, item);
+      const landingCat = resolveLandingCategory(item.slug);
+      if (landingCat) {
+        catalogLandings.set(landingCat, { ...item, landingSlug: item.slug });
       }
     } else if (item.type === "blog-post") {
       writeJson(path.join(OUT.blog, `${item.slug}.json`), {
@@ -186,14 +266,22 @@ function main() {
       });
       blog++;
     } else if (item.type === "project") {
+      const acf = extractProjectFields(item.block, attachments);
       writeJson(path.join(OUT.projects, `${item.slug}.json`), {
         ...base,
         image: getItemImage(item.block, item.content, attachments) || undefined,
+        tags: item.projectTags.map((t) => t.label).filter(Boolean),
+        service: item.projectService[0]?.label,
+        ...acf,
       });
       projects++;
     } else if (item.type === "post") {
-      if (CATALOG_SLUGS.includes(item.slug)) {
-        catalogLandings.set(item.slug, item);
+      const landingCat = resolveLandingCategory(item.slug);
+      if (landingCat) {
+        const existing = catalogLandings.get(landingCat);
+        if (!existing || LANDING_ALIAS_MAP[item.slug]) {
+          catalogLandings.set(landingCat, { ...item, landingSlug: item.slug });
+        }
         continue;
       }
 
@@ -225,6 +313,7 @@ function main() {
       title: landing?.title || def.title,
       description: description || undefined,
       content: content || def.content || undefined,
+      landingSlug: landing?.landingSlug,
     });
   }
 

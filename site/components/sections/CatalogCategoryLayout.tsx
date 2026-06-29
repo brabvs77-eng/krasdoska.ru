@@ -96,7 +96,7 @@ export function CatalogCategoryLayout({
                 {products.map((product) => (
                   <ProductCard
                     key={product.slug}
-                    href={`/katalog/${slug}/${product.slug}/`}
+                    href={`/katalog/${product.category}/${product.slug}/`}
                     title={product.title}
                     image={getProductImage(product)}
                     variant="dark"

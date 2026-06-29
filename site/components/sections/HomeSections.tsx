@@ -165,7 +165,7 @@ const services = [
     image: SERVICE_IMAGES.oil,
   },
   {
-    href: "/kontakty/",
+    href: "/uslugi/",
     title: "Реставрация",
     cta: "Подробнее",
     image: SERVICE_IMAGES.restoration,

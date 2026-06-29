@@ -1,6 +1,7 @@
-import { WpPage } from "@/components/content/WpPage";
+import { PaletteDetailSection } from "@/components/sections/PaletteDetailSection";
 import { buildPageMetadata } from "@/lib/metadata";
-import { getExcerpt, getPalettePage, getPaletteSlugs } from "@/lib/content";
+import { getPalettePageData } from "@/lib/palette-data";
+import { getPaletteSlugs } from "@/lib/content";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -10,32 +11,21 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
-  const page = getPalettePage(slug);
+  const data = getPalettePageData(slug);
   return buildPageMetadata({
-    title: page?.seo?.title ?? page?.title ?? slug.replace(/-/g, " "),
-    description: page ? getExcerpt(page) : undefined,
+    title: data?.title ?? slug.replace(/-/g, " "),
+    description: data?.intro[0],
     path: `/palitra/${slug}/`,
   });
 }
 
 export default async function PaletteSubPage({ params }: Props) {
   const { slug } = await params;
-  const page = getPalettePage(slug);
+  const data = getPalettePageData(slug);
 
-  if (!page) {
+  if (!data) {
     return null;
   }
 
-  return (
-    <WpPage
-      page={page}
-      withMarketingFooter
-      stripLeadingH1
-      breadcrumbs={[
-        { label: "Главная", href: "/" },
-        { label: "Палитра", href: "/palitra/" },
-        { label: page.title },
-      ]}
-    />
-  );
+  return <PaletteDetailSection data={data} />;
 }

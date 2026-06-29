@@ -9,6 +9,8 @@
     "start": "next start",
     "lint": "next lint",
     "migrate:content": "node scripts/migrate-content.mjs",
+    "check:links": "node scripts/check-internal-links.mjs",
+    "postbuild": "node scripts/check-internal-links.mjs",
     "sync:uploads": "node scripts/sync-uploads.mjs",
     "fetch:uploads": "node scripts/fetch-uploads.mjs",
     "prepare:uploads": "node scripts/prepare-uploads.mjs",

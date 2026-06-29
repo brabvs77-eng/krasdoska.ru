@@ -39,7 +39,7 @@ export function HeroSlider({ slides }: HeroSliderProps) {
           />
         ))}
       </div>
-      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 bg-black/40" />
       <div className="container-content relative flex min-h-[700px] flex-col justify-end pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pb-24 lg:pt-36">
         {slides.length > 1 && (
           <p className="absolute right-4 top-28 text-sm font-semibold tracking-widest text-white/90 sm:right-6 sm:top-32 lg:top-36">
