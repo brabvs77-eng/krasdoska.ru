@@ -19,17 +19,17 @@ export function Footer() {
             <p className="mt-3 text-sm text-white/70">Спасибо, что выбираете нас</p>
           </div>
 
-          <div className="flex items-start gap-6">
-            <div className="text-right">
+          <div className="flex items-start gap-5">
+            <div className="flex flex-col items-start lg:items-end">
               <a
                 href={phoneHref}
-                className="block text-3xl font-bold tracking-tight text-white transition hover:text-accent sm:text-4xl lg:text-5xl"
+                className="whitespace-nowrap text-3xl font-bold tracking-tight text-white transition hover:text-accent sm:text-4xl"
               >
                 {phonePlain}
               </a>
               <a
                 href={`mailto:${contacts.email}`}
-                className="mt-1 inline-block text-sm font-medium text-accent hover:text-white"
+                className="mt-1 whitespace-nowrap text-sm font-medium text-accent hover:text-white"
               >
                 {contacts.email}
               </a>
