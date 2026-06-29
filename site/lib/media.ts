@@ -45,6 +45,9 @@ export const PRODUCTION_IMAGE = `${UPLOADS}/2025/04/photo_2025-04-26_20-30-22.we
 
 export const SERVICES_IMAGE = `${UPLOADS}/2025/03/Frame-19.webp`;
 
+// Parity: тёмный индустриальный фон нижнего CTA-баннера
+export const BOTTOMBAR_BG = `${UPLOADS}/2025/04/photo_2025-04-26_23-17-29-2-1024x566.webp`;
+
 // Parity: оранжевый лес — фон секции «Эксклюзивные цвета» (как в оригинале)
 export const COLORS_BG = `${UPLOADS}/2025/03/Frame-19.webp`;
 

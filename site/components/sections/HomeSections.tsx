@@ -9,6 +9,7 @@ import { ContactForm } from "@/components/forms/ContactForm";
 import { getSiteSettings } from "@/lib/site";
 import { HOME_COMPANY_BLOCKS } from "@/lib/home-footer";
 import {
+  BOTTOMBAR_BG,
   CATALOG_PREVIEW,
   COLOR_SWATCHES,
   COLORS_BG,
@@ -341,12 +342,21 @@ export function CompanyPreviewSection() {
 
 export function BottomBarSection() {
   return (
-    <section className="bg-accent py-8 text-white">
-      <div className="container-content flex flex-wrap items-center justify-between gap-4">
-        <p className="text-lg font-semibold sm:text-xl">
+    <section className="relative overflow-hidden bg-brand-dark py-16 text-white sm:py-20">
+      <Image
+        src={BOTTOMBAR_BG}
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover opacity-25"
+        unoptimized
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/85 to-brand-dark/50" />
+      <div className="container-content relative">
+        <h2 className="max-w-2xl text-2xl font-semibold leading-tight sm:text-3xl lg:text-4xl">
           Широкий ассортимент, выгодные цены и быстрая доставка
-        </p>
-        <Link href="/#form" className="btn-outline-light shrink-0">
+        </h2>
+        <Link href="/#form" className="btn-primary mt-8 inline-flex">
           Заказать звонок
         </Link>
       </div>
