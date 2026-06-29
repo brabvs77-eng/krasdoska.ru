@@ -10,7 +10,7 @@ export function Header() {
   const logo = site.logo;
 
   return (
-    <header className="sticky top-0 z-50 bg-brand text-white shadow-sm">
+    <header className="absolute inset-x-0 top-0 z-50 bg-brand/85 text-white backdrop-blur-sm">
       <div className="container-content flex h-16 items-center justify-between gap-4 lg:h-20">
         <Link href="/" className="flex shrink-0 items-center gap-3">
           {logo ? (
