@@ -99,11 +99,11 @@ export function ProductionIntroSection() {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-1 gap-x-12 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-x-12 sm:grid-cols-2 sm:auto-rows-fr">
           {advantages.map((item, index) => (
             <article
               key={item.title}
-              className={`py-7 ${index >= 2 ? "sm:border-t sm:border-white/10" : ""}`}
+              className={`flex flex-col py-7 ${index >= 2 ? "sm:border-t sm:border-white/10" : ""}`}
             >
               <div className="h-11 w-11">{advantageIcons[index]}</div>
               <h3 className="mt-4 text-lg font-semibold text-white">{item.title}</h3>
