@@ -15,16 +15,14 @@ export function Footer() {
         {/* Верхняя строка: логотип слева — крупный телефон + email справа + «Наверх» */}
         <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
           <div className="flex items-center gap-3">
-            {site.logo ? (
-              <Image
-                src={site.logo}
-                alt={site.name}
-                width={56}
-                height={56}
-                className="h-14 w-14 rounded-full object-contain"
-                unoptimized
-              />
-            ) : null}
+            <Image
+              src="/logotype.svg"
+              alt={site.name}
+              width={180}
+              height={56}
+              className="h-14 w-auto max-w-[200px] object-contain"
+              unoptimized
+            />
             <div>
               <p className="text-xl font-bold tracking-tight text-white">{site.name}</p>
               <p className="mt-1 text-xs uppercase tracking-[0.18em] text-white/45">Готовое решение</p>

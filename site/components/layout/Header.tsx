@@ -7,7 +7,7 @@ import { getSiteSettings } from "@/lib/site";
 export function Header() {
   const { site, navigation, contacts } = getSiteSettings();
   const phone = contacts.phones[0];
-  const logo = site.logo;
+  const logo = "/logotype.svg";
   const digits = (phone ?? "").replace(/\D/g, "");
 
   const socials = [
@@ -55,7 +55,7 @@ export function Header() {
               alt={site.name}
               width={48}
               height={48}
-              className="h-11 w-11 rounded-full object-contain"
+              className="h-11 w-auto max-w-[180px] object-contain"
               unoptimized
             />
           ) : (
