@@ -63,7 +63,7 @@ export function HeroSlider({ slides }: HeroSliderProps) {
           {/* Parity fix: в оригинале у hero есть оранжевый CTA */}
           <div className="mt-8 flex flex-wrap gap-4">
             <Link href="/#form" className="btn-primary">
-              Получить консультацию
+              Получить бесплатный расчёт
             </Link>
             <Link href="/katalog/" className="btn-outline-light">
               Смотреть каталог

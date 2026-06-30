@@ -15,8 +15,8 @@ const PRODUCTION = "https://krashenayadoska.ru/wp-content/uploads";
 const CF_PAGES_MAX_BYTES = 25 * 1024 * 1024;
 const MAX_AUTO_BYTES = Number(process.env.FETCH_UPLOADS_MAX_MB ?? 24) * 1024 * 1024;
 
-/** Too large for CF Pages — served from production CDN instead */
-const REMOTE_ONLY = new Set([
+/** Exceeds Cloudflare Pages 25 MiB — kept for SSH deploy, skipped on CF prune */
+const ALLOW_OVERSIZED = new Set([
   "/uploads/2026/03/video_2026-03-13_23-56-23.mp4",
 ]);
 
@@ -49,7 +49,7 @@ export function collectUploadRefs() {
   walk(path.join(SITE_ROOT, "components"));
   walk(path.join(SITE_ROOT, "app"));
 
-  return [...refs].filter((ref) => !REMOTE_ONLY.has(ref)).sort();
+  return [...refs].sort();
 }
 
 export function pruneOversizedUploads() {
@@ -63,8 +63,9 @@ export function pruneOversizedUploads() {
         walk(full);
         continue;
       }
+      const rel = `/uploads/${path.relative(DEST_ROOT, full).replace(/\\/g, "/")}`;
       const size = fs.statSync(full).size;
-      if (size > CF_PAGES_MAX_BYTES) {
+      if (size > CF_PAGES_MAX_BYTES && !ALLOW_OVERSIZED.has(rel)) {
         fs.unlinkSync(full);
         removed++;
         console.warn(`  prune ${full.replace(SITE_ROOT, "")} (${(size / (1024 * 1024)).toFixed(1)} MB)`);
@@ -77,10 +78,8 @@ export function pruneOversizedUploads() {
 }
 
 async function downloadOne(relPath) {
-  if (REMOTE_ONLY.has(relPath)) {
-    return "remote";
-  }
   const remotePath = relPath.replace(/^\/uploads\//, "");
+  const maxBytes = ALLOW_OVERSIZED.has(relPath) ? 200 * 1024 * 1024 : MAX_AUTO_BYTES;
   const dest = path.join(DEST_ROOT, remotePath);
   fs.mkdirSync(path.dirname(dest), { recursive: true });
 
@@ -96,9 +95,9 @@ async function downloadOne(relPath) {
   }
 
   const buf = Buffer.from(await res.arrayBuffer());
-  if (buf.length > MAX_AUTO_BYTES) {
+  if (buf.length > maxBytes) {
     console.warn(
-      `  skip large ${relPath} (${(buf.length / (1024 * 1024)).toFixed(1)} MB, limit ${(MAX_AUTO_BYTES / (1024 * 1024)).toFixed(0)} MB)`,
+      `  skip large ${relPath} (${(buf.length / (1024 * 1024)).toFixed(1)} MB, limit ${(maxBytes / (1024 * 1024)).toFixed(0)} MB)`,
     );
     return "large";
   }
@@ -114,19 +113,16 @@ async function main() {
   let ok = 0;
   let skip = 0;
   let miss = 0;
-  let remote = 0;
-
   for (const ref of refs) {
     const result = await downloadOne(ref);
     if (result === "ok") ok++;
     else if (result === "skip") skip++;
-    else if (result === "remote") remote++;
     else miss++;
   }
 
   const pruned = pruneOversizedUploads();
   console.log(
-    `fetch-uploads: downloaded=${ok} cached=${skip} remote=${remote} missing=${miss} pruned=${pruned}`,
+    `fetch-uploads: downloaded=${ok} cached=${skip} missing=${miss} pruned=${pruned}`,
   );
 
   const maxMiss = Number(process.env.FETCH_UPLOADS_MAX_MISS ?? 0);

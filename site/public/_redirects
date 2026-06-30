@@ -1,4 +1,12 @@
 /blog-post/:slug /blog/:slug 301
+/palitra/ral/ /palitra/palitra-ral/ 301
+/palitra/ral /palitra/palitra-ral/ 301
+/palitra/ncs/ /palitra/palitra-ncs/ 301
+/palitra/ncs /palitra/palitra-ncs/ 301
+/palitra/biofa/ /palitra/palitra-cvetov-biofa/ 301
+/palitra/biofa /palitra/palitra-cvetov-biofa/ 301
+/palitra/cvetov-biofa/ /palitra/palitra-cvetov-biofa/ 301
+/palitra/cvetov-biofa /palitra/palitra-cvetov-biofa/ 301
 /krashenaja-vagonka/ /katalog/krashenaja-vagonka/ 301
 /krashenaja-imitacija-brusa/ /katalog/krashenaja-imitacija-brusa/ 301
 /krashenyj-planken/ /katalog/planken/ 301

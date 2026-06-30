@@ -18,4 +18,4 @@ for (const ref of collectUploadRefs()) {
   execSync(`git add "${rel.replace(/\\/g, "/")}"`, { cwd: repoRoot, stdio: "inherit" });
 }
 
-console.log(`staged ${collectUploadRefs().length} webp asset(s)`);
+console.log(`staged ${collectUploadRefs().length} upload asset(s)`);
