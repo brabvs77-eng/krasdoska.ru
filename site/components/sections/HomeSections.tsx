@@ -46,7 +46,6 @@ const advantages = [
   },
 ];
 
-/* Parity: белые линейные иконки, как в оригинале (Elementor font-icons). */
 const iconProps = {
   width: 46,
   height: 46,
@@ -58,6 +57,7 @@ const iconProps = {
   strokeLinejoin: "round" as const,
 };
 
+/* Parity: белые линейные иконки, как в оригинале (Elementor font-icons). */
 const advantageIcons = [
   // Высокое качество — палец вверх
   <svg key="i0" {...iconProps}><path d="M7 10v9H4a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1h3Z" /><path d="M7 10l3.5-6.5a1.8 1.8 0 0 1 2.5 1.6V9h5a1.8 1.8 0 0 1 1.8 2.1l-1 6A1.8 1.8 0 0 1 17 19H7" /></svg>,
@@ -165,7 +165,7 @@ const services = [
     image: SERVICE_IMAGES.oil,
   },
   {
-    href: "/uslugi/",
+    href: "/kontakty/",
     title: "Реставрация",
     cta: "Подробнее",
     image: SERVICE_IMAGES.restoration,
@@ -175,15 +175,17 @@ const services = [
 /* Parity: 3 карточки с фоновыми фото, тёмный градиент, заголовок + оранжевый тег снизу. */
 export function ServicesPreviewSection() {
   return (
-    <section className="section-dark py-16 sm:py-20">
-      <div className="container-content">
+    <section className="section-dark relative overflow-hidden py-16 sm:py-20">
+      {/* Parity: оранжевый угловой блок-акцент, выходящий за правый край */}
+      <div aria-hidden="true" className="pointer-events-none absolute -right-16 bottom-0 hidden h-72 w-72 translate-y-1/3 bg-accent lg:block" />
+      <div className="container-content relative">
         <h2 className="section-title">Наши услуги</h2>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {services.map((item) => (
             <Link
               key={item.title}
               href={item.href}
-              className="group relative flex min-h-[300px] flex-col justify-end overflow-hidden rounded-2xl"
+              className="group relative flex min-h-[480px] flex-col justify-end overflow-hidden rounded-2xl"
             >
               <Image
                 src={item.image}
@@ -193,12 +195,12 @@ export function ServicesPreviewSection() {
                 className="object-cover transition duration-500 group-hover:scale-105"
                 unoptimized
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
               <div className="relative p-6">
-                <h3 className="text-lg font-semibold leading-snug text-white">{item.title}</h3>
-                <span className="mt-4 inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-white transition group-hover:bg-accent-dark">
+                <h3 className="text-xl font-semibold leading-snug text-white">{item.title}</h3>
+                <span className="mt-5 flex w-full items-center justify-between rounded-lg bg-accent px-5 py-3.5 text-sm font-semibold text-white transition group-hover:bg-accent-dark">
                   {item.cta}
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17 17 7M8 7h9v9" /></svg>
                 </span>
               </div>
             </Link>
@@ -222,6 +224,8 @@ export function ColorsSection() {
       />
       {/* Тёмный градиент: слева плотный, справа лес проступает — как в оригинале */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#1c1512] via-[#1c1512]/95 to-[#1c1512]/40" />
+      {/* Parity: оранжевый блок-акцент справа поверх леса */}
+      <div aria-hidden="true" className="pointer-events-none absolute -right-20 top-1/2 hidden h-72 w-72 -translate-y-1/2 bg-accent lg:block" />
       <div className="container-content relative">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
           <h2 className="section-title text-white">
@@ -301,8 +305,10 @@ export function CtaSection() {
   const phoneHref = phoneDigits ? `tel:${phoneDigits}` : "tel:88002509055";
 
   return (
-    <section id="form" className="section-dark scroll-mt-24 py-16 sm:py-20">
-      <div className="container-content grid gap-10 lg:grid-cols-2 lg:items-start">
+    <section id="form" className="section-dark relative overflow-hidden scroll-mt-24 py-16 sm:py-20">
+      {/* Parity: оранжевый угловой блок-акцент справа */}
+      <div aria-hidden="true" className="pointer-events-none absolute -right-24 top-0 hidden h-80 w-80 bg-accent lg:block" />
+      <div className="container-content relative grid gap-10 lg:grid-cols-2 lg:items-start">
         <div>
           <h2 className="section-title">Остались вопросы?</h2>
           <p className="section-subtitle mt-4">
