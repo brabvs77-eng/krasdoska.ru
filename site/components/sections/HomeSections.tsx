@@ -308,18 +308,18 @@ export function CtaSection() {
     <section id="form" className="section-dark relative overflow-hidden scroll-mt-24 py-16 sm:py-20">
       {/* Parity: оранжевый угловой блок-акцент справа */}
       <div aria-hidden="true" className="pointer-events-none absolute -right-24 top-0 hidden h-80 w-80 bg-accent lg:block" />
-      <div className="container-content relative grid gap-10 lg:grid-cols-2 lg:items-start">
-        <div>
-          <h2 className="section-title">Остались вопросы?</h2>
-          <p className="section-subtitle mt-4">
-            Заполните простую форму — мы свяжемся с вами и поможем подобрать подходящие решения.
-          </p>
+      <div className="container-content relative">
+        <h2 className="section-title">Остались вопросы?</h2>
+        <p className="section-subtitle mt-4 max-w-2xl">
+          Заполните простую форму — мы свяжемся с вами и поможем подобрать подходящие решения.
+        </p>
+        <div className="mt-10 max-w-4xl">
+          <ContactForm
+            email={contacts.email}
+            phoneHref={phoneHref}
+            formEndpoint={integrations.formEndpoint || undefined}
+          />
         </div>
-        <ContactForm
-          email={contacts.email}
-          phoneHref={phoneHref}
-          formEndpoint={integrations.formEndpoint || undefined}
-        />
       </div>
     </section>
   );

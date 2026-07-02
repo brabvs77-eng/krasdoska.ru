@@ -18,13 +18,7 @@ export default function ServicesPage() {
 
   return (
     <>
-      <PageHero
-        title={page?.title ?? "Наши услуги"}
-        description={
-          getExcerpt(page) ??
-          "Покраска на станке, нанесение защитных составов и реставрация деревянных поверхностей."
-        }
-      />
+      <PageHero title="Наши услуги" />
       <ServicesPreviewSection />
       <MarketingPageFooter />
     </>

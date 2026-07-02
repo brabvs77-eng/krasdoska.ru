@@ -22,7 +22,13 @@ export function PageHero({ title, description, action }: PageHeroProps) {
       />
       <div className="absolute inset-0 bg-brand-dark/60" />
       <div className="container-content relative py-20 pt-28 text-white sm:py-24 sm:pt-32 lg:py-28 lg:pt-36">
-        <h1 className="max-w-4xl text-3xl font-semibold uppercase tracking-tight text-white sm:text-4xl lg:text-[50px] lg:leading-[1.1]">
+        {/* Parity: хлебные крошки «Главная / …» */}
+        <nav className="mb-6 flex items-center gap-2 text-sm text-white/60">
+          <Link href="/" className="transition-colors hover:text-white">Главная</Link>
+          <span aria-hidden="true">/</span>
+          <span className="text-white/85">{title}</span>
+        </nav>
+        <h1 className="max-w-4xl text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-[50px] lg:leading-[1.1]">
           {title}
         </h1>
         {description && (
