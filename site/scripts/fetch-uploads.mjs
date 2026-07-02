@@ -15,8 +15,13 @@ const PRODUCTION = "https://krashenayadoska.ru/wp-content/uploads";
 const CF_PAGES_MAX_BYTES = 25 * 1024 * 1024;
 const MAX_AUTO_BYTES = Number(process.env.FETCH_UPLOADS_MAX_MB ?? 24) * 1024 * 1024;
 
-/** Exceeds Cloudflare Pages 25 MiB — kept for SSH deploy, skipped on CF prune */
-const ALLOW_OVERSIZED = new Set([
+/**
+ * Файлы больше лимита Cloudflare Pages (25 МБ). Их НЕ кладём в сборку
+ * (иначе валидация ассетов CF Pages падает и весь деплой отклоняется),
+ * а отдаём с origin через public/_redirects (302 на krashenayadoska.ru).
+ * Такие пути не скачиваем, не считаем как miss и вырезаем при прунинге.
+ */
+const EXCLUDE_FROM_BUILD = new Set([
   "/uploads/2026/03/video_2026-03-13_23-56-23.mp4",
 ]);
 
@@ -63,9 +68,8 @@ export function pruneOversizedUploads() {
         walk(full);
         continue;
       }
-      const rel = `/uploads/${path.relative(DEST_ROOT, full).replace(/\\/g, "/")}`;
       const size = fs.statSync(full).size;
-      if (size > CF_PAGES_MAX_BYTES && !ALLOW_OVERSIZED.has(rel)) {
+      if (size > CF_PAGES_MAX_BYTES) {
         fs.unlinkSync(full);
         removed++;
         console.warn(`  prune ${full.replace(SITE_ROOT, "")} (${(size / (1024 * 1024)).toFixed(1)} MB)`);
@@ -79,7 +83,7 @@ export function pruneOversizedUploads() {
 
 async function downloadOne(relPath) {
   const remotePath = relPath.replace(/^\/uploads\//, "");
-  const maxBytes = ALLOW_OVERSIZED.has(relPath) ? 200 * 1024 * 1024 : MAX_AUTO_BYTES;
+  const maxBytes = MAX_AUTO_BYTES;
   const dest = path.join(DEST_ROOT, remotePath);
   fs.mkdirSync(path.dirname(dest), { recursive: true });
 
@@ -113,7 +117,12 @@ async function main() {
   let ok = 0;
   let skip = 0;
   let miss = 0;
+  let excluded = 0;
   for (const ref of refs) {
+    if (EXCLUDE_FROM_BUILD.has(ref)) {
+      excluded++;
+      continue;
+    }
     const result = await downloadOne(ref);
     if (result === "ok") ok++;
     else if (result === "skip") skip++;
@@ -122,7 +131,7 @@ async function main() {
 
   const pruned = pruneOversizedUploads();
   console.log(
-    `fetch-uploads: downloaded=${ok} cached=${skip} missing=${miss} pruned=${pruned}`,
+    `fetch-uploads: downloaded=${ok} cached=${skip} missing=${miss} pruned=${pruned} excluded=${excluded}`,
   );
 
   const maxMiss = Number(process.env.FETCH_UPLOADS_MAX_MISS ?? 0);

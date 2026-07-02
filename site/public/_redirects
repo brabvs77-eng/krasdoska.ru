@@ -1,3 +1,6 @@
+# Крупное видео (>25 МБ) не кладём в сборку CF Pages — отдаём с origin
+/uploads/2026/03/video_2026-03-13_23-56-23.mp4 https://krashenayadoska.ru/wp-content/uploads/2026/03/video_2026-03-13_23-56-23.mp4 302
+
 /blog-post/:slug /blog/:slug 301
 /palitra/ral/ /palitra/palitra-ral/ 301
 /palitra/ral /palitra/palitra-ral/ 301
