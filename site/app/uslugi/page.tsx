@@ -18,7 +18,10 @@ export default function ServicesPage() {
 
   return (
     <>
-      <PageHero title="Наши услуги" />
+      <PageHero
+        title="Наши услуги"
+        breadcrumbs={[{ label: "Главная", href: "/" }, { label: "Услуги" }]}
+      />
       <ServicesPreviewSection />
       <MarketingPageFooter />
     </>

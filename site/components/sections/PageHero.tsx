@@ -1,14 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Breadcrumbs, type BreadcrumbItem } from "@/components/layout/Breadcrumbs";
 import { PAGE_HERO_BG } from "@/lib/media";
 
 type PageHeroProps = {
   title: string;
   description?: string;
   action?: { href: string; label: string };
+  breadcrumbs?: BreadcrumbItem[];
 };
 
-export function PageHero({ title, description, action }: PageHeroProps) {
+export function PageHero({ title, description, action, breadcrumbs }: PageHeroProps) {
   return (
     <section className="relative overflow-hidden border-b border-brand-dark/30">
       <Image
@@ -22,12 +24,10 @@ export function PageHero({ title, description, action }: PageHeroProps) {
       />
       <div className="absolute inset-0 bg-brand-dark/60" />
       <div className="container-content relative py-20 pt-28 text-white sm:py-24 sm:pt-32 lg:py-28 lg:pt-36">
-        {/* Parity: хлебные крошки «Главная / …» */}
-        <nav className="mb-6 flex items-center gap-2 text-sm text-white/60">
-          <Link href="/" className="transition-colors hover:text-white">Главная</Link>
-          <span aria-hidden="true">/</span>
-          <span className="text-white/85">{title}</span>
-        </nav>
+        {/* Parity: хлебные крошки «Главная / …» в hero */}
+        {breadcrumbs && breadcrumbs.length > 0 && (
+          <Breadcrumbs items={breadcrumbs} variant="dark" />
+        )}
         <h1 className="max-w-4xl text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-[50px] lg:leading-[1.1]">
           {title}
         </h1>
