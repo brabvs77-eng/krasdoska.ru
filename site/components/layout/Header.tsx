@@ -9,6 +9,7 @@ export function Header() {
   const phone = contacts.phones[0];
   const logo = "/logotype.svg";
   const digits = (phone ?? "").replace(/\D/g, "");
+  const waNumber = digits.replace(/^8/, "7");
 
   const socials = [
     {
@@ -55,7 +56,7 @@ export function Header() {
               alt={site.name}
               width={48}
               height={48}
-              className="h-11 w-auto max-w-[180px] object-contain"
+              className="h-11 w-auto max-w-[180px] object-contain brightness-0 invert"
               unoptimized
             />
           ) : (
@@ -114,9 +115,7 @@ export function Header() {
 }
 
 function MobileNav() {
-  const { navigation, contacts } = getSiteSettings();
-  const phone = contacts.phones[0];
-  const digits = (phone ?? "").replace(/\D/g, "");
+  const { navigation } = getSiteSettings();
 
   return (
     <details className="relative lg:hidden">
@@ -127,14 +126,6 @@ function MobileNav() {
         className="absolute right-0 top-full mt-2 min-w-48 rounded-lg border border-neutral-200 bg-white p-2 text-surface-dark shadow-lg"
         aria-label="Мобильное меню"
       >
-        {phone && (
-          <a
-            href={`tel:${digits}`}
-            className="block rounded-md px-3 py-2 text-sm font-semibold text-brand"
-          >
-            {phone}
-          </a>
-        )}
         {navigation.map((item) => (
           <Link
             key={item.href}

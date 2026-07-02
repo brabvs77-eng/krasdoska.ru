@@ -5,8 +5,8 @@ import { getSiteSettings } from "@/lib/site";
 export function Footer() {
   const { site, contacts, navigation } = getSiteSettings();
   const phone = contacts.phones[0] ?? "8 (800) 250-90-55";
-  const phoneDigits = phone.replace(/\D/g, "");
-  const phoneHref = `tel:${phoneDigits}`;
+  const phonePlain = phone.replace(/\s|\(|\)|-/g, "");
+  const phoneHref = `tel:${phonePlain}`;
   const year = new Date().getFullYear();
 
   return (
@@ -20,7 +20,7 @@ export function Footer() {
               alt={site.name}
               width={180}
               height={56}
-              className="h-14 w-auto max-w-[200px] object-contain"
+              className="h-14 w-auto max-w-[200px] object-contain brightness-0 invert"
               unoptimized
             />
             <div>
@@ -36,7 +36,7 @@ export function Footer() {
                 href={phoneHref}
                 className="whitespace-nowrap text-3xl font-bold tracking-tight text-white transition hover:text-accent sm:text-4xl"
               >
-                {phone}
+                {phonePlain}
               </a>
               <a
                 href={`mailto:${contacts.email}`}
