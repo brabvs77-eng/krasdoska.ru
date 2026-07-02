@@ -1,4 +1,8 @@
-export const TECHNOLOGY_VIDEO = "/uploads/2026/03/video_2026-03-13_23-56-23.mp4";
+/** Self-hosted on SSH deploy; CDN on Cloudflare Pages (25 MiB asset limit). */
+export const TECHNOLOGY_VIDEO =
+  process.env.CF_PAGES === "1"
+    ? "https://krashenayadoska.ru/wp-content/uploads/2026/03/video_2026-03-13_23-56-23.mp4"
+    : "/uploads/2026/03/video_2026-03-13_23-56-23.mp4";
 
 export const TECHNOLOGY_IMAGE = "/uploads/2025/04/frame-19-2.webp";
 

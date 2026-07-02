@@ -14,8 +14,6 @@ export async function generateMetadata() {
 }
 
 export default function ServicesPage() {
-  const page = getPage("uslugi");
-
   return (
     <>
       <PageHero
