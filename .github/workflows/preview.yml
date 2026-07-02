@@ -1,4 +1,4 @@
-name: Deploy (develop → server)
+name: Deploy (develop → kraskadoska.ru)
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: deploy-krashenayadoska-develop
+  group: deploy-kraskadoska-develop
   cancel-in-progress: false
 
 defaults:
@@ -55,9 +55,9 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            BACKUP_DIR=~/backups/krashenayadoska-$(date +%Y%m%d-%H%M%S)
+            BACKUP_DIR=~/backups/kraskadoska-$(date +%Y%m%d-%H%M%S)
             mkdir -p "$BACKUP_DIR"
-            cp -a /var/www/u3070106/data/www/krashenayadoska.ru "$BACKUP_DIR/" || true
+            cp -a /var/www/u3070106/data/www/kraskadoska.ru "$BACKUP_DIR/" || true
 
       - name: Remove old build
         uses: appleboy/ssh-action@v1.2.0
@@ -66,7 +66,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            TARGET=/var/www/u3070106/data/www/krashenayadoska.ru
+            TARGET=/var/www/u3070106/data/www/kraskadoska.ru
             find "$TARGET" -mindepth 1 -maxdepth 1 ! -name '.htaccess' -exec rm -rf {} +
 
       - name: Deploy static build
@@ -76,7 +76,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: "site/out/"
-          target: /var/www/u3070106/data/www/krashenayadoska.ru/
+          target: /var/www/u3070106/data/www/kraskadoska.ru/
           strip_components: 2
           overwrite: true
 
@@ -87,4 +87,4 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            chown -R u3070106:u3070106 /var/www/u3070106/data/www/krashenayadoska.ru
+            chown -R u3070106:u3070106 /var/www/u3070106/data/www/kraskadoska.ru
