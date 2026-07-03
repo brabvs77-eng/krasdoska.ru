@@ -177,7 +177,7 @@ export function ServicesPreviewSection() {
   return (
     <section className="section-dark relative overflow-hidden py-16 sm:py-20 lg:overflow-visible">
       {/* Parity: чёткое фото леса справа — заходит ЗА карточки и вниз в секцию «Цвета» */}
-      <div aria-hidden="true" className="pointer-events-none absolute right-0 top-24 z-0 hidden h-[1400px] w-[46%] overflow-hidden lg:block">
+      <div aria-hidden="true" className="pointer-events-none absolute right-0 top-1/2 z-0 hidden h-[820px] w-[46%] overflow-hidden lg:block">
         <Image src={COLORS_BG} alt="" fill sizes="46vw" className="object-cover object-top" unoptimized />
       </div>
       <div className="container-content relative z-10">
