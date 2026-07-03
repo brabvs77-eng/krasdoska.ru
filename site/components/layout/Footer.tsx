@@ -23,11 +23,6 @@ export function Footer() {
               className="h-14 w-auto max-w-[200px] object-contain brightness-0 invert"
               unoptimized
             />
-            <div>
-              <p className="text-xl font-bold tracking-tight text-white">{site.name}</p>
-              <p className="mt-1 text-xs uppercase tracking-[0.18em] text-white/45">Готовое решение</p>
-              <p className="mt-2 text-sm text-white/70">Спасибо, что выбираете нас</p>
-            </div>
           </div>
 
           <div className="flex items-start gap-5">

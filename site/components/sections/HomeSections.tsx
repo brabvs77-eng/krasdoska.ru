@@ -176,8 +176,6 @@ const services = [
 export function ServicesPreviewSection() {
   return (
     <section className="section-dark relative overflow-hidden py-16 sm:py-20">
-      {/* Parity: оранжевый угловой блок-акцент, выходящий за правый край */}
-      <div aria-hidden="true" className="pointer-events-none absolute -right-16 bottom-0 hidden h-72 w-72 translate-y-1/3 bg-accent lg:block" />
       <div className="container-content relative">
         <h2 className="section-title">Наши услуги</h2>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
@@ -213,7 +211,7 @@ export function ServicesPreviewSection() {
 
 export function ColorsSection() {
   return (
-    <section className="relative overflow-hidden bg-[#241c19] py-16 text-white sm:py-20">
+    <section className="relative bg-[#241c19] py-16 text-white sm:py-20">
       <Image
         src={COLORS_BG}
         alt=""
@@ -224,9 +222,12 @@ export function ColorsSection() {
       />
       {/* Тёмный градиент: слева плотный, справа лес проступает — как в оригинале */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#1c1512] via-[#1c1512]/95 to-[#1c1512]/40" />
-      {/* Parity: оранжевый блок-акцент справа поверх леса */}
-      <div aria-hidden="true" className="pointer-events-none absolute -right-20 top-1/2 hidden h-72 w-72 -translate-y-1/2 bg-accent lg:block" />
-      <div className="container-content relative">
+      {/* Parity: оранжевый блок с лесом справа, заходящий вверх на секцию «Услуги» */}
+      <div aria-hidden="true" className="pointer-events-none absolute right-0 -top-40 z-10 hidden h-[560px] w-[300px] overflow-hidden bg-accent xl:w-[360px] lg:block">
+        <Image src={COLORS_BG} alt="" fill sizes="360px" className="object-cover mix-blend-multiply opacity-70" unoptimized />
+        <div className="absolute inset-0 bg-accent/30" />
+      </div>
+      <div className="container-content relative z-20">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
           <h2 className="section-title text-white">
             Эксклюзивные цвета
@@ -306,19 +307,29 @@ export function CtaSection() {
 
   return (
     <section id="form" className="section-dark relative overflow-hidden scroll-mt-24 py-16 sm:py-20">
-      {/* Parity: оранжевый угловой блок-акцент справа */}
-      <div aria-hidden="true" className="pointer-events-none absolute -right-24 top-0 hidden h-80 w-80 bg-accent lg:block" />
-      <div className="container-content relative">
-        <h2 className="section-title">Остались вопросы?</h2>
-        <p className="section-subtitle mt-4 max-w-2xl">
-          Заполните простую форму — мы свяжемся с вами и поможем подобрать подходящие решения.
-        </p>
-        <div className="mt-10 max-w-4xl">
-          <ContactForm
-            email={contacts.email}
-            phoneHref={phoneHref}
-            formEndpoint={integrations.formEndpoint || undefined}
-          />
+      <div className="container-content relative grid items-center gap-10 lg:grid-cols-[1fr_minmax(300px,380px)]">
+        <div>
+          <h2 className="section-title">Остались вопросы?</h2>
+          <p className="section-subtitle mt-4 max-w-xl">
+            Заполните простую форму — мы свяжемся с вами и поможем подобрать подходящие решения.
+          </p>
+          <div className="mt-8">
+            <ContactForm
+              email={contacts.email}
+              phoneHref={phoneHref}
+              formEndpoint={integrations.formEndpoint || undefined}
+            />
+          </div>
+        </div>
+        {/* Parity: оранжевый блок из разных форм со структурой дерева */}
+        <div aria-hidden="true" className="relative hidden h-full min-h-[300px] lg:block">
+          <div className="absolute right-0 top-0 h-[62%] w-[78%] overflow-hidden rounded-2xl bg-accent">
+            <Image src={WOOD_TEXTURE_BG} alt="" fill sizes="360px" className="object-cover opacity-40 mix-blend-multiply" unoptimized />
+          </div>
+          <div className="absolute bottom-0 left-0 h-[54%] w-[52%] overflow-hidden rounded-2xl bg-accent-dark">
+            <Image src={WOOD_TEXTURE_BG} alt="" fill sizes="200px" className="object-cover opacity-30 mix-blend-multiply" unoptimized />
+          </div>
+          <div className="absolute bottom-[10%] right-[6%] h-16 w-16 rounded-xl bg-accent" />
         </div>
       </div>
     </section>

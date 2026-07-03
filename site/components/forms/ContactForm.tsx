@@ -96,7 +96,7 @@ export function ContactForm({
   return (
     <form onSubmit={handleSubmit}>
       {showTitle && <h2 className="mb-6 text-lg font-semibold text-white">{title}</h2>}
-      <div className="grid gap-6 sm:grid-cols-3">
+      <div className="grid gap-x-6 gap-y-2 sm:grid-cols-2">
         <input
           type="text"
           name="name"
@@ -118,11 +118,11 @@ export function ContactForm({
           name="message"
           placeholder="Сообщение"
           disabled={submitting}
-          className={inputClass}
+          className={`${inputClass} sm:col-span-2`}
         />
       </div>
-      <div className="mt-8 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-        <label className="flex max-w-md items-start gap-3 text-sm leading-snug text-white/75">
+      <div className="mt-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <label className="flex max-w-sm items-start gap-2.5 text-xs leading-snug text-white/70">
           <input
             type="checkbox"
             name="consent"

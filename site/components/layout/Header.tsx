@@ -64,7 +64,6 @@ export function Header() {
               KD
             </span>
           )}
-          <span className="hidden text-lg font-bold sm:inline">{site.name}</span>
         </Link>
 
         <nav className="hidden items-center gap-5 lg:flex xl:gap-6" aria-label="Основное меню">
