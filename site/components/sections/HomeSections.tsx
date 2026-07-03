@@ -175,8 +175,12 @@ const services = [
 /* Parity: 3 карточки с фоновыми фото, тёмный градиент, заголовок + оранжевый тег снизу. */
 export function ServicesPreviewSection() {
   return (
-    <section className="section-dark relative overflow-hidden py-16 sm:py-20">
-      <div className="container-content relative">
+    <section className="section-dark relative overflow-hidden py-16 sm:py-20 lg:overflow-visible">
+      {/* Parity: чёткое фото леса справа — заходит ЗА карточки и вниз в секцию «Цвета» */}
+      <div aria-hidden="true" className="pointer-events-none absolute right-0 top-24 z-0 hidden h-[1400px] w-[46%] overflow-hidden lg:block">
+        <Image src={COLORS_BG} alt="" fill sizes="46vw" className="object-cover object-top" unoptimized />
+      </div>
+      <div className="container-content relative z-10">
         <h2 className="section-title">Наши услуги</h2>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {services.map((item) => (
@@ -211,23 +215,10 @@ export function ServicesPreviewSection() {
 
 export function ColorsSection() {
   return (
-    <section className="relative bg-[#241c19] py-16 text-white sm:py-20">
-      <Image
-        src={COLORS_BG}
-        alt=""
-        fill
-        sizes="100vw"
-        className="object-cover object-right"
-        unoptimized
-      />
-      {/* Тёмный градиент: слева плотный, справа лес проступает — как в оригинале */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#1c1512] via-[#1c1512]/95 to-[#1c1512]/40" />
-      {/* Parity: оранжевый блок с лесом справа, заходящий вверх на секцию «Услуги» */}
-      <div aria-hidden="true" className="pointer-events-none absolute right-0 -top-40 z-10 hidden h-[560px] w-[300px] overflow-hidden bg-accent xl:w-[360px] lg:block">
-        <Image src={COLORS_BG} alt="" fill sizes="360px" className="object-cover mix-blend-multiply opacity-70" unoptimized />
-        <div className="absolute inset-0 bg-accent/30" />
-      </div>
-      <div className="container-content relative z-20">
+    <section className="relative py-16 text-white sm:py-20">
+      {/* Тёмная панель: на десктопе кроет левые ~54%, справа просвечивает лес из секции выше */}
+      <div className="absolute inset-0 bg-[#141210] lg:right-[46%]" />
+      <div className="container-content relative z-10 lg:pr-[42%]">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
           <h2 className="section-title text-white">
             Эксклюзивные цвета
