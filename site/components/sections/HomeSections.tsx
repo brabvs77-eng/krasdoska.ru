@@ -298,29 +298,28 @@ export function CtaSection() {
 
   return (
     <section id="form" className="section-dark relative overflow-hidden scroll-mt-24 py-16 sm:py-20">
-      <div className="container-content relative grid items-center gap-10 lg:grid-cols-[1fr_minmax(300px,380px)]">
-        <div>
-          <h2 className="section-title">Остались вопросы?</h2>
-          <p className="section-subtitle mt-4 max-w-xl">
-            Заполните простую форму — мы свяжемся с вами и поможем подобрать подходящие решения.
-          </p>
-          <div className="mt-8">
-            <ContactForm
-              email={contacts.email}
-              phoneHref={phoneHref}
-              formEndpoint={integrations.formEndpoint || undefined}
-            />
-          </div>
-        </div>
-        {/* Parity: оранжевый блок из разных форм со структурой дерева */}
-        <div aria-hidden="true" className="relative hidden h-full min-h-[300px] lg:block">
-          <div className="absolute right-0 top-0 h-[62%] w-[78%] overflow-hidden rounded-2xl bg-accent">
-            <Image src={WOOD_TEXTURE_BG} alt="" fill sizes="360px" className="object-cover opacity-40 mix-blend-multiply" unoptimized />
-          </div>
-          <div className="absolute bottom-0 left-0 h-[54%] w-[52%] overflow-hidden rounded-2xl bg-accent-dark">
-            <Image src={WOOD_TEXTURE_BG} alt="" fill sizes="200px" className="object-cover opacity-30 mix-blend-multiply" unoptimized />
-          </div>
-          <div className="absolute bottom-[10%] right-[6%] h-16 w-16 rounded-xl bg-accent" />
+      {/* Parity: одна оранжевая плита с текстурой, bleed за правый край, на уровне заголовка */}
+      <div
+        aria-hidden="true"
+        className="absolute right-0 top-12 hidden h-64 w-[34%] overflow-hidden bg-accent lg:block"
+      >
+        <Image
+          src={WOOD_TEXTURE_BG}
+          alt=""
+          fill
+          sizes="480px"
+          className="object-cover opacity-40 mix-blend-multiply"
+          unoptimized
+        />
+      </div>
+      <div className="container-content relative">
+        <h2 className="section-title max-w-xl">Остались вопросы?</h2>
+        <div className="mt-10">
+          <ContactForm
+            email={contacts.email}
+            phoneHref={phoneHref}
+            formEndpoint={integrations.formEndpoint || undefined}
+          />
         </div>
       </div>
     </section>

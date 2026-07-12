@@ -89,18 +89,18 @@ export function ContactForm({
     );
   }
 
-  // Parity: тёмная форма эталона — инлайн-поля с подчёркиванием, чекбокс согласия, оранжевая кнопка
+  // Parity: поля и кнопка в одну строку, мелкие тексты под полями в две колонки
   const inputClass =
     "w-full border-0 border-b border-white/30 bg-transparent px-0 py-3 text-base text-white placeholder-white/50 outline-none transition-colors focus:border-accent disabled:opacity-60";
 
   return (
     <form onSubmit={handleSubmit}>
       {showTitle && <h2 className="mb-6 text-lg font-semibold text-white">{title}</h2>}
-      <div className="grid gap-x-5 gap-y-1 sm:grid-cols-3">
+      <div className="grid gap-x-6 gap-y-4 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_auto] lg:items-end">
         <input
           type="text"
           name="name"
-          placeholder="Имя"
+          placeholder="Имя*"
           required
           disabled={submitting}
           className={inputClass}
@@ -108,7 +108,7 @@ export function ContactForm({
         <input
           type="tel"
           name="phone"
-          placeholder="Телефон"
+          placeholder="Телефон*"
           required
           disabled={submitting}
           className={inputClass}
@@ -120,9 +120,20 @@ export function ContactForm({
           disabled={submitting}
           className={inputClass}
         />
+        <button
+          type="submit"
+          className="btn-primary inline-flex shrink-0 items-center gap-2 justify-self-start lg:justify-self-end"
+          disabled={submitting}
+        >
+          {submitting ? "Отправка…" : submitLabel}
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17 17 7M8 7h9v9" /></svg>
+        </button>
       </div>
-      <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <label className="flex max-w-sm items-start gap-2.5 text-xs leading-snug text-white/70">
+      <div className="mt-5 grid gap-x-6 gap-y-3 text-xs leading-snug text-white/60 sm:grid-cols-2 lg:max-w-3xl">
+        <p>
+          Заполните простую форму — мы свяжемся с вами и поможем подобрать подходящие решения.
+        </p>
+        <label className="flex items-start gap-2.5">
           <input
             type="checkbox"
             name="consent"
@@ -134,14 +145,6 @@ export function ContactForm({
             Нажимая кнопку «Отправить», вы соглашаетесь на обработку персональных данных
           </span>
         </label>
-        <button
-          type="submit"
-          className="btn-primary inline-flex shrink-0 items-center gap-2"
-          disabled={submitting}
-        >
-          {submitting ? "Отправка…" : submitLabel}
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17 17 7M8 7h9v9" /></svg>
-        </button>
       </div>
     </form>
   );
