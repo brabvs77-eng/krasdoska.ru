@@ -20,7 +20,7 @@ export default function ServicesPage() {
         title="Наши услуги"
         breadcrumbs={[{ label: "Главная", href: "/" }, { label: "Услуги" }]}
       />
-      <ServicesPreviewSection />
+      <ServicesPreviewSection variant="marketing" />
       <MarketingPageFooter />
     </>
   );
