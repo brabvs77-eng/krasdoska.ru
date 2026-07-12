@@ -173,13 +173,42 @@ const services = [
 ];
 
 /* Parity: 3 карточки с фоновыми фото, тёмный градиент, заголовок + оранжевый тег снизу. */
-export function ServicesPreviewSection() {
+type ServicesPreviewSectionProps = {
+  /** "home" — лес с bleed вниз (текущее поведение, главная).
+      "marketing" — производственное фото с оранжевым multiply, ограничено секцией. */
+  variant?: "home" | "marketing";
+};
+
+export function ServicesPreviewSection({ variant = "home" }: ServicesPreviewSectionProps) {
+  const isMarketing = variant === "marketing";
   return (
-    <section className="section-dark relative overflow-hidden py-16 sm:py-20 lg:overflow-visible">
-      {/* Parity: чёткое фото леса справа — заходит ЗА карточки и вниз в секцию «Цвета» */}
-      <div aria-hidden="true" className="pointer-events-none absolute right-0 top-1/2 z-0 hidden h-[820px] w-[46%] overflow-hidden lg:block">
-        <Image src={COLORS_BG} alt="" fill sizes="46vw" className="object-cover object-top" unoptimized />
-      </div>
+    <section
+      className={`section-dark relative py-16 sm:py-20 ${
+        isMarketing ? "overflow-hidden" : "overflow-hidden lg:overflow-visible"
+      }`}
+    >
+      {isMarketing ? (
+        /* Parity /uslugi: производственное фото с оранжевым multiply за третьей карточкой,
+           bleed вправо до края окна, по высоте — только в пределах секции */
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute bottom-0 right-0 top-1/3 z-0 hidden w-[40%] overflow-hidden bg-accent lg:block"
+        >
+          <Image
+            src={PRODUCTION_IMAGE}
+            alt=""
+            fill
+            sizes="40vw"
+            className="object-cover opacity-45 mix-blend-multiply"
+            unoptimized
+          />
+        </div>
+      ) : (
+        /* Parity: чёткое фото леса справа — заходит ЗА карточки и вниз в секцию «Цвета» */
+        <div aria-hidden="true" className="pointer-events-none absolute right-0 top-1/2 z-0 hidden h-[820px] w-[46%] overflow-hidden lg:block">
+          <Image src={COLORS_BG} alt="" fill sizes="46vw" className="object-cover object-top" unoptimized />
+        </div>
+      )}
       <div className="container-content relative z-10">
         <h2 className="section-title">Наши услуги</h2>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
@@ -301,7 +330,7 @@ export function CtaSection() {
       {/* Parity: одна оранжевая плита с текстурой, bleed за правый край, на уровне заголовка */}
       <div
         aria-hidden="true"
-        className="absolute right-0 top-12 hidden h-64 w-[34%] overflow-hidden bg-accent lg:block"
+        className="absolute right-0 top-12 z-0 hidden h-64 w-[30%] overflow-hidden bg-accent lg:block"
       >
         <Image
           src={WOOD_TEXTURE_BG}
@@ -312,9 +341,9 @@ export function CtaSection() {
           unoptimized
         />
       </div>
-      <div className="container-content relative">
+      <div className="container-content relative z-10">
         <h2 className="section-title max-w-xl">Остались вопросы?</h2>
-        <div className="mt-10">
+        <div className="mt-10 lg:max-w-[66%]">
           <ContactForm
             email={contacts.email}
             phoneHref={phoneHref}

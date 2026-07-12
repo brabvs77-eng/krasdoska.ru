@@ -10,7 +10,7 @@ export function MarketingPageFooter({ withFaq = true }: MarketingPageFooterProps
   return (
     <>
       {withFaq && (
-        <section className="section-dark pb-16 sm:pb-20">
+        <section className="section-dark relative z-10 pb-16 sm:pb-20">
           <div className="container-content">
             <FaqAccordion items={CATALOG_FAQ} title="Часто задаваемые вопросы" variant="dark" />
           </div>
