@@ -28,7 +28,7 @@ export function ServiceDetailContent({ service, breadcrumbs }: Props) {
   return (
     <>
       <section className="section-dark relative overflow-hidden py-12 sm:py-16">
-        <div className="container-content grid items-center gap-10 lg:grid-cols-[1fr_minmax(320px,460px)]">
+        <div className="container-content grid items-center gap-10 lg:grid-cols-[1fr_minmax(380px,560px)]">
           <div>
             <Breadcrumbs items={breadcrumbs} variant="dark" />
             <h1 className="mt-6 text-3xl font-semibold leading-tight text-white sm:text-4xl">
@@ -42,9 +42,17 @@ export function ServiceDetailContent({ service, breadcrumbs }: Props) {
             </Link>
           </div>
           <div className="relative hidden lg:block">
-            <div aria-hidden="true" className="absolute -right-8 -top-8 h-24 w-40 bg-accent" />
-            <div className="relative aspect-square overflow-hidden">
-              <Image src={service.heroImage} alt={service.title} fill sizes="460px" className="object-cover" unoptimized />
+            {/* Parity: оранжевая подложка-полурамка со смещением вправо-вниз */}
+            <div aria-hidden="true" className="absolute -bottom-5 -right-5 h-full w-full bg-accent" />
+            <div className="relative aspect-[4/3] overflow-hidden">
+              <Image
+                src={service.heroImage}
+                alt={service.title}
+                fill
+                sizes="560px"
+                className="object-cover"
+                unoptimized
+              />
             </div>
           </div>
         </div>
