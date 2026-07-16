@@ -1,96 +1,101 @@
-import { ContactForm } from "@/components/forms/ContactForm";
-import { HtmlContent } from "@/components/content/HtmlContent";
-import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
+import Image from "next/image";
 import { PageHero } from "@/components/sections/PageHero";
+import { CtaSection } from "@/components/sections/HomeSections";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import type { ContentItem } from "@/lib/content";
-import { getExcerpt } from "@/lib/content";
-import { getSiteSettings } from "@/lib/site";
-import {
-  PRODUCTION_STEPS,
-  TECHNOLOGY_FAQ,
-  TECHNOLOGY_VIDEO,
-  getTechnologyTailHtml,
-} from "@/lib/technology";
+import { WOOD_TEXTURE_BG } from "@/lib/media";
+import { PRODUCTION_STEPS, TECHNOLOGY_FAQ, TECHNOLOGY_VIDEO } from "@/lib/technology";
 
 type TechnologyContentProps = {
   page: ContentItem;
 };
 
 export function TechnologyContent({ page }: TechnologyContentProps) {
-  const tailHtml = getTechnologyTailHtml(page.content);
-  const { contacts, integrations } = getSiteSettings();
-  const phoneDigits = contacts.phones[0]?.replace(/\D/g, "") ?? "88002509055";
-  const phoneHref = phoneDigits ? `tel:${phoneDigits}` : "tel:88002509055";
-
   return (
     <>
       <PageHero
-        title={page.title}
-        description={getExcerpt(page) ?? "11 этапов производства, видео с линии и ответы на частые вопросы."}
+        title={"Технология:\nнанесение краски и масла"}
+        breadcrumbs={[{ label: "Главная", href: "/" }, { label: page.title }]}
       />
-      <article className="container-content py-12">
-        <Breadcrumbs
-          items={[
-            { label: "Главная", href: "/" },
-            { label: page.title },
-          ]}
-        />
-
+      <article className="section-dark container-content py-12">
         <div className="overflow-hidden rounded-2xl bg-neutral-900 shadow-lg">
-          <video
-            className="aspect-video w-full"
-            controls
-            preload="metadata"
-            playsInline
-            poster="/uploads/2025/04/frame-19-2.webp"
-          >
+          <video className="aspect-video w-full" controls preload="metadata" playsInline>
             <source src={TECHNOLOGY_VIDEO} type="video/mp4" />
           </video>
         </div>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold text-neutral-900">Технология производства</h2>
-          <ol className="mt-6 grid gap-4 sm:grid-cols-2">
+          <h2 className="section-title">🛠️ Технология производства</h2>
+          <ol className="mt-8 space-y-5">
             {PRODUCTION_STEPS.map((step, index) => (
-              <li
-                key={step.title}
-                className="rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm"
-              >
-                <p className="text-sm font-semibold uppercase tracking-wide text-accent">
-                  Этап {index + 1}
+              <li key={step.title}>
+                <p className="font-semibold text-white">
+                  <span className="mr-2 text-accent">{index + 1}.</span>
+                  {step.title} {step.emoji}
                 </p>
-                <p className="mt-2 font-medium text-neutral-900">{step.title}</p>
-                {step.note && <p className="mt-2 text-sm text-neutral-600">{step.note}</p>}
+                {step.note && (
+                  <p className="mt-1 pl-6 text-sm italic text-white/60">({step.note})</p>
+                )}
               </li>
             ))}
           </ol>
-          <p className="mt-6 text-sm text-neutral-600">
-            Каждый этап контролируется для безупречного качества продукции. Готово к отгрузке.
+          <hr className="mt-10 border-white/20" />
+          <p className="mt-6 font-semibold text-white">✅ Готово к отгрузке! 🚚</p>
+          <p className="mt-3 text-sm italic text-white/60">
+            P.S. Каждый этап контролируется для безупречного качества вашей продукции. 🎯
           </p>
         </section>
 
-        {tailHtml && <HtmlContent html={tailHtml} className="mt-12" />}
-
-        <FaqAccordion items={TECHNOLOGY_FAQ} />
-
-        <section className="section-dark mt-12 rounded-2xl px-6 py-10 sm:px-10">
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
-            <div>
-              <h2 className="section-title">Делаем объём без потери качества</h2>
-              <p className="section-subtitle mt-4">
-                Мы гордимся тем, что наши заказчики остаются довольны результатом, и продолжаем
-                внедрять новейшие технологии покраски древесины любых пород.
-              </p>
+        <section className="relative mt-14">
+          <h2 className="section-title">Делаем обьем без потери качества</h2>
+          <div className="relative mt-8">
+            <div className="relative aspect-[16/10] w-full overflow-hidden sm:aspect-[2/1]">
+              <Image
+                src="/uploads/2025/04/frame-19-2.webp"
+                alt="Коллекция окрашенных деревянных панелей с разными текстурами и оттенками"
+                fill
+                sizes="(max-width: 768px) 100vw, 1200px"
+                className="object-cover"
+                unoptimized
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-6 sm:p-10">
+                <p className="max-w-3xl text-lg font-semibold leading-snug text-white sm:text-xl">
+                  Мы гордимся тем, что наши заказчики всегда остаются довольны результатом,
+                  и продолжаем развиваться, внедряя новейшие технологии и подходы в покраске
+                  древесины любых пород.
+                </p>
+              </div>
             </div>
-            <ContactForm
-              email={contacts.email}
-              phoneHref={phoneHref}
-              formEndpoint={integrations.formEndpoint || undefined}
-            />
+            <div aria-hidden="true" className="mt-0 hidden justify-end lg:flex">
+              <div className="h-28 w-[30%] overflow-hidden bg-accent">
+                <Image
+                  src={WOOD_TEXTURE_BG}
+                  alt=""
+                  width={400}
+                  height={112}
+                  className="h-full w-full object-cover opacity-40 mix-blend-multiply"
+                  unoptimized
+                />
+              </div>
+              <div className="h-28 w-[22%] overflow-hidden bg-accent-dark">
+                <Image
+                  src={WOOD_TEXTURE_BG}
+                  alt=""
+                  width={300}
+                  height={112}
+                  className="h-full w-full object-cover opacity-30 mix-blend-multiply"
+                  unoptimized
+                />
+              </div>
+            </div>
           </div>
         </section>
+
+        <div className="mt-12">
+          <FaqAccordion items={TECHNOLOGY_FAQ} variant="dark" />
+        </div>
       </article>
+      <CtaSection />
     </>
   );
 }
