@@ -1,6 +1,8 @@
 import { WpPage } from "@/components/content/WpPage";
+import { ServiceDetailContent } from "@/components/sections/ServiceDetailContent";
 import { buildPageMetadata } from "@/lib/metadata";
 import { getExcerpt, getServicePage, getServiceSlugs } from "@/lib/content";
+import { getServiceDetail } from "@/lib/service-details";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -24,6 +26,20 @@ export default async function ServiceDetailPage({ params }: Props) {
 
   if (!service) {
     return null;
+  }
+
+  const detail = getServiceDetail(slug);
+  if (detail) {
+    return (
+      <ServiceDetailContent
+        service={detail}
+        breadcrumbs={[
+          { label: "Главная", href: "/" },
+          { label: "Услуги", href: "/uslugi/" },
+          { label: detail.title },
+        ]}
+      />
+    );
   }
 
   return (
