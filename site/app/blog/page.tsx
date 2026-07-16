@@ -18,10 +18,11 @@ export default function BlogPage() {
   return (
     <>
       <PageHero title="Блог и новости" description="Статьи о материалах, покраске и производстве." />
-      <section className="bg-surface-muted py-16 sm:py-20">
+      <section className="section-dark py-16 sm:py-20">
         <div className="container-content">
           <ContentList
             embedded
+            variant="dark"
             items={posts.map((post) => ({
               slug: post.slug,
               title: post.title,
