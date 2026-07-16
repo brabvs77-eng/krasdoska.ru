@@ -29,9 +29,11 @@ export default async function BlogPostPage({ params }: Props) {
     return (
       <>
         <PageHero title={slug.replace(/-/g, " ")} />
-        <div className="container-content py-16 text-center text-neutral-600">
-          Запись не найдена.
-        </div>
+        <section className="section-dark">
+          <div className="container-content py-16 text-center text-white/70">
+            Запись не найдена.
+          </div>
+        </section>
       </>
     );
   }
@@ -39,18 +41,21 @@ export default async function BlogPostPage({ params }: Props) {
   return (
     <>
       <PageHero title={post.title} description={getExcerpt(post)} />
-      <article className="container-content py-12">
-        <Breadcrumbs
-          items={[
-            { label: "Главная", href: "/" },
-            { label: "Блог", href: "/blog/" },
-            { label: post.title },
-          ]}
-        />
-        <div className="mt-8">
-          <HtmlContent html={post.content} />
-        </div>
-      </article>
+      <section className="section-dark">
+        <article className="container-content py-12">
+          <Breadcrumbs
+            variant="dark"
+            items={[
+              { label: "Главная", href: "/" },
+              { label: "Блог", href: "/blog/" },
+              { label: post.title },
+            ]}
+          />
+          <div className="mt-8">
+            <HtmlContent html={post.content} />
+          </div>
+        </article>
+      </section>
       <MarketingPageFooter />
     </>
   );

@@ -185,4 +185,30 @@ body {
   .wp-content-dark th {
     @apply bg-white/10 font-semibold text-white;
   }
+
+  /* Тёмный вариант WP-прозы: применяется только внутри .section-dark (блог и т.п.) */
+  .section-dark .wp-content {
+    @apply text-white/80;
+  }
+  .section-dark .wp-content h2,
+  .section-dark .wp-content h3,
+  .section-dark .wp-content h4 {
+    @apply text-white;
+  }
+  .section-dark .wp-content h5 {
+    @apply text-white/70;
+  }
+  .section-dark .wp-content a {
+    @apply text-accent hover:text-accent-dark;
+  }
+  .section-dark .wp-content blockquote {
+    @apply border-accent bg-white/5 text-white/80;
+  }
+  .section-dark .wp-content th,
+  .section-dark .wp-content td {
+    @apply border-white/15;
+  }
+  .section-dark .wp-content th {
+    @apply bg-white/10 text-white;
+  }
 }
