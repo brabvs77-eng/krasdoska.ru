@@ -38,6 +38,15 @@ npm run dev
 
 ---
 
+## SEO
+
+| Документ | Назначение |
+|----------|------------|
+| [`docs/SEO-PLAN.md`](docs/SEO-PLAN.md) | Анализ, KPI, дорожная карта оптимизации и продвижения |
+| [`knowledge/site-audit.md`](knowledge/site-audit.md) | Технический и контентный аудит |
+| [`knowledge/content-plan.md`](knowledge/content-plan.md) | Консолидация блога и ТЗ на тексты страниц |
+| [`knowledge/gsc/`](knowledge/gsc/) | Экспорт Google Search Console |
+
 ## SEO-пайплайн статей
 
 На базе [thruuu-claude-writer](https://github.com/thruuu/thruuu-claude-writer).
