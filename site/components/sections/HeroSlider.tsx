@@ -52,9 +52,21 @@ export function HeroSlider({ slides }: HeroSliderProps) {
               {slide.eyebrow}
             </p>
           )}
-          <h1 className="mt-3 whitespace-pre-line text-3xl font-semibold leading-tight sm:text-4xl lg:text-[50px]">
-            {slide.title}
+          {/* SEO: один стабильный H1 (первый слайд); остальные — визуальный заголовок */}
+          <h1
+            className={
+              index === 0
+                ? "mt-3 whitespace-pre-line text-3xl font-semibold leading-tight sm:text-4xl lg:text-[50px]"
+                : "sr-only"
+            }
+          >
+            {slides[0]?.title}
           </h1>
+          {index !== 0 && (
+            <p className="mt-3 whitespace-pre-line text-3xl font-semibold leading-tight sm:text-4xl lg:text-[50px]">
+              {slide.title}
+            </p>
+          )}
           {slide.subtitle && (
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/90 sm:text-lg">
               {slide.subtitle}

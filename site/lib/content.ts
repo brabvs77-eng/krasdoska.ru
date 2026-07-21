@@ -20,6 +20,7 @@ export type CatalogCategory = {
   title: string;
   description?: string;
   content?: string;
+  seo?: { title?: string; description?: string };
 };
 
 export type CatalogProduct = ContentItem & {

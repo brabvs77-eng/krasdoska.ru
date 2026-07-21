@@ -20,6 +20,7 @@ export async function generateMetadata() {
   return buildPageMetadata({
     title: page?.seo?.title ?? page?.title ?? "Главная",
     description:
+      page?.seo?.description ??
       getExcerpt(page) ??
       "Производитель крашеной доски в Москве и Истре. Каталог, услуги покраски, палитра цветов, проекты и блог.",
     path: "/",

@@ -5,6 +5,9 @@
 **Бренд:** ООО «Крашеная доска» — заводская покраска пиломатериалов (Москва / Истра)  
 **Связанные документы:** [`knowledge/site-audit.md`](../knowledge/site-audit.md), [`knowledge/content-plan.md`](../knowledge/content-plan.md), [`knowledge/gsc/search-analytics.md`](../knowledge/gsc/search-analytics.md), [`docs/REFACTOR-PLAN.md`](REFACTOR-PLAN.md)
 
+> **Исполнение:** пошаговый план — [§7 Поэтапный план работ](#7-поэтапный-план-работ).  
+> Этапы: **1** CTR/техника → **2** чистка блога → **3** коммерция → **4** миграция Next → **5** рост.
+
 ---
 
 ## 1. Диагноз (текущее состояние)
@@ -264,22 +267,28 @@
 
 ### Этап 1. Быстрый CTR и технический фундамент
 
-**Цель:** выжать клики из уже имеющихся показов, убрать очевидный техдолг на текущем WP.
+**Цель:** выжать клики из уже имеющихся показов, убрать очевидный техдолг.  
+**Статус (Next.js / CF Pages):** код готов в ветке; на живом WP meta/кэш нужно продублировать вручную до cutover.
 
-| Шаг | Действие | Результат |
-|----:|----------|-----------|
-| 1.1 | Исправить **title / description / H1** на: `/`, `/katalog/`, `/krashenyj-planken/`, `/krashenaja-vagonka/`, `/uslugi/`, `/kontakty/`, `/parketnaja-doska/` | 1 H1 на странице; desc 140–160 символов; без `&quot;` |
-| 1.2 | Добавить **LocalBusiness / Organization** schema (адрес Истра, телефон, ИНН) | Rich Results / валидация без ошибок |
-| 1.3 | Включить **кэш** для гостей (убрать `cache-control: no-store`) | HTML кэшируется |
-| 1.4 | `/category/…` → **301** на товарный лендинг или `noindex` | Нет дублей категорий в выдаче |
-| 1.5 | Пустые посты `brend`, `dostavka-v-regiony` → снять с индекса **или** срочно заполнить | Нет пустых URL в индексе |
-| 1.6 | Подключить/проверить **Яндекс.Вебмастер** + актуальный sitemap | Sitemap принят без ошибок |
-| 1.7 | Заполнить цели в **Яндекс.Метрике** (форма, клик по телефону, Marquiz) | Цели пишут конверсии |
+| Шаг | Действие | Результат | Статус |
+|----:|----------|-----------|--------|
+| 1.1 | Исправить **title / description / H1** на: `/`, `/katalog/`, `/katalog/planken/`, `/katalog/krashenaja-vagonka/`, `/uslugi/`, `/kontakty/`, `/katalog/krashenaja-doska/` (паркет/палуба) | 1 H1 на странице; desc 140–160 символов; без `&quot;` | ✅ в `site/content` + HeroSlider / CatalogCategoryLayout |
+| 1.2 | Добавить **LocalBusiness / Organization** schema (адрес, телефон, ИНН, производство Истра) | Rich Results / валидация без ошибок | ✅ `lib/schema.ts` + `JsonLd` |
+| 1.3 | Включить **кэш** для статики (`public/_headers`) | HTML revalidate; ассеты immutable | ✅ для CF Pages; на WP — отдельно Super Cache |
+| 1.4 | `/category/…` → **301** на `/katalog/…` | Нет дублей категорий в выдаче | ✅ `public/_redirects` |
+| 1.5 | Пустые посты `brend`, `dostavka-v-regiony` → заполнить | Нет пустых URL в индексе | ✅ контент в `content/blog/*.json` |
+| 1.6 | Sitemap + robots (Host, Clean-param Yandex) | Готовность к Вебмастеру | ✅ `app/sitemap` / `robots` + patch Clean-param; **верификация в Вебмастере — вручную** |
+| 1.7 | Метрика ID + цели в коде: `lead_form`, `phone_click`, `marquiz_open` | События уходят в счётчик | ✅ ID `101150421`; **создать цели в UI Метрики** |
 
 **Критерий выхода этапа 1:**  
 все URL из шага 1.1 с уникальными meta; кэш включён; LocalBusiness на сайте; GSC/Вебмастер без критичных ошибок индексации.
 
 **Ожидаемый эффект:** рост CTR бренда и страниц с позицией ≤15 (`/uslugi/`, `/palitra/`, `/parketnaja-doska/`).
+
+**Ручные шаги вне репозитория (до/после деплоя):**
+1. В Яндекс.Метрике создать JavaScript-цели: `lead_form`, `phone_click`, `marquiz_open`.
+2. В Яндекс.Вебмастере подтвердить сайт и отправить `https://krashenayadoska.ru/sitemap.xml`.
+3. На текущем WP (пока не cutover): те же meta/Yoast + кэш плагин — иначе эффект этапа 1 на проде отложится.
 
 ---
 
