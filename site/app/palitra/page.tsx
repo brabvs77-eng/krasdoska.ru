@@ -12,7 +12,7 @@ const PALETTE_HERO_BG = "/uploads/2026/05/krashenaja-skandinavskaja-doska.webp";
 const PALETTE_CARD_IMAGE = "/uploads/2026/05/1-1.webp";
 const VIDEO_POSTER = "/uploads/2026/05/kachestvennaja-obrabotka-derevjannyh-izdelij.webp";
 
-const OSMO_CARD_IMAGE = "/uploads/palitra/osmo/f35f351b0f17dcc3ad30f7e6394dd8c212a.jpg";
+const OSMO_CARD_IMAGE = "/uploads/palitra/osmo/7e07e01118d79bdff133d99182a17354979.png";
 
 const paletteCards = [
   { title: "Палитра цветов RAL", href: "/palitra/palitra-ral/", image: PALETTE_CARD_IMAGE },
