@@ -16,6 +16,7 @@ const staticRoutes = [
   "/uslugi/",
   "/palitra/",
   "/katalog-tsvetov/",
+  "/shema-pokraski/",
   "/blog/",
   "/project/",
   "/o-kompanii/",

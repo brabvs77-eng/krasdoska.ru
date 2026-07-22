@@ -44,6 +44,13 @@ export function TechnologyContent({ page }: TechnologyContentProps) {
           <p className="mt-3 text-sm italic text-white/60">
             P.S. Каждый этап контролируется для безупречного качества вашей продукции. 🎯
           </p>
+          <p className="mt-6 text-sm text-white/75">
+            Подробные схемы (грунт, число слоёв, Sirca / Talatu) и цены за м² — на странице{" "}
+            <a href="/shema-pokraski/" className="text-accent underline-offset-2 hover:underline">
+              схемы покраски
+            </a>
+            .
+          </p>
         </section>
 
         <section className="relative mt-14">
