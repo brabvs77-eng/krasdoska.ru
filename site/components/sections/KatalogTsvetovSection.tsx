@@ -1,13 +1,16 @@
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
-import { KatalogTsvetovGallery } from "@/components/sections/KatalogTsvetovGallery";
+import {
+  KatalogTsvetovGallery,
+  type GalleryImage,
+} from "@/components/sections/KatalogTsvetovGallery";
 import { MarketingPageFooter } from "@/components/sections/MarketingPageFooter";
 import { PageHero } from "@/components/sections/PageHero";
 
 export type KatalogTsvetovSectionData = {
   title: string;
   intro: string[];
-  sections: { id: string; title: string; images: string[] }[];
+  sections: { id: string; title: string; items: GalleryImage[] }[];
   paletteLinks: { title: string; href: string }[];
 };
 

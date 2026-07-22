@@ -7,7 +7,8 @@
   },
   "intro": [
     "Каталог выкрасов — реальные образцы покраски древесины на разных породах и схемах нанесения. Так проще представить итоговый тон, чем по цифровому вееру.",
-    "Выберите направление ниже или перейдите в палитры RAL, NCS, BIOFA, укрывных и лессирующих цветов. Перед партией сделаем выкрас на вашем материале."
+    "Выберите направление ниже или перейдите в палитры RAL, NCS, BIOFA, укрывных и лессирующих цветов. Перед партией сделаем выкрас на вашем материале.",
+    "Под каждым фото — подпись со схемой и кодами оттенков с оригинальных выкрасов (укрывные СД, лазури ДС, масла Sirca и лаки)."
   ],
   "sections": [
     {
@@ -33,6 +34,103 @@
         "/uploads/katalog-tsvetov/clean/640-naturalnoe-maslo/49-v5.jpg",
         "/uploads/katalog-tsvetov/clean/640-naturalnoe-maslo/52-v5.jpg",
         "/uploads/katalog-tsvetov/clean/640-naturalnoe-maslo/57-v5.jpg"
+      ],
+      "items": [
+        {
+          "src": "/uploads/katalog-tsvetov/clean/640-naturalnoe-maslo/1-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: 8019 · T1515 · 5525-333-2",
+          "alt": "Лессирующая схема · масло Sirca: 8019 · T1515 · 5525-333-2"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/640-naturalnoe-maslo/4-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T3919 · T4296",
+          "alt": "Лессирующая схема · масло Sirca: T3919 · T4296"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/640-naturalnoe-maslo/7-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T5083 · T1829 · T1829X2",
+          "alt": "Лессирующая схема · масло Sirca: T5083 · T1829 · T1829X2"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/640-naturalnoe-maslo/10-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: 11773 · T3016 · T3006",
+          "alt": "Лессирующая схема · масло Sirca: 11773 · T3016 · T3006"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/640-naturalnoe-maslo/13-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T5075 · 11817 · T1530",
+          "alt": "Лессирующая схема · масло Sirca: T5075 · 11817 · T1530"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/640-naturalnoe-maslo/16-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T5080 · T3026 · T3041",
+          "alt": "Лессирующая схема · масло Sirca: T5080 · T3026 · T3041"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/640-naturalnoe-maslo/19-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T5050 · T5064X2 · T5331/03",
+          "alt": "Лессирующая схема · масло Sirca: T5050 · T5064X2 · T5331/03"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/640-naturalnoe-maslo/22-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T5050X2 · T5053X2 · T5223",
+          "alt": "Лессирующая схема · масло Sirca: T5050X2 · T5053X2 · T5223"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/640-naturalnoe-maslo/25-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T1513 · T5079 · T3741",
+          "alt": "Лессирующая схема · масло Sirca: T1513 · T5079 · T3741"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/640-naturalnoe-maslo/28-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T1826X2",
+          "alt": "Лессирующая схема · масло Sirca: T1826X2"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/640-naturalnoe-maslo/31-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T1826 · №31",
+          "alt": "Лессирующая схема · масло Sirca: T1826 · №31"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/640-naturalnoe-maslo/34-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T1808 · T5228 · T5071",
+          "alt": "Лессирующая схема · масло Sirca: T1808 · T5228 · T5071"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/640-naturalnoe-maslo/37-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T1504",
+          "alt": "Лессирующая схема · масло Sirca: T1504"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/640-naturalnoe-maslo/40-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T1505 · 8019X2",
+          "alt": "Лессирующая схема · масло Sirca: T1505 · 8019X2"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/640-naturalnoe-maslo/43-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: 11527",
+          "alt": "Лессирующая схема · масло Sirca: 11527"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/640-naturalnoe-maslo/46-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T5084 · T1631 · T3742 · №46",
+          "alt": "Лессирующая схема · масло Sirca: T5084 · T1631 · T3742 · №46"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/640-naturalnoe-maslo/49-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T1818 · T1818X2 · T1830",
+          "alt": "Лессирующая схема · масло Sirca: T1818 · T1818X2 · T1830"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/640-naturalnoe-maslo/52-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T1710 · T4077",
+          "alt": "Лессирующая схема · масло Sirca: T1710 · T4077"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/640-naturalnoe-maslo/57-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T1813 · T1811X2",
+          "alt": "Лессирующая схема · масло Sirca: T1813 · T1811X2"
+        }
       ]
     },
     {
@@ -52,6 +150,73 @@
         "/uploads/katalog-tsvetov/clean/640-sirka-imitatsiya-brusa/31-v5.jpg",
         "/uploads/katalog-tsvetov/clean/640-sirka-imitatsiya-brusa/34-v5.jpg",
         "/uploads/katalog-tsvetov/clean/640-sirka-imitatsiya-brusa/36-v5.jpg"
+      ],
+      "items": [
+        {
+          "src": "/uploads/katalog-tsvetov/clean/640-sirka-imitatsiya-brusa/1-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: 11817 · T5075 · 11527",
+          "alt": "Лессирующая схема · масло Sirca: 11817 · T5075 · 11527"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/640-sirka-imitatsiya-brusa/4-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T1707 · T5083",
+          "alt": "Лессирующая схема · масло Sirca: T1707 · T5083"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/640-sirka-imitatsiya-brusa/7-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T5084 · T1631 · T3742 · №7",
+          "alt": "Лессирующая схема · масло Sirca: T5084 · T1631 · T3742 · №7"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/640-sirka-imitatsiya-brusa/10-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T1530 · T1811 · T1806",
+          "alt": "Лессирующая схема · масло Sirca: T1530 · T1811 · T1806"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/640-sirka-imitatsiya-brusa/13-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T1505 · T1830",
+          "alt": "Лессирующая схема · масло Sirca: T1505 · T1830"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/640-sirka-imitatsiya-brusa/16-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T5050 · T5064 · 14296",
+          "alt": "Лессирующая схема · масло Sirca: T5050 · T5064 · 14296"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/640-sirka-imitatsiya-brusa/19-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T4077 · T5079",
+          "alt": "Лессирующая схема · масло Sirca: T4077 · T5079"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/640-sirka-imitatsiya-brusa/22-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T1818 · 11515",
+          "alt": "Лессирующая схема · масло Sirca: T1818 · 11515"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/640-sirka-imitatsiya-brusa/25-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T3041 · T3016 · T3006",
+          "alt": "Лессирующая схема · масло Sirca: T3041 · T3016 · T3006"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/640-sirka-imitatsiya-brusa/28-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T3036 · T5088 · T1710",
+          "alt": "Лессирующая схема · масло Sirca: T3036 · T5088 · T1710"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/640-sirka-imitatsiya-brusa/31-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T1625 · T1829 · T5071",
+          "alt": "Лессирующая схема · масло Sirca: T1625 · T1829 · T5071"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/640-sirka-imitatsiya-brusa/34-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T1813 · T5223",
+          "alt": "Лессирующая схема · масло Sirca: T1813 · T5223"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/640-sirka-imitatsiya-brusa/36-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T1826 · №36",
+          "alt": "Лессирующая схема · масло Sirca: T1826 · №36"
+        }
       ]
     },
     {
@@ -153,6 +318,483 @@
         "/uploads/katalog-tsvetov/clean/lazur/415-v5.jpg",
         "/uploads/katalog-tsvetov/clean/lazur/421-v5.jpg",
         "/uploads/katalog-tsvetov/clean/lazur/424-v5.jpg"
+      ],
+      "items": [
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/101-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС17 · №101",
+          "alt": "Лессирующая схема · лазурь ДС17 · №101"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/4-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС46",
+          "alt": "Лессирующая схема · лазурь ДС46"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/6-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС44",
+          "alt": "Лессирующая схема · лазурь ДС44"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/17-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС45",
+          "alt": "Лессирующая схема · лазурь ДС45"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/19-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС32",
+          "alt": "Лессирующая схема · лазурь ДС32"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/23-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС3 · №23",
+          "alt": "Лессирующая схема · лазурь ДС3 · №23"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/26-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС3 · №26",
+          "alt": "Лессирующая схема · лазурь ДС3 · №26"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/34-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС16",
+          "alt": "Лессирующая схема · лазурь ДС16"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/36-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС34",
+          "alt": "Лессирующая схема · лазурь ДС34"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/44-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС57 · №44",
+          "alt": "Лессирующая схема · лазурь ДС57 · №44"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/51-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС57 · №51",
+          "alt": "Лессирующая схема · лазурь ДС57 · №51"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/53-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС55 · №53",
+          "alt": "Лессирующая схема · лазурь ДС55 · №53"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/57-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС55 · №57",
+          "alt": "Лессирующая схема · лазурь ДС55 · №57"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/59-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС20 · №59",
+          "alt": "Лессирующая схема · лазурь ДС20 · №59"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/65-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС20 · №65",
+          "alt": "Лессирующая схема · лазурь ДС20 · №65"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/67-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС35",
+          "alt": "Лессирующая схема · лазурь ДС35"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/74-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС29 · №74",
+          "alt": "Лессирующая схема · лазурь ДС29 · №74"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/79-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС29 · №79",
+          "alt": "Лессирующая схема · лазурь ДС29 · №79"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/81-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС31 · №81",
+          "alt": "Лессирующая схема · лазурь ДС31 · №81"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/87-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС31 · №87",
+          "alt": "Лессирующая схема · лазурь ДС31 · №87"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/89-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС41",
+          "alt": "Лессирующая схема · лазурь ДС41"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/93-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС104",
+          "alt": "Лессирующая схема · лазурь ДС104"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/95-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС40 · №95",
+          "alt": "Лессирующая схема · лазурь ДС40 · №95"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/99-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС40 · №99",
+          "alt": "Лессирующая схема · лазурь ДС40 · №99"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/104-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС17 · №104",
+          "alt": "Лессирующая схема · лазурь ДС17 · №104"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/108-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС15 · №108",
+          "alt": "Лессирующая схема · лазурь ДС15 · №108"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/113-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС15 · №113",
+          "alt": "Лессирующая схема · лазурь ДС15 · №113"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/115-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС65 · №115",
+          "alt": "Лессирующая схема · лазурь ДС65 · №115"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/118-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС65 · №118",
+          "alt": "Лессирующая схема · лазурь ДС65 · №118"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/124-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС5 · №124",
+          "alt": "Лессирующая схема · лазурь ДС5 · №124"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/125-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС53",
+          "alt": "Лессирующая схема · лазурь ДС53"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/129-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС61 · №129",
+          "alt": "Лессирующая схема · лазурь ДС61 · №129"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/134-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС61 · №134",
+          "alt": "Лессирующая схема · лазурь ДС61 · №134"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/136-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС60",
+          "alt": "Лессирующая схема · лазурь ДС60"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/141-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС23 · №141",
+          "alt": "Лессирующая схема · лазурь ДС23 · №141"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/144-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС23 · №144",
+          "alt": "Лессирующая схема · лазурь ДС23 · №144"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/151-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС22",
+          "alt": "Лессирующая схема · лазурь ДС22"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/155-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС12",
+          "alt": "Лессирующая схема · лазурь ДС12"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/162-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС3 · №162",
+          "alt": "Лессирующая схема · лазурь ДС3 · №162"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/165-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС3 · №165",
+          "alt": "Лессирующая схема · лазурь ДС3 · №165"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/177-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС3 · №177",
+          "alt": "Лессирующая схема · лазурь ДС3 · №177"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/180-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС3 · №180",
+          "alt": "Лессирующая схема · лазурь ДС3 · №180"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/184-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС2 · №184",
+          "alt": "Лессирующая схема · лазурь ДС2 · №184"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/191-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС21 · №191",
+          "alt": "Лессирующая схема · лазурь ДС21 · №191"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/194-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС21 · №194",
+          "alt": "Лессирующая схема · лазурь ДС21 · №194"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/198-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС59",
+          "alt": "Лессирующая схема · лазурь ДС59"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/205-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС62",
+          "alt": "Лессирующая схема · лазурь ДС62"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/212-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС52",
+          "alt": "Лессирующая схема · лазурь ДС52"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/222-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС51",
+          "alt": "Лессирующая схема · лазурь ДС51"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/226-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС50 · №226",
+          "alt": "Лессирующая схема · лазурь ДС50 · №226"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/229-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС50 · №229",
+          "alt": "Лессирующая схема · лазурь ДС50 · №229"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/233-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС24 · №233",
+          "alt": "Лессирующая схема · лазурь ДС24 · №233"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/237-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС24 · №237",
+          "alt": "Лессирующая схема · лазурь ДС24 · №237"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/248-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС25 · №248",
+          "alt": "Лессирующая схема · лазурь ДС25 · №248"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/251-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС25 · №251",
+          "alt": "Лессирующая схема · лазурь ДС25 · №251"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/255-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС19 · №255",
+          "alt": "Лессирующая схема · лазурь ДС19 · №255"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/258-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС19 · №258",
+          "alt": "Лессирующая схема · лазурь ДС19 · №258"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/262-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС8 · №262",
+          "alt": "Лессирующая схема · лазурь ДС8 · №262"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/265-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС8 · №265",
+          "alt": "Лессирующая схема · лазурь ДС8 · №265"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/272-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС6 · №272",
+          "alt": "Лессирующая схема · лазурь ДС6 · №272"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/276-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС5 · №276",
+          "alt": "Лессирующая схема · лазурь ДС5 · №276"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/283-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС4 · №283",
+          "alt": "Лессирующая схема · лазурь ДС4 · №283"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/286-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС4 · №286",
+          "alt": "Лессирующая схема · лазурь ДС4 · №286"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/293-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС9",
+          "alt": "Лессирующая схема · лазурь ДС9"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/297-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС27 · №297",
+          "alt": "Лессирующая схема · лазурь ДС27 · №297"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/300-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС27 · №300",
+          "alt": "Лессирующая схема · лазурь ДС27 · №300"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/304-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС28",
+          "alt": "Лессирующая схема · лазурь ДС28"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/311-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС39",
+          "alt": "Лессирующая схема · лазурь ДС39"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/318-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС48 · №318",
+          "alt": "Лессирующая схема · лазурь ДС48 · №318"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/321-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС48 · №321",
+          "alt": "Лессирующая схема · лазурь ДС48 · №321"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/333-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС26 · №333",
+          "alt": "Лессирующая схема · лазурь ДС26 · №333"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/336-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС26 · №336",
+          "alt": "Лессирующая схема · лазурь ДС26 · №336"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/340-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС54 · №340",
+          "alt": "Лессирующая схема · лазурь ДС54 · №340"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/343-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС54 · №343",
+          "alt": "Лессирующая схема · лазурь ДС54 · №343"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/347-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС49 · №347",
+          "alt": "Лессирующая схема · лазурь ДС49 · №347"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/350-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС49 · №350",
+          "alt": "Лессирующая схема · лазурь ДС49 · №350"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/354-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС37 · №354",
+          "alt": "Лессирующая схема · лазурь ДС37 · №354"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/357-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС37 · №357",
+          "alt": "Лессирующая схема · лазурь ДС37 · №357"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/361-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС6 · №361",
+          "alt": "Лессирующая схема · лазурь ДС6 · №361"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/364-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС6 · №364",
+          "alt": "Лессирующая схема · лазурь ДС6 · №364"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/368-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС58 · №368",
+          "alt": "Лессирующая схема · лазурь ДС58 · №368"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/371-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС58 · №371",
+          "alt": "Лессирующая схема · лазурь ДС58 · №371"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/375-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС64",
+          "alt": "Лессирующая схема · лазурь ДС64"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/381-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС11 · №381",
+          "alt": "Лессирующая схема · лазурь ДС11 · №381"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/384-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС11 · №384",
+          "alt": "Лессирующая схема · лазурь ДС11 · №384"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/391-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС1",
+          "alt": "Лессирующая схема · лазурь ДС1"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/395-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС2 · №395",
+          "alt": "Лессирующая схема · лазурь ДС2 · №395"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/398-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС2 · №398",
+          "alt": "Лессирующая схема · лазурь ДС2 · №398"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/402-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС36 · №402",
+          "alt": "Лессирующая схема · лазурь ДС36 · №402"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/405-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС36 · №405",
+          "alt": "Лессирующая схема · лазурь ДС36 · №405"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/408-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС7 · №408",
+          "alt": "Лессирующая схема · лазурь ДС7 · №408"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/411-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС7 · №411",
+          "alt": "Лессирующая схема · лазурь ДС7 · №411"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/415-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС18",
+          "alt": "Лессирующая схема · лазурь ДС18"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/421-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС56 · ДС1",
+          "alt": "Лессирующая схема · лазурь ДС56 · ДС1"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lazur/424-v5.jpg",
+          "caption": "Лессирующая схема · лазурь ДС14 · ДС13",
+          "alt": "Лессирующая схема · лазурь ДС14 · ДС13"
+        }
       ]
     },
     {
@@ -169,6 +811,58 @@
         "/uploads/katalog-tsvetov/clean/lakovaya-skhema/22-v5.jpg",
         "/uploads/katalog-tsvetov/clean/lakovaya-skhema/25-v5.jpg",
         "/uploads/katalog-tsvetov/clean/lakovaya-skhema/28-v5.jpg"
+      ],
+      "items": [
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lakovaya-skhema/1-v5.jpg",
+          "caption": "Лессирующая схема · лак P26 · P21 · P20",
+          "alt": "Лессирующая схема · лак P26 · P21 · P20"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lakovaya-skhema/4-v5.jpg",
+          "caption": "Лессирующая схема · лак N19",
+          "alt": "Лессирующая схема · лак N19"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lakovaya-skhema/7-v5.jpg",
+          "caption": "Лессирующая схема · лак P72 · P62",
+          "alt": "Лессирующая схема · лак P72 · P62"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lakovaya-skhema/10-v5.jpg",
+          "caption": "Лессирующая схема · лак M14 · P12 · N16",
+          "alt": "Лессирующая схема · лак M14 · P12 · N16"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lakovaya-skhema/13-v5.jpg",
+          "caption": "Лессирующая схема · лак P74 · P64",
+          "alt": "Лессирующая схема · лак P74 · P64"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lakovaya-skhema/16-v5.jpg",
+          "caption": "Лессирующая схема · лак N24",
+          "alt": "Лессирующая схема · лак N24"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lakovaya-skhema/19-v5.jpg",
+          "caption": "Лессирующая схема · лак N13 · N27",
+          "alt": "Лессирующая схема · лак N13 · N27"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lakovaya-skhema/22-v5.jpg",
+          "caption": "Лессирующая схема · лак N11",
+          "alt": "Лессирующая схема · лак N11"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lakovaya-skhema/25-v5.jpg",
+          "caption": "Лессирующая схема · лак N19 · N17",
+          "alt": "Лессирующая схема · лак N19 · N17"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/lakovaya-skhema/28-v5.jpg",
+          "caption": "Лессирующая схема · лак P67 · N71 · M0",
+          "alt": "Лессирующая схема · лак P67 · N71 · M0"
+        }
       ]
     },
     {
@@ -184,6 +878,53 @@
         "/uploads/katalog-tsvetov/clean/naturalnoe-maslo-sirka/19-v5.jpg",
         "/uploads/katalog-tsvetov/clean/naturalnoe-maslo-sirka/22-v5.jpg",
         "/uploads/katalog-tsvetov/clean/naturalnoe-maslo-sirka/28-v5.jpg"
+      ],
+      "items": [
+        {
+          "src": "/uploads/katalog-tsvetov/clean/naturalnoe-maslo-sirka/0-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T8014 · T8001 · T8015",
+          "alt": "Лессирующая схема · масло Sirca: T8014 · T8001 · T8015"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/naturalnoe-maslo-sirka/4-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T8002 · T8003 · T1808",
+          "alt": "Лессирующая схема · масло Sirca: T8002 · T8003 · T1808"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/naturalnoe-maslo-sirka/7-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T1505 · T8012 · T1824",
+          "alt": "Лессирующая схема · масло Sirca: T1505 · T8012 · T1824"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/naturalnoe-maslo-sirka/10-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T8008 · T8013 · T1830",
+          "alt": "Лессирующая схема · масло Sirca: T8008 · T8013 · T1830"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/naturalnoe-maslo-sirka/13-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T8011 · T8011X4 · T1809",
+          "alt": "Лессирующая схема · масло Sirca: T8011 · T8011X4 · T1809"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/naturalnoe-maslo-sirka/16-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T507 · T8020 · T8019",
+          "alt": "Лессирующая схема · масло Sirca: T507 · T8020 · T8019"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/naturalnoe-maslo-sirka/19-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T3919 · T5074 · T1829",
+          "alt": "Лессирующая схема · масло Sirca: T3919 · T5074 · T1829"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/naturalnoe-maslo-sirka/22-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T8016 · T8007 · T8017",
+          "alt": "Лессирующая схема · масло Sirca: T8016 · T8007 · T8017"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/naturalnoe-maslo-sirka/28-v5.jpg",
+          "caption": "Лессирующая схема · масло Sirca: T8004 · T8005",
+          "alt": "Лессирующая схема · масло Sirca: T8004 · T8005"
+        }
       ]
     },
     {
@@ -201,6 +942,63 @@
         "/uploads/katalog-tsvetov/clean/skandinavskaya-doska/25-v5.jpg",
         "/uploads/katalog-tsvetov/clean/skandinavskaya-doska/28-v5.jpg",
         "/uploads/katalog-tsvetov/clean/skandinavskaya-doska/31-v5.jpg"
+      ],
+      "items": [
+        {
+          "src": "/uploads/katalog-tsvetov/clean/skandinavskaya-doska/1-v5.jpg",
+          "caption": "Скандинавская фасадная доска: ДС-20 · ДС-56 · ДС-41",
+          "alt": "Скандинавская фасадная доска: ДС-20 · ДС-56 · ДС-41"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/skandinavskaya-doska/4-v5.jpg",
+          "caption": "Скандинавская фасадная доска: ДС-27 · ДС-28 · ДС-38",
+          "alt": "Скандинавская фасадная доска: ДС-27 · ДС-28 · ДС-38"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/skandinavskaya-doska/7-v5.jpg",
+          "caption": "Скандинавская фасадная доска: ДС-35 · ДС-21 · ДС-17",
+          "alt": "Скандинавская фасадная доска: ДС-35 · ДС-21 · ДС-17"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/skandinavskaya-doska/10-v5.jpg",
+          "caption": "Скандинавская фасадная доска: ДС-52 · ДС-36 · ДС-39",
+          "alt": "Скандинавская фасадная доска: ДС-52 · ДС-36 · ДС-39"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/skandinavskaya-doska/13-v5.jpg",
+          "caption": "Скандинавская фасадная доска: ДС-51 · ДС-3 · ДС-12",
+          "alt": "Скандинавская фасадная доска: ДС-51 · ДС-3 · ДС-12"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/skandinavskaya-doska/16-v5.jpg",
+          "caption": "Скандинавская фасадная доска: ДС-42 · ДС-53 · ДС-44",
+          "alt": "Скандинавская фасадная доска: ДС-42 · ДС-53 · ДС-44"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/skandinavskaya-doska/19-v5.jpg",
+          "caption": "Скандинавская фасадная доска: ДС-40 · ДС-16 · ДС-18",
+          "alt": "Скандинавская фасадная доска: ДС-40 · ДС-16 · ДС-18"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/skandinavskaya-doska/22-v5.jpg",
+          "caption": "Скандинавская фасадная доска: ДС-31 · ДС-30 · ДС-34",
+          "alt": "Скандинавская фасадная доска: ДС-31 · ДС-30 · ДС-34"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/skandinavskaya-doska/25-v5.jpg",
+          "caption": "Скандинавская фасадная доска: ДС-54 · ДС-33 · ДС-55",
+          "alt": "Скандинавская фасадная доска: ДС-54 · ДС-33 · ДС-55"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/skandinavskaya-doska/28-v5.jpg",
+          "caption": "Скандинавская фасадная доска: ДС-43 · ДС-19",
+          "alt": "Скандинавская фасадная доска: ДС-43 · ДС-19"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/skandinavskaya-doska/31-v5.jpg",
+          "caption": "Скандинавская фасадная доска: ДС-13 · ДС-37 · ДС-29",
+          "alt": "Скандинавская фасадная доска: ДС-13 · ДС-37 · ДС-29"
+        }
       ]
     },
     {
@@ -226,6 +1024,103 @@
         "/uploads/katalog-tsvetov/clean/ukryvnaya-skhema/50-v5.jpg",
         "/uploads/katalog-tsvetov/clean/ukryvnaya-skhema/53-v5.jpg",
         "/uploads/katalog-tsvetov/clean/ukryvnaya-skhema/57-v5.jpg"
+      ],
+      "items": [
+        {
+          "src": "/uploads/katalog-tsvetov/clean/ukryvnaya-skhema/1-v5.jpg",
+          "caption": "Укрывная схема: СД-6 · СД-13 · СД-11",
+          "alt": "Укрывная схема: СД-6 · СД-13 · СД-11"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/ukryvnaya-skhema/4-v5.jpg",
+          "caption": "Укрывная схема: СД-38 · СД-40 · СД-27",
+          "alt": "Укрывная схема: СД-38 · СД-40 · СД-27"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/ukryvnaya-skhema/7-v5.jpg",
+          "caption": "Укрывная схема: СД-28 · СД-2 · СД-7",
+          "alt": "Укрывная схема: СД-28 · СД-2 · СД-7"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/ukryvnaya-skhema/10-v5.jpg",
+          "caption": "Укрывная схема: СД-10 · СД-52 · СД-48",
+          "alt": "Укрывная схема: СД-10 · СД-52 · СД-48"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/ukryvnaya-skhema/13-v5.jpg",
+          "caption": "Укрывная схема: СД-39 · СД-46 · СД-33",
+          "alt": "Укрывная схема: СД-39 · СД-46 · СД-33"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/ukryvnaya-skhema/16-v5.jpg",
+          "caption": "Укрывная схема: СД-36 · СД-43 · СД-49",
+          "alt": "Укрывная схема: СД-36 · СД-43 · СД-49"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/ukryvnaya-skhema/19-v5.jpg",
+          "caption": "Укрывная схема: СД-42 · СД-18 · СД-37",
+          "alt": "Укрывная схема: СД-42 · СД-18 · СД-37"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/ukryvnaya-skhema/22-v5.jpg",
+          "caption": "Укрывная схема: СД-29 · СД-24 · СД-34",
+          "alt": "Укрывная схема: СД-29 · СД-24 · СД-34"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/ukryvnaya-skhema/25-v5.jpg",
+          "caption": "Укрывная схема: СД-31 · СД-22 · СД-25",
+          "alt": "Укрывная схема: СД-31 · СД-22 · СД-25"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/ukryvnaya-skhema/28-v5.jpg",
+          "caption": "Укрывная схема: СД-47 · СД-30 · СД-21",
+          "alt": "Укрывная схема: СД-47 · СД-30 · СД-21"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/ukryvnaya-skhema/31-v5.jpg",
+          "caption": "Укрывная схема: СД-17 · СД-57 · СД-58",
+          "alt": "Укрывная схема: СД-17 · СД-57 · СД-58"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/ukryvnaya-skhema/34-v5.jpg",
+          "caption": "Укрывная схема: СД-45 · СД-50 · СД-20",
+          "alt": "Укрывная схема: СД-45 · СД-50 · СД-20"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/ukryvnaya-skhema/37-v5.jpg",
+          "caption": "Укрывная схема: СД-44 · СД-32 · СД-55",
+          "alt": "Укрывная схема: СД-44 · СД-32 · СД-55"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/ukryvnaya-skhema/40-v5.jpg",
+          "caption": "Укрывная схема: СД-35 · СД-3 · СД-63",
+          "alt": "Укрывная схема: СД-35 · СД-3 · СД-63"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/ukryvnaya-skhema/43-v5.jpg",
+          "caption": "Укрывная схема: СД-54 · СД-19 · СД-26",
+          "alt": "Укрывная схема: СД-54 · СД-19 · СД-26"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/ukryvnaya-skhema/46-v5.jpg",
+          "caption": "Укрывная схема: СД-1 · СД-44 · СД-53",
+          "alt": "Укрывная схема: СД-1 · СД-44 · СД-53"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/ukryvnaya-skhema/50-v5.jpg",
+          "caption": "Укрывная схема: СД-12 · СД-51 · СД-56",
+          "alt": "Укрывная схема: СД-12 · СД-51 · СД-56"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/ukryvnaya-skhema/53-v5.jpg",
+          "caption": "Укрывная схема: СД-23 · СД-5",
+          "alt": "Укрывная схема: СД-23 · СД-5"
+        },
+        {
+          "src": "/uploads/katalog-tsvetov/clean/ukryvnaya-skhema/57-v5.jpg",
+          "caption": "Укрывная схема: СД-9 · СД-16 · СД-4",
+          "alt": "Укрывная схема: СД-9 · СД-16 · СД-4"
+        }
       ]
     }
   ],
