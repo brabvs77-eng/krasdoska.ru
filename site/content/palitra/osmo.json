@@ -38,45 +38,53 @@
           "name": "Золото",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/1ce1ceddb604bc57241e3d3bbc5b841443c.jpg",
-          "label": "Osmo 3092 Золото 1-2 слоя (шлифовка)"
+          "label": "Osmo 3092 Золото 1-2 слоя (шлифовка)",
+          "layers": "1-2"
         },
         {
           "code": "3073",
           "name": "Терра",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/5705700b1e3f842660afc24fc0d560793b6.jpg",
-          "label": "Osmo 3073 Терра 1-2 слоя (шлифовка)"
+          "label": "Osmo 3073 Терра 1-2 слоя (шлифовка)",
+          "layers": "1-2"
         },
         {
           "code": "3074",
           "name": "Графит",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/02b02b10c644c290566ef2fee2a53d0a347.jpg",
-          "label": "Osmo 3074 Графит 1-2 слоя (шлифовка)"
+          "label": "Osmo 3074 Графит 1-2 слоя (шлифовка)",
+          "layers": "1-2"
         },
         {
           "code": "3092",
           "name": "Золото",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/8c98c95aac9010d88c20e7361591c1d73c0.jpg",
-          "label": "Osmo 3092 1-2 слоя Золото (брашировка)"
+          "label": "Osmo 3092 1-2 слоя Золото (брашировка)",
+          "layers": "1-2"
         },
         {
           "code": "3073",
           "name": "Терра",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/048048c9da791f320ed917fafd0627f4049.jpg",
-          "label": "Osmo 3073 Терра (брашировка)"
+          "label": "Osmo 3073 Терра (брашировка)",
+          "layers": null
         },
         {
           "code": "3074",
           "name": "Графит",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/f35f351b0f17dcc3ad30f7e6394dd8c212a.jpg",
-          "label": "Osmo 3074 Графит (брашировка)"
+          "label": "Osmo 3074 Графит (брашировка)",
+          "layers": null
         }
       ],
-      "lead": "Масла и лазури для внутренних работ применяются для стен и потолков, столешниц и подоконников, декоративных балок и реек в сухих помещениях. Это натуральные составы: без резкого запаха, подходят в том числе для жилых и детских комнат при соблюдении технологии нанесения."
+      "lead": "Масла и лазури для внутренних работ применяются для стен и потолков, столешниц и подоконников, декоративных балок и реек в сухих помещениях. Это натуральные составы: без резкого запаха, подходят в том числе для жилых и детских комнат при соблюдении технологии нанесения.",
+      "scope": "interior",
+      "exclusive": false
     },
     {
       "id": "hartwachs",
@@ -88,269 +96,309 @@
           "name": "Мед",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/de3de37bb9f2ac19e8992634fefeddf11d4.jpg",
-          "label": "Osmo 3071 Мед 1-2 слоя (шлифовка)"
+          "label": "Osmo 3071 Мед 1-2 слоя (шлифовка)",
+          "layers": "1-2"
         },
         {
           "code": "3091",
           "name": "Серебро",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/50a50a834eb497642e948a1c3ff8a40d44e.jpg",
-          "label": "Osmo 3091 Серебро 1-2 слоя (шлифовка)"
+          "label": "Osmo 3091 Серебро 1-2 слоя (шлифовка)",
+          "layers": "1-2"
         },
         {
           "code": "3072",
           "name": "Янтарь",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/6bf6bf5c0d36c31f2706f4c7ba3e5a5e6b1.jpg",
-          "label": "Osmo 3072 Янтарь 1-2 слоя (шлифовка)"
+          "label": "Osmo 3072 Янтарь 1-2 слоя (шлифовка)",
+          "layers": "1-2"
         },
         {
           "code": "3071",
           "name": "Мед",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/8928921d5f029f13345bdcb098f94e67fe8.jpg",
-          "label": "Osmo 3071 Мед 1-2 слоя (брашировка)"
+          "label": "Osmo 3071 Мед 1-2 слоя (брашировка)",
+          "layers": "1-2"
         },
         {
           "code": "3091",
           "name": "Серебро",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/bddbdd6c2e0fccab2fdf89b786b5d377cfe.jpg",
-          "label": "Osmo 3091 Серебро 1-2 слоя (брашировка)"
+          "label": "Osmo 3091 Серебро 1-2 слоя (брашировка)",
+          "layers": "1-2"
         },
         {
           "code": "3072",
           "name": "Янтарь",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/2222226d24c38c5b900bfd68909c4416d31.jpg",
-          "label": "Osmo 3072 Янтарь 1-2 слоя (брашировка)"
+          "label": "Osmo 3072 Янтарь 1-2 слоя (брашировка)",
+          "layers": "1-2"
         },
         {
           "code": "3075",
           "name": "Черный",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/a10a10fad5900001d5ea7883d7cd7b6dc5e.jpg",
-          "label": "Osmo 3075 Черный 1-2 слоя (шлиф)"
+          "label": "Osmo 3075 Черный 1-2 слоя (шлиф)",
+          "layers": "1-2"
         },
         {
           "code": "3040",
           "name": "Белый",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/246246d48e563cccbb0d34988f0eaaca5d4.jpg",
-          "label": "Osmo 3040 Белый 1-2 слоя (шлиф)"
+          "label": "Osmo 3040 Белый 1-2 слоя (шлиф)",
+          "layers": "1-2"
         },
         {
           "code": "3067",
           "name": "Светло-серая",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/14c14c9417b17d3fc94c94b231edd1d7aef.jpg",
-          "label": "Osmo 3067 Светло-серая 1-2 слоя (шлиф)"
+          "label": "Osmo 3067 Светло-серая 1-2 слоя (шлиф)",
+          "layers": "1-2"
         },
         {
           "code": "3075",
           "name": "Черный",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/9249241627819d3d4037d1d82399fe42ba4.jpg",
-          "label": "Osmo 3075 Черный 1-2 слоя (браш)"
+          "label": "Osmo 3075 Черный 1-2 слоя (браш)",
+          "layers": "1-2"
         },
         {
           "code": "3040",
           "name": "Белый",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/11a11a8965a932f92dac23aa0ab43002a5d.jpg",
-          "label": "Osmo 3040 Белый 1-2 слоя (браш)"
+          "label": "Osmo 3040 Белый 1-2 слоя (браш)",
+          "layers": "1-2"
         },
         {
           "code": "3067",
           "name": "Светло-серая",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/78f78f9f38bbf4b26258cd3d24b38b5c869.jpg",
-          "label": "Osmo 3067 Светло-серая 1-2 слоя (браш)"
+          "label": "Osmo 3067 Светло-серая 1-2 слоя (браш)",
+          "layers": "1-2"
         },
         {
           "code": "3161",
           "name": "Венге",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/487487bc301c0736b6fd67013fed51d317e.png",
-          "label": "Osmo 3161 Венге 1-2 слоя (шлифовка)"
+          "label": "Osmo 3161 Венге 1-2 слоя (шлифовка)",
+          "layers": "1-2"
         },
         {
           "code": "3169",
           "name": "Черный",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/65f65f20bdc9e5816bc0e87e76d13bce455.jpg",
-          "label": "Osmo 3169 Черный 1-2 слоя (шлифовка)"
+          "label": "Osmo 3169 Черный 1-2 слоя (шлифовка)",
+          "layers": "1-2"
         },
         {
           "code": "3188",
           "name": "Снег",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/6c56c5f517ddb10177601b7ae98288471ad.jpg",
-          "label": "Osmo 3188 Снег 1-2 слоя (шлифовка)"
+          "label": "Osmo 3188 Снег 1-2 слоя (шлифовка)",
+          "layers": "1-2"
         },
         {
           "code": "3132",
           "name": "Серо-бежевый",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/7e47e46888e4672a9f28332cf0087794859.jpeg",
-          "label": "Osmo 3132 Серо-бежевый 1-2 слоя (шлифовка)"
+          "label": "Osmo 3132 Серо-бежевый 1-2 слоя (шлифовка)",
+          "layers": "1-2"
         },
         {
           "code": "3186",
           "name": "Белый матовый",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/9159151ccd1be00239281a261cfdeaf637e.jpeg",
-          "label": "Osmo 3186 Белый матовый 1-2 слоя (шлифовка)"
+          "label": "Osmo 3186 Белый матовый 1-2 слоя (шлифовка)",
+          "layers": "1-2"
         },
         {
           "code": "3104",
           "name": "Красный",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/0310315432958413415f66f70f7a9c9271d.jpeg",
-          "label": "Osmo 3104 Красный 1-2 слоя (шлиф)"
+          "label": "Osmo 3104 Красный 1-2 слоя (шлиф)",
+          "layers": "1-2"
         },
         {
           "code": "3102",
           "name": "Бук дымчатый",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/3e63e6991fa6810e3ec8693f5a94ff0e159.jpg",
-          "label": "Osmo 3102 Бук дымчатый 1-2 слоя (шлиф)"
+          "label": "Osmo 3102 Бук дымчатый 1-2 слоя (шлиф)",
+          "layers": "1-2"
         },
         {
           "code": "3137",
           "name": "Вишня",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/c85c85a23ced7999d7ffd6cfdabed9aedd7.jpg",
-          "label": "Osmo 3137 Вишня 1-2 слоя (шлиф)"
+          "label": "Osmo 3137 Вишня 1-2 слоя (шлиф)",
+          "layers": "1-2"
         },
         {
           "code": "3131",
           "name": "Зеленый",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/e4ae4a0b60fdd2b2ab387651a22bde5eebf.png",
-          "label": "Osmo 3131 Зеленый 1-2 слоя (шлиф)"
+          "label": "Osmo 3131 Зеленый 1-2 слоя (шлиф)",
+          "layers": "1-2"
         },
         {
           "code": "3172",
           "name": "Шелк",
           "finish": "шлифовка",
-          "image": "/uploads/palitra/osmo/7e07e01118d79bdff133d99182a17354979.png",
-          "label": "Osmo 3172 Шелк 1-2 слоя (шлиф)"
+          "image": "/uploads/palitra/osmo/5565562e25b207f51b530353c72209cdbac.jpg",
+          "label": "Osmo 3172 Шелк 1-2 слоя (шлиф)",
+          "layers": "1-2"
         },
         {
           "code": "3164",
           "name": "Дуб",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/dbadba2da2fe350b91ec892f38615bb5dbb.jpg",
-          "label": "Osmo 3164 Дуб 1-2 слоя (шлиф)"
+          "label": "Osmo 3164 Дуб 1-2 слоя (шлиф)",
+          "layers": "1-2"
         },
         {
           "code": "3119",
           "name": "Шелковисто-серая",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/86c86c3f56db8ff65e82aabf63044503a3b.jpg",
-          "label": "Osmo 3119 Шелковисто-серая 1-2 слоя (шлиф )"
+          "label": "Osmo 3119 Шелковисто-серая 1-2 слоя (шлиф )",
+          "layers": "1-2"
         },
         {
           "code": "3143",
           "name": "Коньяк",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/a33a33f57bd1bd3aaac4780ee9200f71d2e.jpg",
-          "label": "Osmo 3143 Коньяк 1-2 слоя (шлиф)"
+          "label": "Osmo 3143 Коньяк 1-2 слоя (шлиф)",
+          "layers": "1-2"
         },
         {
           "code": "3161",
           "name": "Венге",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/965965e06f2f4b2e7d39b7cbdd45b2c6d89.jpg",
-          "label": "Osmo 3161 Венге (брашировка)"
+          "label": "Osmo 3161 Венге (брашировка)",
+          "layers": null
         },
         {
           "code": "3169",
           "name": "Черный",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/f56f566e7e9ac1150645c98d0281225dff0.jpg",
-          "label": "Osmo 3169 Черный (брашировка)"
+          "label": "Osmo 3169 Черный (брашировка)",
+          "layers": null
         },
         {
           "code": "3188",
           "name": "Снег",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/b69b69279a99838ba927df8a092351baf2b.jpg",
-          "label": "Osmo 3188 Снег 1-2 слоя (брашировка)"
+          "label": "Osmo 3188 Снег 1-2 слоя (брашировка)",
+          "layers": "1-2"
         },
         {
           "code": "3132",
           "name": "Серо-бежевый",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/a71a7168db4e8995dfabe44a6c0839a8121.jpg",
-          "label": "Osmo 3132 Серо-бежевый 1-2 слоя (браш)"
+          "label": "Osmo 3132 Серо-бежевый 1-2 слоя (браш)",
+          "layers": "1-2"
         },
         {
           "code": "3186",
           "name": "Белый матовый",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/4fb4fb896f27bb68abb228b73eed76e3f49.jpg",
-          "label": "Osmo 3186 Белый матовый 1-2 слоя (браш)"
+          "label": "Osmo 3186 Белый матовый 1-2 слоя (браш)",
+          "layers": "1-2"
         },
         {
           "code": "3104",
           "name": "Красный",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/f9af9a1c715b8a669b99145cda48c7fc7fe.jpg",
-          "label": "Osmo 3104 Красный 1-2 слоя (браш)"
+          "label": "Osmo 3104 Красный 1-2 слоя (браш)",
+          "layers": "1-2"
         },
         {
           "code": "3102",
           "name": "Бук дымчатый",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/7197197d7c3433655bf2b7c46168299037e.jpg",
-          "label": "Osmo 3102 Бук дымчатый 1-2 слоя (браш)"
+          "label": "Osmo 3102 Бук дымчатый 1-2 слоя (браш)",
+          "layers": "1-2"
         },
         {
           "code": "3137",
           "name": "Вишня",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/b37b373e321b622a1e6e90418fd4fdb27fe.jpg",
-          "label": "Osmo 3137 Вишня 1-2 слоя (браш)"
+          "label": "Osmo 3137 Вишня 1-2 слоя (браш)",
+          "layers": "1-2"
         },
         {
           "code": "3131",
           "name": "Зеленый",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/b23b232016824df4eb7c8f247a49fb732a4.jpg",
-          "label": "Osmo 3131 Зеленый 1-2 слоя (браш)"
+          "label": "Osmo 3131 Зеленый 1-2 слоя (браш)",
+          "layers": "1-2"
         },
         {
           "code": "3172",
           "name": "Шелк",
           "finish": "брашировка",
-          "image": "/uploads/palitra/osmo/75275291693d67977146ec9c2b1bb6140ff.jpg",
-          "label": "Osmo 3172 Шелк 1-2 слоя (браш)"
+          "image": "/uploads/palitra/osmo/a9ba9b48401ce4c9c57aa09cbf5600b1391.jpg",
+          "label": "Osmo 3172 Шелк 1-2 слоя (браш)",
+          "layers": "1-2"
         },
         {
           "code": "3164",
           "name": "Дуб",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/bc4bc490ab3d8240bc8e137cea5e9df2e72.jpg",
-          "label": "Osmo 3164 Дуб 1-2 слоя (браш)"
+          "label": "Osmo 3164 Дуб 1-2 слоя (браш)",
+          "layers": "1-2"
         },
         {
           "code": "3119",
           "name": "Шелковисто-серая",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/2bd2bd2b311a16265e96dac324ce4d56d5f.jpg",
-          "label": "Osmo 3119 Шелковисто-серая 1-2 слоя (браш)"
+          "label": "Osmo 3119 Шелковисто-серая 1-2 слоя (браш)",
+          "layers": "1-2"
         },
         {
           "code": "3143",
           "name": "Коньяк",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/9709707fad9a695e9080c87035cabafb266.jpg",
-          "label": "Osmo 3143 Коньяк 1-2 слоя (браш)"
+          "label": "Osmo 3143 Коньяк 1-2 слоя (браш)",
+          "layers": "1-2"
         }
       ],
-      "lead": "Масло с твёрдым воском Osmo для внутренних работ подчёркивает текстуру дерева и даёт шелковистую износостойкую поверхность."
+      "lead": "Масло с твёрдым воском Osmo для внутренних работ подчёркивает текстуру дерева и даёт шелковистую износостойкую поверхность.",
+      "scope": "interior",
+      "exclusive": false
     },
     {
       "id": "dekorwachs",
@@ -362,255 +410,293 @@
           "name": "Серый гранит",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/952952c5a1f71877f9a44dc9e36b03c004d.jpg",
-          "label": "Osmo 3118 Серый гранит 1-2 слоя (шлиф)"
+          "label": "Osmo 3118 Серый гранит 1-2 слоя (шлиф)",
+          "layers": "1-2"
         },
         {
           "code": "3181",
           "name": "Галька",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/e7be7b0b5e1b210ece2cccb4e195beae3f6.jpg",
-          "label": "Osmo 3181 Галька 1-2 слоя (шлифовка)"
+          "label": "Osmo 3181 Галька 1-2 слоя (шлифовка)",
+          "layers": "1-2"
         },
         {
           "code": "3103",
           "name": "Дуб светлый",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/213213784d5c29466b1642f12e670bc7938.jpg",
-          "label": "Osmo 3103 Дуб светлый 1-2 слоя (шлиф)"
+          "label": "Osmo 3103 Дуб светлый 1-2 слоя (шлиф)",
+          "layers": "1-2"
         },
         {
           "code": "3136",
           "name": "Береза",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/4fe4fe749c4f2bc806b8aa2eec1a01cdb17.jpg",
-          "label": "Osmo 3136 Береза 1-2 слоя (шлиф)"
+          "label": "Osmo 3136 Береза 1-2 слоя (шлиф)",
+          "layers": "1-2"
         },
         {
           "code": "3125",
           "name": "Синий",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/554554da47c67e3de2ce69d1cf07aab1f1c.jpg",
-          "label": "Osmo 3125 Синий 1-2 слоя (шлифовка)"
+          "label": "Osmo 3125 Синий 1-2 слоя (шлифовка)",
+          "layers": "1-2"
         },
         {
           "code": "3111",
           "name": "Белое",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/e3de3d8c966bd6a6cef65d75bd86adbe4a4.jpg",
-          "label": "Osmo 3111 Белое 1-2 слоя (шлифовка)"
+          "label": "Osmo 3111 Белое 1-2 слоя (шлифовка)",
+          "layers": "1-2"
         },
         {
           "code": "3138",
           "name": "Махагон",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/9a09a0f2fa850d9979cb1b3fed02d755f19.jpg",
-          "label": "Osmo 3138 Махагон 1-2 слоя (шлифовка)"
+          "label": "Osmo 3138 Махагон 1-2 слоя (шлифовка)",
+          "layers": "1-2"
         },
         {
           "code": "3118",
           "name": "Серый гранит",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/f1af1a1e34021b0e070892148971748cef9.jpg",
-          "label": "Osmo 3118 Серый гранит 1-2 слоя (браш)"
+          "label": "Osmo 3118 Серый гранит 1-2 слоя (браш)",
+          "layers": "1-2"
         },
         {
           "code": "3181",
           "name": "Галька",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/a9ba9b48401ce4c9c57aa09cbf5600b1391.jpg",
-          "label": "Osmo 3181 Галька 1-2 слоя (брашировка)"
+          "label": "Osmo 3181 Галька 1-2 слоя (брашировка)",
+          "layers": "1-2"
         },
         {
           "code": "3103",
           "name": "Дуб светлый",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/b97b971f2fc93c31fc060d98e70bb1e78f5.jpg",
-          "label": "Osmo 3103 Дуб светлый 1-2 слоя (браш)"
+          "label": "Osmo 3103 Дуб светлый 1-2 слоя (браш)",
+          "layers": "1-2"
         },
         {
           "code": "3136",
           "name": "Береза",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/fa4fa4f738cc542193ac7c03efd955bdebb.jpg",
-          "label": "Osmo 3136 Береза 1-2 слоя (браш)"
+          "label": "Osmo 3136 Береза 1-2 слоя (браш)",
+          "layers": "1-2"
         },
         {
           "code": "3125",
           "name": "Синий",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/74d74d7eafd77b9d97f6da563550c17d9fc.jpg",
-          "label": "Osmo 3125 Синий 1-2 слоя (брашировка)"
+          "label": "Osmo 3125 Синий 1-2 слоя (брашировка)",
+          "layers": "1-2"
         },
         {
           "code": "3111",
           "name": "Белое",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/f30f30e6a1eb403dc7ff93aae42e1ec58ed.jpg",
-          "label": "Osmo 3111 Белое 1-2 слоя (брашировка)"
+          "label": "Osmo 3111 Белое 1-2 слоя (брашировка)",
+          "layers": "1-2"
         },
         {
           "code": "3138",
           "name": "Махагон",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/d1ad1a58be49352aacd13437e1fed6cda34.jpg",
-          "label": "Osmo 3138 Махагон 1-2 слоя (брашировка)"
+          "label": "Osmo 3138 Махагон 1-2 слоя (брашировка)",
+          "layers": "1-2"
         },
         {
           "code": "3105",
           "name": "Желтый",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/a99a996b469dbd89a470e6b8a2e7734401f.jpg",
-          "label": "Osmo 3105 Желтый 1-2 слоя (шлиф)"
+          "label": "Osmo 3105 Желтый 1-2 слоя (шлиф)",
+          "layers": "1-2"
         },
         {
           "code": "3101",
           "name": "Бесцветное",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/af4af490c0a1c67a362622c87c698e06bac.jpg",
-          "label": "Osmo 3101 Бесцветное 1-2 слоя (шлиф)"
+          "label": "Osmo 3101 Бесцветное 1-2 слоя (шлиф)",
+          "layers": "1-2"
         },
         {
           "code": "3166",
           "name": "Орех",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/09e09e17f0e04f43cd2e8a24ea727da089b.jpg",
-          "label": "Osmo 3166 Орех 1-2 слоя (шлиф)"
+          "label": "Osmo 3166 Орех 1-2 слоя (шлиф)",
+          "layers": "1-2"
         },
         {
           "code": "3123",
           "name": "Клен",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/9e59e5f4237ab1615391abfec29596e9b45.jpg",
-          "label": "Osmo 3123 Клен 1-2 слоя (шлиф)"
+          "label": "Osmo 3123 Клен 1-2 слоя (шлиф)",
+          "layers": "1-2"
         },
         {
           "code": "3168",
           "name": "Дуб антик",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/250250568f725a362a433372dbbd6be4fcd.jpg",
-          "label": "Osmo 3168 Дуб антик 1-2 слоя (шлиф)"
+          "label": "Osmo 3168 Дуб антик 1-2 слоя (шлиф)",
+          "layers": "1-2"
         },
         {
           "code": "3105",
           "name": "Желтый",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/2e82e860cf3060b22b02692ef19b6a32d14.jpg",
-          "label": "Osmo 3105 Желтый 1-2 слоя (браш)"
+          "label": "Osmo 3105 Желтый 1-2 слоя (браш)",
+          "layers": "1-2"
         },
         {
           "code": "3101",
           "name": "Бесцветное",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/1a81a89e996973368fae61c5e205f156e31.jpg",
-          "label": "Osmo 3101 Бесцветное 1-2 слоя (браш)"
+          "label": "Osmo 3101 Бесцветное 1-2 слоя (браш)",
+          "layers": "1-2"
         },
         {
           "code": "3166",
           "name": "Орех",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/7c97c9bed69f9822f1c9543f9b37c3825ae.jpg",
-          "label": "Osmo 3166 Орех 1-2 слоя (браш)"
+          "label": "Osmo 3166 Орех 1-2 слоя (браш)",
+          "layers": "1-2"
         },
         {
           "code": "3123",
           "name": "Клен",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/b65b659a1f3f46e6245ff1e3b2e7b7a3e9a.jpg",
-          "label": "Osmo 3123 Клен 1-2 слоя (браш)"
+          "label": "Osmo 3123 Клен 1-2 слоя (браш)",
+          "layers": "1-2"
         },
         {
           "code": "3168",
           "name": "Дуб антик",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/e33e33446c3ae7022f194fac48ec174c4f9.jpg",
-          "label": "Osmo 3168 Дуб антик 1-2 слоя (браш)"
+          "label": "Osmo 3168 Дуб антик 1-2 слоя (браш)",
+          "layers": "1-2"
         },
         {
           "code": "3519",
           "name": "Натуральный",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/6c46c480d48d7f812938ee731232f697ff0.jpg",
-          "label": "Osmo 3519 Натуральный 1-2 слоя (шлиф)"
+          "label": "Osmo 3519 Натуральный 1-2 слоя (шлиф)",
+          "layers": "1-2"
         },
         {
           "code": "3543",
           "name": "Коньяк",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/8d18d1e0968027eedfd998aee926fc6bac1.jpg",
-          "label": "Osmo 3543 Коньяк 1-2 слоя (шлифовка)"
+          "label": "Osmo 3543 Коньяк 1-2 слоя (шлифовка)",
+          "layers": "1-2"
         },
         {
           "code": "3518",
           "name": "Светло-серый",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/00500568d7315d8d7e004326d26a8a265d3.jpg",
-          "label": "Osmo 3518 Светло-серый 1-2 слоя (шлифовка)"
+          "label": "Osmo 3518 Светло-серый 1-2 слоя (шлифовка)",
+          "layers": "1-2"
         },
         {
           "code": "3541",
           "name": "Гавана",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/b70b707f15c1692de592bb4469c563fcedd.jpg",
-          "label": "Osmo 3541 Гавана 1-2 слоя (шлифовка)"
+          "label": "Osmo 3541 Гавана 1-2 слоя (шлифовка)",
+          "layers": "1-2"
         },
         {
           "code": "3514",
           "name": "Графит",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/b31b31f4dacb9fe3d6d7f3b0b0927e8ce79.jpg",
-          "label": "Osmo 3514 Графит 1-2 слоя (шлифовка)"
+          "label": "Osmo 3514 Графит 1-2 слоя (шлифовка)",
+          "layers": "1-2"
         },
         {
           "code": "3512",
           "name": "Серебристо-серый",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/5f85f8f09454bee5ef832769f190153d41b.jpg",
-          "label": "Osmo 3512 Серебристо-серый (шлиф)"
+          "label": "Osmo 3512 Серебристо-серый (шлиф)",
+          "layers": null
         },
         {
           "code": "3519",
           "name": "Натуральный",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/1a01a0d10873ce4e3ba9f9e90e3debf41c5.jpg",
-          "label": "Osmo 3519 Натуральный 1-2 слоя (браш)"
+          "label": "Osmo 3519 Натуральный 1-2 слоя (браш)",
+          "layers": "1-2"
         },
         {
           "code": "3543",
           "name": "Коньяк",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/6f16f16f3d0e0f45f68761d316d1873c24b.jpg",
-          "label": "Osmo 3543 Коньяк (брашировка)"
+          "label": "Osmo 3543 Коньяк (брашировка)",
+          "layers": null
         },
         {
           "code": "3518",
           "name": "Светло-серый",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/effeffbed03f771558fda4ba9d370d968a3.jpg",
-          "label": "Osmo 3518 Светло-серый (брашировка)"
+          "label": "Osmo 3518 Светло-серый (брашировка)",
+          "layers": null
         },
         {
           "code": "3541",
           "name": "Гавана",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/1e41e48d04fe1efadcada89df8a5dc57dc7.jpg",
-          "label": "Osmo 3541 Гавана 1-2 слоя (брашировка)"
+          "label": "Osmo 3541 Гавана 1-2 слоя (брашировка)",
+          "layers": "1-2"
         },
         {
           "code": "3514",
           "name": "Графит",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/d35d35c8855ca828d9019671b4595b9b4a2.jpg",
-          "label": "Osmo 3514 Графит 1-2 слоя (браш)"
+          "label": "Osmo 3514 Графит 1-2 слоя (браш)",
+          "layers": "1-2"
         },
         {
           "code": "3512",
           "name": "Серебристо-серый",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/63c63c54d01413770c55e09dab95e9911ce.jpg",
-          "label": "Osmo 3512 Серебристо-серый (браш)"
+          "label": "Osmo 3512 Серебристо-серый (браш)",
+          "layers": null
         }
       ],
-      "lead": "Цветные масла Osmo Dekorwachs — декоративные оттенки для интерьерной отделки с сохранением рисунка древесины."
+      "lead": "Цветные масла Osmo Dekorwachs — декоративные оттенки для интерьерной отделки с сохранением рисунка древесины.",
+      "scope": "interior",
+      "exclusive": false
     },
     {
       "id": "ol-beize",
@@ -622,199 +708,229 @@
           "name": "Табак",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/4034030439a78c92d3c1ca0e4c828abe03d.jpg",
-          "label": "Osmo 3564 Табак 1-2 слоя (шлифовка)"
+          "label": "Osmo 3564 Табак 1-2 слоя (шлифовка)",
+          "layers": "1-2"
         },
         {
           "code": "3516",
           "name": "Ятоба",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/cfccfced45bd686d0cb90023482bd1a10be.jpg",
-          "label": "Osmo 3516 Ятоба 1-2 слоя (шлифовка)"
+          "label": "Osmo 3516 Ятоба 1-2 слоя (шлифовка)",
+          "layers": "1-2"
         },
         {
           "code": "3590",
           "name": "Черный",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/33633607767d0dd275c6d279198b3d0bf44.jpg",
-          "label": "Osmo 3590 Черный 1-2 слоя (шлифовка)"
+          "label": "Osmo 3590 Черный 1-2 слоя (шлифовка)",
+          "layers": "1-2"
         },
         {
           "code": "3501",
           "name": "Белый",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/e0de0d72cc7f8724408905cf8e571160c75.jpg",
-          "label": "Osmo 3501 Белый 1-2 слоя (шлифовка)"
+          "label": "Osmo 3501 Белый 1-2 слоя (шлифовка)",
+          "layers": "1-2"
         },
         {
           "code": "3564",
           "name": "Табак",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/5e15e107f603e034184e6e3ae31517991b5.jpg",
-          "label": "Osmo 3564 Табак 1-2 слоя (брашировка)"
+          "label": "Osmo 3564 Табак 1-2 слоя (брашировка)",
+          "layers": "1-2"
         },
         {
           "code": "3516",
           "name": "Ятоба",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/cc5cc54ddd6f215abcb4fb6c2c8402a342e.jpg",
-          "label": "Osmo 3516 Ятоба 1-2 слоя (брашировка)"
+          "label": "Osmo 3516 Ятоба 1-2 слоя (брашировка)",
+          "layers": "1-2"
         },
         {
           "code": "3590",
           "name": "Черный",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/e93e938209a82980de427363107eb018ca4.jpg",
-          "label": "Osmo 3590 Черный 1-2 слоя (брашировка)"
+          "label": "Osmo 3590 Черный 1-2 слоя (брашировка)",
+          "layers": "1-2"
         },
         {
           "code": "3501",
           "name": "Белый",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/3a23a214efb117acfe18b335d6ac097c95e.jpg",
-          "label": "Osmo 3501 Белый 1-2 слоя (брашировка)"
+          "label": "Osmo 3501 Белый 1-2 слоя (брашировка)",
+          "layers": "1-2"
         },
         {
           "code": "2507",
           "name": "Серо-голубая",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/e55e55646f2a0bb94e73860c037bef2a726.jpg",
-          "label": "Osmo 2507 Серо-голубая (шлифовка)"
+          "label": "Osmo 2507 Серо-голубая (шлифовка)",
+          "layers": null
         },
         {
           "code": "2507",
           "name": "Серо-голубая",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/f88f88047d05f374f9e56a0aba8c4cc9374.jpg",
-          "label": "Osmo 2507 Серо-голубая (брашировка)"
+          "label": "Osmo 2507 Серо-голубая (брашировка)",
+          "layers": null
         },
         {
           "code": "2203",
           "name": "Желтая ель",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/808808467eba0270f31360e060779850b44.jpg",
-          "label": "Osmo 2203 Желтая ель (шлифовка)"
+          "label": "Osmo 2203 Желтая ель (шлифовка)",
+          "layers": null
         },
         {
           "code": "2742",
           "name": "Серый туман",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/a99a99314b76d2cc7ede45065e93171a6f9.jpg",
-          "label": "Osmo 2742 Серый туман (шлифовка)"
+          "label": "Osmo 2742 Серый туман (шлифовка)",
+          "layers": null
         },
         {
           "code": "2310",
           "name": "Кедр/красное дерево",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/66f66fed8717120ed3fbe6a5e342733e05a.jpg",
-          "label": "Osmo 2310 Кедр/красное дерево (шлиф)"
+          "label": "Osmo 2310 Кедр/красное дерево (шлиф)",
+          "layers": null
         },
         {
           "code": "2607",
           "name": "Темно-коричневая",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/d62d62099daf3dc912f3a025de77d9c4438.jpg",
-          "label": "Osmo 2607 Темно-коричневая (шлиф)"
+          "label": "Osmo 2607 Темно-коричневая (шлиф)",
+          "layers": null
         },
         {
           "code": "2735",
           "name": "Дымчато-серая",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/f38f3843b8fbb37219c3c929259c4f4123a.jpg",
-          "label": "Osmo 2735 Дымчато-серая (шлифовка)"
+          "label": "Osmo 2735 Дымчато-серая (шлифовка)",
+          "layers": null
         },
         {
           "code": "2708",
           "name": "Светло-серая",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/01b01b192bb1764b845c6b75da19c53aa62.jpg",
-          "label": "Osmo 2708 Светло-серая (шлиф)"
+          "label": "Osmo 2708 Светло-серая (шлиф)",
+          "layers": null
         },
         {
           "code": "2311",
           "name": "Красно-коричневая",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/e12e1245130ad4121e6daa34577228c8a93.jpg",
-          "label": "Osmo 2311 Красно-коричневая (шлиф)"
+          "label": "Osmo 2311 Красно-коричневая (шлиф)",
+          "layers": null
         },
         {
           "code": "2404",
           "name": "Темно-зеленая",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/e11e115aedfb191fa2b990a9fdeeeea6bcc.jpg",
-          "label": "Osmo 2404 Темно-зеленая (шлиф)"
+          "label": "Osmo 2404 Темно-зеленая (шлиф)",
+          "layers": null
         },
         {
           "code": "2308",
           "name": "Темно-красная",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/f68f6897c175215dc42b30d1cb7ca55048b.jpg",
-          "label": "Osmo 2308 Темно-красная (шлиф)"
+          "label": "Osmo 2308 Темно-красная (шлиф)",
+          "layers": null
         },
         {
           "code": "2203",
           "name": "Желтая ель",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/577577bd6e3cf843ab0fd28c79288fdc105.jpg",
-          "label": "Osmo 2203 Желтая ель (брашировка)"
+          "label": "Osmo 2203 Желтая ель (брашировка)",
+          "layers": null
         },
         {
           "code": "2742",
           "name": "Серый туман",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/942942768af83954b09e4e612f11bc1cb23.jpg",
-          "label": "Osmo 2742 Серый туман (брашировка)"
+          "label": "Osmo 2742 Серый туман (брашировка)",
+          "layers": null
         },
         {
           "code": "2310",
           "name": "Кедр/красное дерево",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/b12b12915eaf6d028e82b58984afb1e4c24.jpg",
-          "label": "Osmo 2310 Кедр/красное дерево (браш)"
+          "label": "Osmo 2310 Кедр/красное дерево (браш)",
+          "layers": null
         },
         {
           "code": "2607",
           "name": "Темно-коричневая",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/d25d251f28e89e00672acc8faa264359b93.jpg",
-          "label": "Osmo 2607 Темно-коричневая (браш)"
+          "label": "Osmo 2607 Темно-коричневая (браш)",
+          "layers": null
         },
         {
           "code": "2735",
           "name": "Дымчато-серая",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/b91b91be133e13ce0407abf802a152c8d9f.jpg",
-          "label": "Osmo 2735 Дымчато-серая (брашировка)"
+          "label": "Osmo 2735 Дымчато-серая (брашировка)",
+          "layers": null
         },
         {
           "code": "2708",
           "name": "Светло-серая",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/bfabfa8be4e3e0096367c2bc036cd6f6ac4.jpg",
-          "label": "Osmo 2708 Светло-серая (браш)"
+          "label": "Osmo 2708 Светло-серая (браш)",
+          "layers": null
         },
         {
           "code": "2311",
           "name": "Красно-коричневая",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/b12b1252bf946bb7ce24578819b04af5b93.jpg",
-          "label": "Osmo 2311 Красно-коричневая (браш)"
+          "label": "Osmo 2311 Красно-коричневая (браш)",
+          "layers": null
         },
         {
           "code": "2404",
           "name": "Темно-зеленая",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/9699691dac8f3079b3558e5542eb09aa565.jpg",
-          "label": "Osmo 2404 Темно-зеленая (браш)"
+          "label": "Osmo 2404 Темно-зеленая (браш)",
+          "layers": null
         },
         {
           "code": "2308",
           "name": "Темно-красная",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/b9cb9c7eff0a559c441dc54716944ca1c34.jpg",
-          "label": "Osmo 2308 Темно-красная (браш)"
+          "label": "Osmo 2308 Темно-красная (браш)",
+          "layers": null
         }
       ],
-      "lead": "Цветные бейцы на масляной основе Osmo ÖL-BEIZE дают выразительный тон при сохранении структуры дерева."
+      "lead": "Цветные бейцы на масляной основе Osmo ÖL-BEIZE дают выразительный тон при сохранении структуры дерева.",
+      "scope": "interior",
+      "exclusive": false
     },
     {
       "id": "landhaus-interior",
@@ -826,143 +942,165 @@
           "name": "Слоновая кость",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/cedcedda30eb9c03f101fdfba115028adb8.jpg",
-          "label": "Osmo 2204 Слоновая кость (шлифовка)"
+          "label": "Osmo 2204 Слоновая кость (шлифовка)",
+          "layers": null
         },
         {
           "code": "2204",
           "name": "Слоновая кость",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/4c74c735e453eec6a3015971a4b77e17b6f.jpg",
-          "label": "Osmo 2204 Слоновая кость (брашировка)"
+          "label": "Osmo 2204 Слоновая кость (брашировка)",
+          "layers": null
         },
         {
           "code": "2501",
           "name": "Морская волна",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/c17c17147ddf9867cbf8c0f5f346bdbc8be.jpg",
-          "label": "Osmo 2501 Морская волна (шлифовка)"
+          "label": "Osmo 2501 Морская волна (шлифовка)",
+          "layers": null
         },
         {
           "code": "2703",
           "name": "Серо-черная",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/5da5da71dcbc8b9b6941f94b4ca50fcd474.jpg",
-          "label": "Osmo 2703 Серо-черная (шлифовка)"
+          "label": "Osmo 2703 Серо-черная (шлифовка)",
+          "layers": null
         },
         {
           "code": "2716",
           "name": "Серый антрацит",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/3e13e11b06a0fbdc8bd85d754477b198fc4.jpg",
-          "label": "Osmo 2716 Серый антрацит (шлифовка)"
+          "label": "Osmo 2716 Серый антрацит (шлифовка)",
+          "layers": null
         },
         {
           "code": "2101",
           "name": "Белая",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/3f43f4de613be7e806b0cc41a7b22569a23.jpg",
-          "label": "Osmo 2101 Белая (шлифовка)"
+          "label": "Osmo 2101 Белая (шлифовка)",
+          "layers": null
         },
         {
           "code": "2104",
           "name": "Белая",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/3f13f144df6c729cee12e4243d7df655db4.jpg",
-          "label": "Osmo 2104 Белая (шлифовка)"
+          "label": "Osmo 2104 Белая (шлифовка)",
+          "layers": null
         },
         {
           "code": "2606",
           "name": "Коричневая",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/364364a8e362f96b7dcb25eba7d4e59648d.jpg",
-          "label": "Osmo 2606 Коричневая (шлиф)"
+          "label": "Osmo 2606 Коричневая (шлиф)",
+          "layers": null
         },
         {
           "code": "2506",
           "name": "Темно-синяя",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/d06d06d1ac34fb57296191d55cd14671bb6.jpg",
-          "label": "Osmo 2506 Темно-синяя (шлифовка)"
+          "label": "Osmo 2506 Темно-синяя (шлифовка)",
+          "layers": null
         },
         {
           "code": "2704",
           "name": "Серая",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/e75e75c80b9965a6059c4c02a0ab08a32e5.jpg",
-          "label": "Osmo 2704 Серая (шлифовка)"
+          "label": "Osmo 2704 Серая (шлифовка)",
+          "layers": null
         },
         {
           "code": "2501",
           "name": "Морская волна",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/6766764bd68618be11a742f3e984167829e.jpg",
-          "label": "Osmo 2501 Морская волна (брашировка)"
+          "label": "Osmo 2501 Морская волна (брашировка)",
+          "layers": null
         },
         {
           "code": "2703",
           "name": "Серо-черная",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/7db7db9d0365f0aca38f24f32548faae824.jpg",
-          "label": "Osmo 2703 Серо-черная (брашировка)"
+          "label": "Osmo 2703 Серо-черная (брашировка)",
+          "layers": null
         },
         {
           "code": "2716",
           "name": "Серый антрацит",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/9b19b1521d43f7447917aedbe34256b35c3.jpg",
-          "label": "Osmo 2716 Серый антрацит (брашировка)"
+          "label": "Osmo 2716 Серый антрацит (брашировка)",
+          "layers": null
         },
         {
           "code": "2101",
           "name": "Белая",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/cb4cb4232cbe7a9d6c3e2b5758946aee91f.jpg",
-          "label": "Osmo 2101 Белая (брашировка)"
+          "label": "Osmo 2101 Белая (брашировка)",
+          "layers": null
         },
         {
           "code": "2104",
           "name": "Белая",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/b2db2d66f0934e28b094c19d0d2bb8fedc5.jpg",
-          "label": "Osmo 2104 Белая (брашировка)"
+          "label": "Osmo 2104 Белая (брашировка)",
+          "layers": null
         },
         {
           "code": "2606",
           "name": "Коричневая",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/165165babcc9d3e11d8c8e839bc472ce99f.jpg",
-          "label": "Osmo 2606 Коричневая (браш)"
+          "label": "Osmo 2606 Коричневая (браш)",
+          "layers": null
         },
         {
           "code": "2506",
           "name": "Темно-синяя",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/27c27cfa51af28ae0bb5e319ed03a77580d.jpg",
-          "label": "Osmo 2506 Темно-синяя (брашировка)"
+          "label": "Osmo 2506 Темно-синяя (брашировка)",
+          "layers": null
         },
         {
           "code": "2704",
           "name": "Серая",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/9a19a14618c1c3a84c3f7df7014956b052e.jpg",
-          "label": "Osmo 2704 Серая (брашировка)"
+          "label": "Osmo 2704 Серая (брашировка)",
+          "layers": null
         },
         {
           "code": "2205",
           "name": "Ярко-желтая",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/3b03b0735a90474efd51c048335dc97408c.jpg",
-          "label": "Osmo 2205 Ярко-желтая (шлифовка)"
+          "label": "Osmo 2205 Ярко-желтая (шлифовка)",
+          "layers": null
         },
         {
           "code": "2205",
           "name": "Ярко-желтая",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/f6bf6bcd4466f9f79e392301acf8b677908.jpg",
-          "label": "Osmo 2205 Ярко-желтая (брашировка)"
+          "label": "Osmo 2205 Ярко-желтая (брашировка)",
+          "layers": null
         }
       ],
-      "lead": "Непрозрачная (укрывная) краска Osmo Landhausfarbe для внутренних работ — плотный цвет с минимально видимой текстурой."
+      "lead": "Непрозрачная (укрывная) краска Osmo Landhausfarbe для внутренних работ — плотный цвет с минимально видимой текстурой.",
+      "scope": "interior",
+      "exclusive": false
     },
     {
       "id": "exterior-oils",
@@ -974,143 +1112,165 @@
           "name": "Серо-голубая",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/e55e55646f2a0bb94e73860c037bef2a726.jpg",
-          "label": "Osmo 2507 Серо-голубая (шлифовка)"
+          "label": "Osmo 2507 Серо-голубая (шлифовка)",
+          "layers": null
         },
         {
           "code": "2507",
           "name": "Серо-голубая",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/f88f88047d05f374f9e56a0aba8c4cc9374.jpg",
-          "label": "Osmo 2507 Серо-голубая (брашировка)"
+          "label": "Osmo 2507 Серо-голубая (брашировка)",
+          "layers": null
         },
         {
           "code": "2203",
           "name": "Желтая ель",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/808808467eba0270f31360e060779850b44.jpg",
-          "label": "Osmo 2203 Желтая ель (шлифовка)"
+          "label": "Osmo 2203 Желтая ель (шлифовка)",
+          "layers": null
         },
         {
           "code": "2742",
           "name": "Серый туман",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/a99a99314b76d2cc7ede45065e93171a6f9.jpg",
-          "label": "Osmo 2742 Серый туман (шлифовка)"
+          "label": "Osmo 2742 Серый туман (шлифовка)",
+          "layers": null
         },
         {
           "code": "2310",
           "name": "Кедр/красное дерево",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/66f66fed8717120ed3fbe6a5e342733e05a.jpg",
-          "label": "Osmo 2310 Кедр/красное дерево (шлиф)"
+          "label": "Osmo 2310 Кедр/красное дерево (шлиф)",
+          "layers": null
         },
         {
           "code": "2607",
           "name": "Темно-коричневая",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/d62d62099daf3dc912f3a025de77d9c4438.jpg",
-          "label": "Osmo 2607 Темно-коричневая (шлиф)"
+          "label": "Osmo 2607 Темно-коричневая (шлиф)",
+          "layers": null
         },
         {
           "code": "2735",
           "name": "Дымчато-серая",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/f38f3843b8fbb37219c3c929259c4f4123a.jpg",
-          "label": "Osmo 2735 Дымчато-серая (шлифовка)"
+          "label": "Osmo 2735 Дымчато-серая (шлифовка)",
+          "layers": null
         },
         {
           "code": "2708",
           "name": "Светло-серая",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/01b01b192bb1764b845c6b75da19c53aa62.jpg",
-          "label": "Osmo 2708 Светло-серая (шлиф)"
+          "label": "Osmo 2708 Светло-серая (шлиф)",
+          "layers": null
         },
         {
           "code": "2311",
           "name": "Красно-коричневая",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/e12e1245130ad4121e6daa34577228c8a93.jpg",
-          "label": "Osmo 2311 Красно-коричневая (шлиф)"
+          "label": "Osmo 2311 Красно-коричневая (шлиф)",
+          "layers": null
         },
         {
           "code": "2404",
           "name": "Темно-зеленая",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/e11e115aedfb191fa2b990a9fdeeeea6bcc.jpg",
-          "label": "Osmo 2404 Темно-зеленая (шлиф)"
+          "label": "Osmo 2404 Темно-зеленая (шлиф)",
+          "layers": null
         },
         {
           "code": "2308",
           "name": "Темно-красная",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/f68f6897c175215dc42b30d1cb7ca55048b.jpg",
-          "label": "Osmo 2308 Темно-красная (шлиф)"
+          "label": "Osmo 2308 Темно-красная (шлиф)",
+          "layers": null
         },
         {
           "code": "2203",
           "name": "Желтая ель",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/577577bd6e3cf843ab0fd28c79288fdc105.jpg",
-          "label": "Osmo 2203 Желтая ель (брашировка)"
+          "label": "Osmo 2203 Желтая ель (брашировка)",
+          "layers": null
         },
         {
           "code": "2742",
           "name": "Серый туман",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/942942768af83954b09e4e612f11bc1cb23.jpg",
-          "label": "Osmo 2742 Серый туман (брашировка)"
+          "label": "Osmo 2742 Серый туман (брашировка)",
+          "layers": null
         },
         {
           "code": "2310",
           "name": "Кедр/красное дерево",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/b12b12915eaf6d028e82b58984afb1e4c24.jpg",
-          "label": "Osmo 2310 Кедр/красное дерево (браш)"
+          "label": "Osmo 2310 Кедр/красное дерево (браш)",
+          "layers": null
         },
         {
           "code": "2607",
           "name": "Темно-коричневая",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/d25d251f28e89e00672acc8faa264359b93.jpg",
-          "label": "Osmo 2607 Темно-коричневая (браш)"
+          "label": "Osmo 2607 Темно-коричневая (браш)",
+          "layers": null
         },
         {
           "code": "2735",
           "name": "Дымчато-серая",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/b91b91be133e13ce0407abf802a152c8d9f.jpg",
-          "label": "Osmo 2735 Дымчато-серая (брашировка)"
+          "label": "Osmo 2735 Дымчато-серая (брашировка)",
+          "layers": null
         },
         {
           "code": "2708",
           "name": "Светло-серая",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/bfabfa8be4e3e0096367c2bc036cd6f6ac4.jpg",
-          "label": "Osmo 2708 Светло-серая (браш)"
+          "label": "Osmo 2708 Светло-серая (браш)",
+          "layers": null
         },
         {
           "code": "2311",
           "name": "Красно-коричневая",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/b12b1252bf946bb7ce24578819b04af5b93.jpg",
-          "label": "Osmo 2311 Красно-коричневая (браш)"
+          "label": "Osmo 2311 Красно-коричневая (браш)",
+          "layers": null
         },
         {
           "code": "2404",
           "name": "Темно-зеленая",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/9699691dac8f3079b3558e5542eb09aa565.jpg",
-          "label": "Osmo 2404 Темно-зеленая (браш)"
+          "label": "Osmo 2404 Темно-зеленая (браш)",
+          "layers": null
         },
         {
           "code": "2308",
           "name": "Темно-красная",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/b9cb9c7eff0a559c441dc54716944ca1c34.jpg",
-          "label": "Osmo 2308 Темно-красная (браш)"
+          "label": "Osmo 2308 Темно-красная (браш)",
+          "layers": null
         }
       ],
-      "lead": "Масла и лазури для наружных работ надёжно защищают деревянные поверхности: атмосферостойкое износостойкое покрытие и защита от ультрафиолета и биопоражений."
+      "lead": "Масла и лазури для наружных работ надёжно защищают деревянные поверхности: атмосферостойкое износостойкое покрытие и защита от ультрафиолета и биопоражений.",
+      "scope": "exterior",
+      "exclusive": false
     },
     {
       "id": "landhaus-exterior",
@@ -1122,248 +1282,285 @@
           "name": "Слоновая кость",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/4c74c735e453eec6a3015971a4b77e17b6f.jpg",
-          "label": "Osmo 2204 Слоновая кость (шлифовка)"
+          "label": "Osmo 2204 Слоновая кость (шлифовка)",
+          "layers": null
         },
         {
           "code": "2204",
           "name": "Слоновая кость",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/c17c17147ddf9867cbf8c0f5f346bdbc8be.jpg",
-          "label": "Osmo 2204 Слоновая кость (брашировка)"
+          "label": "Osmo 2204 Слоновая кость (брашировка)",
+          "layers": null
         },
         {
           "code": "2501",
           "name": "Морская волна",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/5da5da71dcbc8b9b6941f94b4ca50fcd474.jpg",
-          "label": "Osmo 2501 Морская волна (шлифовка)"
+          "label": "Osmo 2501 Морская волна (шлифовка)",
+          "layers": null
         },
         {
           "code": "2703",
           "name": "Серо-черная",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/3e13e11b06a0fbdc8bd85d754477b198fc4.jpg",
-          "label": "Osmo 2703 Серо-черная (шлифовка)"
+          "label": "Osmo 2703 Серо-черная (шлифовка)",
+          "layers": null
         },
         {
           "code": "2716",
           "name": "Серый антрацит",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/3f43f4de613be7e806b0cc41a7b22569a23.jpg",
-          "label": "Osmo 2716 Серый антрацит (шлифовка)"
+          "label": "Osmo 2716 Серый антрацит (шлифовка)",
+          "layers": null
         },
         {
           "code": "2101",
           "name": "Белая",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/3f13f144df6c729cee12e4243d7df655db4.jpg",
-          "label": "Osmo 2101 Белая (шлифовка)"
+          "label": "Osmo 2101 Белая (шлифовка)",
+          "layers": null
         },
         {
           "code": "2104",
           "name": "Белая",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/364364a8e362f96b7dcb25eba7d4e59648d.jpg",
-          "label": "Osmo 2104 Белая (шлифовка)"
+          "label": "Osmo 2104 Белая (шлифовка)",
+          "layers": null
         },
         {
           "code": "2506",
           "name": "Темно-синяя",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/d06d06d1ac34fb57296191d55cd14671bb6.jpg",
-          "label": "Osmo 2506 Темно-синяя (шлифовка)"
+          "label": "Osmo 2506 Темно-синяя (шлифовка)",
+          "layers": null
         },
         {
           "code": "2704",
           "name": "Серая",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/e75e75c80b9965a6059c4c02a0ab08a32e5.jpg",
-          "label": "Osmo 2704 Серая (шлифовка)"
+          "label": "Osmo 2704 Серая (шлифовка)",
+          "layers": null
         },
         {
           "code": "2501",
           "name": "Морская волна",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/6766764bd68618be11a742f3e984167829e.jpg",
-          "label": "Osmo 2501 Морская волна (брашировка)"
+          "label": "Osmo 2501 Морская волна (брашировка)",
+          "layers": null
         },
         {
           "code": "2703",
           "name": "Серо-черная",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/7db7db9d0365f0aca38f24f32548faae824.jpg",
-          "label": "Osmo 2703 Серо-черная (брашировка)"
+          "label": "Osmo 2703 Серо-черная (брашировка)",
+          "layers": null
         },
         {
           "code": "2716",
           "name": "Серый антрацит",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/9b19b1521d43f7447917aedbe34256b35c3.jpg",
-          "label": "Osmo 2716 Серый антрацит (брашировка)"
+          "label": "Osmo 2716 Серый антрацит (брашировка)",
+          "layers": null
         },
         {
           "code": "2101",
           "name": "Белая",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/cb4cb4232cbe7a9d6c3e2b5758946aee91f.jpg",
-          "label": "Osmo 2101 Белая (брашировка)"
+          "label": "Osmo 2101 Белая (брашировка)",
+          "layers": null
         },
         {
           "code": "2104",
           "name": "Белая",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/b2db2d66f0934e28b094c19d0d2bb8fedc5.jpg",
-          "label": "Osmo 2104 Белая (брашировка)"
+          "label": "Osmo 2104 Белая (брашировка)",
+          "layers": null
         },
         {
           "code": "2606",
           "name": "Коричневая",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/165165babcc9d3e11d8c8e839bc472ce99f.jpg",
-          "label": "Osmo 2606 Коричневая (браш)"
+          "label": "Osmo 2606 Коричневая (браш)",
+          "layers": null
         },
         {
           "code": "2506",
           "name": "Темно-синяя",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/27c27cfa51af28ae0bb5e319ed03a77580d.jpg",
-          "label": "Osmo 2506 Темно-синяя (брашировка)"
+          "label": "Osmo 2506 Темно-синяя (брашировка)",
+          "layers": null
         },
         {
           "code": "2704",
           "name": "Серая",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/9a19a14618c1c3a84c3f7df7014956b052e.jpg",
-          "label": "Osmo 2704 Серая (брашировка)"
+          "label": "Osmo 2704 Серая (брашировка)",
+          "layers": null
         },
         {
           "code": "2205",
           "name": "Ярко-желтая",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/3b03b0735a90474efd51c048335dc97408c.jpg",
-          "label": "Osmo 2205 Ярко-желтая (шлифовка)"
+          "label": "Osmo 2205 Ярко-желтая (шлифовка)",
+          "layers": null
         },
         {
           "code": "2205",
           "name": "Ярко-желтая",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/f6bf6bcd4466f9f79e392301acf8b677908.jpg",
-          "label": "Osmo 2205 Ярко-желтая (брашировка)"
+          "label": "Osmo 2205 Ярко-желтая (брашировка)",
+          "layers": null
         },
         {
           "code": "712",
           "name": "Венге",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/08c08ca87b1910a45da443c3bae79cdbcb2.jpg",
-          "label": "Osmo 712 Венге (шлифовка)"
+          "label": "Osmo 712 Венге (шлифовка)",
+          "layers": null
         },
         {
           "code": "728",
           "name": "Кедр",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/ed9ed9ff85b5a498660ef3ae9e5a50c8238.jpg",
-          "label": "Osmo 728 Кедр (шлифовка)"
+          "label": "Osmo 728 Кедр (шлифовка)",
+          "layers": null
         },
         {
           "code": "729",
           "name": "Тёмно-зеленое",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/cbccbce44ee5aea96c6d84184184158a973.jpg",
-          "label": "Osmo 729 Тёмно-зеленое (шлифовка)"
+          "label": "Osmo 729 Тёмно-зеленое (шлифовка)",
+          "layers": null
         },
         {
           "code": "708",
           "name": "Тик",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/32f32f78618f61c11d53bb2d5764b456fe5.jpg",
-          "label": "Osmo 708 Тик (шлифовка)"
+          "label": "Osmo 708 Тик (шлифовка)",
+          "layers": null
         },
         {
           "code": "732",
           "name": "Дуб светлый",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/0bb0bb2fd248bc2d303382117d9f8936efe.jpg",
-          "label": "Osmo 732 Дуб светлый (шлифовка)"
+          "label": "Osmo 732 Дуб светлый (шлифовка)",
+          "layers": null
         },
         {
           "code": "708",
           "name": "Тик",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/bf6bf6e60df96605c73c5e79e79b3e10c70.jpg",
-          "label": "Osmo 708 Тик (брашировка)"
+          "label": "Osmo 708 Тик (брашировка)",
+          "layers": null
         },
         {
           "code": "732",
           "name": "Дуб светлый",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/e12e12b3faacadfcbdd5b6311150669386b.jpg",
-          "label": "Osmo 732 Дуб светлый (брашировка)"
+          "label": "Osmo 732 Дуб светлый (брашировка)",
+          "layers": null
         },
         {
           "code": "712",
           "name": "Венге",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/21521564af2e527b7f4f8001d0ddc325bba.jpg",
-          "label": "Osmo 712 Венге (брашировка)"
+          "label": "Osmo 712 Венге (брашировка)",
+          "layers": null
         },
         {
           "code": "728",
           "name": "Кедр",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/31d31d98c6fac8f3c10e94ebef02b50740d.jpg",
-          "label": "Osmo 728 Кедр (брашировка)"
+          "label": "Osmo 728 Кедр (брашировка)",
+          "layers": null
         },
         {
           "code": "710",
           "name": "Пиния",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/6f46f47df8ea47f2e982dc6d9b0e227c09e.jpg",
-          "label": "Osmo 710 Пиния (шлифовка)"
+          "label": "Osmo 710 Пиния (шлифовка)",
+          "layers": null
         },
         {
           "code": "710",
           "name": "Пиния",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/511511b9e3fcda32009a96d1300f721f123.jpg",
-          "label": "Osmo 710 Пиния (брашировка)"
+          "label": "Osmo 710 Пиния (брашировка)",
+          "layers": null
         },
         {
           "code": "729",
           "name": "Тёмно-зеленое",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/61961989ff8b29cfb04735ca7e6ae7b1310.jpg",
-          "label": "Osmo 729 Тёмно-зеленое (брашировка)"
+          "label": "Osmo 729 Тёмно-зеленое (брашировка)",
+          "layers": null
         },
         {
           "code": "707",
           "name": "Орех",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/41f41f47983687f5d83656c1e2042eb0b04.jpg",
-          "label": "Osmo 707 Орех (шлифовка)"
+          "label": "Osmo 707 Орех (шлифовка)",
+          "layers": null
         },
         {
           "code": "707",
           "name": "Орех",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/2c72c70f2a03f0926d21eba1313e9fac658.jpg",
-          "label": "Osmo 707 Орех (брашировка)"
+          "label": "Osmo 707 Орех (брашировка)",
+          "layers": null
         },
         {
           "code": "727",
           "name": "Палисандр",
           "finish": "шлифовка",
           "image": "/uploads/palitra/osmo/39039031bbc243a91c0190fb7058347f47b.jpg",
-          "label": "Osmo 727 Палисандр (шлифовка)"
+          "label": "Osmo 727 Палисандр (шлифовка)",
+          "layers": null
         },
         {
           "code": "727",
           "name": "Палисандр",
           "finish": "брашировка",
           "image": "/uploads/palitra/osmo/55155128c31b5322e695845e0b9cdf676be.jpg",
-          "label": "Osmo 727 Палисандр (брашировка)"
+          "label": "Osmo 727 Палисандр (брашировка)",
+          "layers": null
         }
       ],
-      "lead": "Укрывная краска Osmo Landhausfarbe для фасадов и уличных конструкций — плотный цвет и защита на улице."
+      "lead": "Укрывная краска Osmo Landhausfarbe для фасадов и уличных конструкций — плотный цвет и защита на улице.",
+      "scope": "exterior",
+      "exclusive": false
     },
     {
       "id": "holzschutz",
@@ -1375,157 +1572,203 @@
           "name": "Серый базаль",
           "finish": "шлифовка",
           "raw": "Osmo 903 Серый базаль (шлифовка)",
-          "image": "/uploads/palitra/osmo/ab6ab63f7f6006218f8a671ff3fa5f5a3ae.jpg"
+          "image": "/uploads/palitra/osmo/ab6ab63f7f6006218f8a671ff3fa5f5a3ae.jpg",
+          "layers": null,
+          "label": "Osmo 903 Серый базаль (шлифовка)"
         },
         {
           "code": "700",
           "name": "Сосна",
           "finish": "шлифовка",
           "raw": "Osmo 700 Сосна (шлифовка)",
-          "image": "/uploads/palitra/osmo/d30d30cbff8d9663bfb646b2b0c80e03f10.jpg"
+          "image": "/uploads/palitra/osmo/d30d30cbff8d9663bfb646b2b0c80e03f10.jpg",
+          "layers": null,
+          "label": "Osmo 700 Сосна (шлифовка)"
         },
         {
           "code": "706",
           "name": "Дуб",
           "finish": "шлифовка",
           "raw": "Osmo 706 Дуб (шлифовка)",
-          "image": "/uploads/palitra/osmo/60e60ed778354ea21bee9a98b251792c476.jpg"
+          "image": "/uploads/palitra/osmo/60e60ed778354ea21bee9a98b251792c476.jpg",
+          "layers": null,
+          "label": "Osmo 706 Дуб (шлифовка)"
         },
         {
           "code": "903",
           "name": "Серый базальт",
           "finish": "брашировка",
           "raw": "Osmo 903 Серый базальт (брашировка)",
-          "image": "/uploads/palitra/osmo/972972d29b8adb218634f0ea30c51b122a5.jpg"
+          "image": "/uploads/palitra/osmo/972972d29b8adb218634f0ea30c51b122a5.jpg",
+          "layers": null,
+          "label": "Osmo 903 Серый базальт (брашировка)"
         },
         {
           "code": "700",
           "name": "Сосна",
           "finish": "брашировка",
           "raw": "Osmo 700 Сосна (брашировка)",
-          "image": "/uploads/palitra/osmo/d02d020505c1ba52f7edc34b069eccf1171.jpg"
+          "image": "/uploads/palitra/osmo/d02d020505c1ba52f7edc34b069eccf1171.jpg",
+          "layers": null,
+          "label": "Osmo 700 Сосна (брашировка)"
         },
         {
           "code": "706",
           "name": "Дуб",
           "finish": "брашировка",
           "raw": "Osmo 706 Дуб (брашировка)",
-          "image": "/uploads/palitra/osmo/e26e2636443ce1d7a33d71cfad99c7e5473.jpg"
+          "image": "/uploads/palitra/osmo/e26e2636443ce1d7a33d71cfad99c7e5473.jpg",
+          "layers": null,
+          "label": "Osmo 706 Дуб (брашировка)"
         },
         {
           "code": "905",
           "name": "Патина",
           "finish": "шлифовка",
           "raw": "Osmo 905 Патина (шлифовка)",
-          "image": "/uploads/palitra/osmo/887887ce14388eb15c0185006fc6fe53851.jpg"
+          "image": "/uploads/palitra/osmo/887887ce14388eb15c0185006fc6fe53851.jpg",
+          "layers": null,
+          "label": "Osmo 905 Патина (шлифовка)"
         },
         {
           "code": "731",
           "name": "Сосна Орегон",
           "finish": "шлифовка",
           "raw": "Osmo 731 Сосна Орегон (шлифовка)",
-          "image": "/uploads/palitra/osmo/5195190b97a95cd42cab3d88123867f28b8.jpg"
+          "image": "/uploads/palitra/osmo/5195190b97a95cd42cab3d88123867f28b8.jpg",
+          "layers": null,
+          "label": "Osmo 731 Сосна Орегон (шлифовка)"
         },
         {
           "code": "703",
           "name": "Махагон",
           "finish": "шлифовка",
           "raw": "Osmo 703 Махагон (шлифовка)",
-          "image": "/uploads/palitra/osmo/5195190b97a95cd42cab3d88123867f28b8.jpg"
+          "image": "/uploads/palitra/osmo/5195190b97a95cd42cab3d88123867f28b8.jpg",
+          "layers": null,
+          "label": "Osmo 703 Махагон (шлифовка)"
         },
         {
           "code": "905",
           "name": "Патина",
           "finish": "брашировка",
           "raw": "Osmo 905 Патина (брашировка)",
-          "image": "/uploads/palitra/osmo/a94a94fe39b679e0590e3ca674b661744d6.jpg"
+          "image": "/uploads/palitra/osmo/a94a94fe39b679e0590e3ca674b661744d6.jpg",
+          "layers": null,
+          "label": "Osmo 905 Патина (брашировка)"
         },
         {
           "code": "731",
           "name": "Сосна Орегон",
           "finish": "брашировка",
           "raw": "Osmo 731 Сосна Орегон (брашировка)",
-          "image": "/uploads/palitra/osmo/3ea3eab7ad1c85c9744fa4e2a4e62529acd.jpg"
+          "image": "/uploads/palitra/osmo/3ea3eab7ad1c85c9744fa4e2a4e62529acd.jpg",
+          "layers": null,
+          "label": "Osmo 731 Сосна Орегон (брашировка)"
         },
         {
           "code": "703",
           "name": "Махагон",
           "finish": "брашировка",
           "raw": "Osmo 703 Махагон (брашировка)",
-          "image": "/uploads/palitra/osmo/955955772c7a8675bfa9d7738643c91d55d.jpg"
+          "image": "/uploads/palitra/osmo/955955772c7a8675bfa9d7738643c91d55d.jpg",
+          "layers": null,
+          "label": "Osmo 703 Махагон (брашировка)"
         },
         {
           "code": "900",
           "name": "белое",
           "finish": "шлифовка",
           "raw": "Osmo 900 белое (шлифовка)",
-          "image": "/uploads/palitra/osmo/5ec5ecf32e4f2a9e864e5f55357f3630f8c.jpg"
+          "image": "/uploads/palitra/osmo/5ec5ecf32e4f2a9e864e5f55357f3630f8c.jpg",
+          "layers": null,
+          "label": "Osmo 900 белое (шлифовка)"
         },
         {
           "code": "702",
           "name": "лиственница",
           "finish": "шлифовка",
           "raw": "Osmo 702 лиственница (шлифовка)",
-          "image": "/uploads/palitra/osmo/4684685257a1674ebee7d49ffd560c7bf10.jpg"
+          "image": "/uploads/palitra/osmo/4684685257a1674ebee7d49ffd560c7bf10.jpg",
+          "layers": null,
+          "label": "Osmo 702 лиственница (шлифовка)"
         },
         {
           "code": "906",
           "name": "Серый Жемчуг",
           "finish": "шлифовка",
           "raw": "Osmo 906 Серый Жемчуг (шлифовка)",
-          "image": "/uploads/palitra/osmo/72e72e942e481c43a309305150f471806b6.jpg"
+          "image": "/uploads/palitra/osmo/72e72e942e481c43a309305150f471806b6.jpg",
+          "layers": null,
+          "label": "Osmo 906 Серый Жемчуг (шлифовка)"
         },
         {
           "code": "900",
           "name": "Белое",
           "finish": "брашировка",
           "raw": "Osmo 900 Белое(брашировка)",
-          "image": "/uploads/palitra/osmo/602602c307e450aafeeaecf15ba55322bb0.jpg"
+          "image": "/uploads/palitra/osmo/602602c307e450aafeeaecf15ba55322bb0.jpg",
+          "layers": null,
+          "label": "Osmo 900 Белое(брашировка)"
         },
         {
           "code": "702",
           "name": "Лиственница",
           "finish": "брашировка",
           "raw": "Osmo 702 Лиственница (брашировка)",
-          "image": "/uploads/palitra/osmo/4684685257a1674ebee7d49ffd560c7bf10.jpg"
+          "image": "/uploads/palitra/osmo/4684685257a1674ebee7d49ffd560c7bf10.jpg",
+          "layers": null,
+          "label": "Osmo 702 Лиственница (брашировка)"
         },
         {
           "code": "906",
           "name": "Серый Жемчуг",
           "finish": "брашировка",
           "raw": "Osmo 906 Серый Жемчуг (брашировка)",
-          "image": "/uploads/palitra/osmo/f45f4598797d4b2ffd85ebf36e271a9c3bc.jpg"
+          "image": "/uploads/palitra/osmo/f45f4598797d4b2ffd85ebf36e271a9c3bc.jpg",
+          "layers": null,
+          "label": "Osmo 906 Серый Жемчуг (брашировка)"
         },
         {
           "code": "1150",
           "name": "Американский орех",
           "finish": "шлифовка",
           "raw": "Osmo 1150 Американский орех (шлиф)",
-          "image": "/uploads/palitra/osmo/6946944fb173630518729d22bcad621e409.jpg"
+          "image": "/uploads/palitra/osmo/6946944fb173630518729d22bcad621e409.jpg",
+          "layers": null,
+          "label": "Osmo 1150 Американский орех (шлиф)"
         },
         {
           "code": "907",
           "name": "Серый кварц",
           "finish": "шлифовка",
           "raw": "Osmo 907 Серый кварц (шлифовка)",
-          "image": "/uploads/palitra/osmo/b90b90e8788fc22ffdac937a1f219a06ac7.jpg"
+          "image": "/uploads/palitra/osmo/b90b90e8788fc22ffdac937a1f219a06ac7.jpg",
+          "layers": null,
+          "label": "Osmo 907 Серый кварц (шлифовка)"
         },
         {
           "code": "1150",
           "name": "Американский орех",
           "finish": "брашировка",
           "raw": "Osmo 1150 Американский орех (браш)",
-          "image": "/uploads/palitra/osmo/dd0dd08796b5bb81d9b514cfe6da9c0082a.jpg"
+          "image": "/uploads/palitra/osmo/dd0dd08796b5bb81d9b514cfe6da9c0082a.jpg",
+          "layers": null,
+          "label": "Osmo 1150 Американский орех (браш)"
         },
         {
           "code": "907",
           "name": "Серый кварц",
           "finish": "брашировка",
           "raw": "Osmo 907 Серый кварц (брашировка)",
-          "image": "/uploads/palitra/osmo/6d26d2f59029e12efe87dc0ce06069401cd.jpg"
+          "image": "/uploads/palitra/osmo/6d26d2f59029e12efe87dc0ce06069401cd.jpg",
+          "layers": null,
+          "label": "Osmo 907 Серый кварц (брашировка)"
         }
       ],
-      "lead": "Защитное масло-лазурь Osmo Holzschutz Öl-Lasur для внешних работ — классические натуральные тона для фасада и уличных элементов."
+      "lead": "Защитное масло-лазурь Osmo Holzschutz Öl-Lasur для внешних работ — классические натуральные тона для фасада и уличных элементов.",
+      "scope": "exterior",
+      "exclusive": false
     },
     {
       "id": "osmo-silver",
@@ -1537,45 +1780,135 @@
           "name": "Оникс-серебро",
           "finish": "шлифовка",
           "raw": "Osmo 1143 Оникс-серебро (шлифовка)",
-          "image": "/uploads/palitra/osmo/0aa0aa6240f3173c4a2c4e5d29ed96e2b33.jpg"
+          "image": "/uploads/palitra/osmo/0aa0aa6240f3173c4a2c4e5d29ed96e2b33.jpg",
+          "layers": null,
+          "label": "Osmo 1143 Оникс-серебро (шлифовка)"
         },
         {
           "code": "1143",
           "name": "Оникс-серебро",
           "finish": "брашировка",
           "raw": "Osmo 1143 Оникс-серебро (брашировка)",
-          "image": "/uploads/palitra/osmo/c3dc3d1edd19f49d9b492aba615b8b3dd6c.jpg"
+          "image": "/uploads/palitra/osmo/c3dc3d1edd19f49d9b492aba615b8b3dd6c.jpg",
+          "layers": null,
+          "label": "Osmo 1143 Оникс-серебро (брашировка)"
         },
         {
           "code": "1140",
           "name": "Агат-серебро",
           "finish": "шлифовка",
           "raw": "Osmo 1140 Агат-серебро (шлифовка)",
-          "image": "/uploads/palitra/osmo/ad8ad852d86247997f2d8bee0f8a72e5c6b.jpg"
+          "image": "/uploads/palitra/osmo/ad8ad852d86247997f2d8bee0f8a72e5c6b.jpg",
+          "layers": null,
+          "label": "Osmo 1140 Агат-серебро (шлифовка)"
         },
         {
           "code": "1140",
           "name": "Агат-серебро",
           "finish": "брашировка",
           "raw": "Osmo 1140 Агат-серебро (брашировка)",
-          "image": "/uploads/palitra/osmo/2f42f41ee07f5e95306857d2be5384860e0.jpg"
+          "image": "/uploads/palitra/osmo/2f42f41ee07f5e95306857d2be5384860e0.jpg",
+          "layers": null,
+          "label": "Osmo 1140 Агат-серебро (брашировка)"
         },
         {
           "code": "1142",
           "name": "Графит-серебро",
           "finish": "шлифовка",
           "raw": "Osmo 1142 Графит-серебро (шлифовка)",
-          "image": "/uploads/palitra/osmo/0d20d2aa9904ddf48f8eec2c762059b509c.jpg"
+          "image": "/uploads/palitra/osmo/0d20d2aa9904ddf48f8eec2c762059b509c.jpg",
+          "layers": null,
+          "label": "Osmo 1142 Графит-серебро (шлифовка)"
         },
         {
           "code": "1142",
           "name": "Графит-серебро",
           "finish": "брашировка",
           "raw": "Osmo 1142 Графит-серебро (брашировка)",
-          "image": "/uploads/palitra/osmo/70c70c0cfa69008ba964eb5a36ab3a1b024.jpg"
+          "image": "/uploads/palitra/osmo/70c70c0cfa69008ba964eb5a36ab3a1b024.jpg",
+          "layers": null,
+          "label": "Osmo 1142 Графит-серебро (брашировка)"
         }
       ],
-      "lead": "Защитное масло-лазурь Osmo с эффектом серебра для внешних работ — декоративные серебристые эффекты на фасаде."
+      "lead": "Защитное масло-лазурь Osmo с эффектом серебра для внешних работ — декоративные серебристые эффекты на фасаде.",
+      "scope": "exterior",
+      "exclusive": false
+    },
+    {
+      "id": "exclusive-interior",
+      "title": "Эксклюзивные цвета для внутренних работ",
+      "scope": "interior",
+      "lead": "Сложные миксы и комбинированные тона для интерьера — по согласованию выкраса на вашей доске.",
+      "note": "Названия миксов сохранены как в каталоге образцов. Фактура — брашировка.",
+      "items": [
+        {
+          "code": "3590/3092Золото",
+          "name": "3590/3092 Золото (брашировка)",
+          "finish": "брашировка",
+          "image": "/uploads/palitra/osmo/exclusive/995995f6578ea22f65fb8a53d59d364bb4c.jpg",
+          "label": "3590/3092 Золото (брашировка)",
+          "layers": null
+        },
+        {
+          "code": "3590/3091Серебро",
+          "name": "3590/3091 Серебро (брашировка)",
+          "finish": "брашировка",
+          "image": "/uploads/palitra/osmo/exclusive/a74a7474dfe790a75c1844c1cc89a166fa3.jpg",
+          "label": "3590/3091 Серебро (брашировка)",
+          "layers": null
+        }
+      ],
+      "exclusive": true
+    },
+    {
+      "id": "exclusive-exterior",
+      "title": "Эксклюзивные цвета для наружных работ",
+      "scope": "exterior",
+      "lead": "Авторские миксы оттенков для фасада: комбинации пигментов под проект.",
+      "note": "Точные названия миксов как на образцах. Перед партией рекомендуем выкрас.",
+      "items": [
+        {
+          "code": "7004 + S700N",
+          "name": "7004 + S700N",
+          "finish": "брашировка",
+          "image": "/uploads/palitra/osmo/exclusive/c92c9246791ccfcfccb72f42f34011332b0.jpeg",
+          "label": "7004 + S700N (брашировка)",
+          "layers": null
+        },
+        {
+          "code": "S8000 + белый",
+          "name": "S8000 + белый",
+          "finish": "брашировка",
+          "image": "/uploads/palitra/osmo/exclusive/3c83c8015112a8d2eb291130c1fa3c2a84e.jpeg",
+          "label": "S8000 + белый (брашировка)",
+          "layers": null
+        },
+        {
+          "code": "7020 + R908",
+          "name": "7020 + R908",
+          "finish": "брашировка",
+          "image": "/uploads/palitra/osmo/exclusive/a0fa0ff5020f8910d46517aaf572032a2ea.jpeg",
+          "label": "7020 + R908 (брашировка)",
+          "layers": null
+        },
+        {
+          "code": "S8000+Y498",
+          "name": "S8000+Y498",
+          "finish": "брашировка",
+          "image": "/uploads/palitra/osmo/exclusive/42a42aaa4c952317c530b01367e0885769e.jpeg",
+          "label": "S8000+Y498 (брашировка)",
+          "layers": null
+        },
+        {
+          "code": "01 + Y498",
+          "name": "01 + Y498",
+          "finish": "брашировка",
+          "image": "/uploads/palitra/osmo/exclusive/34834890d9ca0ef1771b3b180e9ab1cb787.jpeg",
+          "label": "01 + Y498 (брашировка)",
+          "layers": null
+        }
+      ],
+      "exclusive": true
     }
   ],
   "lead": {
