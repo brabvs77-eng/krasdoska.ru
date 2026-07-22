@@ -26,6 +26,7 @@
     { "href": "/kontakty/", "label": "Контакты" },
     { "href": "/katalog/", "label": "Каталог" },
     { "href": "/palitra/", "label": "Палитра" },
+    { "href": "/shema-pokraski/", "label": "Схемы покраски" },
     { "href": "/tehnologija-nanesenija-kraski/", "label": "Технология" }
   ]
 }

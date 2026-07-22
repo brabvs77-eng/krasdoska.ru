@@ -68,17 +68,17 @@ export default function PalettePage() {
           fill
           priority
           sizes="100vw"
-          className="object-cover opacity-60"
+          className="object-cover"
           unoptimized
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/20 to-transparent" />
         <div className="container-content relative text-white">
           <h1 className="max-w-2xl text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
             Идеальный цвет для каждой детали:
             <br />
             подбор оттенков онлайн
           </h1>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/85 sm:text-lg">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/90 sm:text-lg">
             Добро пожаловать в мир профессиональных цветовых решений от компании «Крашеная доска»!
             Мы открываем безграничные возможности для создания стильных, долговечных и выразительных
             интерьеров и фасадов.
@@ -86,6 +86,25 @@ export default function PalettePage() {
           <Link href="#form" className="btn-primary mt-8 inline-flex">
             Получить бесплатный расчёт
           </Link>
+        </div>
+      </section>
+
+      <section className="section-dark py-10">
+        <div className="container-content">
+          <aside className="border border-accent/35 bg-accent/10 px-5 py-4 text-sm leading-relaxed text-white/90 sm:px-6 sm:py-5">
+            <p className="font-semibold text-white">Схемы покраски и цены</p>
+            <p className="mt-2 max-w-3xl text-white/80">
+              Оттенок из палитры — только часть результата. Срок службы и внешний вид зависят от
+              схемы нанесения (грунт, число слоёв, укрывная или лессирующая система). Работаем на
+              итальянской Sirca и масле Talatu. Цены — от 520 ₽/м².
+            </p>
+            <Link
+              href="/shema-pokraski/"
+              className="mt-3 inline-flex text-accent underline-offset-2 hover:underline"
+            >
+              Смотреть схемы покраски и прайс →
+            </Link>
+          </aside>
         </div>
       </section>
 
