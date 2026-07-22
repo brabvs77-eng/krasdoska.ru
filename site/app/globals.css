@@ -211,4 +211,262 @@ body {
   .section-dark .wp-content th {
     @apply bg-white/10 text-white;
   }
+
+  /* Featured blog article: DIY vs factory */
+  .diy-article {
+    @apply relative grid gap-10 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-12 xl:grid-cols-[240px_minmax(0,1fr)];
+  }
+
+  .diy-rail {
+    @apply relative hidden lg:block;
+  }
+
+  .diy-rail__sticky {
+    @apply sticky top-28;
+  }
+
+  .diy-rail__eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[0.22em] text-accent;
+  }
+
+  .diy-rail__nav {
+    @apply mt-4 flex flex-col border-l border-white/15;
+  }
+
+  .diy-rail__link {
+    @apply flex items-start gap-3 border-l-2 border-transparent py-2.5 pl-4 text-left text-sm text-white/55 no-underline transition-colors hover:border-accent hover:text-white;
+  }
+
+  .diy-rail__index {
+    @apply shrink-0 font-semibold tabular-nums text-accent/80;
+  }
+
+  .diy-rail__cta {
+    @apply mt-8 border border-white/10 bg-white/[0.03] p-4 text-left text-sm leading-snug text-white/70;
+  }
+
+  .diy-body {
+    @apply mx-auto w-full max-w-[720px] text-center text-base leading-relaxed text-white/80;
+  }
+
+  .diy-body a {
+    @apply text-accent underline decoration-accent/40 underline-offset-2 transition-colors hover:text-white hover:decoration-white;
+  }
+
+  .diy-body p {
+    @apply mx-auto max-w-[38rem];
+  }
+
+  .diy-cover {
+    @apply relative mb-10 aspect-[16/9] overflow-hidden border border-white/10;
+  }
+
+  .diy-lead {
+    @apply text-lg leading-relaxed text-white sm:text-xl;
+  }
+
+  .diy-note {
+    @apply mt-4 text-sm text-white/55 sm:text-[15px];
+  }
+
+  .diy-divider {
+    @apply my-10 flex items-center justify-center gap-3;
+  }
+
+  .diy-divider__line {
+    @apply h-px w-16 bg-gradient-to-r from-transparent via-white/30 to-transparent sm:w-24;
+  }
+
+  .diy-divider__dot {
+    @apply h-1.5 w-1.5 rotate-45 bg-accent;
+  }
+
+  .diy-h2 {
+    @apply mb-5 mt-2 flex flex-col items-center gap-3 text-center text-2xl font-semibold tracking-tight text-white sm:text-3xl;
+  }
+
+  .diy-h2__icon {
+    @apply flex h-11 w-11 items-center justify-center border border-accent/50 text-accent;
+  }
+
+  .diy-h3 {
+    @apply mb-6 flex flex-col items-center gap-3 text-center text-xl font-semibold text-white;
+  }
+
+  .diy-h3__badge {
+    @apply flex h-12 w-12 items-center justify-center border border-white/15 bg-white/[0.04] text-accent;
+  }
+
+  .diy-approach-nav {
+    @apply mt-8 flex flex-wrap items-center justify-center gap-3;
+  }
+
+  .diy-chip {
+    @apply inline-flex items-center gap-2 border border-white/15 bg-white/[0.03] px-4 py-2 text-sm text-white/80 no-underline transition-colors hover:border-accent hover:text-white;
+  }
+
+  .diy-block {
+    @apply scroll-mt-28;
+  }
+
+  .diy-proscons {
+    @apply mx-auto my-8 grid max-w-[40rem] gap-4 text-left sm:grid-cols-2;
+  }
+
+  .diy-proscons__col {
+    @apply border border-white/10 bg-white/[0.03] p-4 sm:p-5;
+  }
+
+  .diy-proscons__col--pros {
+    @apply border-l-2 border-l-accent;
+  }
+
+  .diy-proscons__col--cons {
+    @apply border-l-2 border-l-white/25;
+  }
+
+  .diy-proscons__label {
+    @apply mb-3 text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-white/50;
+  }
+
+  .diy-proscons ul {
+    @apply m-0 list-none space-y-2.5 p-0;
+  }
+
+  .diy-proscons li {
+    @apply flex items-start gap-2.5 text-sm leading-snug text-white/75;
+  }
+
+  .diy-mark {
+    @apply mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center;
+  }
+
+  .diy-mark--ok {
+    @apply text-accent;
+  }
+
+  .diy-mark--no {
+    @apply text-white/40;
+  }
+
+  .diy-facts {
+    @apply mx-auto my-6 flex max-w-[36rem] list-none flex-col gap-3 p-0;
+  }
+
+  .diy-facts li {
+    @apply grid gap-1 border border-white/10 bg-white/[0.03] px-4 py-3 sm:grid-cols-[1fr_auto] sm:items-center sm:gap-x-4;
+  }
+
+  .diy-facts span {
+    @apply text-left text-xs uppercase tracking-[0.16em] text-white/45 sm:col-span-2;
+  }
+
+  .diy-facts strong {
+    @apply text-left text-white;
+  }
+
+  .diy-facts em {
+    @apply text-left text-sm not-italic text-white/55 sm:text-right;
+  }
+
+  .diy-price {
+    @apply mx-auto my-6 flex max-w-md flex-col items-center gap-2 border border-accent/40 bg-accent/10 px-6 py-5;
+  }
+
+  .diy-price span {
+    @apply text-sm uppercase tracking-[0.16em] text-white/60;
+  }
+
+  .diy-price strong {
+    @apply text-3xl font-semibold tracking-tight text-white;
+  }
+
+  .diy-figure {
+    @apply mx-auto my-10 max-w-[640px];
+  }
+
+  .diy-figure__frame {
+    @apply relative aspect-[16/10] overflow-hidden border border-white/10;
+  }
+
+  .diy-figure figcaption {
+    @apply mt-3 text-sm leading-snug text-white/50;
+  }
+
+  .diy-compare {
+    @apply mx-auto my-8 grid max-w-[44rem] gap-3 sm:grid-cols-3;
+  }
+
+  .diy-compare__item {
+    @apply flex flex-col items-center border border-white/10 bg-white/[0.03] px-3 py-5;
+  }
+
+  .diy-compare__item--accent {
+    @apply border-accent/50 bg-accent/10;
+  }
+
+  .diy-compare__icon {
+    @apply mb-3 flex h-10 w-10 items-center justify-center text-accent;
+  }
+
+  .diy-compare__title {
+    @apply text-sm font-semibold text-white;
+  }
+
+  .diy-compare__price {
+    @apply mt-2 text-lg font-semibold tracking-tight text-white;
+  }
+
+  .diy-compare__meta {
+    @apply mt-1 text-xs leading-snug text-white/50;
+  }
+
+  .diy-tips {
+    @apply mx-auto my-8 grid max-w-[44rem] gap-4 text-left;
+  }
+
+  .diy-tip {
+    @apply border border-white/10 bg-white/[0.03] p-5;
+  }
+
+  .diy-tip--accent {
+    @apply border-accent/35;
+  }
+
+  .diy-tip h3 {
+    @apply mb-3 text-center text-base font-semibold text-white;
+  }
+
+  .diy-tip ul {
+    @apply m-0 list-none space-y-2 p-0;
+  }
+
+  .diy-tip li {
+    @apply relative pl-5 text-sm leading-snug text-white/75;
+  }
+
+  .diy-tip li::before {
+    content: "";
+    @apply absolute left-0 top-[0.55em] h-1.5 w-1.5 rotate-45 bg-accent;
+  }
+
+  .diy-quote {
+    @apply mx-auto my-8 max-w-[38rem] border-y border-accent/40 bg-transparent px-2 py-6 text-lg font-medium leading-relaxed text-white sm:text-xl;
+  }
+
+  .diy-toc-mobile {
+    @apply mb-8 border border-white/10 bg-white/[0.03] p-4 text-left lg:hidden;
+  }
+
+  .diy-toc-mobile__title {
+    @apply mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-accent;
+  }
+
+  .diy-toc-mobile__list {
+    @apply m-0 flex list-none flex-col gap-2 p-0;
+  }
+
+  .diy-toc-mobile__list a {
+    @apply text-sm text-white/70 no-underline hover:text-white;
+  }
 }
