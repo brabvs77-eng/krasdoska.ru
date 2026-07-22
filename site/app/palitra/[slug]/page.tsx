@@ -25,8 +25,8 @@ export async function generateMetadata({ params }: Props) {
 
   const data = getPalettePageData(slug);
   return buildPageMetadata({
-    title: data?.title ?? slug.replace(/-/g, " "),
-    description: data?.intro[0],
+    title: data?.seo?.title ?? data?.title ?? slug.replace(/-/g, " "),
+    description: data?.seo?.description ?? data?.intro[0],
     path: `/palitra/${slug}/`,
   });
 }

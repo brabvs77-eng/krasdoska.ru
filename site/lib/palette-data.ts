@@ -1,3 +1,6 @@
+import ralCatalog from "@/content/palitra/ral.json";
+import { PRODUCTION_IMAGE } from "@/lib/media";
+
 export type PaletteSwatch = {
   code: string;
   name: string;
@@ -10,40 +13,29 @@ export type PalettePageData = {
   title: string;
   intro: string[];
   note?: string;
+  benefits?: string[];
+  coverImage?: string;
+  seo?: { title: string; description: string };
   swatches: PaletteSwatch[];
 };
 
-import { PRODUCTION_IMAGE } from "@/lib/media";
-
 export const PALETTE_HERO_IMAGE = PRODUCTION_IMAGE;
 
+export const RAL_CARD_IMAGE = "/uploads/palitra/ral/cover.jpg";
+
+const ralPage: PalettePageData = {
+  slug: ralCatalog.slug,
+  title: ralCatalog.title,
+  intro: ralCatalog.intro,
+  note: ralCatalog.note,
+  benefits: ralCatalog.benefits,
+  coverImage: RAL_CARD_IMAGE,
+  seo: ralCatalog.seo,
+  swatches: ralCatalog.swatches as PaletteSwatch[],
+};
+
 export const PALETTE_PAGES: Record<string, PalettePageData> = {
-  "palitra-ral": {
-    slug: "palitra-ral",
-    title: "Палитра цветов RAL",
-    intro: [
-      "Мы красим древесину строго по международной системе RAL. В колеровочной базе — широкий спектр оттенков для фасадов и интерьеров.",
-      "Выбирая ЛКМ у нас, вы получаете точное попадание в тон и безупречную эстетику каждого квадратного метра.",
-    ],
-    note: "Показаны популярные оттенки RAL Classic. Полный каталог доступен при консультации — подберём точный код под ваш проект.",
-    swatches: [
-      { code: "RAL 9010", name: "Белый", hex: "#F7F9EF", group: "Белые и серые" },
-      { code: "RAL 9005", name: "Чёрный", hex: "#0E0E10", group: "Белые и серые" },
-      { code: "RAL 7035", name: "Светло-серый", hex: "#CBD0CC", group: "Белые и серые" },
-      { code: "RAL 7016", name: "Антрацитово-серый", hex: "#383E42", group: "Белые и серые" },
-      { code: "RAL 6005", name: "Зелёный мох", hex: "#114232", group: "Зелёные" },
-      { code: "RAL 6021", name: "Бледно-зелёный", hex: "#89AC76", group: "Зелёные" },
-      { code: "RAL 5010", name: "Генцианово-синий", hex: "#004F7C", group: "Синие" },
-      { code: "RAL 5008", name: "Серо-синий", hex: "#2F4A71", group: "Синие" },
-      { code: "RAL 3020", name: "Транспортный красный", hex: "#BB1E10", group: "Красные" },
-      { code: "RAL 8017", name: "Шоколадно-коричневый", hex: "#45322E", group: "Коричневые" },
-      { code: "RAL 8003", name: "Глиняно-коричневый", hex: "#7E4B26", group: "Коричневые" },
-      { code: "RAL 1015", name: "Светлая слоновая кость", hex: "#E6D690", group: "Жёлтые и бежевые" },
-      { code: "RAL 1001", name: "Бежевый", hex: "#C2B078", group: "Жёлтые и бежевые" },
-      { code: "RAL 3004", name: "Пурпурно-красный", hex: "#691F23", group: "Красные" },
-      { code: "RAL 7021", name: "Чёрно-серый", hex: "#2F3234", group: "Белые и серые" },
-    ],
-  },
+  "palitra-ral": ralPage,
   "palitra-ncs": {
     slug: "palitra-ncs",
     title: "Палитра цветов NCS",
