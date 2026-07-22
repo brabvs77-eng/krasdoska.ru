@@ -21,12 +21,17 @@ const missionParagraphs = [
   "ООО «Крашеная доска» – это не просто компания, занимающаяся покраской. Это команда профессионалов, страстно любящих свое дело и стремящихся преобразить мир вокруг нас, делая его ярче и красивее. Мы гордимся тем, что можем внести свой вклад в создание уютной и гармоничной атмосферы в вашем доме. Доверьте нам свои мечты об идеальном цвете, и мы воплотим их в жизнь!",
 ];
 
+/** Единый формат фото на странице (кроме портрета руководителя). */
+const PHOTO_ASPECT = "aspect-[4/5]";
+
 const directors = [
   {
     name: "Орлов Павел Павлович",
     role: "генеральный директор",
     image: "/uploads/2025/04/frame-10-1.webp",
     reverse: false,
+    /** Портрет руководителя — отдельный, более крупный формат */
+    isLead: true,
     paragraphs: [
       "ООО «Крашеная доска» предлагает профессиональный подход к каждому проекту. Мы изучаем особенности заказа: тип древесины, условия эксплуатации, пожелания клиента. Используем качественные материалы и современное оборудование. Гарантируем покрытие, которое прослужит много лет.",
       "Наша цель — не просто покрасить пиломатериалы. Мы создаем защитное и эстетическое покрытие, соответствующее требованиям заказчика.",
@@ -37,6 +42,7 @@ const directors = [
     role: "технический директор / художник-исследователь",
     image: "/uploads/2025/04/frame-10-2.webp",
     reverse: true,
+    isLead: false,
     paragraphs: [
       "Он помогает создать широкую палитру оттенков. Обеспечивает нужные цветовые эффекты и качественное покрытие поверхности.",
       "Андрей изучает влияние цвета на восприятие и эмоции. Его знания позволяют находить уникальные решения и вдохновлять заказчиков новыми идеями.",
@@ -166,17 +172,17 @@ export default function AboutPage() {
             <h2 className="text-2xl font-semibold text-white sm:text-3xl">
               Наша команда профессионалов
             </h2>
-            <div className="relative mt-10 max-w-4xl">
+            <div className="relative mt-10 max-w-md">
               <div
                 aria-hidden="true"
-                className="absolute -bottom-5 -right-5 hidden h-full w-2/3 rounded-2xl bg-accent sm:block"
+                className="absolute -bottom-4 -right-4 hidden h-full w-full bg-accent sm:block"
               />
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-surface-muted">
+              <div className={`relative ${PHOTO_ASPECT} overflow-hidden bg-surface-muted`}>
                 <Image
                   src="/uploads/2025/04/frame-19-2.webp"
                   alt="Коллекция окрашенных деревянных панелей с разными текстурами и оттенками"
                   fill
-                  sizes="(max-width: 896px) 100vw, 896px"
+                  sizes="(max-width: 448px) 100vw, 448px"
                   className="object-cover"
                   unoptimized
                 />
@@ -201,22 +207,48 @@ export default function AboutPage() {
                 <article
                   key={person.name}
                   className={`grid items-center gap-8 md:gap-12 ${
-                    person.reverse
-                      ? "md:grid-cols-[minmax(0,1fr)_minmax(0,280px)]"
-                      : "md:grid-cols-[minmax(0,280px)_minmax(0,1fr)]"
+                    person.isLead
+                      ? person.reverse
+                        ? "md:grid-cols-[minmax(0,1fr)_minmax(0,340px)]"
+                        : "md:grid-cols-[minmax(0,340px)_minmax(0,1fr)]"
+                      : person.reverse
+                        ? "md:grid-cols-[minmax(0,1fr)_minmax(0,280px)]"
+                        : "md:grid-cols-[minmax(0,280px)_minmax(0,1fr)]"
                   }`}
                 >
                   <div className={person.reverse ? "md:order-2" : undefined}>
-                    <div className="relative mx-auto aspect-[3/4] w-full max-w-[280px] overflow-hidden rounded-2xl bg-surface-muted">
-                      <Image
-                        src={person.image}
-                        alt={person.name}
-                        fill
-                        sizes="280px"
-                        className="object-cover"
-                        unoptimized
-                      />
-                    </div>
+                    {person.isLead ? (
+                      <div className="relative mx-auto w-full max-w-[340px] pb-4 pr-4">
+                        <div
+                          aria-hidden="true"
+                          className="absolute bottom-0 right-0 h-[calc(100%-1rem)] w-[calc(100%-1rem)] bg-accent"
+                        />
+                        <div className="relative aspect-[3/4] overflow-hidden bg-surface-muted">
+                          <Image
+                            src={person.image}
+                            alt={person.name}
+                            fill
+                            sizes="340px"
+                            className="object-cover object-top"
+                            unoptimized
+                            priority
+                          />
+                        </div>
+                      </div>
+                    ) : (
+                      <div
+                        className={`relative mx-auto ${PHOTO_ASPECT} w-full max-w-[280px] overflow-hidden bg-surface-muted`}
+                      >
+                        <Image
+                          src={person.image}
+                          alt={person.name}
+                          fill
+                          sizes="280px"
+                          className="object-cover object-top"
+                          unoptimized
+                        />
+                      </div>
+                    )}
                   </div>
                   <div className={person.reverse ? "md:order-1" : undefined}>
                     <h3 className="text-xl font-semibold text-white">
@@ -248,26 +280,18 @@ export default function AboutPage() {
                   </p>
                 ))}
               </div>
-              <div
-                className={`mt-10 grid gap-4 sm:gap-6 ${
-                  group.images.length === 1
-                    ? "max-w-sm grid-cols-1"
-                    : group.images.length === 2
-                      ? "grid-cols-1 sm:grid-cols-2"
-                      : "grid-cols-2 lg:grid-cols-3"
-                }`}
-              >
+              <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
                 {group.images.map((src) => (
                   <div
                     key={src}
-                    className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-surface-muted"
+                    className={`relative ${PHOTO_ASPECT} w-full max-w-[280px] overflow-hidden bg-surface-muted sm:max-w-none`}
                   >
                     <Image
                       src={src}
                       alt={group.title}
                       fill
-                      sizes="(max-width: 640px) 50vw, 33vw"
-                      className="object-cover"
+                      sizes="(max-width: 640px) 280px, (max-width: 1024px) 45vw, 280px"
+                      className="object-cover object-top"
                       unoptimized
                     />
                   </div>
