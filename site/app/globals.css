@@ -584,4 +584,113 @@ body {
   .article-body .wp-content.article-prose img {
     @apply my-0 aspect-[16/10] h-auto w-full border border-white/10 object-cover;
   }
+
+  /* About company page */
+  .about-heading {
+    @apply flex flex-col items-start gap-3;
+  }
+
+  .about-heading__icon {
+    @apply flex h-11 w-11 items-center justify-center border border-accent/50 text-accent;
+  }
+
+  .about-heading__eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[0.22em] text-accent;
+  }
+
+  .about-heading__title {
+    @apply max-w-3xl text-2xl font-semibold tracking-tight text-white sm:text-3xl lg:text-[2.1rem] lg:leading-tight;
+  }
+
+  .about-divider {
+    @apply my-10 flex items-center gap-3;
+  }
+
+  .about-divider__line {
+    @apply h-px flex-1 max-w-[6rem] bg-gradient-to-r from-white/30 to-transparent sm:max-w-[8rem];
+  }
+
+  .about-divider__dot {
+    @apply h-1.5 w-1.5 shrink-0 rotate-45 bg-accent;
+  }
+
+  .about-lead {
+    @apply text-xl font-medium leading-relaxed text-white sm:text-2xl sm:leading-snug;
+  }
+
+  .about-lead--sm {
+    @apply text-lg sm:text-xl;
+  }
+
+  .about-pillars {
+    @apply grid gap-6 sm:grid-cols-2 xl:grid-cols-4;
+  }
+
+  .about-pillars--services {
+    @apply xl:grid-cols-4;
+  }
+
+  .about-pillar {
+    @apply border-l-2 border-accent/70 pl-4;
+  }
+
+  .about-pillar__icon {
+    @apply mb-3 flex h-10 w-10 items-center justify-center border border-white/15 text-accent;
+  }
+
+  .about-pillar__title {
+    @apply text-lg font-semibold tracking-tight text-white;
+  }
+
+  .about-pillar__text {
+    @apply mt-2 text-sm leading-relaxed text-white/70;
+  }
+
+  .about-mission-grid {
+    @apply grid gap-8 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] lg:items-start lg:gap-12;
+  }
+
+  .about-mission-copy {
+    @apply space-y-4 text-base leading-relaxed text-white/75;
+  }
+
+  .about-quote {
+    @apply border-y border-accent/40 px-1 py-6 text-lg font-medium leading-relaxed text-white sm:text-xl;
+  }
+
+  .about-split {
+    @apply grid items-center gap-8 md:grid-cols-[minmax(0,360px)_minmax(0,1fr)] md:gap-12;
+  }
+
+  .about-split--reverse {
+    @apply md:grid-cols-[minmax(0,1fr)_minmax(0,360px)];
+  }
+
+  .about-split--reverse .about-split__media {
+    @apply md:order-2;
+  }
+
+  .about-split--reverse .about-split__copy {
+    @apply md:order-1;
+  }
+
+  .about-split__media {
+    @apply w-full;
+  }
+
+  .about-role {
+    @apply text-[11px] font-semibold uppercase tracking-[0.18em] text-accent;
+  }
+
+  .about-guarantees {
+    @apply m-0 grid list-none gap-5 p-0 sm:grid-cols-2;
+  }
+
+  .about-guarantees li {
+    @apply flex items-start gap-3 border border-white/10 bg-white/[0.03] p-4;
+  }
+
+  .about-guarantees__mark {
+    @apply mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center text-accent;
+  }
 }
