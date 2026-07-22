@@ -88,7 +88,7 @@ export function Header() {
               alt={site.name}
               width={48}
               height={48}
-              className="h-10 w-auto max-w-[150px] object-contain brightness-0 invert lg:h-11 lg:max-w-[160px]"
+              className="h-11 w-auto max-w-[180px] object-contain brightness-0 invert"
               unoptimized
             />
           ) : (
