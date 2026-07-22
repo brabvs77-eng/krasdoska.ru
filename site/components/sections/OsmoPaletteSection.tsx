@@ -154,15 +154,22 @@ export function OsmoPaletteSection({ data }: OsmoPaletteSectionProps) {
               </Link>
             </div>
           </div>
-          <div className="relative aspect-[716/586] overflow-hidden rounded-2xl bg-white/5">
-            <Image
-              src={PALETTE_HERO_IMAGE}
-              alt="Заводская покраска пиломатериалов"
-              fill
-              sizes="360px"
-              className="object-cover"
-              unoptimized
+          <div className="relative w-full max-w-[360px] justify-self-start lg:justify-self-end">
+            {/* Оранжевая полурамка со смещением вправо-вниз — как на главной / услугах */}
+            <div
+              className="absolute -bottom-4 -right-4 h-full w-full rounded-2xl bg-accent"
+              aria-hidden="true"
             />
+            <div className="relative aspect-[716/586] overflow-hidden rounded-2xl bg-white/5">
+              <Image
+                src={PALETTE_HERO_IMAGE}
+                alt="Заводская покраска пиломатериалов"
+                fill
+                sizes="360px"
+                className="object-cover"
+                unoptimized
+              />
+            </div>
           </div>
         </div>
       </section>
