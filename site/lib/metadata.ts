@@ -5,18 +5,29 @@ type PageMetaInput = {
   title?: string;
   description?: string;
   path?: string;
+  noIndex?: boolean;
 };
+
+function composeTitle(pageTitle: string | undefined, siteName: string): string {
+  if (!pageTitle?.trim()) return siteName;
+  const trimmed = pageTitle.trim();
+  const lower = trimmed.toLowerCase();
+  const siteLower = siteName.toLowerCase();
+  if (lower === siteLower || lower.endsWith(` | ${siteLower}`) || lower.endsWith(` - ${siteLower}`)) {
+    return trimmed;
+  }
+  return `${trimmed} | ${siteName}`;
+}
 
 export function buildPageMetadata({
   title,
   description,
   path = "/",
+  noIndex = false,
 }: PageMetaInput): Metadata {
   const settings = getSiteSettings();
-  const pageTitle = title
-    ? `${title} | ${settings.site.name}`
-    : settings.site.name;
-  const pageDescription = description ?? settings.site.description;
+  const pageTitle = composeTitle(title, settings.site.name);
+  const pageDescription = description?.trim() || settings.site.description;
 
   return {
     title: pageTitle,
@@ -25,6 +36,9 @@ export function buildPageMetadata({
     alternates: {
       canonical: path,
     },
+    robots: noIndex
+      ? { index: false, follow: false }
+      : { index: true, follow: true },
     openGraph: {
       title: pageTitle,
       description: pageDescription,

@@ -5,8 +5,10 @@ import { getPage } from "@/lib/content";
 export async function generateMetadata() {
   const page = getPage("kontakty");
   return buildPageMetadata({
-    title: page?.title ?? "Контакты",
-    description: "Контакты, адрес офиса, телефон, email и карта проезда.",
+    title: page?.seo?.title ?? page?.title ?? "Контакты",
+    description:
+      page?.seo?.description ??
+      "Контакты, адрес офиса, телефон, email и карта проезда.",
     path: "/kontakty/",
   });
 }

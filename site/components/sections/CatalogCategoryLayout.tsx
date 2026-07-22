@@ -110,6 +110,7 @@ export function CatalogCategoryLayout({
             <div className="mt-12 rounded-2xl border border-white/10 bg-white/5 p-6">
               <HtmlContent
                 html={category.content}
+                stripLeadingH1
                 className="wp-content-dark [&_h2]:text-white [&_h3]:text-white [&_a]:text-accent"
               />
             </div>

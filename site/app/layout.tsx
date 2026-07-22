@@ -4,13 +4,17 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SiteIntegrations } from "@/components/integrations/SiteIntegrations";
 import { CookieNotice } from "@/components/integrations/CookieNotice";
+import { JsonLd } from "@/components/integrations/JsonLd";
 import { MarquizWidget } from "@/components/integrations/MarquizWidget";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { buildPageMetadata } from "@/lib/metadata";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  ...buildPageMetadata({}),
+  ...buildPageMetadata({
+    title: undefined,
+    description: settings.site.description,
+  }),
   icons: settings.site.favicon ? { icon: settings.site.favicon } : { icon: "/favicon.svg" },
 };
 
@@ -22,6 +26,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className="flex min-h-screen flex-col">
+        <JsonLd />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

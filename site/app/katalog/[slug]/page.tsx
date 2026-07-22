@@ -13,8 +13,8 @@ export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const category = getCatalogCategory(slug);
   return buildPageMetadata({
-    title: category?.title ?? slug.replace(/-/g, " "),
-    description: category?.description,
+    title: category?.seo?.title ?? category?.title ?? slug.replace(/-/g, " "),
+    description: category?.seo?.description ?? category?.description,
     path: `/katalog/${slug}/`,
   });
 }
@@ -22,6 +22,7 @@ export async function generateMetadata({ params }: Props) {
 export default async function CatalogCategoryPage({ params }: Props) {
   const { slug } = await params;
   const category = getCatalogCategory(slug);
+  // H1 — короткий title категории; seo.title только в metadata
   const title = category?.title ?? slug.replace(/-/g, " ");
   const products = getProductsByCategory(slug);
   const showcase = getCatalogShowcaseForSlug(slug);

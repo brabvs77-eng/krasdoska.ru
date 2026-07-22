@@ -2,30 +2,53 @@
   "site": {
     "name": "Крашеная доска",
     "url": "https://krashenayadoska.ru",
-    "description": "Производитель крашеной доски — Москва / Истра",
+    "description": "Заводская покраска пиломатериалов в Истре: вагонка, планкен, фасадная и террасная доска. Официальный дилер Sirca. Доставка по России.",
     "logo": "/uploads/2025/05/cropped-photo_2025-05-18_23-34-48.webp",
     "favicon": "/uploads/2025/05/cropped-photo_2025-05-18_23-34-48-32x32.webp"
   },
   "contacts": {
-    "phones": ["8 (800) 250-90-55"],
+    "phones": [
+      "8 (800) 250-90-55"
+    ],
     "email": "krashenaya.doska@mail.ru",
     "address": "141031, Московская обл., г.о. Мытищи, п. Нагорное, ул. Центральная, д.3, стр.1, пом. №43",
     "inn": "9715482912",
     "kpp": "771501001"
   },
   "integrations": {
-    "yandexMetrikaId": "",
+    "yandexMetrikaId": "101150421",
     "googleAnalyticsId": "",
     "marquizId": "6a1226b74922200019dd589d",
     "formEndpoint": ""
   },
   "navigation": [
-    { "href": "/uslugi/", "label": "Услуги" },
-    { "href": "/o-kompanii/", "label": "О компании" },
-    { "href": "/blog/", "label": "Блог" },
-    { "href": "/kontakty/", "label": "Контакты" },
-    { "href": "/katalog/", "label": "Каталог" },
-    { "href": "/palitra/", "label": "Палитра" },
-    { "href": "/tehnologija-nanesenija-kraski/", "label": "Технология" }
+    {
+      "href": "/uslugi/",
+      "label": "Услуги"
+    },
+    {
+      "href": "/o-kompanii/",
+      "label": "О компании"
+    },
+    {
+      "href": "/blog/",
+      "label": "Блог"
+    },
+    {
+      "href": "/kontakty/",
+      "label": "Контакты"
+    },
+    {
+      "href": "/katalog/",
+      "label": "Каталог"
+    },
+    {
+      "href": "/palitra/",
+      "label": "Палитра"
+    },
+    {
+      "href": "/tehnologija-nanesenija-kraski/",
+      "label": "Технология"
+    }
   ]
 }
