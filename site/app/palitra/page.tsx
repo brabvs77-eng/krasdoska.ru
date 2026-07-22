@@ -18,7 +18,7 @@ const BIOFA_CARD_IMAGE = "/uploads/palitra/biofa/cover.jpg";
 const TEKNOS_INTERIOR_CARD_IMAGE = "/uploads/palitra/teknos-interior/cover.jpg";
 const TEKNOS_FACADE_CARD_IMAGE = "/uploads/palitra/teknos-facade/cover.jpg";
 const LESIRUYUSHCHIE_CARD_IMAGE = "/uploads/palitra/lesiruyushchie/cover.jpg";
-const KATALOG_TSVETOV_CARD_IMAGE = "/uploads/katalog-tsvetov/cover.jpg";
+const KATALOG_TSVETOV_CARD_IMAGE = "/uploads/katalog-tsvetov/clean/cover.jpg";
 
 const paletteCards = [
   { title: "Палитра цветов RAL", href: "/palitra/palitra-ral/", image: RAL_CARD_IMAGE },
