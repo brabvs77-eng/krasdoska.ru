@@ -22,7 +22,7 @@ export function ProjectGallery({ images, title }: ProjectGalleryProps) {
   if (images.length === 0) return null;
 
   return (
-    <div className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-neutral-900">
+    <div className="relative aspect-[16/10] overflow-hidden border border-white/10 bg-neutral-900">
       {images.map((src, i) => (
         <Image
           key={src}
@@ -30,7 +30,7 @@ export function ProjectGallery({ images, title }: ProjectGalleryProps) {
           alt={`${title} — фото ${i + 1}`}
           fill
           priority={i === 0}
-          sizes="(max-width: 1024px) 100vw, 960px"
+          sizes="(max-width: 1024px) 100vw, 900px"
           className={`object-cover transition-opacity duration-700 ${i === index ? "opacity-100" : "opacity-0"}`}
           unoptimized
         />
@@ -44,7 +44,7 @@ export function ProjectGallery({ images, title }: ProjectGalleryProps) {
                 type="button"
                 aria-label={`Слайд ${i + 1}`}
                 onClick={() => setIndex(i)}
-                className={`h-2 w-2 rounded-full transition ${i === index ? "bg-accent w-6" : "bg-white/50"}`}
+                className={`h-2 w-2 transition ${i === index ? "w-6 bg-accent" : "bg-white/50"}`}
               />
             ))}
           </div>
@@ -52,7 +52,7 @@ export function ProjectGallery({ images, title }: ProjectGalleryProps) {
             type="button"
             aria-label="Предыдущий слайд"
             onClick={() => setIndex((current) => (current - 1 + images.length) % images.length)}
-            className="absolute left-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/45 text-white hover:bg-black/65"
+            className="absolute left-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center border border-white/20 bg-black/45 text-white hover:bg-black/65"
           >
             ‹
           </button>
@@ -60,7 +60,7 @@ export function ProjectGallery({ images, title }: ProjectGalleryProps) {
             type="button"
             aria-label="Следующий слайд"
             onClick={() => setIndex((current) => (current + 1) % images.length)}
-            className="absolute right-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/45 text-white hover:bg-black/65"
+            className="absolute right-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center border border-white/20 bg-black/45 text-white hover:bg-black/65"
           >
             ›
           </button>

@@ -1,9 +1,10 @@
-import Image from "next/image";
 import { DiyVsFactoryArticle } from "@/components/blog/DiyVsFactoryArticle";
+import { ArticleShell } from "@/components/content/ArticleShell";
 import { HtmlContent } from "@/components/content/HtmlContent";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { MarketingPageFooter } from "@/components/sections/MarketingPageFooter";
 import { PageHero } from "@/components/sections/PageHero";
+import { enhanceArticleHtml, extractArticleToc } from "@/lib/article-html";
 import { buildPageMetadata } from "@/lib/metadata";
 import { getBlogPost, getBlogSlugs, getExcerpt } from "@/lib/content";
 import { getContentImage } from "@/lib/product-media";
@@ -45,6 +46,8 @@ export default async function BlogPostPage({ params }: Props) {
 
   const isFeatured = slug === FEATURED_ARTICLE_SLUG;
   const cover = getContentImage(post);
+  const enhanced = enhanceArticleHtml(post.content ?? "", cover);
+  const toc = extractArticleToc(enhanced);
 
   return (
     <>
@@ -59,30 +62,15 @@ export default async function BlogPostPage({ params }: Props) {
               { label: post.title },
             ]}
           />
-          {isFeatured && cover ? (
-            <div className="mt-8">
+          <div className="mt-8">
+            {isFeatured && cover ? (
               <DiyVsFactoryArticle coverSrc={cover} title={post.title} />
-            </div>
-          ) : (
-            <>
-              {cover ? (
-                <figure className="relative mt-8 aspect-[16/9] overflow-hidden rounded-xl border border-white/10">
-                  <Image
-                    src={cover}
-                    alt={post.title}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 960px"
-                    className="object-cover"
-                    unoptimized
-                    priority
-                  />
-                </figure>
-              ) : null}
-              <div className="mt-8">
-                <HtmlContent html={post.content} />
-              </div>
-            </>
-          )}
+            ) : (
+              <ArticleShell coverSrc={cover} coverAlt={post.title} toc={toc} orangeFrame>
+                <HtmlContent html={enhanced} className="article-prose" />
+              </ArticleShell>
+            )}
+          </div>
         </article>
       </section>
       <MarketingPageFooter />
