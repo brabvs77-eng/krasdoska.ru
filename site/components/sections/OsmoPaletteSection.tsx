@@ -2,13 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { MarketingPageFooter } from "@/components/sections/MarketingPageFooter";
-import { OsmoSwatchGrid } from "@/components/sections/OsmoSwatchGrid";
+import { OsmoPaletteCatalog } from "@/components/sections/OsmoPaletteCatalog";
 import { PageHero } from "@/components/sections/PageHero";
-import type { OsmoPaletteCatalog } from "@/lib/osmo-palette";
+import type { OsmoPaletteCatalog as OsmoPaletteCatalogData } from "@/lib/osmo-palette";
 import { PALETTE_HERO_IMAGE } from "@/lib/palette-data";
 
 type OsmoPaletteSectionProps = {
-  data: OsmoPaletteCatalog;
+  data: OsmoPaletteCatalogData;
 };
 
 export function OsmoPaletteSection({ data }: OsmoPaletteSectionProps) {
@@ -91,54 +91,18 @@ export function OsmoPaletteSection({ data }: OsmoPaletteSectionProps) {
             </section>
           )}
 
-          <nav className="mt-12" aria-label="Разделы каталога Osmo">
-            <h2 className="text-xl font-semibold text-white sm:text-2xl">Разделы каталога</h2>
-            <ul className="mt-5 grid gap-2 sm:grid-cols-2">
-              {data.sections.map((section) => (
-                <li key={section.id}>
-                  <a
-                    href={`#${section.id}`}
-                    className="block rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/85 transition hover:border-accent/50 hover:text-white"
-                  >
-                    {section.title}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
           <div className="mt-8 flex flex-wrap gap-4">
             <Link href="/#form" className="btn-primary">
               Подобрать цвет Osmo
             </Link>
-            <Link href="/katalog/" className="btn-outline-light">
-              Смотреть каталог
-            </Link>
+            <a href="#catalog-filters" className="btn-outline-light">
+              Открыть каталог
+            </a>
           </div>
         </div>
       </section>
 
-      {data.sections.map((section) => (
-        <section
-          key={section.id}
-          id={section.id}
-          className="scroll-mt-24 border-t border-white/10 bg-brand-dark py-12 sm:py-16"
-        >
-          <div className="container-content">
-            <h2 className="max-w-4xl text-xl font-semibold text-white sm:text-2xl">
-              {section.title}
-            </h2>
-            {section.lead && (
-              <p className="mt-4 max-w-3xl text-base leading-relaxed text-white/75">{section.lead}</p>
-            )}
-            {section.note && (
-              <p className="mt-3 max-w-3xl text-sm leading-relaxed text-white/60">{section.note}</p>
-            )}
-
-            <OsmoSwatchGrid items={section.items} sectionId={section.id} />
-          </div>
-        </section>
-      ))}
+      <OsmoPaletteCatalog sections={data.sections} />
 
       <section className="section-dark border-t border-white/10 py-12 sm:py-16">
         <div className="container-content grid gap-10 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-center">
