@@ -15,6 +15,7 @@ const staticRoutes = [
   "/katalog/",
   "/uslugi/",
   "/palitra/",
+  "/katalog-tsvetov/",
   "/blog/",
   "/project/",
   "/o-kompanii/",

@@ -73,7 +73,7 @@ export function PaletteSwatchCatalog({ data }: PaletteSwatchCatalogProps) {
                 const light = isLightHex(swatch.hex);
                 return (
                   <article
-                    key={swatch.code}
+                    key={`${swatch.group ?? "palette"}-${swatch.code}`}
                     className="overflow-hidden rounded-xl border border-white/10 bg-white/5"
                   >
                     <div
