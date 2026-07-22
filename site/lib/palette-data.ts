@@ -32,7 +32,7 @@ export const BIOFA_CARD_IMAGE = "/uploads/palitra/biofa/cover.jpg";
 export const TEKNOS_INTERIOR_CARD_IMAGE = "/uploads/palitra/teknos-interior/cover.jpg";
 export const TEKNOS_FACADE_CARD_IMAGE = "/uploads/palitra/teknos-facade/cover.jpg";
 export const LESIRUYUSHCHIE_CARD_IMAGE = "/uploads/palitra/lesiruyushchie/cover.jpg";
-export const KATALOG_TSVETOV_CARD_IMAGE = "/uploads/katalog-tsvetov/cover.jpg";
+export const KATALOG_TSVETOV_CARD_IMAGE = "/uploads/katalog-tsvetov/clean/cover.jpg";
 
 function fromCatalog(
   catalog: {
