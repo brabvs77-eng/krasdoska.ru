@@ -218,7 +218,7 @@ export function getAllServices(): ContentItem[] {
 }
 
 export function getPaletteSlugs(): string[] {
-  return ["palitra-ral", "palitra-ncs", "palitra-cvetov-biofa"];
+  return ["palitra-ral", "palitra-ncs", "palitra-cvetov-biofa", "palitra-osmo"];
 }
 
 export function getPalettePage(slug: string): ContentItem | null {

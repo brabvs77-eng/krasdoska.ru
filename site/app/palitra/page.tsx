@@ -12,20 +12,23 @@ const PALETTE_HERO_BG = "/uploads/2026/05/krashenaja-skandinavskaja-doska.webp";
 const PALETTE_CARD_IMAGE = "/uploads/2026/05/1-1.webp";
 const VIDEO_POSTER = "/uploads/2026/05/kachestvennaja-obrabotka-derevjannyh-izdelij.webp";
 
+const OSMO_CARD_IMAGE = "/uploads/palitra/osmo/f35f351b0f17dcc3ad30f7e6394dd8c212a.jpg";
+
 const paletteCards = [
-  { title: "Палитра цветов RAL", href: "/palitra/palitra-ral/" },
-  { title: "Палитра цветов NCS", href: "/palitra/palitra-ncs/" },
-  { title: "Палитра цветов масло BIOFA", href: "/palitra/palitra-cvetov-biofa/" },
-  { title: "Палитра укрывных цветов для интерьера", href: null },
-  { title: "Палитра укрывных цветов для фасада", href: null },
-  { title: "Палитра лессирующих цветов", href: null },
+  { title: "Палитра цветов RAL", href: "/palitra/palitra-ral/", image: PALETTE_CARD_IMAGE },
+  { title: "Палитра цветов NCS", href: "/palitra/palitra-ncs/", image: PALETTE_CARD_IMAGE },
+  { title: "Палитра цветов масло BIOFA", href: "/palitra/palitra-cvetov-biofa/", image: PALETTE_CARD_IMAGE },
+  { title: "Палитра цветов Osmo", href: "/palitra/palitra-osmo/", image: OSMO_CARD_IMAGE },
+  { title: "Палитра укрывных цветов для интерьера", href: null, image: PALETTE_CARD_IMAGE },
+  { title: "Палитра укрывных цветов для фасада", href: null, image: PALETTE_CARD_IMAGE },
+  { title: "Палитра лессирующих цветов", href: null, image: PALETTE_CARD_IMAGE },
 ];
 
 export async function generateMetadata() {
   const page = getPage("palitra");
   return buildPageMetadata({
     title: page?.seo?.title ?? page?.title ?? "Палитра",
-    description: page ? getExcerpt(page) : "Палитры RAL, NCS и BIOFA. Эксклюзивные цвета KD.",
+    description: page ? getExcerpt(page) : "Палитры RAL, NCS, BIOFA и Osmo. Эксклюзивные цвета KD.",
     path: "/palitra/",
   });
 }
@@ -69,7 +72,7 @@ export default function PalettePage() {
                 <>
                   <div className="relative aspect-[7/5] overflow-hidden border-2 border-accent">
                     <Image
-                      src={PALETTE_CARD_IMAGE}
+                      src={item.image}
                       alt={item.title}
                       fill
                       sizes="(max-width: 640px) 100vw, 33vw"
