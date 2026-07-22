@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ArticleShell } from "@/components/content/ArticleShell";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { MarketingPageFooter } from "@/components/sections/MarketingPageFooter";
 import { ProjectGallery } from "@/components/sections/ProjectGallery";
@@ -8,6 +9,11 @@ import type { ProjectItem } from "@/lib/content";
 type ProjectLayoutProps = {
   project: ProjectItem;
 };
+
+const PROJECT_TOC = [
+  { id: "opisanie", label: "Описание" },
+  { id: "galereya", label: "Галерея" },
+] as const;
 
 export function ProjectLayout({ project }: ProjectLayoutProps) {
   const sliderImages = project.slider?.length
@@ -18,8 +24,21 @@ export function ProjectLayout({ project }: ProjectLayoutProps) {
         ? [project.image]
         : [];
 
+  const coverSrc = sliderImages[0] ?? project.image;
+  const galleryImages = sliderImages.length > 1 ? sliderImages.slice(1) : [];
+  const extraGallery = project.gallery?.filter((src) => src !== coverSrc) ?? [];
+  const allGallery = [...galleryImages, ...extraGallery.filter((src) => !galleryImages.includes(src))];
+
   const heroText = project.heroDescription?.trim();
   const bodyDescription = project.description?.trim();
+  const hasDescription = Boolean(heroText || bodyDescription);
+
+  const toc = [
+    ...(hasDescription ? [{ id: "opisanie", label: "Описание" }] : []),
+    ...(allGallery.length > 0 || sliderImages.length > 1
+      ? [{ id: "galereya", label: "Галерея" }]
+      : []),
+  ];
 
   return (
     <>
@@ -34,19 +53,19 @@ export function ProjectLayout({ project }: ProjectLayoutProps) {
               { label: project.title },
             ]}
           />
-          <div className="mt-8 max-w-3xl">
+          <div className="mt-8 max-w-3xl text-left">
             {(project.tags?.length || project.service) && (
               <div className="mb-4 flex flex-wrap gap-2">
                 {project.tags?.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-wide text-white/85"
+                    className="border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-wide text-white/85"
                   >
                     {tag}
                   </span>
                 ))}
                 {project.service && (
-                  <span className="rounded-full bg-accent/90 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
+                  <span className="bg-accent/90 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
                     {project.service}
                   </span>
                 )}
@@ -63,58 +82,124 @@ export function ProjectLayout({ project }: ProjectLayoutProps) {
       </section>
 
       <article className="section-dark py-12 sm:py-16">
-        <div className="container-content space-y-12">
-          {sliderImages.length > 0 && (
-            <ProjectGallery images={sliderImages} title={project.title} />
-          )}
+        <div className="container-content">
+          <ArticleShell
+            coverSrc={coverSrc}
+            coverAlt={project.title}
+            orangeFrame
+            toc={toc.length ? toc : [...PROJECT_TOC]}
+            ctaText="Хотите такой же результат?"
+            ctaLabel="Оставить заявку"
+          >
+            {hasDescription ? (
+              <section id="opisanie" className="scroll-mt-28 space-y-4">
+                <div className="article-divider" aria-hidden="true">
+                  <span className="article-divider__line" />
+                  <span className="article-divider__dot" />
+                  <span className="article-divider__line" />
+                </div>
+                <h2 className="article-h2">
+                  <span className="article-h2__icon" aria-hidden="true" />
+                  <span>Описание</span>
+                </h2>
+                {bodyDescription
+                  ? bodyDescription.split(/\n+/).map((paragraph) => (
+                      <p key={paragraph.slice(0, 48)}>{paragraph.trim()}</p>
+                    ))
+                  : null}
+                {!bodyDescription && heroText ? (
+                  <p className="text-white/70">Подробности проекта — в галерее ниже.</p>
+                ) : null}
+              </section>
+            ) : null}
 
-          {project.logo && (
-            <div className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4">
-              <div className="relative h-14 w-28">
-                <Image
-                  src={project.logo}
-                  alt="Партнёр проекта"
-                  fill
-                  sizes="112px"
-                  className="object-contain"
-                  unoptimized
-                />
+            {project.logo ? (
+              <div className="mx-auto my-8 flex max-w-md flex-col items-center gap-3 border border-white/10 bg-white/[0.03] p-4">
+                <div className="relative h-14 w-28">
+                  <Image
+                    src={project.logo}
+                    alt="Партнёр проекта"
+                    fill
+                    sizes="112px"
+                    className="object-contain"
+                    unoptimized
+                  />
+                </div>
+                <p className="text-sm text-white/70">
+                  Проект выполнен с использованием материалов партнёров
+                </p>
               </div>
-              <p className="text-sm text-white/70">Проект выполнен с использованием материалов партнёров</p>
-            </div>
-          )}
+            ) : null}
 
-          {bodyDescription && (
-            <div className="max-w-3xl space-y-4 text-base leading-relaxed text-white/80">
-              {bodyDescription.split(/\n+/).map((paragraph) => (
-                <p key={paragraph.slice(0, 40)}>{paragraph.trim()}</p>
-              ))}
-            </div>
-          )}
-
-          {project.gallery && project.gallery.length > 0 && (
-            <section>
-              <h2 className="section-title">Галерея</h2>
-              <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {project.gallery.map((src) => (
-                  <div key={src} className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-white/5">
-                    <Image
-                      src={src}
-                      alt={project.title}
-                      fill
-                      sizes="(max-width: 640px) 100vw, 33vw"
-                      className="object-cover"
-                      unoptimized
-                    />
+            {sliderImages.length > 1 ? (
+              <section id="galereya" className="scroll-mt-28">
+                <div className="article-divider" aria-hidden="true">
+                  <span className="article-divider__line" />
+                  <span className="article-divider__dot" />
+                  <span className="article-divider__line" />
+                </div>
+                <h2 className="article-h2">
+                  <span className="article-h2__icon" aria-hidden="true" />
+                  <span>Галерея</span>
+                </h2>
+                <div className="mt-6">
+                  <ProjectGallery images={sliderImages.slice(1)} title={project.title} />
+                </div>
+                {extraGallery.length > 0 ? (
+                  <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                    {extraGallery.map((src) => (
+                      <figure key={src} className="article-figure">
+                        <div className="relative aspect-[16/10] overflow-hidden border border-white/10">
+                          <Image
+                            src={src}
+                            alt={project.title}
+                            fill
+                            sizes="(max-width: 640px) 100vw, 50vw"
+                            className="object-cover"
+                            unoptimized
+                          />
+                        </div>
+                      </figure>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </section>
-          )}
+                ) : null}
+              </section>
+            ) : allGallery.length > 0 ? (
+              <section id="galereya" className="scroll-mt-28">
+                <div className="article-divider" aria-hidden="true">
+                  <span className="article-divider__line" />
+                  <span className="article-divider__dot" />
+                  <span className="article-divider__line" />
+                </div>
+                <h2 className="article-h2">
+                  <span className="article-h2__icon" aria-hidden="true" />
+                  <span>Галерея</span>
+                </h2>
+                <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                  {allGallery.map((src) => (
+                    <figure key={src} className="article-figure">
+                      <div className="relative aspect-[16/10] overflow-hidden border border-white/10">
+                        <Image
+                          src={src}
+                          alt={project.title}
+                          fill
+                          sizes="(max-width: 640px) 100vw, 50vw"
+                          className="object-cover"
+                          unoptimized
+                        />
+                      </div>
+                    </figure>
+                  ))}
+                </div>
+              </section>
+            ) : null}
 
-          <Link href="/project/" className="btn-outline-light inline-flex">
-            Все проекты
-          </Link>
+            <div className="mt-10">
+              <Link href="/project/" className="btn-outline-light inline-flex">
+                Все проекты
+              </Link>
+            </div>
+          </ArticleShell>
         </div>
       </article>
 

@@ -28,7 +28,7 @@ export async function generateMetadata() {
 
 export default function HomePage() {
   return (
-    <>
+    <div className="font-home">
       <HeroSlider slides={HERO_SLIDES} />
       <ProductionIntroSection />
       <CatalogPreviewSection />
@@ -40,6 +40,6 @@ export default function HomePage() {
       <CtaSection />
       <CompanyPreviewSection />
       <BottomBarSection />
-    </>
+    </div>
   );
 }

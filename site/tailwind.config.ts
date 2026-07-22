@@ -24,7 +24,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-manrope)", "system-ui", "sans-serif"],
+        sans: ["var(--font-rubik)", "system-ui", "sans-serif"],
+        rubik: ["var(--font-rubik)", "system-ui", "sans-serif"],
+        manrope: ["var(--font-manrope)", "system-ui", "sans-serif"],
       },
       maxWidth: {
         content: "1440px",

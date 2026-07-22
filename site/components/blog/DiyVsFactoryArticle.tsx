@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { ArticleShell } from "@/components/content/ArticleShell";
 
 const TOC = [
   { id: "tri-podhoda", label: "Три подхода" },
@@ -193,53 +194,12 @@ type Props = {
 
 export function DiyVsFactoryArticle({ coverSrc, title }: Props) {
   return (
-    <div className="diy-article">
-      <aside className="diy-rail" aria-label="Содержание статьи">
-        <div className="diy-rail__sticky">
-          <p className="diy-rail__eyebrow">Содержание</p>
-          <nav className="diy-rail__nav">
-            {TOC.map((item, index) => (
-              <a key={item.id} href={`#${item.id}`} className="diy-rail__link">
-                <span className="diy-rail__index">{String(index + 1).padStart(2, "0")}</span>
-                <span>{item.label}</span>
-              </a>
-            ))}
-          </nav>
-          <div className="diy-rail__cta">
-            <p>Нужен расчёт под ваш метраж?</p>
-            <Link href="/#form" className="btn-primary mt-3 w-full text-center">
-              Оставить заявку
-            </Link>
-          </div>
-        </div>
-      </aside>
-
-      <div className="diy-body">
-        <figure className="diy-cover">
-          <Image
-            src={coverSrc}
-            alt={title}
-            fill
-            sizes="(max-width: 1024px) 100vw, 760px"
-            className="object-cover"
-            unoptimized
-            priority
-          />
-        </figure>
-
-        <nav className="diy-toc-mobile" aria-label="Содержание статьи">
-          <p className="diy-toc-mobile__title">Содержание</p>
-          <ol className="diy-toc-mobile__list">
-            {TOC.map((item, index) => (
-              <li key={item.id}>
-                <a href={`#${item.id}`}>
-                  {String(index + 1).padStart(2, "0")}. {item.label}
-                </a>
-              </li>
-            ))}
-          </ol>
-        </nav>
-
+    <ArticleShell
+      coverSrc={coverSrc}
+      coverAlt={title}
+      orangeFrame
+      toc={TOC.map((item) => ({ id: item.id, label: item.label }))}
+    >
         <p className="diy-lead">
           Перед покраской пиломатериалов почти всегда встаёт один и тот же вопрос: сделать самому,
           нанять маляра или отдать доску на заводскую покраску. Ниже сравниваем затраты, плюсы и
@@ -524,7 +484,6 @@ export function DiyVsFactoryArticle({ coverSrc, title }: Props) {
           <Link href="/shema-pokraski/">схем покраски</Link>, живые образцы — в{" "}
           <Link href="/katalog-tsvetov/">каталоге выкрасов</Link>.
         </p>
-      </div>
-    </div>
+    </ArticleShell>
   );
 }
