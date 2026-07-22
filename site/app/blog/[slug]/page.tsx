@@ -1,9 +1,11 @@
+import Image from "next/image";
 import { HtmlContent } from "@/components/content/HtmlContent";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { MarketingPageFooter } from "@/components/sections/MarketingPageFooter";
 import { PageHero } from "@/components/sections/PageHero";
 import { buildPageMetadata } from "@/lib/metadata";
 import { getBlogPost, getBlogSlugs, getExcerpt } from "@/lib/content";
+import { getContentImage } from "@/lib/product-media";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -51,6 +53,19 @@ export default async function BlogPostPage({ params }: Props) {
               { label: post.title },
             ]}
           />
+          {getContentImage(post) ? (
+            <figure className="relative mt-8 aspect-[16/9] overflow-hidden rounded-xl border border-white/10">
+              <Image
+                src={getContentImage(post)!}
+                alt={post.title}
+                fill
+                sizes="(max-width: 1024px) 100vw, 960px"
+                className="object-cover"
+                unoptimized
+                priority
+              />
+            </figure>
+          ) : null}
           <div className="mt-8">
             <HtmlContent html={post.content} />
           </div>

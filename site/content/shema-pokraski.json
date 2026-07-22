@@ -337,6 +337,10 @@
     { "title": "Каталог выкрасов", "href": "/katalog-tsvetov/" },
     { "title": "Технология нанесения", "href": "/tehnologija-nanesenija-kraski/" },
     { "title": "Каталог продукции", "href": "/katalog/" },
-    { "title": "Услуги покраски", "href": "/uslugi/" }
+    { "title": "Услуги покраски", "href": "/uslugi/" },
+    {
+      "title": "Что выгоднее: самому или на производстве",
+      "href": "/blog/chto-vygodnee-krasit-samomu-ili-na-proizvodstve/"
+    }
   ]
 }

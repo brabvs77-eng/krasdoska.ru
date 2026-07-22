@@ -274,7 +274,14 @@ export function PaintSchemesSection({ data }: Props) {
             >
               технологии нанесения
             </Link>
-            . Сравнить оттенки можно в{" "}
+            . Сравнить «самому / маляр / завод» по деньгам — в статье{" "}
+            <Link
+              href="/blog/chto-vygodnee-krasit-samomu-ili-na-proizvodstve/"
+              className="text-accent underline-offset-2 hover:underline"
+            >
+              что выгоднее: красить самому или на производстве
+            </Link>
+            . Оттенки — в{" "}
             <Link href="/katalog-tsvetov/" className="text-accent underline-offset-2 hover:underline">
               каталоге выкрасов
             </Link>{" "}
