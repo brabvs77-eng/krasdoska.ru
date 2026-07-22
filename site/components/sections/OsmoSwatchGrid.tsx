@@ -18,11 +18,14 @@ export function OsmoSwatchGrid({ items, sectionId, compareMode = false }: OsmoSw
     () =>
       items
         .filter((item) => item.image)
-        .map((item) => ({
-          src: item.image,
-          alt: item.label,
-          caption: item.layers === "1-2" ? `${item.label} — 1 и 2 слоя на одной доске` : item.label,
-        })),
+        .map((item) => {
+          const caption = item.label || [item.code, item.name, item.finish].filter(Boolean).join(" ");
+          return {
+            src: item.image,
+            alt: caption,
+            caption: item.layers === "1-2" ? `${caption} — 1 и 2 слоя на одной доске` : caption,
+          };
+        }),
     [items],
   );
 
@@ -49,6 +52,8 @@ export function OsmoSwatchGrid({ items, sectionId, compareMode = false }: OsmoSw
       >
         {items.map((item, index) => {
           const lightboxIndex = indexMap.get(index);
+          const caption =
+            item.label || [item.code, item.name, item.finish].filter(Boolean).join(" ");
           return (
             <article
               key={`${sectionId}-${item.code}-${item.finish}-${index}`}
@@ -63,13 +68,13 @@ export function OsmoSwatchGrid({ items, sectionId, compareMode = false }: OsmoSw
                 onClick={() => {
                   if (lightboxIndex !== undefined) setActive(lightboxIndex);
                 }}
-                aria-label={`Увеличить: ${item.label}`}
+                aria-label={`Увеличить: ${caption}`}
                 disabled={lightboxIndex === undefined}
               >
                 {item.image ? (
                   <Image
                     src={item.image}
-                    alt={item.label}
+                    alt={caption}
                     fill
                     sizes={
                       compareMode
@@ -91,7 +96,7 @@ export function OsmoSwatchGrid({ items, sectionId, compareMode = false }: OsmoSw
                 </span>
               </button>
               <div className="p-3">
-                <p className="text-sm font-semibold leading-snug text-white">{item.label}</p>
+                <p className="text-sm font-semibold leading-snug text-white">{caption}</p>
                 {compareMode && item.layers === "1-2" ? (
                   <p className="mt-1.5 text-xs leading-relaxed text-white/55">
                     На одной доске: один и два слоя покрытия для сравнения насыщенности.

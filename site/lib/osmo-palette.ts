@@ -10,6 +10,7 @@ export type OsmoSwatch = {
   finish: OsmoFinish | string | null;
   image: string;
   label: string;
+  raw?: string;
   layers?: OsmoLayers | null;
 };
 

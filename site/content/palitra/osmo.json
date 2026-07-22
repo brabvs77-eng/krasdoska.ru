@@ -263,7 +263,7 @@
           "code": "3172",
           "name": "Шелк",
           "finish": "шлифовка",
-          "image": "/uploads/palitra/osmo/7e07e01118d79bdff133d99182a17354979.png",
+          "image": "/uploads/palitra/osmo/5565562e25b207f51b530353c72209cdbac.jpg",
           "label": "Osmo 3172 Шелк 1-2 слоя (шлиф)",
           "layers": "1-2"
         },
@@ -367,7 +367,7 @@
           "code": "3172",
           "name": "Шелк",
           "finish": "брашировка",
-          "image": "/uploads/palitra/osmo/75275291693d67977146ec9c2b1bb6140ff.jpg",
+          "image": "/uploads/palitra/osmo/a9ba9b48401ce4c9c57aa09cbf5600b1391.jpg",
           "label": "Osmo 3172 Шелк 1-2 слоя (браш)",
           "layers": "1-2"
         },
@@ -1573,7 +1573,8 @@
           "finish": "шлифовка",
           "raw": "Osmo 903 Серый базаль (шлифовка)",
           "image": "/uploads/palitra/osmo/ab6ab63f7f6006218f8a671ff3fa5f5a3ae.jpg",
-          "layers": null
+          "layers": null,
+          "label": "Osmo 903 Серый базаль (шлифовка)"
         },
         {
           "code": "700",
@@ -1581,7 +1582,8 @@
           "finish": "шлифовка",
           "raw": "Osmo 700 Сосна (шлифовка)",
           "image": "/uploads/palitra/osmo/d30d30cbff8d9663bfb646b2b0c80e03f10.jpg",
-          "layers": null
+          "layers": null,
+          "label": "Osmo 700 Сосна (шлифовка)"
         },
         {
           "code": "706",
@@ -1589,7 +1591,8 @@
           "finish": "шлифовка",
           "raw": "Osmo 706 Дуб (шлифовка)",
           "image": "/uploads/palitra/osmo/60e60ed778354ea21bee9a98b251792c476.jpg",
-          "layers": null
+          "layers": null,
+          "label": "Osmo 706 Дуб (шлифовка)"
         },
         {
           "code": "903",
@@ -1597,7 +1600,8 @@
           "finish": "брашировка",
           "raw": "Osmo 903 Серый базальт (брашировка)",
           "image": "/uploads/palitra/osmo/972972d29b8adb218634f0ea30c51b122a5.jpg",
-          "layers": null
+          "layers": null,
+          "label": "Osmo 903 Серый базальт (брашировка)"
         },
         {
           "code": "700",
@@ -1605,7 +1609,8 @@
           "finish": "брашировка",
           "raw": "Osmo 700 Сосна (брашировка)",
           "image": "/uploads/palitra/osmo/d02d020505c1ba52f7edc34b069eccf1171.jpg",
-          "layers": null
+          "layers": null,
+          "label": "Osmo 700 Сосна (брашировка)"
         },
         {
           "code": "706",
@@ -1613,7 +1618,8 @@
           "finish": "брашировка",
           "raw": "Osmo 706 Дуб (брашировка)",
           "image": "/uploads/palitra/osmo/e26e2636443ce1d7a33d71cfad99c7e5473.jpg",
-          "layers": null
+          "layers": null,
+          "label": "Osmo 706 Дуб (брашировка)"
         },
         {
           "code": "905",
@@ -1621,7 +1627,8 @@
           "finish": "шлифовка",
           "raw": "Osmo 905 Патина (шлифовка)",
           "image": "/uploads/palitra/osmo/887887ce14388eb15c0185006fc6fe53851.jpg",
-          "layers": null
+          "layers": null,
+          "label": "Osmo 905 Патина (шлифовка)"
         },
         {
           "code": "731",
@@ -1629,7 +1636,8 @@
           "finish": "шлифовка",
           "raw": "Osmo 731 Сосна Орегон (шлифовка)",
           "image": "/uploads/palitra/osmo/5195190b97a95cd42cab3d88123867f28b8.jpg",
-          "layers": null
+          "layers": null,
+          "label": "Osmo 731 Сосна Орегон (шлифовка)"
         },
         {
           "code": "703",
@@ -1637,7 +1645,8 @@
           "finish": "шлифовка",
           "raw": "Osmo 703 Махагон (шлифовка)",
           "image": "/uploads/palitra/osmo/5195190b97a95cd42cab3d88123867f28b8.jpg",
-          "layers": null
+          "layers": null,
+          "label": "Osmo 703 Махагон (шлифовка)"
         },
         {
           "code": "905",
@@ -1645,7 +1654,8 @@
           "finish": "брашировка",
           "raw": "Osmo 905 Патина (брашировка)",
           "image": "/uploads/palitra/osmo/a94a94fe39b679e0590e3ca674b661744d6.jpg",
-          "layers": null
+          "layers": null,
+          "label": "Osmo 905 Патина (брашировка)"
         },
         {
           "code": "731",
@@ -1653,7 +1663,8 @@
           "finish": "брашировка",
           "raw": "Osmo 731 Сосна Орегон (брашировка)",
           "image": "/uploads/palitra/osmo/3ea3eab7ad1c85c9744fa4e2a4e62529acd.jpg",
-          "layers": null
+          "layers": null,
+          "label": "Osmo 731 Сосна Орегон (брашировка)"
         },
         {
           "code": "703",
@@ -1661,7 +1672,8 @@
           "finish": "брашировка",
           "raw": "Osmo 703 Махагон (брашировка)",
           "image": "/uploads/palitra/osmo/955955772c7a8675bfa9d7738643c91d55d.jpg",
-          "layers": null
+          "layers": null,
+          "label": "Osmo 703 Махагон (брашировка)"
         },
         {
           "code": "900",
@@ -1669,7 +1681,8 @@
           "finish": "шлифовка",
           "raw": "Osmo 900 белое (шлифовка)",
           "image": "/uploads/palitra/osmo/5ec5ecf32e4f2a9e864e5f55357f3630f8c.jpg",
-          "layers": null
+          "layers": null,
+          "label": "Osmo 900 белое (шлифовка)"
         },
         {
           "code": "702",
@@ -1677,7 +1690,8 @@
           "finish": "шлифовка",
           "raw": "Osmo 702 лиственница (шлифовка)",
           "image": "/uploads/palitra/osmo/4684685257a1674ebee7d49ffd560c7bf10.jpg",
-          "layers": null
+          "layers": null,
+          "label": "Osmo 702 лиственница (шлифовка)"
         },
         {
           "code": "906",
@@ -1685,7 +1699,8 @@
           "finish": "шлифовка",
           "raw": "Osmo 906 Серый Жемчуг (шлифовка)",
           "image": "/uploads/palitra/osmo/72e72e942e481c43a309305150f471806b6.jpg",
-          "layers": null
+          "layers": null,
+          "label": "Osmo 906 Серый Жемчуг (шлифовка)"
         },
         {
           "code": "900",
@@ -1693,7 +1708,8 @@
           "finish": "брашировка",
           "raw": "Osmo 900 Белое(брашировка)",
           "image": "/uploads/palitra/osmo/602602c307e450aafeeaecf15ba55322bb0.jpg",
-          "layers": null
+          "layers": null,
+          "label": "Osmo 900 Белое(брашировка)"
         },
         {
           "code": "702",
@@ -1701,7 +1717,8 @@
           "finish": "брашировка",
           "raw": "Osmo 702 Лиственница (брашировка)",
           "image": "/uploads/palitra/osmo/4684685257a1674ebee7d49ffd560c7bf10.jpg",
-          "layers": null
+          "layers": null,
+          "label": "Osmo 702 Лиственница (брашировка)"
         },
         {
           "code": "906",
@@ -1709,7 +1726,8 @@
           "finish": "брашировка",
           "raw": "Osmo 906 Серый Жемчуг (брашировка)",
           "image": "/uploads/palitra/osmo/f45f4598797d4b2ffd85ebf36e271a9c3bc.jpg",
-          "layers": null
+          "layers": null,
+          "label": "Osmo 906 Серый Жемчуг (брашировка)"
         },
         {
           "code": "1150",
@@ -1717,7 +1735,8 @@
           "finish": "шлифовка",
           "raw": "Osmo 1150 Американский орех (шлиф)",
           "image": "/uploads/palitra/osmo/6946944fb173630518729d22bcad621e409.jpg",
-          "layers": null
+          "layers": null,
+          "label": "Osmo 1150 Американский орех (шлиф)"
         },
         {
           "code": "907",
@@ -1725,7 +1744,8 @@
           "finish": "шлифовка",
           "raw": "Osmo 907 Серый кварц (шлифовка)",
           "image": "/uploads/palitra/osmo/b90b90e8788fc22ffdac937a1f219a06ac7.jpg",
-          "layers": null
+          "layers": null,
+          "label": "Osmo 907 Серый кварц (шлифовка)"
         },
         {
           "code": "1150",
@@ -1733,7 +1753,8 @@
           "finish": "брашировка",
           "raw": "Osmo 1150 Американский орех (браш)",
           "image": "/uploads/palitra/osmo/dd0dd08796b5bb81d9b514cfe6da9c0082a.jpg",
-          "layers": null
+          "layers": null,
+          "label": "Osmo 1150 Американский орех (браш)"
         },
         {
           "code": "907",
@@ -1741,7 +1762,8 @@
           "finish": "брашировка",
           "raw": "Osmo 907 Серый кварц (брашировка)",
           "image": "/uploads/palitra/osmo/6d26d2f59029e12efe87dc0ce06069401cd.jpg",
-          "layers": null
+          "layers": null,
+          "label": "Osmo 907 Серый кварц (брашировка)"
         }
       ],
       "lead": "Защитное масло-лазурь Osmo Holzschutz Öl-Lasur для внешних работ — классические натуральные тона для фасада и уличных элементов.",
@@ -1759,7 +1781,8 @@
           "finish": "шлифовка",
           "raw": "Osmo 1143 Оникс-серебро (шлифовка)",
           "image": "/uploads/palitra/osmo/0aa0aa6240f3173c4a2c4e5d29ed96e2b33.jpg",
-          "layers": null
+          "layers": null,
+          "label": "Osmo 1143 Оникс-серебро (шлифовка)"
         },
         {
           "code": "1143",
@@ -1767,7 +1790,8 @@
           "finish": "брашировка",
           "raw": "Osmo 1143 Оникс-серебро (брашировка)",
           "image": "/uploads/palitra/osmo/c3dc3d1edd19f49d9b492aba615b8b3dd6c.jpg",
-          "layers": null
+          "layers": null,
+          "label": "Osmo 1143 Оникс-серебро (брашировка)"
         },
         {
           "code": "1140",
@@ -1775,7 +1799,8 @@
           "finish": "шлифовка",
           "raw": "Osmo 1140 Агат-серебро (шлифовка)",
           "image": "/uploads/palitra/osmo/ad8ad852d86247997f2d8bee0f8a72e5c6b.jpg",
-          "layers": null
+          "layers": null,
+          "label": "Osmo 1140 Агат-серебро (шлифовка)"
         },
         {
           "code": "1140",
@@ -1783,7 +1808,8 @@
           "finish": "брашировка",
           "raw": "Osmo 1140 Агат-серебро (брашировка)",
           "image": "/uploads/palitra/osmo/2f42f41ee07f5e95306857d2be5384860e0.jpg",
-          "layers": null
+          "layers": null,
+          "label": "Osmo 1140 Агат-серебро (брашировка)"
         },
         {
           "code": "1142",
@@ -1791,7 +1817,8 @@
           "finish": "шлифовка",
           "raw": "Osmo 1142 Графит-серебро (шлифовка)",
           "image": "/uploads/palitra/osmo/0d20d2aa9904ddf48f8eec2c762059b509c.jpg",
-          "layers": null
+          "layers": null,
+          "label": "Osmo 1142 Графит-серебро (шлифовка)"
         },
         {
           "code": "1142",
@@ -1799,7 +1826,8 @@
           "finish": "брашировка",
           "raw": "Osmo 1142 Графит-серебро (брашировка)",
           "image": "/uploads/palitra/osmo/70c70c0cfa69008ba964eb5a36ab3a1b024.jpg",
-          "layers": null
+          "layers": null,
+          "label": "Osmo 1142 Графит-серебро (брашировка)"
         }
       ],
       "lead": "Защитное масло-лазурь Osmo с эффектом серебра для внешних работ — декоративные серебристые эффекты на фасаде.",
