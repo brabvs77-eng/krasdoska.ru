@@ -218,7 +218,15 @@ export function getAllServices(): ContentItem[] {
 }
 
 export function getPaletteSlugs(): string[] {
-  return ["palitra-ral", "palitra-ncs", "palitra-cvetov-biofa", "palitra-osmo"];
+  return [
+    "palitra-ral",
+    "palitra-ncs",
+    "palitra-cvetov-biofa",
+    "palitra-osmo",
+    "palitra-ukryvnyh-cvetov-dlya-interera",
+    "palitra-ukryvnyh-cvetov-dlya-fasada",
+    "palitra-lesiruyushchih-cvetov",
+  ];
 }
 
 export function getPalettePage(slug: string): ContentItem | null {

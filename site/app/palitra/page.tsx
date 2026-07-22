@@ -9,27 +9,51 @@ import { WOOD_TEXTURE_BG } from "@/lib/media";
 import { TECHNOLOGY_VIDEO } from "@/lib/technology";
 
 const PALETTE_HERO_BG = "/uploads/2026/05/krashenaja-skandinavskaja-doska.webp";
-const PALETTE_CARD_IMAGE = "/uploads/2026/05/1-1.webp";
 const VIDEO_POSTER = "/uploads/2026/05/kachestvennaja-obrabotka-derevjannyh-izdelij.webp";
 
 const OSMO_CARD_IMAGE = "/uploads/palitra/osmo/7e07e01118d79bdff133d99182a17354979.png";
 const RAL_CARD_IMAGE = "/uploads/palitra/ral/cover.jpg";
+const NCS_CARD_IMAGE = "/uploads/palitra/ncs/cover.jpg";
+const BIOFA_CARD_IMAGE = "/uploads/palitra/biofa/cover.jpg";
+const TEKNOS_INTERIOR_CARD_IMAGE = "/uploads/palitra/teknos-interior/cover.jpg";
+const TEKNOS_FACADE_CARD_IMAGE = "/uploads/palitra/teknos-facade/cover.jpg";
+const LESIRUYUSHCHIE_CARD_IMAGE = "/uploads/palitra/lesiruyushchie/cover.jpg";
+const KATALOG_TSVETOV_CARD_IMAGE = "/uploads/katalog-tsvetov/cover.jpg";
 
 const paletteCards = [
   { title: "Палитра цветов RAL", href: "/palitra/palitra-ral/", image: RAL_CARD_IMAGE },
-  { title: "Палитра цветов NCS", href: "/palitra/palitra-ncs/", image: PALETTE_CARD_IMAGE },
-  { title: "Палитра цветов масло BIOFA", href: "/palitra/palitra-cvetov-biofa/", image: PALETTE_CARD_IMAGE },
+  { title: "Палитра цветов NCS", href: "/palitra/palitra-ncs/", image: NCS_CARD_IMAGE },
+  { title: "Палитра цветов масло BIOFA", href: "/palitra/palitra-cvetov-biofa/", image: BIOFA_CARD_IMAGE },
   { title: "Палитра цветов Osmo", href: "/palitra/palitra-osmo/", image: OSMO_CARD_IMAGE },
-  { title: "Палитра укрывных цветов для интерьера", href: null, image: PALETTE_CARD_IMAGE },
-  { title: "Палитра укрывных цветов для фасада", href: null, image: PALETTE_CARD_IMAGE },
-  { title: "Палитра лессирующих цветов", href: null, image: PALETTE_CARD_IMAGE },
+  {
+    title: "Палитра укрывных цветов для интерьера",
+    href: "/palitra/palitra-ukryvnyh-cvetov-dlya-interera/",
+    image: TEKNOS_INTERIOR_CARD_IMAGE,
+  },
+  {
+    title: "Палитра укрывных цветов для фасада",
+    href: "/palitra/palitra-ukryvnyh-cvetov-dlya-fasada/",
+    image: TEKNOS_FACADE_CARD_IMAGE,
+  },
+  {
+    title: "Палитра лессирующих цветов",
+    href: "/palitra/palitra-lesiruyushchih-cvetov/",
+    image: LESIRUYUSHCHIE_CARD_IMAGE,
+  },
+  {
+    title: "Каталог выкрасов",
+    href: "/katalog-tsvetov/",
+    image: KATALOG_TSVETOV_CARD_IMAGE,
+  },
 ];
 
 export async function generateMetadata() {
   const page = getPage("palitra");
   return buildPageMetadata({
     title: page?.seo?.title ?? page?.title ?? "Палитра",
-    description: page ? getExcerpt(page) : "Палитры RAL, NCS, BIOFA и Osmo. Эксклюзивные цвета KD.",
+    description: page
+      ? getExcerpt(page)
+      : "Палитры RAL, NCS, BIOFA, Osmo, укрывные и лессирующие цвета. Каталог выкрасов на древесине.",
     path: "/palitra/",
   });
 }

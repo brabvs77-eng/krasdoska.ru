@@ -1,4 +1,9 @@
+import biofaCatalog from "@/content/palitra/biofa.json";
+import lesiruyushchieCatalog from "@/content/palitra/lesiruyushchie.json";
+import ncsCatalog from "@/content/palitra/ncs.json";
 import ralCatalog from "@/content/palitra/ral.json";
+import teknosFacadeCatalog from "@/content/palitra/teknos-facade.json";
+import teknosInteriorCatalog from "@/content/palitra/teknos-interior.json";
 import { PRODUCTION_IMAGE } from "@/lib/media";
 
 export type PaletteSwatch = {
@@ -22,66 +27,47 @@ export type PalettePageData = {
 export const PALETTE_HERO_IMAGE = PRODUCTION_IMAGE;
 
 export const RAL_CARD_IMAGE = "/uploads/palitra/ral/cover.jpg";
+export const NCS_CARD_IMAGE = "/uploads/palitra/ncs/cover.jpg";
+export const BIOFA_CARD_IMAGE = "/uploads/palitra/biofa/cover.jpg";
+export const TEKNOS_INTERIOR_CARD_IMAGE = "/uploads/palitra/teknos-interior/cover.jpg";
+export const TEKNOS_FACADE_CARD_IMAGE = "/uploads/palitra/teknos-facade/cover.jpg";
+export const LESIRUYUSHCHIE_CARD_IMAGE = "/uploads/palitra/lesiruyushchie/cover.jpg";
+export const KATALOG_TSVETOV_CARD_IMAGE = "/uploads/katalog-tsvetov/cover.jpg";
 
-const ralPage: PalettePageData = {
-  slug: ralCatalog.slug,
-  title: ralCatalog.title,
-  intro: ralCatalog.intro,
-  note: ralCatalog.note,
-  benefits: ralCatalog.benefits,
-  coverImage: RAL_CARD_IMAGE,
-  seo: ralCatalog.seo,
-  swatches: ralCatalog.swatches as PaletteSwatch[],
-};
+function fromCatalog(
+  catalog: {
+    slug: string;
+    title: string;
+    intro: string[];
+    note?: string;
+    benefits?: string[];
+    seo?: { title: string; description: string };
+    swatches: PaletteSwatch[];
+  },
+  coverImage: string,
+): PalettePageData {
+  return {
+    slug: catalog.slug,
+    title: catalog.title,
+    intro: catalog.intro,
+    note: catalog.note,
+    benefits: catalog.benefits,
+    coverImage,
+    seo: catalog.seo,
+    swatches: catalog.swatches as PaletteSwatch[],
+  };
+}
 
 export const PALETTE_PAGES: Record<string, PalettePageData> = {
-  "palitra-ral": ralPage,
-  "palitra-ncs": {
-    slug: "palitra-ncs",
-    title: "Палитра цветов NCS",
-    intro: [
-      "Шведская система NCS — инструмент для естественных природных оттенков интерьера и фасада.",
-      "Мы выполняем компьютерную колеровку и профессиональную покраску доски по каталогу NCS на автоматической линии.",
-    ],
-    note: "NCS описывает цвет через черноту, насыщенность и оттенок. Ниже — часто заказываемые тона для деревянных фасадов.",
-    swatches: [
-      { code: "S 0500-N", name: "Чистый белый", hex: "#F5F5F0", group: "Нейтральные" },
-      { code: "S 1002-B", name: "Светло-бежевый", hex: "#E8DFD0", group: "Нейтральные" },
-      { code: "S 3005-Y20R", name: "Тёплый песок", hex: "#C4A574", group: "Тёплые" },
-      { code: "S 4010-Y30R", name: "Оливковый", hex: "#8A7A4A", group: "Зелёные" },
-      { code: "S 5020-B50G", name: "Хвойный", hex: "#3D5C4A", group: "Зелёные" },
-      { code: "S 6010-B30G", name: "Лесной", hex: "#2E4A3A", group: "Зелёные" },
-      { code: "S 7005-R20B", name: "Графит", hex: "#4A4E52", group: "Тёмные" },
-      { code: "S 8005-B20G", name: "Антрацит", hex: "#2C3330", group: "Тёмные" },
-      { code: "S 4040-R10B", name: "Сливовый", hex: "#6B3A4A", group: "Акцентные" },
-      { code: "S 3030-Y70R", name: "Терракота", hex: "#A85A3A", group: "Тёплые" },
-      { code: "S 2030-Y40R", name: "Карамель", hex: "#B8885A", group: "Тёплые" },
-      { code: "S 0502-Y", name: "Кремовый", hex: "#F0EDE4", group: "Нейтральные" },
-    ],
-  },
-  "palitra-cvetov-biofa": {
-    slug: "palitra-cvetov-biofa",
-    title: "Палитра цветов масло BIOFA",
-    intro: [
-      "Натуральные немецкие масла и воски BIOFA — выбор тех, кто ценит экологичность и хочет подчеркнуть рисунок живой древесины.",
-      "Лессирующие составы глубоко проникают в поры дерева, создавая «дышащую» шелковистую поверхность. На производстве наносим масла методом распыления и втирания.",
-    ],
-    note: "Оттенки BIOFA полупрозрачны — итоговый цвет зависит от породы древесины. Образцы можно заказать на вашей доске.",
-    swatches: [
-      { code: "BIOFA 01", name: "Натуральный", hex: "#D4B896", group: "Натуральные" },
-      { code: "BIOFA 02", name: "Сосна", hex: "#C9A86C", group: "Натуральные" },
-      { code: "BIOFA 03", name: "Дуб светлый", hex: "#B8956A", group: "Дуб" },
-      { code: "BIOFA 04", name: "Дуб", hex: "#9A7348", group: "Дуб" },
-      { code: "BIOFA 05", name: "Орех", hex: "#7A5230", group: "Тёмные" },
-      { code: "BIOFA 06", name: "Тик", hex: "#8B6914", group: "Тёмные" },
-      { code: "BIOFA 07", name: "Серый дым", hex: "#9A9590", group: "Серые" },
-      { code: "BIOFA 08", name: "Графит", hex: "#5C5A56", group: "Серые" },
-      { code: "BIOFA 09", name: "Белый", hex: "#E8E4DC", group: "Светлые" },
-      { code: "BIOFA 10", name: "Оливковый", hex: "#6B7048", group: "Зелёные" },
-      { code: "BIOFA 11", name: "Красное дерево", hex: "#8B4040", group: "Акцентные" },
-      { code: "BIOFA 12", name: "Чёрный", hex: "#3A3632", group: "Тёмные" },
-    ],
-  },
+  "palitra-ral": fromCatalog(ralCatalog, RAL_CARD_IMAGE),
+  "palitra-ncs": fromCatalog(ncsCatalog, NCS_CARD_IMAGE),
+  "palitra-cvetov-biofa": fromCatalog(biofaCatalog, BIOFA_CARD_IMAGE),
+  "palitra-ukryvnyh-cvetov-dlya-interera": fromCatalog(
+    teknosInteriorCatalog,
+    TEKNOS_INTERIOR_CARD_IMAGE,
+  ),
+  "palitra-ukryvnyh-cvetov-dlya-fasada": fromCatalog(teknosFacadeCatalog, TEKNOS_FACADE_CARD_IMAGE),
+  "palitra-lesiruyushchih-cvetov": fromCatalog(lesiruyushchieCatalog, LESIRUYUSHCHIE_CARD_IMAGE),
 };
 
 export function getPalettePageData(slug: string): PalettePageData | null {
