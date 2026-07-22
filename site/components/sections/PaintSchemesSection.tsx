@@ -79,10 +79,24 @@ export function PaintSchemesSection({ data }: Props) {
 
           <div className="mt-10 max-w-3xl space-y-4">
             {data.intro.map((paragraph) => (
-              <p key={paragraph.slice(0, 40)} className="text-base leading-relaxed text-white/80">
+              <p key={paragraph.slice(0, 48)} className="text-base leading-relaxed text-white/80">
                 {paragraph}
               </p>
             ))}
+          </div>
+
+          <div className="mt-10 max-w-3xl">
+            <h2 className="text-xl font-semibold text-white sm:text-2xl">Тарифы схем</h2>
+            <p className="mt-3 text-base leading-relaxed text-white/80">{data.tariffsIntro}</p>
+            <ul className="mt-5 space-y-4">
+              {data.tariffs.map((tariff) => (
+                <li key={tariff.name} className="border-l-2 border-accent pl-4">
+                  <p className="font-semibold text-white">{tariff.name}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-white/75">{tariff.text}</p>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-6 text-sm leading-relaxed text-white/80">{data.included}</p>
           </div>
 
           <aside className="mt-8 border border-accent/35 bg-accent/10 px-5 py-4 text-sm leading-relaxed text-white/90">
@@ -108,33 +122,27 @@ export function PaintSchemesSection({ data }: Props) {
       <section className="section-dark border-t border-white/5 py-14 sm:py-16">
         <div className="container-content">
           <h2 className="text-2xl font-semibold text-white sm:text-3xl">Как устроена схема</h2>
-          <p className="mt-3 max-w-2xl text-sm text-white/65">
-            Короткая инфографика этапов заводской покраски — от подготовки до контроля партии.
-          </p>
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-white/70">{data.stepsLead}</p>
           <div className="mt-8">
             <SchemeProcess steps={data.steps} />
           </div>
 
-          {/* Visual stack diagram */}
           <div className="mt-12 grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div className="space-y-3">
               <h3 className="text-xl font-semibold text-white">Слои покрытия (стандарт)</h3>
-              <p className="text-sm leading-relaxed text-white/70">
-                В стандартных схемах Sirca: грунт со всех сторон и два финишных слоя. Для террас —
-                масло Talatu с прокрасом торцов и оборота.
-              </p>
+              <p className="text-sm leading-relaxed text-white/70">{data.layersLead}</p>
               <ul className="space-y-2 text-sm text-white/80">
                 <li className="flex gap-3">
                   <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-accent" />
-                  Укрывная — плотный цвет, скрывает рисунок сильнее
+                  Укрывная — плотный цвет, сильнее скрывает рисунок, максимальная защита фасада
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-accent" />
-                  Лессирующая — подчёркивает текстуру дерева
+                  Лессирующая — подчёркивает текстуру дерева, сохраняет «живой» вид
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-accent" />
-                  Масло Talatu — для террас с периодическим обновлением
+                  Масло Talatu — для террас с периодическим обновлением покрытия
                 </li>
               </ul>
             </div>
@@ -172,7 +180,19 @@ export function PaintSchemesSection({ data }: Props) {
         >
           <div className="container-content">
             <h2 className="text-2xl font-semibold text-white sm:text-3xl">{section.title}</h2>
-            <p className="mt-3 max-w-2xl text-sm text-white/65">{section.subtitle}</p>
+            <p className="mt-3 max-w-3xl text-sm text-white/65">{section.subtitle}</p>
+            {section.lead?.length ? (
+              <div className="mt-5 max-w-3xl space-y-3">
+                {section.lead.map((paragraph) => (
+                  <p
+                    key={paragraph.slice(0, 48)}
+                    className="text-base leading-relaxed text-white/80"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            ) : null}
 
             <div className="mt-10 space-y-12">
               {section.groups.map((group) => (
@@ -204,9 +224,21 @@ export function PaintSchemesSection({ data }: Props) {
                           Срок службы: {item.life}
                         </p>
                         <LayerInfographic layers={item.layers} />
-                        <p className="mt-4 flex-1 text-sm leading-relaxed text-white/75">
+                        <p className="mt-4 text-sm leading-relaxed text-white/75">
                           {item.description}
                         </p>
+                        {item.details?.length ? (
+                          <div className="mt-3 space-y-2">
+                            {item.details.map((detail) => (
+                              <p
+                                key={detail.slice(0, 40)}
+                                className="text-sm leading-relaxed text-white/65"
+                              >
+                                {detail}
+                              </p>
+                            ))}
+                          </div>
+                        ) : null}
                         <Link href="/#form" className="btn-primary mt-5 inline-flex self-start">
                           Заказать схему
                         </Link>
@@ -222,9 +254,10 @@ export function PaintSchemesSection({ data }: Props) {
 
       <section className="section-dark border-t border-white/5 py-14 sm:py-16">
         <div className="container-content">
-          <h2 className="text-2xl font-semibold text-white sm:text-3xl">
-            Заводская покраска — надёжно и выгодно
-          </h2>
+          <h2 className="text-2xl font-semibold text-white sm:text-3xl">{data.benefitsTitle}</h2>
+          <p className="mt-3 max-w-3xl text-base leading-relaxed text-white/75">
+            {data.benefitsLead}
+          </p>
           <div className="mt-8 grid gap-5 sm:grid-cols-2">
             {data.benefits.map((benefit) => (
               <div key={benefit.title} className="border border-white/10 bg-white/5 p-5">
@@ -233,14 +266,15 @@ export function PaintSchemesSection({ data }: Props) {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="section-dark border-t border-white/5 py-14 sm:py-16">
-        <div className="container-content">
-          <h2 className="text-2xl font-semibold text-white sm:text-3xl">Примеры работ</h2>
-          <p className="mt-3 max-w-2xl text-sm text-white/65">
-            Фрагменты производства и готовых объектов. Больше оттенков — в{" "}
+          <p className="mt-8 max-w-3xl text-sm leading-relaxed text-white/65">
+            Подробнее о процессе — на странице{" "}
+            <Link
+              href="/tehnologija-nanesenija-kraski/"
+              className="text-accent underline-offset-2 hover:underline"
+            >
+              технологии нанесения
+            </Link>
+            . Сравнить оттенки можно в{" "}
             <Link href="/katalog-tsvetov/" className="text-accent underline-offset-2 hover:underline">
               каталоге выкрасов
             </Link>{" "}
@@ -249,6 +283,15 @@ export function PaintSchemesSection({ data }: Props) {
               палитре
             </Link>
             .
+          </p>
+        </div>
+      </section>
+
+      <section className="section-dark border-t border-white/5 py-14 sm:py-16">
+        <div className="container-content">
+          <h2 className="text-2xl font-semibold text-white sm:text-3xl">Примеры работ</h2>
+          <p className="mt-3 max-w-3xl text-base leading-relaxed text-white/75">
+            {data.examplesLead}
           </p>
           <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-3">
             {data.examples.map((example) => (
