@@ -4,10 +4,16 @@ import Image from "next/image";
 import { useMemo, useState } from "react";
 import { ImageLightbox, type LightboxItem } from "@/components/ui/ImageLightbox";
 
+export type GalleryImage = {
+  src: string;
+  caption: string;
+  alt?: string;
+};
+
 type GallerySection = {
   id: string;
   title: string;
-  images: string[];
+  items: GalleryImage[];
 };
 
 type Props = {
@@ -20,11 +26,11 @@ export function KatalogTsvetovGallery({ sections }: Props) {
   const lightboxItems = useMemo<LightboxItem[]>(() => {
     const items: LightboxItem[] = [];
     for (const section of sections) {
-      for (const src of section.images) {
+      for (const image of section.items) {
         items.push({
-          src,
-          alt: section.title,
-          caption: section.title,
+          src: image.src,
+          alt: image.alt ?? image.caption,
+          caption: image.caption,
         });
       }
     }
@@ -35,8 +41,8 @@ export function KatalogTsvetovGallery({ sections }: Props) {
     const map = new Map<string, number>();
     let i = 0;
     for (const section of sections) {
-      for (const src of section.images) {
-        map.set(src, i);
+      for (const image of section.items) {
+        map.set(image.src, i);
         i += 1;
       }
     }
@@ -47,29 +53,33 @@ export function KatalogTsvetovGallery({ sections }: Props) {
     <>
       <div className="space-y-14">
         {sections.map((section) => (
-          <section key={section.id}>
+          <section key={section.id} id={section.id}>
             <h2 className="text-xl font-semibold text-white sm:text-2xl">{section.title}</h2>
-            <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-              {section.images.map((src) => {
-                const lightboxIndex = indexMap.get(src);
+            <div className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+              {section.items.map((image) => {
+                const lightboxIndex = indexMap.get(image.src);
                 return (
-                  <button
-                    key={src}
-                    type="button"
-                    className="group relative aspect-[4/3] overflow-hidden rounded-xl border border-white/10 bg-white/5 text-left"
-                    onClick={() => {
-                      if (lightboxIndex !== undefined) setActive(lightboxIndex);
-                    }}
-                  >
-                    <Image
-                      src={src}
-                      alt={section.title}
-                      fill
-                      sizes="(max-width: 640px) 50vw, 20vw"
-                      className="object-cover transition duration-300 group-hover:scale-105"
-                      unoptimized
-                    />
-                  </button>
+                  <figure key={image.src} className="flex flex-col gap-2">
+                    <button
+                      type="button"
+                      className="group relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-white/10 bg-white/5 text-left"
+                      onClick={() => {
+                        if (lightboxIndex !== undefined) setActive(lightboxIndex);
+                      }}
+                    >
+                      <Image
+                        src={image.src}
+                        alt={image.alt ?? image.caption}
+                        fill
+                        sizes="(max-width: 640px) 50vw, 20vw"
+                        className="object-cover transition duration-300 group-hover:scale-105"
+                        unoptimized
+                      />
+                    </button>
+                    <figcaption className="px-0.5 text-xs leading-snug text-white/70 sm:text-sm">
+                      {image.caption}
+                    </figcaption>
+                  </figure>
                 );
               })}
             </div>

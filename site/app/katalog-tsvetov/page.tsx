@@ -14,7 +14,11 @@ export default function KatalogTsvetovPage() {
       data={{
         title: catalog.title,
         intro: catalog.intro,
-        sections: catalog.sections,
+        sections: catalog.sections.map((section) => ({
+          id: section.id,
+          title: section.title,
+          items: section.items,
+        })),
         paletteLinks: catalog.paletteLinks,
       }}
     />
