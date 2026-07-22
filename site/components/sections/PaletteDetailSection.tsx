@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { MarketingPageFooter } from "@/components/sections/MarketingPageFooter";
+import { PaletteSwatchCatalog } from "@/components/sections/PaletteSwatchCatalog";
 import { PageHero } from "@/components/sections/PageHero";
 import type { PalettePageData } from "@/lib/palette-data";
 import { PALETTE_HERO_IMAGE } from "@/lib/palette-data";
@@ -10,19 +11,8 @@ type PaletteDetailSectionProps = {
   data: PalettePageData;
 };
 
-function groupSwatches(data: PalettePageData) {
-  const groups = new Map<string, typeof data.swatches>();
-  for (const swatch of data.swatches) {
-    const group = swatch.group ?? "Палитра";
-    const list = groups.get(group) ?? [];
-    list.push(swatch);
-    groups.set(group, list);
-  }
-  return [...groups.entries()];
-}
-
 export function PaletteDetailSection({ data }: PaletteDetailSectionProps) {
-  const groups = groupSwatches(data);
+  const asideImage = data.coverImage ?? PALETTE_HERO_IMAGE;
 
   return (
     <>
@@ -52,29 +42,21 @@ export function PaletteDetailSection({ data }: PaletteDetailSectionProps) {
                 </p>
               )}
 
-              {groups.map(([group, swatches]) => (
-                <section key={group} className="pt-4">
-                  <h2 className="text-lg font-semibold text-white">{group}</h2>
-                  <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-                    {swatches.map((swatch) => (
-                      <div
-                        key={swatch.code}
-                        className="overflow-hidden rounded-xl border border-white/10 bg-white/5"
-                      >
-                        <div
-                          className="aspect-square w-full"
-                          style={{ backgroundColor: swatch.hex }}
-                          aria-hidden="true"
-                        />
-                        <div className="p-3">
-                          <p className="text-sm font-semibold text-white">{swatch.code}</p>
-                          <p className="mt-0.5 text-xs text-white/65">{swatch.name}</p>
-                        </div>
-                      </div>
+              {data.benefits && data.benefits.length > 0 ? (
+                <section>
+                  <h2 className="text-lg font-semibold text-white">Преимущества</h2>
+                  <ul className="mt-4 space-y-2 text-sm leading-relaxed text-white/80">
+                    {data.benefits.map((item) => (
+                      <li key={item} className="flex gap-3">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden />
+                        <span>{item}</span>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </section>
-              ))}
+              ) : null}
+
+              <PaletteSwatchCatalog data={data} />
 
               <div className="flex flex-wrap gap-4 pt-4">
                 <Link href="/#form" className="btn-primary">
@@ -86,11 +68,11 @@ export function PaletteDetailSection({ data }: PaletteDetailSectionProps) {
               </div>
             </div>
 
-            <aside className="space-y-6">
+            <aside className="space-y-6 lg:sticky lg:top-24">
               <div className="relative aspect-[716/586] overflow-hidden rounded-2xl bg-white/5">
                 <Image
-                  src={PALETTE_HERO_IMAGE}
-                  alt="Качественная обработка деревянных изделий"
+                  src={asideImage}
+                  alt={data.title}
                   fill
                   sizes="360px"
                   className="object-cover"
