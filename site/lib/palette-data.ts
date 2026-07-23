@@ -27,12 +27,12 @@ export type PalettePageData = {
 export const PALETTE_HERO_IMAGE = PRODUCTION_IMAGE;
 
 export const RAL_CARD_IMAGE = "/uploads/palitra/ral/cover.jpg";
-export const NCS_CARD_IMAGE = "/uploads/palitra/ncs/cover.jpg";
-export const BIOFA_CARD_IMAGE = "/uploads/palitra/biofa/cover.jpg";
-export const TEKNOS_INTERIOR_CARD_IMAGE = "/uploads/palitra/teknos-interior/cover.jpg";
+export const NCS_CARD_IMAGE = "/uploads/palitra/ncs/cover.webp";
+export const BIOFA_CARD_IMAGE = "/uploads/palitra/biofa/cover.webp";
+export const TEKNOS_INTERIOR_CARD_IMAGE = "/uploads/palitra/teknos-interior/cover.webp";
 export const TEKNOS_FACADE_CARD_IMAGE = "/uploads/palitra/teknos-facade/cover.jpg";
 export const LESIRUYUSHCHIE_CARD_IMAGE = "/uploads/palitra/lesiruyushchie/cover.jpg";
-export const KATALOG_TSVETOV_CARD_IMAGE = "/uploads/katalog-tsvetov/clean/cover.jpg";
+export const KATALOG_TSVETOV_CARD_IMAGE = "/uploads/katalog-tsvetov/clean/cover.webp";
 
 function fromCatalog(
   catalog: {

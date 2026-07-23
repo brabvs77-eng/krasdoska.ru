@@ -13,12 +13,12 @@ const VIDEO_POSTER = "/uploads/2026/05/kachestvennaja-obrabotka-derevjannyh-izde
 
 const OSMO_CARD_IMAGE = "/uploads/palitra/osmo/7e07e01118d79bdff133d99182a17354979.png";
 const RAL_CARD_IMAGE = "/uploads/palitra/ral/cover.jpg";
-const NCS_CARD_IMAGE = "/uploads/palitra/ncs/cover.jpg";
-const BIOFA_CARD_IMAGE = "/uploads/palitra/biofa/cover.jpg";
-const TEKNOS_INTERIOR_CARD_IMAGE = "/uploads/palitra/teknos-interior/cover.jpg";
+const NCS_CARD_IMAGE = "/uploads/palitra/ncs/cover.webp";
+const BIOFA_CARD_IMAGE = "/uploads/palitra/biofa/cover.webp";
+const TEKNOS_INTERIOR_CARD_IMAGE = "/uploads/palitra/teknos-interior/cover.webp";
 const TEKNOS_FACADE_CARD_IMAGE = "/uploads/palitra/teknos-facade/cover.jpg";
 const LESIRUYUSHCHIE_CARD_IMAGE = "/uploads/palitra/lesiruyushchie/cover.jpg";
-const KATALOG_TSVETOV_CARD_IMAGE = "/uploads/katalog-tsvetov/clean/cover.jpg";
+const KATALOG_TSVETOV_CARD_IMAGE = "/uploads/katalog-tsvetov/clean/cover.webp";
 
 const paletteCards = [
   { title: "Палитра цветов RAL", href: "/palitra/palitra-ral/", image: RAL_CARD_IMAGE },
