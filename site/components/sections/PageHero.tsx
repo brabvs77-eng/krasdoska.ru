@@ -19,12 +19,12 @@ export function PageHero({ title, description, action, breadcrumbs }: PageHeroPr
         fill
         priority
         sizes="100vw"
-        className="object-cover"
+        className="object-cover object-center brightness-110 contrast-105"
         unoptimized
       />
-      <div className="absolute inset-0 bg-brand-dark/60" />
+      {/* Lighter overlay than before — wood texture stays readable like the original */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/30 to-brand-dark/55" />
       <div className="container-content relative py-20 pt-28 text-white sm:py-24 sm:pt-32 lg:py-28 lg:pt-36">
-        {/* Parity: хлебные крошки «Главная / …» в hero */}
         {breadcrumbs && breadcrumbs.length > 0 && (
           <Breadcrumbs items={breadcrumbs} variant="dark" />
         )}
@@ -32,7 +32,7 @@ export function PageHero({ title, description, action, breadcrumbs }: PageHeroPr
           {title}
         </h1>
         {description && (
-          <p className="section-subtitle mt-4 max-w-2xl text-white/85">{description}</p>
+          <p className="section-subtitle mt-4 max-w-2xl text-white/90">{description}</p>
         )}
         {action && (
           <Link href={action.href} className="btn-primary mt-8">

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { PageHero } from "@/components/sections/PageHero";
 import { DELIVERY_TRUCK_IMAGE, WOOD_TEXTURE_BG } from "@/lib/media";
@@ -55,6 +56,23 @@ const deliveryFeatures = [
   },
 ];
 
+function ContactFact({
+  label,
+  children,
+}: {
+  label: string;
+  children: ReactNode;
+}) {
+  return (
+    <div className="flex h-full flex-col border border-white/10 bg-white/[0.03] px-5 py-5 text-center">
+      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-accent">{label}</p>
+      <div className="mt-3 flex flex-1 items-center justify-center text-base leading-relaxed text-white">
+        {children}
+      </div>
+    </div>
+  );
+}
+
 export function ContactsPageContent() {
   const { integrations } = getSiteSettings();
 
@@ -70,29 +88,37 @@ export function ContactsPageContent() {
         {offices.map((office) => (
           <section key={office.title} className="py-12 sm:py-16">
             <div className="container-content">
-              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-                <div>
-                  <p className="text-sm text-white/60">{office.title}:</p>
-                  <p className="mt-2 text-base leading-relaxed text-white">{office.address}</p>
-                </div>
-                <div>
-                  <p className="text-sm text-white/60">Телефон:</p>
-                  <a href={PHONE_HREF} className="mt-2 block text-base text-white hover:text-accent">
+              <h2 className="text-center text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+                {office.title}
+              </h2>
+              <div className="mx-auto mt-3 h-px w-16 bg-accent" aria-hidden />
+
+              <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
+                <ContactFact label="Адрес">
+                  <p className="text-sm sm:text-base">{office.address}</p>
+                </ContactFact>
+                <ContactFact label="Телефон">
+                  <a
+                    href={PHONE_HREF}
+                    className="whitespace-nowrap font-semibold tabular-nums text-white hover:text-accent"
+                  >
                     {PHONE_DISPLAY}
                   </a>
-                </div>
-                <div>
-                  <p className="text-sm text-white/60">Email:</p>
-                  <a href={`mailto:${EMAIL}`} className="mt-2 block text-base text-accent hover:text-accent-dark">
+                </ContactFact>
+                <ContactFact label="Email">
+                  <a
+                    href={`mailto:${EMAIL}`}
+                    className="break-all text-accent hover:text-white"
+                  >
                     {EMAIL}
                   </a>
-                </div>
-                <div>
-                  <p className="text-sm text-white/60">Режим работы</p>
-                  <p className="mt-2 text-base text-white">{office.hours}</p>
-                </div>
+                </ContactFact>
+                <ContactFact label="Режим работы">
+                  <p className="font-semibold">{office.hours}</p>
+                </ContactFact>
               </div>
-              <div className="mt-8 overflow-hidden rounded-2xl border border-white/10">
+
+              <div className="mt-8 overflow-hidden border border-white/10">
                 <iframe
                   title={office.mapTitle}
                   src={office.mapSrc}
@@ -107,36 +133,36 @@ export function ContactsPageContent() {
 
         <section className="py-12 sm:py-16">
           <div className="container-content">
-            <h2 className="section-title mb-8">
+            <h2 className="text-center text-2xl font-semibold tracking-tight text-white sm:text-3xl">
               Доставим крашеную доску в Москву и любую точку России
             </h2>
-            <div className="overflow-hidden bg-accent">
-              <div className="grid lg:grid-cols-[1.5fr_1fr]">
-                <div className="p-8 sm:p-10 lg:p-12">
-                  <div className="grid gap-8 sm:grid-cols-2">
-                    {deliveryFeatures.map((feature) => (
-                      <div key={feature.title}>
-                        <div className="text-white">{feature.icon}</div>
-                        <h3 className="mt-4 text-lg font-semibold text-white">{feature.title}</h3>
-                        <p className="mt-2 text-sm leading-relaxed text-white/90">{feature.text}</p>
-                      </div>
-                    ))}
-                  </div>
+            <div className="mx-auto mt-3 h-px w-16 bg-accent" aria-hidden />
+
+            <div className="mt-10 overflow-hidden bg-accent">
+              <div className="grid lg:grid-cols-2">
+                <div className="grid gap-8 p-8 sm:grid-cols-2 sm:gap-10 sm:p-10 lg:p-12">
+                  {deliveryFeatures.map((feature) => (
+                    <div key={feature.title} className="text-center sm:text-left">
+                      <div className="mx-auto inline-flex text-white sm:mx-0">{feature.icon}</div>
+                      <h3 className="mt-4 text-lg font-semibold text-white">{feature.title}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-white/90">{feature.text}</p>
+                    </div>
+                  ))}
                 </div>
-                <div className="relative min-h-[220px]">
+                <div className="relative min-h-[240px]">
                   <Image
                     src={DELIVERY_TRUCK_IMAGE}
-                    alt=""
+                    alt="Доставка крашеной доски"
                     fill
-                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"
                     unoptimized
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-accent via-accent/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-accent via-accent/35 to-transparent lg:from-accent/80" />
                 </div>
               </div>
             </div>
-            <p className="mt-6 text-sm text-white/70">
+            <p className="mt-6 text-center text-sm text-white/65">
               *Стоимость и сроки доставки рассчитываются индивидуально согласно тарифам транспортных
               компаний и зависят от объема заказа (веса и кубатуры пиломатериалов).
             </p>
@@ -146,7 +172,7 @@ export function ContactsPageContent() {
         <section id="form" className="relative overflow-hidden scroll-mt-24 py-12 sm:py-16">
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute bottom-16 right-0 top-8 hidden w-[34%] overflow-hidden bg-accent lg:block"
+            className="pointer-events-none absolute inset-y-8 right-0 hidden w-[32%] overflow-hidden bg-accent lg:block"
           >
             <Image
               src={WOOD_TEXTURE_BG}
@@ -158,30 +184,39 @@ export function ContactsPageContent() {
             />
           </div>
           <div className="container-content relative">
-            <div className="lg:max-w-[60%]">
-              <h2 className="section-title">Юридическая информация</h2>
-              <p className="mt-6 text-lg font-medium text-white">ООО «Крашеная Доска»</p>
-              <div className="mt-8 grid gap-8 sm:grid-cols-3">
-                <div>
-                  <p className="text-sm text-white/60">Адрес:</p>
-                  <p className="mt-2 text-base leading-relaxed text-white">
-                    141031, Россия, Московская обл, г.о. Мытищи, п. Нагорное, ул. Центральная, д.3, стр.1, пом. №43
+            <div className="lg:max-w-[62%]">
+              <h2 className="text-center text-2xl font-semibold tracking-tight text-white sm:text-left sm:text-3xl">
+                Юридическая информация
+              </h2>
+              <div className="mx-auto mt-3 h-px w-16 bg-accent sm:mx-0" aria-hidden />
+              <p className="mt-6 text-center text-lg font-medium text-white sm:text-left">
+                ООО «Крашеная Доска»
+              </p>
+              <div className="mt-8 grid gap-4 sm:grid-cols-3 sm:gap-5">
+                <ContactFact label="Адрес">
+                  <p className="text-sm">
+                    141031, Россия, Московская обл, г.о. Мытищи, п. Нагорное, ул. Центральная, д.3,
+                    стр.1, пом. №43
                   </p>
-                </div>
-                <div>
-                  <p className="text-sm text-white/60">ОГРН:</p>
-                  <p className="mt-2 text-base text-white">1247700371027</p>
-                </div>
-                <div>
-                  <p className="text-sm text-white/60">ИНН/КПП:</p>
-                  <p className="mt-2 text-base text-white">9715482912 / 771501001</p>
-                </div>
+                </ContactFact>
+                <ContactFact label="ОГРН">
+                  <p className="font-semibold tabular-nums">1247700371027</p>
+                </ContactFact>
+                <ContactFact label="ИНН / КПП">
+                  <p className="font-semibold tabular-nums">9715482912 / 771501001</p>
+                </ContactFact>
               </div>
             </div>
 
-            <div className="relative z-10 mt-14 bg-[#181410] p-6 sm:p-10 lg:mr-[10%]">
-              <h2 className="section-title">Остались вопросы?</h2>
-              <div className="mt-8">
+            <div className="relative z-10 mt-14 border border-white/10 bg-[#181410] p-6 sm:p-10 lg:mr-[8%]">
+              <h2 className="text-center text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+                Остались вопросы?
+              </h2>
+              <div className="mx-auto mt-3 h-px w-16 bg-accent" aria-hidden />
+              <p className="mx-auto mt-5 max-w-xl text-center text-base text-white/70">
+                Заполните форму — свяжемся и поможем с выбором схемы, цвета и расчётом.
+              </p>
+              <div className="mx-auto mt-8 max-w-2xl">
                 <ContactForm
                   email={EMAIL}
                   phoneHref={PHONE_HREF}
