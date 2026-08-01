@@ -18,6 +18,7 @@ import {
   PARTNERS,
   PRODUCTION_IMAGE,
   SERVICE_IMAGES,
+  USLUGI_SERVICES_PANEL_BG,
   WOOD_TEXTURE_BG,
 } from "@/lib/media";
 
@@ -285,14 +286,14 @@ export function ServicesPreviewSection({ variant = "home" }: ServicesPreviewSect
       }`}
     >
       {isMarketing ? (
-        /* Parity /uslugi: производственное фото с оранжевым multiply за третьей карточкой,
+        /* Parity /uslugi: frame-19-2 на оранжевом multiply за третьей карточкой,
            bleed вправо до края окна, по высоте — только в пределах секции */
         <div
           aria-hidden="true"
           className="pointer-events-none absolute bottom-0 right-0 top-1/3 z-0 hidden w-[40%] overflow-hidden bg-accent lg:block"
         >
           <Image
-            src={PRODUCTION_IMAGE}
+            src={USLUGI_SERVICES_PANEL_BG}
             alt=""
             fill
             sizes="40vw"

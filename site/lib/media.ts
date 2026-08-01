@@ -50,6 +50,8 @@ export const HERO_SLIDES: HeroSlide[] = [
 ];
 
 export const PRODUCTION_IMAGE = `${UPLOADS}/2025/04/photo_2025-04-26_20-30-22.webp`;
+/** Orange panel behind services cards on /uslugi/ — WP frame-19-2.png */
+export const USLUGI_SERVICES_PANEL_BG = `${UPLOADS}/2025/04/frame-19-2.webp`;
 
 export const SERVICES_IMAGE = `${UPLOADS}/2025/03/Frame-19.webp`;
 
