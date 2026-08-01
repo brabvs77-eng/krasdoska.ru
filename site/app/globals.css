@@ -693,4 +693,65 @@ body {
   .about-guarantees__mark {
     @apply mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center text-accent;
   }
+
+  /* Homepage company preview — infographic */
+  .company-infographic__rail {
+    position: relative;
+  }
+
+  @media (min-width: 768px) {
+    .company-infographic__rail::before {
+      content: "";
+      position: absolute;
+      top: 1.55rem;
+      left: 8%;
+      right: 8%;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(254, 119, 43, 0.55),
+        rgba(254, 119, 43, 0.55),
+        transparent
+      );
+      pointer-events: none;
+    }
+  }
+
+  .company-infographic__step {
+    @apply relative rounded-none border border-white/10 bg-white/[0.03] p-5 transition duration-300 sm:p-6;
+  }
+
+  .company-infographic__step:hover {
+    @apply border-accent/45 bg-white/[0.05];
+  }
+
+  .company-infographic__step-head {
+    @apply flex items-center justify-between gap-3;
+  }
+
+  .company-infographic__index {
+    @apply font-semibold tabular-nums tracking-[0.14em] text-accent;
+    font-size: 1.35rem;
+  }
+
+  .company-infographic__icon {
+    @apply flex h-10 w-10 items-center justify-center border border-accent/40 text-accent transition duration-300;
+  }
+
+  .company-infographic__step:hover .company-infographic__icon {
+    @apply border-accent bg-accent text-white;
+  }
+
+  .company-infographic__tile {
+    @apply border-l-2 border-accent/70 bg-gradient-to-r from-accent/10 to-transparent px-4 py-4 transition duration-300;
+  }
+
+  .company-infographic__tile:hover {
+    @apply border-accent from-accent/20;
+  }
+
+  .company-infographic__tile-icon {
+    @apply inline-flex text-accent;
+  }
 }
