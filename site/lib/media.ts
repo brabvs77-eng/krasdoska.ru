@@ -6,6 +6,8 @@ export const WOOD_TEXTURE_BG = `${UPLOADS}/2025/04/top-view-light-wood-wallpaper
 export const COMPANY_SECTION_BG = `${UPLOADS}/2025/03/Mask-group-4.png`;
 // Parity: фото грузовика — правая часть баннера доставки на /kontakty/
 export const DELIVERY_TRUCK_IMAGE = `${UPLOADS}/2026/05/bg-1.webp`;
+/** Contacts «Остались вопросы?» form block background */
+export const CONTACTS_QUESTIONS_BG = `${UPLOADS}/2025/04/frame-61.webp`;
 
 export const HERO_IMAGE = `${UPLOADS}/2025/05/photo_2025-05-30_23-49-23.webp`;
 

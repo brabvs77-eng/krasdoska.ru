@@ -2,7 +2,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { PageHero } from "@/components/sections/PageHero";
-import { DELIVERY_TRUCK_IMAGE, WOOD_TEXTURE_BG } from "@/lib/media";
+import { CONTACTS_QUESTIONS_BG, DELIVERY_TRUCK_IMAGE, WOOD_TEXTURE_BG } from "@/lib/media";
 import { getSiteSettings } from "@/lib/site";
 
 const PHONE_DISPLAY = "8 (800) 250-90-55";
@@ -208,20 +208,34 @@ export function ContactsPageContent() {
               </div>
             </div>
 
-            <div className="relative z-10 mt-14 border border-white/10 bg-[#181410] p-6 sm:p-10 lg:mr-[8%]">
-              <h2 className="text-center text-2xl font-semibold tracking-tight text-white sm:text-3xl">
-                Остались вопросы?
-              </h2>
-              <div className="mx-auto mt-3 h-px w-16 bg-accent" aria-hidden />
-              <p className="mx-auto mt-5 max-w-xl text-center text-base text-white/70">
-                Заполните форму — свяжемся и поможем с выбором схемы, цвета и расчётом.
-              </p>
-              <div className="mx-auto mt-8 max-w-2xl">
-                <ContactForm
-                  email={EMAIL}
-                  phoneHref={PHONE_HREF}
-                  formEndpoint={integrations.formEndpoint || undefined}
-                />
+            <div className="relative z-10 mt-14 overflow-hidden border border-white/10 p-6 sm:p-10 lg:mr-[8%]">
+              <Image
+                src={CONTACTS_QUESTIONS_BG}
+                alt=""
+                fill
+                sizes="(max-width: 1024px) 100vw, 900px"
+                className="object-cover object-right"
+                unoptimized
+              />
+              <div
+                aria-hidden
+                className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/45 to-black/25"
+              />
+              <div className="relative z-10">
+                <h2 className="text-center text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+                  Остались вопросы?
+                </h2>
+                <div className="mx-auto mt-3 h-px w-16 bg-accent" aria-hidden />
+                <p className="mx-auto mt-5 max-w-xl text-center text-base text-white/75">
+                  Заполните форму — свяжемся и поможем с выбором схемы, цвета и расчётом.
+                </p>
+                <div className="mx-auto mt-8 max-w-2xl">
+                  <ContactForm
+                    email={EMAIL}
+                    phoneHref={PHONE_HREF}
+                    formEndpoint={integrations.formEndpoint || undefined}
+                  />
+                </div>
               </div>
             </div>
           </div>
