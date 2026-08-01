@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { ProductCard } from "@/components/cards/ProductCard";
 import { ContentList } from "@/components/content/ContentList";
 import { getBlogPost, getExcerpt, getProject } from "@/lib/content";
@@ -18,6 +19,109 @@ import {
   SERVICE_IMAGES,
   WOOD_TEXTURE_BG,
 } from "@/lib/media";
+
+function IconLeaf({ className = "h-5 w-5" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path
+        d="M5 19c6-1 10-5 12-12 0 0-5 1-9 5S5 19 5 19Z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+      <path d="M9 15c2-2 5-4 8-5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function IconUsers({ className = "h-5 w-5" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
+      <circle cx="9" cy="8" r="3" stroke="currentColor" strokeWidth="1.6" />
+      <circle cx="17" cy="9" r="2.4" stroke="currentColor" strokeWidth="1.6" />
+      <path
+        d="M3.5 19c1.2-3 3.2-4.5 5.5-4.5S13.3 16 14.5 19M14 14.2c1.5-.4 3.1 0 4.5 1.3.9.8 1.5 1.9 1.9 3.5"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function IconBox({ className = "h-5 w-5" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path
+        d="M3.5 8.5 12 4l8.5 4.5v9L12 22l-8.5-4.5v-9Z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+      <path d="M3.5 8.5 12 13l8.5-4.5M12 13v9" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function IconPalette({ className = "h-5 w-5" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path
+        d="M12 3a9 9 0 1 0 0 18h1.2a2.3 2.3 0 0 0 0-4.6H12a1.2 1.2 0 1 1 0-2.4h4.5A9 9 0 0 0 12 3Z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+      <circle cx="7.5" cy="10" r="1.1" fill="currentColor" />
+      <circle cx="10.5" cy="7.2" r="1.1" fill="currentColor" />
+      <circle cx="14.2" cy="7.8" r="1.1" fill="currentColor" />
+    </svg>
+  );
+}
+
+function IconHandshake({ className = "h-5 w-5" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path
+        d="M8 13.5 10.2 11a1.8 1.8 0 0 1 2.5 0l.8.8a1.4 1.4 0 0 0 2 0l1.7-1.7M4.5 12.5l2.2-2.2a2 2 0 0 1 2.8 0L11 11.8"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M3 9.5 7.5 5h3L14 8.5M21 9.5 16.5 5h-2.2"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path d="M8 16.5h3.2a2 2 0 0 0 1.4-.6l1.2-1.2" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function IconPhone({ className = "h-5 w-5" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path
+        d="M7.5 4.5h3L12 8l-1.8 1.2a11 11 0 0 0 4.6 4.6L16 12l3.5 1.5v3a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 5.5 6.7a2 2 0 0 1 2-2.2Z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+const COMPANY_ICONS: Record<string, ReactNode> = {
+  ecology: <IconLeaf />,
+  team: <IconUsers />,
+  products: <IconBox />,
+  design: <IconPalette />,
+  partnership: <IconHandshake />,
+  contacts: <IconPhone />,
+};
 
 const advantages = [
   {
@@ -360,21 +464,64 @@ export function CtaSection() {
 }
 
 export function CompanyPreviewSection() {
+  const [about, ...pillars] = HOME_COMPANY_BLOCKS;
+  const primary = pillars.slice(0, 3);
+  const secondary = pillars.slice(3);
+
   return (
-    <section className="section-dark py-16 sm:py-20">
-      <div className="container-content max-w-4xl">
-        <h2 className="section-title">ООО «Крашеная доска»</h2>
-        <div className="mt-8 space-y-8">
-          {HOME_COMPANY_BLOCKS.map((block) => (
-            <article key={block.title}>
-              <h3 className="text-lg font-semibold text-accent">
-                <span className="mr-2">{block.icon}</span>
-                {block.title}
-              </h3>
-              <p className="mt-2 text-base leading-relaxed text-white/75">{block.text}</p>
+    <section className="company-infographic section-dark relative overflow-hidden py-16 sm:py-20">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_0%,rgba(254,119,43,0.16),transparent_45%),radial-gradient(ellipse_at_90%_80%,rgba(254,119,43,0.08),transparent_40%)]"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-y-0 right-0 hidden w-[38%] opacity-[0.12] lg:block"
+      >
+        <Image
+          src={WOOD_TEXTURE_BG}
+          alt=""
+          fill
+          sizes="40vw"
+          className="object-cover"
+          unoptimized
+        />
+      </div>
+
+      <div className="container-content relative z-10">
+        <header className="max-w-3xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+            {about.title}
+          </p>
+          <h2 className="section-title mt-3">ООО «Крашеная доска»</h2>
+          <p className="mt-5 text-base leading-relaxed text-white/75 sm:text-lg">{about.text}</p>
+        </header>
+
+        <ol className="company-infographic__rail mt-12 grid gap-5 md:grid-cols-3">
+          {primary.map((block, index) => (
+            <li key={block.id} className="company-infographic__step">
+              <div className="company-infographic__step-head">
+                <span className="company-infographic__index" aria-hidden>
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span className="company-infographic__icon">{COMPANY_ICONS[block.id]}</span>
+              </div>
+              <h3 className="mt-4 text-lg font-semibold text-accent">{block.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-white/70 sm:text-base">{block.text}</p>
+            </li>
+          ))}
+        </ol>
+
+        <div className="mt-6 grid gap-4 sm:grid-cols-3">
+          {secondary.map((block) => (
+            <article key={block.id} className="company-infographic__tile">
+              <div className="company-infographic__tile-icon">{COMPANY_ICONS[block.id]}</div>
+              <h3 className="mt-3 text-base font-semibold text-accent">{block.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-white/70">{block.text}</p>
             </article>
           ))}
         </div>
+
         <Link href="/o-kompanii/" className="btn-outline-light mt-10">
           Подробнее о компании
         </Link>
