@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs, type BreadcrumbItem } from "@/components/layout/Breadcrumbs";
 import { HomeProjectsSection } from "@/components/sections/HomeSections";
 import { MarketingPageFooter } from "@/components/sections/MarketingPageFooter";
-import { PAGE_HERO_BG } from "@/lib/media";
+import { USLUGI_HERO_BG } from "@/lib/media";
 import type { ServiceDetail } from "@/lib/service-details";
 
 type Props = { service: ServiceDetail; breadcrumbs: BreadcrumbItem[] };
@@ -30,18 +30,18 @@ export function ServiceDetailContent({ service, breadcrumbs }: Props) {
     <>
       <section className="relative overflow-hidden border-b border-brand-dark/30 py-12 sm:py-16">
         <Image
-          src={PAGE_HERO_BG}
+          src={USLUGI_HERO_BG}
           alt=""
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center"
+          className="object-cover object-center brightness-110 contrast-105"
           unoptimized
           aria-hidden
         />
         <div
           aria-hidden
-          className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/30 to-brand-dark/55"
+          className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/20 to-brand-dark/45"
         />
         <div className="container-content relative z-10 grid items-center gap-10 lg:grid-cols-[1fr_minmax(380px,560px)]">
           <div>

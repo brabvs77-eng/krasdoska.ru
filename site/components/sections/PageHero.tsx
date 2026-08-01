@@ -8,13 +8,29 @@ type PageHeroProps = {
   description?: string;
   action?: { href: string; label: string };
   breadcrumbs?: BreadcrumbItem[];
+  /** Override default shared page-hero background (cache-bust / page-specific art) */
+  backgroundSrc?: string;
+  /** Lighter veil so dark photo subjects stay readable */
+  overlay?: "default" | "light";
 };
 
-export function PageHero({ title, description, action, breadcrumbs }: PageHeroProps) {
+const overlays = {
+  default: "absolute inset-0 bg-gradient-to-b from-black/45 via-black/30 to-brand-dark/55",
+  light: "absolute inset-0 bg-gradient-to-b from-black/35 via-black/20 to-brand-dark/45",
+} as const;
+
+export function PageHero({
+  title,
+  description,
+  action,
+  breadcrumbs,
+  backgroundSrc = PAGE_HERO_BG,
+  overlay = "default",
+}: PageHeroProps) {
   return (
     <section className="relative overflow-hidden border-b border-brand-dark/30">
       <Image
-        src={PAGE_HERO_BG}
+        src={backgroundSrc}
         alt=""
         fill
         priority
@@ -22,8 +38,7 @@ export function PageHero({ title, description, action, breadcrumbs }: PageHeroPr
         className="object-cover object-center brightness-110 contrast-105"
         unoptimized
       />
-      {/* Lighter overlay than before — wood texture stays readable like the original */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/30 to-brand-dark/55" />
+      <div className={overlays[overlay]} />
       <div className="container-content relative py-20 pt-28 text-white sm:py-24 sm:pt-32 lg:py-28 lg:pt-36">
         {breadcrumbs && breadcrumbs.length > 0 && (
           <Breadcrumbs items={breadcrumbs} variant="dark" />
