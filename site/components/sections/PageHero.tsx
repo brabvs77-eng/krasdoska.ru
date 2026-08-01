@@ -10,12 +10,11 @@ type PageHeroProps = {
   breadcrumbs?: BreadcrumbItem[];
   /** Override default shared page-hero background (cache-bust / page-specific art) */
   backgroundSrc?: string;
-  /** Lighter veil so dark photo subjects stay readable */
   overlay?: "default" | "light";
 };
 
 const overlays = {
-  default: "absolute inset-0 bg-gradient-to-b from-black/45 via-black/30 to-brand-dark/55",
+  default: "absolute inset-0 bg-gradient-to-b from-black/50 via-black/35 to-brand-dark/60",
   light: "absolute inset-0 bg-gradient-to-b from-black/35 via-black/20 to-brand-dark/45",
 } as const;
 
@@ -25,7 +24,7 @@ export function PageHero({
   action,
   breadcrumbs,
   backgroundSrc = PAGE_HERO_BG,
-  overlay = "light",
+  overlay = "default",
 }: PageHeroProps) {
   return (
     <section className="relative overflow-hidden border-b border-brand-dark/30">
@@ -35,7 +34,7 @@ export function PageHero({
         fill
         priority
         sizes="100vw"
-        className="object-cover object-center brightness-110 contrast-105"
+        className="object-cover object-center"
         unoptimized
       />
       <div className={overlays[overlay]} />
