@@ -14,6 +14,7 @@ import {
   CATALOG_PREVIEW,
   COLOR_SWATCHES,
   COLORS_BG,
+  COMPANY_SECTION_BG,
   PARTNERS,
   PRODUCTION_IMAGE,
   SERVICE_IMAGES,
@@ -463,32 +464,24 @@ export function CompanyPreviewSection() {
   const secondary = pillars.slice(3);
 
   return (
-    <section className="company-infographic section-dark relative overflow-hidden py-16 sm:py-20">
+    <section className="company-infographic relative overflow-hidden py-16 text-white sm:py-20">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_0%,rgba(254,119,43,0.16),transparent_45%),radial-gradient(ellipse_at_90%_80%,rgba(254,119,43,0.08),transparent_40%)]"
+        className="company-infographic__bg pointer-events-none absolute inset-0"
+        style={{ backgroundImage: `url(${COMPANY_SECTION_BG})` }}
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-y-0 right-0 hidden w-[38%] opacity-[0.12] lg:block"
-      >
-        <Image
-          src={WOOD_TEXTURE_BG}
-          alt=""
-          fill
-          sizes="40vw"
-          className="object-cover"
-          unoptimized
-        />
-      </div>
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/45 via-black/35 to-black/55"
+      />
 
       <div className="container-content relative z-10">
         <header className="max-w-3xl">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
             {about.title}
           </p>
-          <h2 className="section-title mt-3">ООО «Крашеная доска»</h2>
-          <p className="mt-5 text-base leading-relaxed text-white/75 sm:text-lg">{about.text}</p>
+          <h2 className="section-title mt-3 text-white">ООО «Крашеная доска»</h2>
+          <p className="mt-5 text-base leading-relaxed text-white/80 sm:text-lg">{about.text}</p>
         </header>
 
         <ol className="company-infographic__rail mt-12 grid gap-5 md:grid-cols-3">
