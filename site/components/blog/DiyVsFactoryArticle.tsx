@@ -289,7 +289,7 @@ export function DiyVsFactoryArticle({ coverSrc, title }: Props) {
             <Link href="/tehnologija-nanesenija-kraski/">как красят древесину на производстве</Link>.
           </p>
           <ArticleFigure
-            src="/uploads/2025/04/photo_2025-05-17_21-55-26.jpg"
+            src="/uploads/2025/04/dsc_5377-scaled.webp"
             alt="Окрашенный деревянный фасад"
             caption="Фасадная доска после качественной окраски держит цвет и защищает древесину годами"
           />
@@ -324,7 +324,7 @@ export function DiyVsFactoryArticle({ coverSrc, title }: Props) {
             сумма легко выходит за <strong>320–350&nbsp;тыс.&nbsp;₽</strong>.
           </p>
           <ArticleFigure
-            src="/uploads/2025/04/photo_2025-04-26_20-30-22.webp"
+            src="/uploads/2025/04/photo_2025-05-31_00-05-25.webp"
             alt="Готовая партия крашеной доски"
             caption="Готовая партия после линии — материал упакован и готов к монтажу"
           />
@@ -377,7 +377,7 @@ export function DiyVsFactoryArticle({ coverSrc, title }: Props) {
             <Link href="/shema-pokraski/">схем покраски</Link>.
           </p>
           <ArticleFigure
-            src="/uploads/2026/05/krashenaja-skandinavskaja-doska.webp"
+            src="/uploads/2025/04/photo_2025-04-26_23-09-13.webp"
             alt="Крашеная скандинавская доска"
             caption="Пример готовой крашеной доски — цвет и фактура согласованы до запуска партии"
           />
@@ -430,7 +430,7 @@ export function DiyVsFactoryArticle({ coverSrc, title }: Props) {
           имитации бруса почти всегда выгоднее отдать на линию.
         </p>
         <ArticleFigure
-          src="/uploads/2025/04/photo_2025-05-17_21-55-26-2.jpg"
+          src="/uploads/2025/04/photo_2025-04-26_22-11-46.webp"
           alt="Интерьер с крашеной древесиной"
           caption="В интерьере заводская покраска экономит недели ручной работы на высоте"
         />
