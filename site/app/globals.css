@@ -292,6 +292,15 @@ body {
     @apply relative aspect-[16/9] overflow-hidden border border-white/10 bg-brand-dark;
   }
 
+  /* Portrait certificate / document covers (donor /blog-post/brend/) */
+  .article-cover--portrait {
+    @apply mx-auto max-w-[420px] sm:max-w-[460px];
+  }
+
+  .article-cover__media--portrait {
+    @apply aspect-[3/4] bg-black;
+  }
+
   .diy-cover {
     @apply relative mb-10 aspect-[16/9] overflow-hidden border border-white/10;
   }

@@ -7,6 +7,7 @@ type ArticleShellProps = {
   coverSrc?: string;
   coverAlt: string;
   orangeFrame?: boolean;
+  coverVariant?: "landscape" | "portrait";
   toc: ArticleTocItem[];
   ctaLabel?: string;
   ctaHref?: string;
@@ -18,6 +19,7 @@ export function ArticleShell({
   coverSrc,
   coverAlt,
   orangeFrame = true,
+  coverVariant = "landscape",
   toc,
   ctaLabel = "Оставить заявку",
   ctaHref = "/#form",
@@ -56,7 +58,12 @@ export function ArticleShell({
 
       <div className="article-body">
         {coverSrc ? (
-          <ArticleCover src={coverSrc} alt={coverAlt} orangeFrame={orangeFrame} />
+          <ArticleCover
+            src={coverSrc}
+            alt={coverAlt}
+            orangeFrame={orangeFrame}
+            variant={coverVariant}
+          />
         ) : null}
 
         {toc.length > 0 ? (

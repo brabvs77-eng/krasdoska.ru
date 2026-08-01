@@ -66,7 +66,13 @@ export default async function BlogPostPage({ params }: Props) {
             {isFeatured && cover ? (
               <DiyVsFactoryArticle coverSrc={cover} title={post.title} />
             ) : (
-              <ArticleShell coverSrc={cover} coverAlt={post.title} toc={toc} orangeFrame>
+              <ArticleShell
+                coverSrc={cover}
+                coverAlt={post.title}
+                toc={toc}
+                orangeFrame
+                coverVariant={slug === "brend" ? "portrait" : "landscape"}
+              >
                 <HtmlContent html={enhanced} className="article-prose" />
               </ArticleShell>
             )}
