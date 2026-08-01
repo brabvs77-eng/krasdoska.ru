@@ -362,7 +362,7 @@ export function ColorsSection() {
               href={swatch.href}
               className="group text-center"
             >
-              <div className="relative mx-auto aspect-square max-w-[150px] overflow-hidden rounded-2xl border border-white/15 shadow-lg">
+              <div className="relative mx-auto aspect-square max-w-[150px] overflow-hidden rounded-2xl border border-white/15 bg-black shadow-lg">
                 <Image
                   src={swatch.image}
                   alt={swatch.code}

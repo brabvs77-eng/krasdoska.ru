@@ -180,7 +180,8 @@ export const COLOR_SWATCHES = [
   },
   {
     code: "Osmo",
-    image: `${UPLOADS}/palitra/osmo/7e07e01118d79bdff133d99182a17354979.png`,
+    // Flattened onto solid black (source PNG had ~45% transparent pixels)
+    image: `${UPLOADS}/palitra/osmo/osmo-cover.webp`,
     href: "/palitra/palitra-osmo/",
   },
 ] as const;
