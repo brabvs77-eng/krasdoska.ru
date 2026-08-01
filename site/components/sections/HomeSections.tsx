@@ -367,7 +367,7 @@ export function ColorsSection() {
             <Link
               key={swatch.code}
               href={swatch.href}
-              className="group text-center transition hover:opacity-90"
+              className="group text-center"
             >
               <div className="relative mx-auto aspect-square max-w-[150px] overflow-hidden rounded-2xl border border-white/15 shadow-lg">
                 <Image
@@ -379,7 +379,9 @@ export function ColorsSection() {
                   unoptimized
                 />
               </div>
-              <p className="mt-4 text-sm font-semibold text-white/90">{swatch.code}</p>
+              <p className="mt-4 text-sm font-semibold text-white/90 transition-colors duration-200 group-hover:text-accent">
+                {swatch.code}
+              </p>
             </Link>
           ))}
         </div>
