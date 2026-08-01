@@ -2,6 +2,8 @@ const UPLOADS = "/uploads";
 
 export const PAGE_HERO_BG = `${UPLOADS}/2025/04/frist-screen.webp`;
 export const WOOD_TEXTURE_BG = `${UPLOADS}/2025/04/top-view-light-wood-wallpaper-1-1.webp`;
+/** Dark wood grain tile — monolithic homepage company block background */
+export const COMPANY_SECTION_BG = `${UPLOADS}/2025/03/Mask-group-4.png`;
 // Parity: фото грузовика — правая часть баннера доставки на /kontakty/
 export const DELIVERY_TRUCK_IMAGE = `${UPLOADS}/2026/05/bg-1.webp`;
 

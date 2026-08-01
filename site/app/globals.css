@@ -694,7 +694,14 @@ body {
     @apply mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center text-accent;
   }
 
-  /* Homepage company preview — infographic */
+  /* Homepage company preview — monolithic dark-wood field */
+  .company-infographic__bg {
+    background-color: #14100e;
+    background-repeat: repeat;
+    background-size: 168px 168px;
+    background-position: center;
+  }
+
   .company-infographic__rail {
     position: relative;
   }
@@ -710,8 +717,8 @@ body {
       background: linear-gradient(
         90deg,
         transparent,
-        rgba(254, 119, 43, 0.55),
-        rgba(254, 119, 43, 0.55),
+        rgba(254, 119, 43, 0.45),
+        rgba(254, 119, 43, 0.45),
         transparent
       );
       pointer-events: none;
@@ -719,11 +726,11 @@ body {
   }
 
   .company-infographic__step {
-    @apply relative rounded-none border border-white/10 bg-white/[0.03] p-5 transition duration-300 sm:p-6;
+    @apply relative rounded-none border border-white/10 bg-black/20 p-5 backdrop-blur-[1px] transition duration-300 sm:p-6;
   }
 
   .company-infographic__step:hover {
-    @apply border-accent/45 bg-white/[0.05];
+    @apply border-accent/45 bg-black/30;
   }
 
   .company-infographic__step-head {
@@ -744,11 +751,11 @@ body {
   }
 
   .company-infographic__tile {
-    @apply border-l-2 border-accent/70 bg-gradient-to-r from-accent/10 to-transparent px-4 py-4 transition duration-300;
+    @apply border-l-2 border-accent/70 bg-black/15 px-4 py-4 transition duration-300;
   }
 
   .company-infographic__tile:hover {
-    @apply border-accent from-accent/20;
+    @apply border-accent bg-black/25;
   }
 
   .company-infographic__tile-icon {
