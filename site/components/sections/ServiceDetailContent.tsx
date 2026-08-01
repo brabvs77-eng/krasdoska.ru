@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs, type BreadcrumbItem } from "@/components/layout/Breadcrumbs";
 import { HomeProjectsSection } from "@/components/sections/HomeSections";
 import { MarketingPageFooter } from "@/components/sections/MarketingPageFooter";
+import { PAGE_HERO_BG } from "@/lib/media";
 import type { ServiceDetail } from "@/lib/service-details";
 
 type Props = { service: ServiceDetail; breadcrumbs: BreadcrumbItem[] };
@@ -27,8 +28,22 @@ const advantageIcons = [
 export function ServiceDetailContent({ service, breadcrumbs }: Props) {
   return (
     <>
-      <section className="section-dark relative overflow-hidden py-12 sm:py-16">
-        <div className="container-content grid items-center gap-10 lg:grid-cols-[1fr_minmax(380px,560px)]">
+      <section className="relative overflow-hidden border-b border-brand-dark/30 py-12 sm:py-16">
+        <Image
+          src={PAGE_HERO_BG}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+          unoptimized
+          aria-hidden
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/30 to-brand-dark/55"
+        />
+        <div className="container-content relative z-10 grid items-center gap-10 lg:grid-cols-[1fr_minmax(380px,560px)]">
           <div>
             <Breadcrumbs items={breadcrumbs} variant="dark" />
             <h1 className="mt-6 text-3xl font-semibold leading-tight text-white sm:text-4xl">
