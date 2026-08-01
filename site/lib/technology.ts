@@ -6,40 +6,101 @@ export const TECHNOLOGY_VIDEO =
 
 export const TECHNOLOGY_IMAGE = "/uploads/2025/04/photo_2025-05-17_23-20-04.webp";
 
+export type ProductionPhaseId =
+  | "prepare"
+  | "primer"
+  | "finish1"
+  | "finish2"
+  | "pack";
+
 export type ProductionStep = {
   title: string;
   note?: string;
-  emoji?: string;
+  phase: ProductionPhaseId;
+  /** Compact label for the infographic node type */
+  kind: "prep" | "coat" | "dry" | "sand" | "pack";
 };
 
+export const PRODUCTION_PHASES: {
+  id: ProductionPhaseId;
+  label: string;
+  summary: string;
+}[] = [
+  {
+    id: "prepare",
+    label: "Подготовка",
+    summary: "Геометрия и чистота поверхности перед покрытием",
+  },
+  {
+    id: "primer",
+    label: "Грунт",
+    summary: "Антисептик и защита тыльной стороны",
+  },
+  {
+    id: "finish1",
+    label: "Финиш I",
+    summary: "Первый слой покрытия с межслойной шлифовкой",
+  },
+  {
+    id: "finish2",
+    label: "Финиш II",
+    summary: "Второй слой для плотности и стойкости цвета",
+  },
+  {
+    id: "pack",
+    label: "Упаковка",
+    summary: "Защита лицевых пластей до отгрузки",
+  },
+];
+
+/** Original production sequence — wording preserved from the source page. */
 export const PRODUCTION_STEPS: ProductionStep[] = [
-  { title: "Калибровка и шлифовка на КШС", emoji: "🔧" },
-  { title: "Обеспыливание", emoji: "🌬️" },
+  { title: "Калибровка и шлифовка на КШС", phase: "prepare", kind: "prep" },
+  { title: "Обеспыливание", phase: "prepare", kind: "prep" },
   {
     title: "Нанесение грунта-антисептика на щеточном станке с окрашиванием тыльной стороны",
-    emoji: "🎨🧪",
+    phase: "primer",
+    kind: "coat",
   },
-  { title: "Сушка", emoji: "☀️" },
-  { title: "Межслойное шлифование на щеточно-шлифовальном станке", emoji: "✨" },
+  { title: "Сушка", phase: "primer", kind: "dry" },
+  {
+    title: "Межслойное шлифование на щеточно-шлифовальном станке",
+    phase: "finish1",
+    kind: "sand",
+  },
   {
     title: "Нанесение 1 слоя финишного покрытия",
     note: "лак полуглянец, матовый, укрывная краска, воск, масло",
-    emoji: "🖌️",
+    phase: "finish1",
+    kind: "coat",
   },
-  { title: "Сушка", emoji: "☀️" },
-  { title: "Межслойное шлифование на щеточно-шлифовальном станке", emoji: "✨" },
+  { title: "Сушка", phase: "finish1", kind: "dry" },
+  {
+    title: "Межслойное шлифование на щеточно-шлифовальном станке",
+    phase: "finish2",
+    kind: "sand",
+  },
   {
     title: "Нанесение второго слоя финишного покрытия",
     note: "лак полуглянец, матовый, укрывная краска, воск, масло",
-    emoji: "🖌️",
+    phase: "finish2",
+    kind: "coat",
   },
-  { title: "Сушка", emoji: "☀️" },
+  { title: "Сушка", phase: "finish2", kind: "dry" },
   {
     title: "Упаковка",
     note: "вспененный полиэтилен по лицевым пластям, обмотка в стрейч-плёнку",
-    emoji: "📦",
+    phase: "pack",
+    kind: "pack",
   },
 ];
+
+export const TECHNOLOGY_CLOSING = {
+  ready: "Готово к отгрузке!",
+  ps: "P.S. Каждый этап контролируется для безупречного качества вашей продукции.",
+  schemesLead:
+    "Подробные схемы (грунт, число слоёв, Sirca / Talatu) и цены за м² — на странице",
+} as const;
 
 export type FaqItem = {
   question: string;
