@@ -152,11 +152,31 @@ export const ADVANTAGE_ICONS = [
 ] as const;
 
 export const COLOR_SWATCHES = [
-  { code: "KD-25", image: `${UPLOADS}/2025/03/Mask-group-1.webp` },
-  { code: "KD-32", image: `${UPLOADS}/2025/03/Mask-group-2.webp` },
-  { code: "KD-28", image: `${UPLOADS}/2025/03/Mask-group-3.webp` },
-  { code: "KD-6", image: `${UPLOADS}/2025/03/Mask-group-4.webp` },
-  { code: "KD-15", image: `${UPLOADS}/2025/03/Mask-group-5.webp` },
+  {
+    code: "Sirca",
+    image: `${UPLOADS}/katalog-tsvetov/clean/cover.webp`,
+    href: "/katalog-tsvetov/",
+  },
+  {
+    code: "RAL",
+    image: `${UPLOADS}/palitra/teknos-interior/cover.webp`,
+    href: "/palitra/palitra-ral/",
+  },
+  {
+    code: "Biofa",
+    image: `${UPLOADS}/palitra/biofa/cover.webp`,
+    href: "/palitra/palitra-cvetov-biofa/",
+  },
+  {
+    code: "NCS",
+    image: `${UPLOADS}/palitra/ncs/cover.webp`,
+    href: "/palitra/palitra-ncs/",
+  },
+  {
+    code: "Osmo",
+    image: `${UPLOADS}/palitra/osmo/7e07e01118d79bdff133d99182a17354979.png`,
+    href: "/palitra/palitra-osmo/",
+  },
 ] as const;
 
 export const PARTNERS = [

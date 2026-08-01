@@ -260,19 +260,23 @@ export function ColorsSection() {
         </div>
         <div className="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
           {COLOR_SWATCHES.map((swatch) => (
-            <div key={swatch.code} className="text-center">
+            <Link
+              key={swatch.code}
+              href={swatch.href}
+              className="group text-center transition hover:opacity-90"
+            >
               <div className="relative mx-auto aspect-square max-w-[150px] overflow-hidden rounded-2xl border border-white/15 shadow-lg">
                 <Image
                   src={swatch.image}
                   alt={swatch.code}
                   fill
                   sizes="150px"
-                  className="object-cover"
+                  className="object-cover transition duration-300 group-hover:scale-105"
                   unoptimized
                 />
               </div>
               <p className="mt-4 text-sm font-semibold text-white/90">{swatch.code}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
