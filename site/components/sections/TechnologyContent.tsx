@@ -4,7 +4,6 @@ import { CtaSection } from "@/components/sections/HomeSections";
 import { TechnologyProcessInfographic } from "@/components/sections/TechnologyProcessInfographic";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import type { ContentItem } from "@/lib/content";
-import { WOOD_TEXTURE_BG } from "@/lib/media";
 import {
   TECHNOLOGY_FAQ,
   TECHNOLOGY_IMAGE,
@@ -33,7 +32,12 @@ export function TechnologyContent({ page }: TechnologyContentProps) {
 
         <section className="relative mt-14">
           <h2 className="section-title">Делаем обьем без потери качества</h2>
-          <div className="relative mt-8">
+          {/* Оранжевая полурамка со смещением вправо-вниз — как на услугах / палитре */}
+          <div className="relative mt-8 pr-4 pb-4 sm:pr-5 sm:pb-5">
+            <div
+              aria-hidden="true"
+              className="absolute bottom-0 right-0 h-[calc(100%-1rem)] w-[calc(100%-1rem)] bg-accent sm:h-[calc(100%-1.25rem)] sm:w-[calc(100%-1.25rem)]"
+            />
             <div className="relative aspect-[16/10] w-full overflow-hidden sm:aspect-[2/1]">
               <Image
                 src={TECHNOLOGY_IMAGE}
@@ -49,28 +53,6 @@ export function TechnologyContent({ page }: TechnologyContentProps) {
                   и продолжаем развиваться, внедряя новейшие технологии и подходы в покраске
                   древесины любых пород.
                 </p>
-              </div>
-            </div>
-            <div aria-hidden="true" className="mt-0 hidden justify-end lg:flex">
-              <div className="h-28 w-[30%] overflow-hidden bg-accent">
-                <Image
-                  src={WOOD_TEXTURE_BG}
-                  alt=""
-                  width={400}
-                  height={112}
-                  className="h-full w-full object-cover opacity-40 mix-blend-multiply"
-                  unoptimized
-                />
-              </div>
-              <div className="h-28 w-[22%] overflow-hidden bg-accent-dark">
-                <Image
-                  src={WOOD_TEXTURE_BG}
-                  alt=""
-                  width={300}
-                  height={112}
-                  className="h-full w-full object-cover opacity-30 mix-blend-multiply"
-                  unoptimized
-                />
               </div>
             </div>
           </div>
