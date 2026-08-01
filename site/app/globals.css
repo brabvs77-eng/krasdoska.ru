@@ -694,14 +694,7 @@ body {
     @apply mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center text-accent;
   }
 
-  /* Homepage company preview — monolithic dark-wood field */
-  .company-infographic__bg {
-    background-color: #14100e;
-    background-repeat: repeat;
-    background-size: 168px 168px;
-    background-position: center;
-  }
-
+  /* Homepage company preview — single stretched wood background */
   .company-infographic__rail {
     position: relative;
   }
