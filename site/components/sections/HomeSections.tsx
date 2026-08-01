@@ -465,14 +465,18 @@ export function CompanyPreviewSection() {
 
   return (
     <section className="company-infographic relative overflow-hidden py-16 text-white sm:py-20">
-      <div
+      <Image
+        src={COMPANY_SECTION_BG}
+        alt=""
+        fill
+        sizes="100vw"
+        className="pointer-events-none object-cover object-center"
+        unoptimized
         aria-hidden
-        className="company-infographic__bg pointer-events-none absolute inset-0"
-        style={{ backgroundImage: `url(${COMPANY_SECTION_BG})` }}
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/45 via-black/35 to-black/55"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/55"
       />
 
       <div className="container-content relative z-10">
