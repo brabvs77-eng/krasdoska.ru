@@ -150,67 +150,15 @@ const advantages = [
   },
 ];
 
-const iconProps = {
-  width: 46,
-  height: 46,
-  viewBox: "0 0 24 24",
-  fill: "none",
-  stroke: "#ffffff",
-  strokeWidth: 1.5,
-  strokeLinecap: "round" as const,
-  strokeLinejoin: "round" as const,
-};
-
-/* Белые линейные иконки по назначению (качество / покрытие / продукты / уход / обработка / экология). */
-const advantageIcons = [
-  // Высокое качество — образец дерева + палец вверх
-  <svg key="i0" {...iconProps}>
-    <rect x="4.5" y="3.5" width="12" height="12" rx="1.2" />
-    <path d="M4.5 5.2h12M4.5 13.8h12M6.2 3.5v12M14.8 3.5v12" />
-    <path d="M7 7.2c1.2-.5 2.4-.4 3.6.2M7 9.2c1.4-.4 2.8-.3 4 .3M7 11.2c1.1-.4 2.5-.3 3.7.2" />
-    <path d="M14.8 14.2c.4 1.4 1.5 2.5 3 2.9.4.1.8-.2.8-.6v-3.1c0-.7-.6-1.2-1.3-1.1-1 .2-1.8.9-2.2 1.9Z" />
-    <path d="M15.2 16.6h-1.6a1.2 1.2 0 0 1-1.2-1.2V14" />
-  </svg>,
-  // Долговечность покрытия — состав + доска
-  <svg key="i1" {...iconProps}>
-    <path d="M13.5 3.8h3.2c.7 0 1.3.6 1.3 1.3v4.2c0 .4-.1.8-.4 1.1L15.2 13H11l-1.2-1.6V5.1c0-.7.6-1.3 1.3-1.3h2.4Z" />
-    <path d="M12.2 7.2h4.2M12.5 10.2c.8.4 1.8.5 2.8.2" />
-    <rect x="3.5" y="14.2" width="14.5" height="5.2" rx="1" />
-    <path d="M5.5 16h4.5M5.5 17.6h6.5M11.5 16h4" />
-    <path d="M7.2 5.2l.8-.8M5.6 6.6l.7-.7M6.2 8.4h1.2" />
-  </svg>,
-  // Контроль — штабель досок / продукт
-  <svg key="i2" {...iconProps}>
-    <path d="M4 14.8 11.2 11l8.3 3.6-7.2 3.8L4 14.8Z" />
-    <path d="M4 14.8v2.4l8.3 3.6 8.2-3.8v-2.2" />
-    <path d="M5.2 10.6 12.2 7l7.8 3.4-7.1 3.6-7.7-3.4Z" />
-    <path d="M5.2 10.6v2.1" />
-    <path d="M8.2 8.6c1.6-.4 3.3-.3 4.9.3M9 9.8c1.3-.3 2.7-.2 4 .3" />
-  </svg>,
-  // Шлифовка / уход — рука со спонжем
-  <svg key="i3" {...iconProps}>
-    <path d="M3.8 18.8h16.4" />
-    <path d="M8.2 14.2h7.6c.7 0 1.3.6 1.3 1.3v1.4H6.9v-1.4c0-.7.6-1.3 1.3-1.3Z" />
-    <path d="M8.4 15.2h.1M10.2 15.8h.1M12 15.2h.1M13.8 15.8h.1M15.4 15.2h.1" strokeWidth="2" />
-    <path d="M14.8 14.2c1.2-1.4 2.5-3.4 3.1-5.2.3-.8-.3-1.6-1.1-1.6h-1.4c-.5 0-.9.3-1.1.7l-1.5 3.4-1.2-1.5c-.4-.5-1.2-.5-1.6 0l-.8.9c-.3.4-.3.9 0 1.2l2.4 2.1" />
-  </svg>,
-  // Автоматизация / обработка — пила по дереву
-  <svg key="i4" {...iconProps}>
-    <rect x="3.5" y="14" width="17" height="5.5" rx="1" />
-    <path d="M5.5 15.8h4M5.5 17.4h6.5M12.2 15.8h5.2" />
-    <path d="M12 14.2c3.4 0 6.2-2.5 6.2-5.6S15.4 3 12 3 5.8 5.5 5.8 8.6c0 1.4.6 2.7 1.5 3.7" />
-    <path d="M12 8.6v.1M9.4 6.4l.7.7M14.6 6.4l-.7.7M8.8 9.8h1M14.2 9.8h1" />
-    <path d="M16.8 4.6c.5-.3 1.1-.2 1.5.2M18.2 6.2c.4.2.7.7.6 1.2M18.8 8.4c.1.5-.1 1-.5 1.3" />
-  </svg>,
-  // Экологичность — годовые кольца дерева
-  <svg key="i5" {...iconProps}>
-    <path d="M12 3.2c2.1 0 3.9.7 5.1 1.9 1.3 1.2 2.1 2.9 2.1 4.9 0 1.8-.6 3.4-1.7 4.6-.4.5-.3 1.2.2 1.6 1.1.9 1.8 2.2 1.8 3.7 0 .5-.5.8-.9.6-1.6-.5-2.9-1.5-3.7-2.8-.3-.4-.9-.5-1.3-.1-.8.7-1.9 1.1-3.1 1.1-.9 0-1.8-.3-2.5-.7-.4-.3-.9-.1-1.1.3-.6 1.1-1.7 1.9-3 2.3-.5.1-.9-.2-.9-.7 0-1.4.7-2.6 1.7-3.5.5-.4.5-1.1.1-1.6C3.8 13.4 3.2 11.8 3.2 10c0-2 .8-3.7 2.1-4.9C6.5 3.9 8.4 3.2 10.5 3.2h1.5Z" />
-    <circle cx="12" cy="11.2" r="1.15" />
-    <path d="M12 6.6c2.4 0 4.3 1.7 4.3 3.8S14.4 14.2 12 14.2 7.7 12.5 7.7 10.4 9.6 6.6 12 6.6Z" />
-    <path d="M12 8.4c1.3 0 2.4.9 2.4 2s-1.1 2-2.4 2-2.4-.9-2.4-2 1.1-2 2.4-2Z" />
-    <path d="M5.8 16.8 7 15.6" />
-  </svg>,
-];
+/* Оригинальные SVG с WP (uploads/2025/03/Layer_1*.svg), по назначению. */
+const ADVANTAGE_ICONS = [
+  "/icons/advantages/kachestvo.svg", // Layer_1 — Высокое качество
+  "/icons/advantages/pokrytie.svg", // Layer_1-1 — Долговечность покрытия
+  "/icons/advantages/produkty.svg", // Layer_1-2 — Контроль
+  "/icons/advantages/uhod.svg", // Layer_1-3 — Шлифовка
+  "/icons/advantages/obrabotka.svg", // Layer_1-4 — Автоматизация
+  "/icons/advantages/ekologiya.svg", // Layer_1-5 — Экологичность
+] as const;
 
 /* Parity: оригинал — одна тёмная секция: слева заголовок + фото,
    справа сетка преимуществ 2×3 с оранжевыми иконками, без карточек. */
@@ -243,7 +191,16 @@ export function ProductionIntroSection() {
               key={item.title}
               className="flex flex-col border-b border-white/15 py-8"
             >
-              <div className="h-12 w-12">{advantageIcons[index]}</div>
+              <div className="relative h-12 w-12">
+                <Image
+                  src={ADVANTAGE_ICONS[index]}
+                  alt=""
+                  fill
+                  sizes="48px"
+                  className="object-contain"
+                  unoptimized
+                />
+              </div>
               <h3 className="mt-5 text-xl font-semibold text-white">{item.title}</h3>
               <p className="mt-2.5 text-base leading-relaxed text-white">{item.text}</p>
             </article>
