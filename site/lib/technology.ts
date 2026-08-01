@@ -4,7 +4,7 @@ export const TECHNOLOGY_VIDEO =
     ? "https://krashenayadoska.ru/wp-content/uploads/2026/03/video_2026-03-13_23-56-23.mp4"
     : "/uploads/2026/03/video_2026-03-13_23-56-23.mp4";
 
-export const TECHNOLOGY_IMAGE = "/uploads/2025/04/frame-19-2.webp";
+export const TECHNOLOGY_IMAGE = "/uploads/2025/04/photo_2025-05-17_23-20-04.webp";
 
 export type ProductionStep = {
   title: string;

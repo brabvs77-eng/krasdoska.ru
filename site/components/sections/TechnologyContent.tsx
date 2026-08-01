@@ -4,7 +4,12 @@ import { CtaSection } from "@/components/sections/HomeSections";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import type { ContentItem } from "@/lib/content";
 import { WOOD_TEXTURE_BG } from "@/lib/media";
-import { PRODUCTION_STEPS, TECHNOLOGY_FAQ, TECHNOLOGY_VIDEO } from "@/lib/technology";
+import {
+  PRODUCTION_STEPS,
+  TECHNOLOGY_FAQ,
+  TECHNOLOGY_IMAGE,
+  TECHNOLOGY_VIDEO,
+} from "@/lib/technology";
 
 type TechnologyContentProps = {
   page: ContentItem;
@@ -58,8 +63,8 @@ export function TechnologyContent({ page }: TechnologyContentProps) {
           <div className="relative mt-8">
             <div className="relative aspect-[16/10] w-full overflow-hidden sm:aspect-[2/1]">
               <Image
-                src="/uploads/2025/04/frame-19-2.webp"
-                alt="Коллекция окрашенных деревянных панелей с разными текстурами и оттенками"
+                src={TECHNOLOGY_IMAGE}
+                alt="Рифлёная доска крупным планом — объёмная фактура без потери качества"
                 fill
                 sizes="(max-width: 768px) 100vw, 1200px"
                 className="object-cover"
