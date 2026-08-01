@@ -754,4 +754,115 @@ body {
   .company-infographic__tile-icon {
     @apply inline-flex text-accent;
   }
+
+  /* Technology page — production process infographic */
+  .tech-process__phases {
+    @apply relative space-y-10;
+  }
+
+  .tech-process__phase {
+    @apply relative grid gap-5 lg:grid-cols-[minmax(140px,200px)_1fr] lg:gap-8;
+  }
+
+  .tech-process__phase-label {
+    @apply lg:sticky lg:top-28 lg:self-start;
+  }
+
+  .tech-process__phase-name {
+    @apply block text-sm font-semibold uppercase tracking-[0.16em] text-accent;
+  }
+
+  .tech-process__phase-summary {
+    @apply mt-2 block text-sm leading-relaxed text-white/55;
+  }
+
+  .tech-process__steps {
+    @apply relative space-y-0 border-l border-accent/35 pl-6 sm:pl-8;
+  }
+
+  .tech-process__step {
+    @apply relative grid gap-3 py-4 sm:grid-cols-[auto_1fr] sm:items-start sm:gap-5;
+    animation: tech-process-in 0.55s ease both;
+    animation-delay: calc(var(--step-i, 1) * 45ms);
+  }
+
+  .tech-process__step::before {
+    content: "";
+    position: absolute;
+    left: calc(-1.5rem - 1px);
+    top: 1.55rem;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 999px;
+    background: var(--kd-orange);
+    box-shadow: 0 0 0 3px rgba(254, 119, 43, 0.22);
+    transform: translateX(-50%);
+  }
+
+  @media (min-width: 640px) {
+    .tech-process__step::before {
+      left: calc(-2rem - 1px);
+    }
+  }
+
+  .tech-process__node {
+    @apply flex items-center gap-3;
+  }
+
+  .tech-process__index {
+    @apply font-semibold tabular-nums tracking-[0.12em] text-accent;
+    font-size: 1.15rem;
+  }
+
+  .tech-process__icon {
+    @apply flex h-10 w-10 shrink-0 items-center justify-center border border-accent/40 text-accent transition duration-300;
+  }
+
+  .tech-process__step:hover .tech-process__icon {
+    @apply border-accent bg-accent text-white;
+  }
+
+  .tech-process__title {
+    @apply text-base font-semibold leading-snug text-white sm:text-lg;
+  }
+
+  .tech-process__note {
+    @apply mt-1.5 text-sm italic leading-relaxed text-white/55;
+  }
+
+  .tech-process__finish {
+    @apply relative mt-12 flex gap-4 border border-accent/40 bg-accent/10 p-5 sm:gap-5 sm:p-7;
+    animation: tech-process-in 0.6s ease both;
+    animation-delay: 0.55s;
+  }
+
+  .tech-process__finish::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 3px;
+    background: var(--kd-orange);
+  }
+
+  .tech-process__finish-mark {
+    @apply flex h-12 w-12 shrink-0 items-center justify-center border border-accent text-accent;
+  }
+
+  @keyframes tech-process-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tech-process__step,
+    .tech-process__finish {
+      animation: none;
+    }
+  }
 }

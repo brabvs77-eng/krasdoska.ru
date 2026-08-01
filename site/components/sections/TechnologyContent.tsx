@@ -1,11 +1,11 @@
 import Image from "next/image";
 import { PageHero } from "@/components/sections/PageHero";
 import { CtaSection } from "@/components/sections/HomeSections";
+import { TechnologyProcessInfographic } from "@/components/sections/TechnologyProcessInfographic";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import type { ContentItem } from "@/lib/content";
 import { WOOD_TEXTURE_BG } from "@/lib/media";
 import {
-  PRODUCTION_STEPS,
   TECHNOLOGY_FAQ,
   TECHNOLOGY_IMAGE,
   TECHNOLOGY_VIDEO,
@@ -29,34 +29,7 @@ export function TechnologyContent({ page }: TechnologyContentProps) {
           </video>
         </div>
 
-        <section className="mt-12">
-          <h2 className="section-title">🛠️ Технология производства</h2>
-          <ol className="mt-8 space-y-5">
-            {PRODUCTION_STEPS.map((step, index) => (
-              <li key={step.title}>
-                <p className="font-semibold text-white">
-                  <span className="mr-2 text-accent">{index + 1}.</span>
-                  {step.title} {step.emoji}
-                </p>
-                {step.note && (
-                  <p className="mt-1 pl-6 text-sm italic text-white/60">({step.note})</p>
-                )}
-              </li>
-            ))}
-          </ol>
-          <hr className="mt-10 border-white/20" />
-          <p className="mt-6 font-semibold text-white">✅ Готово к отгрузке! 🚚</p>
-          <p className="mt-3 text-sm italic text-white/60">
-            P.S. Каждый этап контролируется для безупречного качества вашей продукции. 🎯
-          </p>
-          <p className="mt-6 text-sm text-white/75">
-            Подробные схемы (грунт, число слоёв, Sirca / Talatu) и цены за м² — на странице{" "}
-            <a href="/shema-pokraski/" className="text-accent underline-offset-2 hover:underline">
-              схемы покраски
-            </a>
-            .
-          </p>
-        </section>
+        <TechnologyProcessInfographic />
 
         <section className="relative mt-14">
           <h2 className="section-title">Делаем обьем без потери качества</h2>
