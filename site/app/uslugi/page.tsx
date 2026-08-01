@@ -3,6 +3,7 @@ import { MarketingPageFooter } from "@/components/sections/MarketingPageFooter";
 import { PageHero } from "@/components/sections/PageHero";
 import { buildPageMetadata } from "@/lib/metadata";
 import { getExcerpt, getPage } from "@/lib/content";
+import { USLUGI_HERO_BG } from "@/lib/media";
 
 export async function generateMetadata() {
   const page = getPage("uslugi");
@@ -19,6 +20,8 @@ export default function ServicesPage() {
       <PageHero
         title="Наши услуги"
         breadcrumbs={[{ label: "Главная", href: "/" }, { label: "Услуги" }]}
+        backgroundSrc={USLUGI_HERO_BG}
+        overlay="light"
       />
       <ServicesPreviewSection variant="marketing" />
       <MarketingPageFooter />
