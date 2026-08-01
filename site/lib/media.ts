@@ -182,7 +182,7 @@ export const COLOR_SWATCHES = [
 export const PARTNERS = [
   { name: "Stardeck", url: "https://stardeck-msk.ru/", image: `${UPLOADS}/2025/04/photo_2025-04-18_09-46-28-1-2.webp` },
   { name: "Лиственница", url: "https://listvennica-sosna.ru/", image: `${UPLOADS}/2025/04/photo_2025-04-18_19-09-37-1-1.webp` },
-  { name: "Dedom", url: "https://dedom.ru/", image: `${UPLOADS}/2025/04/photo_2025-04-18_11-56-01.webp` },
+  { name: "Деревянный дом", url: "http://2-d.ru", image: `${UPLOADS}/2025/04/photo_2025-04-18_11-56-01.webp` },
   { name: "Talatu", url: "https://talatu.com/", image: `${UPLOADS}/2025/04/photo_2025-04-18_11-19-34.webp` },
   { name: "Купить лиственницу", url: "https://kupitlistvennica.ru/", image: `${UPLOADS}/2025/04/photo_2025-04-18_22-30-59-1.webp` },
   { name: "Lakpro", url: "https://lakpro.ru/", image: `${UPLOADS}/2025/04/photo_2025-04-26_22-07-39-2-1-1-1.webp` },
