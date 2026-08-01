@@ -6,9 +6,8 @@ import { ContentList } from "@/components/content/ContentList";
 import { getBlogPost, getExcerpt, getProject } from "@/lib/content";
 import { HOME_BLOG_DATES, HOME_BLOG_SLUGS, HOME_PROJECT_SLUGS, HOME_PROJECT_TAGS } from "@/lib/home-content";
 import { getContentImage } from "@/lib/product-media";
-import { ContactForm } from "@/components/forms/ContactForm";
-import { getSiteSettings } from "@/lib/site";
 import { HOME_COMPANY_BLOCKS } from "@/lib/home-footer";
+import { QuestionsCtaSection } from "@/components/sections/QuestionsCtaSection";
 import {
   BOTTOMBAR_BG,
   CATALOG_PREVIEW,
@@ -424,39 +423,9 @@ export function PartnersSection() {
   );
 }
 
+/** Shared CTA — same photo panel as on /kontakty/ «Остались вопросы?» */
 export function CtaSection() {
-  const { contacts, integrations } = getSiteSettings();
-  const phoneDigits = contacts.phones[0]?.replace(/\D/g, "") ?? "88002509055";
-  const phoneHref = phoneDigits ? `tel:${phoneDigits}` : "tel:88002509055";
-
-  return (
-    <section id="form" className="section-dark relative overflow-hidden scroll-mt-24 py-16 sm:py-20">
-      {/* Parity: одна оранжевая плита с текстурой, bleed за правый край, на уровне заголовка */}
-      <div
-        aria-hidden="true"
-        className="absolute right-0 top-12 z-0 hidden h-64 w-[30%] overflow-hidden bg-accent lg:block"
-      >
-        <Image
-          src={WOOD_TEXTURE_BG}
-          alt=""
-          fill
-          sizes="480px"
-          className="object-cover opacity-40 mix-blend-multiply"
-          unoptimized
-        />
-      </div>
-      <div className="container-content relative z-10">
-        <h2 className="section-title max-w-xl">Остались вопросы?</h2>
-        <div className="mt-10 lg:max-w-[66%]">
-          <ContactForm
-            email={contacts.email}
-            phoneHref={phoneHref}
-            formEndpoint={integrations.formEndpoint || undefined}
-          />
-        </div>
-      </div>
-    </section>
-  );
+  return <QuestionsCtaSection />;
 }
 
 export function CompanyPreviewSection() {
