@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs, type BreadcrumbItem } from "@/components/layout/Breadcrumbs";
 import { HomeProjectsSection } from "@/components/sections/HomeSections";
 import { MarketingPageFooter } from "@/components/sections/MarketingPageFooter";
-import { USLUGI_HERO_BG } from "@/lib/media";
+import { PAGE_HERO_BG } from "@/lib/media";
 import type { ServiceDetail } from "@/lib/service-details";
 
 type Props = { service: ServiceDetail; breadcrumbs: BreadcrumbItem[] };
@@ -30,7 +30,7 @@ export function ServiceDetailContent({ service, breadcrumbs }: Props) {
     <>
       <section className="relative overflow-hidden border-b border-brand-dark/30 py-12 sm:py-16">
         <Image
-          src={USLUGI_HERO_BG}
+          src={PAGE_HERO_BG}
           alt=""
           fill
           priority

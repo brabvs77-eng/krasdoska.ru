@@ -25,7 +25,7 @@ export function PageHero({
   action,
   breadcrumbs,
   backgroundSrc = PAGE_HERO_BG,
-  overlay = "default",
+  overlay = "light",
 }: PageHeroProps) {
   return (
     <section className="relative overflow-hidden border-b border-brand-dark/30">

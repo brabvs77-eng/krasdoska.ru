@@ -1,8 +1,9 @@
 const UPLOADS = "/uploads";
 
-export const PAGE_HERO_BG = `${UPLOADS}/2025/04/frist-screen.webp`;
-/** Services listing + service detail heroes — unique path so CDN/browser cache cannot serve the old shared hero */
-export const USLUGI_HERO_BG = `${UPLOADS}/2025/04/uslugi-hero.webp`;
+/** Shared page headers (услуги, о компании, блог, контакты, каталог, схемы, технология) — WP frist-screen.png */
+export const PAGE_HERO_BG = `${UPLOADS}/2025/04/page-hero-frist-screen.webp`;
+/** @deprecated alias — same asset as PAGE_HERO_BG */
+export const USLUGI_HERO_BG = PAGE_HERO_BG;
 export const WOOD_TEXTURE_BG = `${UPLOADS}/2025/04/top-view-light-wood-wallpaper-1-1.webp`;
 /** Dark wood — single full-bleed homepage company block background (one image, stretched) */
 export const COMPANY_SECTION_BG = `${UPLOADS}/2025/03/company-section-bg.webp`;
