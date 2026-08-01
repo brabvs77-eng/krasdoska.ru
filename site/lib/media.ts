@@ -1,7 +1,7 @@
 const UPLOADS = "/uploads";
 
-/** Shared page headers (услуги, о компании, блог, контакты, каталог, схемы, технология) — WP frist-screen.png */
-export const PAGE_HERO_BG = `${UPLOADS}/2025/04/page-hero-frist-screen.webp`;
+/** Shared page headers — WP frist-screen.png as-is (true black, no lift) */
+export const PAGE_HERO_BG = `${UPLOADS}/2025/04/page-hero-frist-screen-black.webp`;
 /** @deprecated alias — same asset as PAGE_HERO_BG */
 export const USLUGI_HERO_BG = PAGE_HERO_BG;
 export const WOOD_TEXTURE_BG = `${UPLOADS}/2025/04/top-view-light-wood-wallpaper-1-1.webp`;

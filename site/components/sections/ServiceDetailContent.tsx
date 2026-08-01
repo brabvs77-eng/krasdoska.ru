@@ -35,13 +35,13 @@ export function ServiceDetailContent({ service, breadcrumbs }: Props) {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center brightness-110 contrast-105"
+          className="object-cover object-center"
           unoptimized
           aria-hidden
         />
         <div
           aria-hidden
-          className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/20 to-brand-dark/45"
+          className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/35 to-brand-dark/60"
         />
         <div className="container-content relative z-10 grid items-center gap-10 lg:grid-cols-[1fr_minmax(380px,560px)]">
           <div>
