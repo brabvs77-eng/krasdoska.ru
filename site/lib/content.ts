@@ -118,7 +118,9 @@ export function getCatalogCategory(slug: string): CatalogCategory | null {
     slug,
     title: base?.title ?? contentSource?.title ?? showcase?.title ?? slug.replace(/-/g, " "),
     description: base?.description ?? contentSource?.description ?? showcase?.tagline,
-    content: rawContent ? normalizeWpHtml(rawContent) : undefined,
+    content: rawContent
+      ? normalizeWpHtml(rawContent, { stripLeadingGallery: true })
+      : undefined,
   };
 }
 
@@ -135,7 +137,10 @@ export function getProductSlugs(): string[] {
 export function getProduct(slug: string): CatalogProduct | null {
   const product = readJsonFile<CatalogProduct>("catalog/products", slug);
   if (!product) return null;
-  return { ...product, content: normalizeWpHtml(product.content) };
+  return {
+    ...product,
+    content: normalizeWpHtml(product.content, { stripLeadingGallery: true }),
+  };
 }
 
 export function getAllProducts(): CatalogProduct[] {
