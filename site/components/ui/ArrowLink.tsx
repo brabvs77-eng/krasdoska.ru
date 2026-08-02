@@ -6,9 +6,13 @@ type ArrowLinkProps = ComponentProps<typeof Link> & {
 };
 
 export function ArrowLink({ children, className = "", ...props }: ArrowLinkProps) {
+  const hasTextColor = /\btext-/.test(className);
+
   return (
     <Link
-      className={`inline-flex items-center gap-2 text-sm font-semibold text-brand transition hover:text-brand-dark ${className}`}
+      className={`inline-flex items-center gap-2 text-sm font-semibold transition ${
+        hasTextColor ? "" : "text-brand hover:text-brand-dark "
+      }${className}`}
       {...props}
     >
       {children}
