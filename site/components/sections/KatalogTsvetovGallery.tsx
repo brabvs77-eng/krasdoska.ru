@@ -55,14 +55,15 @@ export function KatalogTsvetovGallery({ sections }: Props) {
         {sections.map((section) => (
           <section key={section.id} id={section.id}>
             <h2 className="text-xl font-semibold text-white sm:text-2xl">{section.title}</h2>
-            <div className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+            {/* Wide tiles (~8/3): donor photos show 2–3 swatches side by side; 4/3+cover was cropping the sides */}
+            <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {section.items.map((image) => {
                 const lightboxIndex = indexMap.get(image.src);
                 return (
                   <figure key={image.src} className="flex flex-col gap-2">
                     <button
                       type="button"
-                      className="group relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-white/10 bg-white/5 text-left"
+                      className="group relative aspect-[8/3] w-full overflow-hidden rounded-xl border border-white/10 bg-black/40 text-left"
                       onClick={() => {
                         if (lightboxIndex !== undefined) setActive(lightboxIndex);
                       }}
@@ -71,8 +72,8 @@ export function KatalogTsvetovGallery({ sections }: Props) {
                         src={image.src}
                         alt={image.alt ?? image.caption}
                         fill
-                        sizes="(max-width: 640px) 50vw, 20vw"
-                        className="object-cover transition duration-300 group-hover:scale-105"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-contain transition duration-300 group-hover:scale-[1.02]"
                         unoptimized
                       />
                     </button>
