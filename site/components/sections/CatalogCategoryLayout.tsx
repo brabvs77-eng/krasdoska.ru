@@ -9,6 +9,7 @@ import type { CatalogCategory, CatalogProduct } from "@/lib/content";
 import type { CatalogShowcaseItem } from "@/lib/catalog-showcase";
 import { getCatalogImage } from "@/lib/media";
 import { getProductImage } from "@/lib/product-media";
+import { getProductSectionImage } from "@/lib/profile-sections";
 
 type CatalogCategoryLayoutProps = {
   slug: string;
@@ -108,6 +109,7 @@ export function CatalogCategoryLayout({
                     href={`/katalog/${product.category}/${product.slug}/`}
                     title={product.title}
                     image={getProductImage(product)}
+                    sectionImage={getProductSectionImage(product)}
                     variant="dark"
                   />
                 ))}
