@@ -50,7 +50,10 @@ export function CatalogShowcaseSection() {
                   </div>
                 )}
               </dl>
-              <ArrowLink href={item.href} className="mt-6 text-accent">
+              <ArrowLink
+                href={item.href}
+                className="mt-6 text-accent hover:text-accent-dark"
+              >
                 Узнать подробнее
               </ArrowLink>
             </div>
