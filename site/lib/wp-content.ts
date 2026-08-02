@@ -45,6 +45,20 @@ function stripLeadingHeading(html: string): string {
   return html.replace(/^\s*<h1\b[^>]*>[\s\S]*?<\/h1>\s*/i, "");
 }
 
+/**
+ * Removes the legacy WordPress product gallery that often opens category/product
+ * HTML with three stacked photos (sometimes identical). Later figures in the
+ * body (profile diagrams, etc.) are left intact.
+ */
+function stripLeadingWpGallery(html: string): string {
+  return html
+    .replace(
+      /^\s*(?:<p>\s*)?<!--\s*wp:gallery\b[\s\S]*?<!--\s*\/wp:gallery\s*-->(?:\s*<\/p>)?\s*/i,
+      "",
+    )
+    .trimStart();
+}
+
 function embedMediaUrls(html: string): string {
   return html.replace(
     /(?:^|[\s>])(https?:\/\/[^\s<]+\.(?:mp4|webm))(?:[\s<]|$)/gi,
@@ -55,6 +69,7 @@ function embedMediaUrls(html: string): string {
 type NormalizeWpHtmlOptions = {
   stripLeadingH1?: boolean;
   stripTrailingCta?: boolean;
+  stripLeadingGallery?: boolean;
 };
 
 export function normalizeWpHtml(
@@ -67,6 +82,10 @@ export function normalizeWpHtml(
     .replace(/\[custom_breadcrumbs\]/g, "")
     .replace(/https?:\/\/krashenayadoska\.ru\/wp-content\/uploads\//gi, "/uploads/")
     .replace(/\/wp-content\/uploads\//g, "/uploads/");
+
+  if (options?.stripLeadingGallery) {
+    normalized = stripLeadingWpGallery(normalized);
+  }
 
   if (options?.stripLeadingH1) {
     normalized = stripLeadingHeading(normalized);
