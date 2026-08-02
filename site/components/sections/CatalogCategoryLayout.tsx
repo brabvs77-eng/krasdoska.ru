@@ -89,6 +89,15 @@ export function CatalogCategoryLayout({
             </div>
           )}
 
+          {category?.content && (
+            <div className="mt-12 rounded-2xl border border-white/10 bg-white/5 p-6">
+              <HtmlContent
+                html={category.content}
+                className="wp-content-dark [&_h2]:text-white [&_h3]:text-white [&_a]:text-accent"
+              />
+            </div>
+          )}
+
           {products.length > 0 && (
             <section className="mt-12">
               <h2 className="section-title">Товары в категории</h2>
@@ -104,15 +113,6 @@ export function CatalogCategoryLayout({
                 ))}
               </div>
             </section>
-          )}
-
-          {category?.content && (
-            <div className="mt-12 rounded-2xl border border-white/10 bg-white/5 p-6">
-              <HtmlContent
-                html={category.content}
-                className="wp-content-dark [&_h2]:text-white [&_h3]:text-white [&_a]:text-accent"
-              />
-            </div>
           )}
 
           <Link href="/katalog/" className="btn-outline-light mt-10">
