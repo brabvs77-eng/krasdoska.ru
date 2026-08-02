@@ -41,7 +41,7 @@ export function ProductCard({
       </div>
 
       <h3
-        className={`mt-3 min-h-[2.75rem] text-sm font-semibold leading-snug tracking-tight sm:min-h-[3.25rem] sm:text-base ${
+        className={`mt-3 min-h-[3.5rem] text-sm font-semibold leading-snug tracking-tight sm:min-h-[3.75rem] sm:text-base ${
           isDark ? "text-white group-hover:text-accent" : "text-neutral-900 group-hover:text-brand"
         }`}
       >
