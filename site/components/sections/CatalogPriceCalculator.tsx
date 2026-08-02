@@ -1,13 +1,15 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
+import { useMemo, useState } from "react";
 import {
   formatRub,
   uniqueSorted,
   type CatalogPricesData,
   type PriceGradeId,
 } from "@/lib/catalog-prices";
+import { getSectionImageForProfile } from "@/lib/profile-sections";
 
 type Props = {
   data: CatalogPricesData;
@@ -83,6 +85,7 @@ export function CatalogPriceCalculator({ data }: Props) {
   const areaValue = Number(String(area).replace(",", "."));
   const areaOk = Number.isFinite(areaValue) && areaValue > 0;
   const total = pricePerM2 != null && areaOk ? Math.round(pricePerM2 * areaValue) : null;
+  const sectionImage = getSectionImageForProfile(activeProfile);
 
   return (
     <section id="kalkulyator" className="section-dark scroll-mt-24 py-16 sm:py-20">
@@ -148,6 +151,23 @@ export function CatalogPriceCalculator({ data }: Props) {
                   </option>
                 ))}
               </select>
+              {sectionImage ? (
+                <div className="mt-3 overflow-hidden rounded-lg border border-white/10 bg-black/40 px-3 py-2.5">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-white/45">
+                    Сечение профиля
+                  </p>
+                  <div className="relative mt-2 h-12 w-full sm:h-14">
+                    <Image
+                      src={sectionImage}
+                      alt={`Сечение: ${activeProfile}`}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      className="object-contain object-left"
+                      unoptimized
+                    />
+                  </div>
+                </div>
+              ) : null}
             </div>
 
             <div className="grid gap-5 sm:grid-cols-2">

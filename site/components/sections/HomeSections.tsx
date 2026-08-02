@@ -6,6 +6,7 @@ import { ContentList } from "@/components/content/ContentList";
 import { getBlogPost, getExcerpt, getProject } from "@/lib/content";
 import { HOME_BLOG_DATES, HOME_BLOG_SLUGS, HOME_PROJECT_SLUGS, HOME_PROJECT_TAGS } from "@/lib/home-content";
 import { getContentImage } from "@/lib/product-media";
+import { getSectionImageForProfile } from "@/lib/profile-sections";
 import { HOME_COMPANY_BLOCKS } from "@/lib/home-footer";
 import { QuestionsCtaSection } from "@/components/sections/QuestionsCtaSection";
 import {
@@ -239,6 +240,7 @@ export function CatalogPreviewSection() {
               href={item.href}
               title={item.title}
               image={item.image}
+              sectionImage={getSectionImageForProfile(`${item.title} ${item.slug}`)}
               variant="dark"
             />
           ))}
