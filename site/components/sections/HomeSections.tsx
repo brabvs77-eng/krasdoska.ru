@@ -233,7 +233,7 @@ export function CatalogPreviewSection() {
             Купить по лучшей цене
           </Link>
         </div>
-        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+        <div className="mt-10 grid grid-cols-2 items-stretch gap-4 sm:grid-cols-3 lg:grid-cols-6">
           {CATALOG_PREVIEW.map((item) => (
             <ProductCard
               key={`${item.href}-${item.title}`}

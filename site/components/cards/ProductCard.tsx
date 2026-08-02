@@ -22,7 +22,7 @@ export function ProductCard({
   const isDark = variant === "dark";
 
   return (
-    <Link href={href} className="group block">
+    <Link href={href} className="group flex h-full flex-col">
       <div
         className={`overflow-hidden ${
           isDark ? "rounded-lg bg-white/5" : "rounded-2xl border border-neutral-200 bg-surface-muted shadow-sm"
@@ -41,7 +41,7 @@ export function ProductCard({
       </div>
 
       <h3
-        className={`mt-3 text-sm font-semibold leading-snug tracking-tight sm:text-base ${
+        className={`mt-3 min-h-[3.5rem] text-sm font-semibold leading-snug tracking-tight sm:min-h-[3.75rem] sm:text-base ${
           isDark ? "text-white group-hover:text-accent" : "text-neutral-900 group-hover:text-brand"
         }`}
       >
@@ -50,7 +50,7 @@ export function ProductCard({
 
       {sectionImage ? (
         <div
-          className={`mt-2 overflow-hidden rounded-lg border px-3 py-2.5 ${
+          className={`mt-auto overflow-hidden rounded-lg border px-3 py-2.5 ${
             isDark ? "border-white/10 bg-black/40" : "border-neutral-200 bg-neutral-950"
           }`}
         >
@@ -67,7 +67,7 @@ export function ProductCard({
               alt={`Сечение: ${title}`}
               fill
               sizes="(max-width: 640px) 100vw, 33vw"
-              className="object-contain object-left"
+              className="object-contain object-center"
               unoptimized
             />
           </div>
