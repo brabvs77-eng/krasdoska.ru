@@ -38,32 +38,8 @@ export function ProductCard({
             unoptimized
           />
         </div>
-        {sectionImage ? (
-          <div
-            className={`relative border-t px-3 py-2.5 ${
-              isDark ? "border-white/10 bg-black/40" : "border-neutral-200 bg-neutral-950"
-            }`}
-          >
-            <p
-              className={`mb-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] ${
-                isDark ? "text-white/45" : "text-white/55"
-              }`}
-            >
-              Сечение профиля
-            </p>
-            <div className="relative h-12 w-full sm:h-14">
-              <Image
-                src={sectionImage}
-                alt={`Сечение: ${title}`}
-                fill
-                sizes="(max-width: 640px) 100vw, 33vw"
-                className="object-contain object-left"
-                unoptimized
-              />
-            </div>
-          </div>
-        ) : null}
       </div>
+
       <h3
         className={`mt-3 text-sm font-semibold leading-snug tracking-tight sm:text-base ${
           isDark ? "text-white group-hover:text-accent" : "text-neutral-900 group-hover:text-brand"
@@ -71,6 +47,32 @@ export function ProductCard({
       >
         {title}
       </h3>
+
+      {sectionImage ? (
+        <div
+          className={`mt-2 overflow-hidden rounded-lg border px-3 py-2.5 ${
+            isDark ? "border-white/10 bg-black/40" : "border-neutral-200 bg-neutral-950"
+          }`}
+        >
+          <p
+            className={`mb-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] ${
+              isDark ? "text-white/45" : "text-white/55"
+            }`}
+          >
+            Сечение профиля
+          </p>
+          <div className="relative h-12 w-full sm:h-14">
+            <Image
+              src={sectionImage}
+              alt={`Сечение: ${title}`}
+              fill
+              sizes="(max-width: 640px) 100vw, 33vw"
+              className="object-contain object-left"
+              unoptimized
+            />
+          </div>
+        </div>
+      ) : null}
     </Link>
   );
 }

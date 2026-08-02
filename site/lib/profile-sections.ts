@@ -2,7 +2,7 @@ import type { CatalogProduct } from "@/lib/content";
 
 const SECTION = "/uploads/prices/sections";
 
-/** Cross-section diagrams extracted from the price-list Excel files. */
+/** Cross-section diagrams extracted from the price-list Excel files (+ drawn fills). */
 export const PROFILE_SECTION_IMAGES = {
   vagonkaShtil: `${SECTION}/vagonka-shtil.png`,
   imitacijaBrusa: `${SECTION}/imitacija-brusa.png`,
@@ -12,11 +12,19 @@ export const PROFILE_SECTION_IMAGES = {
   terrasaVelvet: `${SECTION}/terrasa-velvet.png`,
   palubnaya: `${SECTION}/palubnaya.png`,
   doskaKm: `${SECTION}/doska-km.png`,
+  doskaPola: `${SECTION}/doska-pola.png`,
+  parketnaja: `${SECTION}/parketnaja-doska.png`,
+  massivPola: `${SECTION}/massiv-pola.png`,
+  blokHaus: `${SECTION}/blok-haus.png`,
 } as const;
 
 const PROFILE_KEYWORDS: { match: RegExp; image: string }[] = [
+  { match: /блок[-\s]?хаус|block[-\s]?haus/i, image: PROFILE_SECTION_IMAGES.blokHaus },
   { match: /вельвет|velvet/i, image: PROFILE_SECTION_IMAGES.terrasaVelvet },
   { match: /палубн/i, image: PROFILE_SECTION_IMAGES.palubnaya },
+  { match: /паркет/i, image: PROFILE_SECTION_IMAGES.parketnaja },
+  { match: /массив/i, image: PROFILE_SECTION_IMAGES.massivPola },
+  { match: /доска\s*пола|пола\b/i, image: PROFILE_SECTION_IMAGES.doskaPola },
   { match: /скошен|косой|kosoy|skoshen/i, image: PROFILE_SECTION_IMAGES.plankenKosoy },
   { match: /прямой\s*планкен|планкен\s*прямой/i, image: PROFILE_SECTION_IMAGES.plankenPryamoy },
   { match: /карел/i, image: PROFILE_SECTION_IMAGES.imitacijaBrusaKarelia },
@@ -31,7 +39,7 @@ const PROFILE_KEYWORDS: { match: RegExp; image: string }[] = [
 const CATEGORY_SECTION: Record<string, string> = {
   vagonka: PROFILE_SECTION_IMAGES.vagonkaShtil,
   "krashenaja-vagonka": PROFILE_SECTION_IMAGES.vagonkaShtil,
-  "imitacija-brusa": PROFILE_SECTION_IMAGES.imitacijaBrusa,
+  "imitacija-brusa": PROFILE_SECTION_IMAGES.blokHaus,
   "krashenaja-imitacija-brusa": PROFILE_SECTION_IMAGES.imitacijaBrusaKarelia,
   planken: PROFILE_SECTION_IMAGES.plankenKosoy,
   "terrasnaja-doska": PROFILE_SECTION_IMAGES.terrasaVelvet,
