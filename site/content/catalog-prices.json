@@ -1,0 +1,715 @@
+{
+  "updatedAt": "2026-08-02",
+  "currency": "RUB",
+  "unit": "м²",
+  "grades": [
+    {
+      "id": "extra",
+      "label": "Экстра / Элита"
+    },
+    {
+      "id": "prima",
+      "label": "Прима / А"
+    },
+    {
+      "id": "av",
+      "label": "АВ"
+    }
+  ],
+  "note": "Расчёт ориентировочный по актуальному прайсу. Итоговая стоимость зависит от объёма, цвета и схемы покраски — подтвердим при заказе.",
+  "collections": [
+    {
+      "id": "fasad",
+      "title": "Фасад — готовое решение",
+      "subtitle": "Sirca / Talatu · цена за 1 м² готового изделия",
+      "items": [
+        {
+          "profile": "Вагонка штиль крашеная",
+          "thickness": 14,
+          "width": "110-135",
+          "widthWork": "110-135",
+          "length": "6000",
+          "wood": "ель/сосна",
+          "prices": {
+            "av": 1850
+          }
+        },
+        {
+          "profile": "Вагонка штиль крашеная",
+          "thickness": 13,
+          "width": "96",
+          "widthWork": "96",
+          "length": "2-4м.",
+          "wood": "лиственница",
+          "prices": {
+            "extra": 2900,
+            "prima": 2400,
+            "av": 2230
+          }
+        },
+        {
+          "profile": "Вагонка штиль крашеная",
+          "thickness": 14,
+          "width": "120-135",
+          "widthWork": "120-135",
+          "length": "2-4м.",
+          "wood": "лиственница",
+          "prices": {
+            "extra": 3450,
+            "prima": 2900,
+            "av": 2300
+          }
+        },
+        {
+          "profile": "Вагонка штиль крашеная",
+          "thickness": 14,
+          "width": "90-135",
+          "widthWork": "90-135",
+          "length": "2-4м.",
+          "wood": "ангарская сосна",
+          "prices": {
+            "extra": 3450,
+            "prima": 2900,
+            "av": 2300
+          }
+        },
+        {
+          "profile": "Имитация бруса Карелький профиль крашеная",
+          "thickness": 16,
+          "width": "145",
+          "widthWork": "145",
+          "length": "6000",
+          "wood": "ель/сосна",
+          "prices": {
+            "av": 1850
+          }
+        },
+        {
+          "profile": "Имитация бруса Карелький профиль крашеная",
+          "thickness": 20,
+          "width": "145",
+          "widthWork": "145",
+          "length": "6000",
+          "wood": "ель/сосна",
+          "prices": {
+            "av": 2200
+          }
+        },
+        {
+          "profile": "Прямой планкен крашеный",
+          "thickness": 20,
+          "width": "95",
+          "widthWork": "95",
+          "length": "6000",
+          "wood": "ель/сосна",
+          "prices": {
+            "av": 2050
+          }
+        },
+        {
+          "profile": "Прямой планкен крашеный",
+          "thickness": 20,
+          "width": "120",
+          "widthWork": "120",
+          "length": "6000",
+          "wood": "ель/сосна",
+          "prices": {
+            "av": 2200
+          }
+        },
+        {
+          "profile": "Прямой планкен крашеный",
+          "thickness": 20,
+          "width": "145",
+          "widthWork": "145",
+          "length": "6000",
+          "wood": "ель/сосна",
+          "prices": {
+            "av": 2200
+          }
+        },
+        {
+          "profile": "Прямой планкен крашеный",
+          "thickness": 20,
+          "width": "90",
+          "widthWork": "90",
+          "length": "4000",
+          "wood": "лиственница",
+          "prices": {
+            "extra": 3350,
+            "prima": 2800,
+            "av": 2600
+          }
+        },
+        {
+          "profile": "Прямой планкен крашеный",
+          "thickness": 20,
+          "width": "120",
+          "widthWork": "120",
+          "length": "4000",
+          "wood": "лиственница",
+          "prices": {
+            "extra": 3450,
+            "prima": 2940,
+            "av": 2650
+          }
+        },
+        {
+          "profile": "Прямой планкен крашеный",
+          "thickness": 20,
+          "width": "140",
+          "widthWork": "140",
+          "length": "4000",
+          "wood": "лиственница",
+          "prices": {
+            "extra": 3800,
+            "prima": 3100,
+            "av": 2750
+          }
+        },
+        {
+          "profile": "Косой планкен крашеный",
+          "thickness": 20,
+          "width": "120",
+          "widthWork": "120",
+          "length": "6000",
+          "wood": "ель/сосна",
+          "prices": {
+            "av": 2200
+          }
+        },
+        {
+          "profile": "Косой планкен крашеный",
+          "thickness": 20,
+          "width": "145",
+          "widthWork": "145",
+          "length": "6000",
+          "wood": "ель/сосна",
+          "prices": {
+            "av": 2200
+          }
+        },
+        {
+          "profile": "Косой планкен крашеный",
+          "thickness": 20,
+          "width": "90",
+          "widthWork": "90",
+          "length": "4000",
+          "wood": "лиственница",
+          "prices": {
+            "extra": 3350,
+            "prima": 2800,
+            "av": 2600
+          }
+        },
+        {
+          "profile": "Косой планкен крашеный",
+          "thickness": 20,
+          "width": "120",
+          "widthWork": "120",
+          "length": "4000",
+          "wood": "лиственница",
+          "prices": {
+            "extra": 3450,
+            "prima": 2940,
+            "av": 2650
+          }
+        },
+        {
+          "profile": "Косой планкен крашеный",
+          "thickness": 20,
+          "width": "140",
+          "widthWork": "140",
+          "length": "4000",
+          "wood": "лиственница",
+          "prices": {
+            "extra": 3800,
+            "prima": 3100,
+            "av": 2750
+          }
+        }
+      ]
+    },
+    {
+      "id": "terrace-ready",
+      "title": "Терраса — готовое решение",
+      "subtitle": "Sirca / Talatu · цена за 1 м² готового изделия",
+      "items": [
+        {
+          "profile": "Террасная доска Вельвет крашеный",
+          "thickness": 28,
+          "width": "120-140",
+          "widthWork": "120-140",
+          "length": "2-4м.",
+          "wood": "лиственница",
+          "prices": {
+            "extra": 4450,
+            "prima": 3500,
+            "av": 2800
+          }
+        },
+        {
+          "profile": "Террасная доска Вельвет крашеный",
+          "thickness": 35,
+          "width": "120-140",
+          "widthWork": "120-140",
+          "length": "2-4м.",
+          "wood": "лиственница",
+          "prices": {
+            "extra": 5400,
+            "prima": 4350,
+            "av": 3100
+          }
+        },
+        {
+          "profile": "Террасная доска Вельвет крашеный",
+          "thickness": 45,
+          "width": "140",
+          "widthWork": "140",
+          "length": "2-4м.",
+          "wood": "лиственница",
+          "prices": {
+            "extra": 6450,
+            "prima": 5200,
+            "av": 3630
+          }
+        },
+        {
+          "profile": "Палубная доска Гладкая крашеная",
+          "thickness": 28,
+          "width": "90",
+          "widthWork": "90",
+          "length": "2-4м.",
+          "wood": "лиственница",
+          "prices": {
+            "extra": 4000,
+            "prima": 3480,
+            "av": 2500
+          }
+        },
+        {
+          "profile": "Палубная доска Гладкая крашеная",
+          "thickness": 28,
+          "width": "120",
+          "widthWork": "120",
+          "length": "2-4м.",
+          "wood": "лиственница",
+          "prices": {
+            "extra": 4400,
+            "prima": 3530,
+            "av": 2750
+          }
+        },
+        {
+          "profile": "Палубная доска Гладкая крашеная",
+          "thickness": 28,
+          "width": "140",
+          "widthWork": "140",
+          "length": "2-4м.",
+          "wood": "лиственница",
+          "prices": {
+            "extra": 4450,
+            "prima": 3530,
+            "av": 2750
+          }
+        },
+        {
+          "profile": "Палубная доска Гладкая крашеная",
+          "thickness": 35,
+          "width": "140",
+          "widthWork": "140",
+          "length": "2-4м.",
+          "wood": "лиственница",
+          "prices": {
+            "extra": 5400,
+            "prima": 4200,
+            "av": 3000
+          }
+        },
+        {
+          "profile": "Палубная доска Гладкая крашеная",
+          "thickness": 45,
+          "width": "140",
+          "widthWork": "140",
+          "length": "2-4м.",
+          "wood": "лиственница",
+          "prices": {
+            "extra": 6430,
+            "prima": 5100,
+            "av": 3530
+          }
+        }
+      ]
+    },
+    {
+      "id": "interior",
+      "title": "Интерьер",
+      "subtitle": "Sirca / Talatu · цена за 1 м²",
+      "items": [
+        {
+          "profile": "Вагонка штиль крашеная",
+          "thickness": 14,
+          "width": "145",
+          "widthWork": "140",
+          "length": "6000",
+          "wood": "ель/сосна",
+          "prices": {
+            "av": 1260
+          }
+        },
+        {
+          "profile": "Вагонка штиль крашеная",
+          "thickness": 14,
+          "width": "120",
+          "widthWork": "115",
+          "length": "4000",
+          "wood": "лиственница",
+          "prices": {
+            "extra": 1990,
+            "prima": 1770,
+            "av": 1450
+          }
+        },
+        {
+          "profile": "Вагонка штиль крашеная",
+          "thickness": 14,
+          "width": "145",
+          "widthWork": "140",
+          "length": "4000",
+          "wood": "лиственница",
+          "prices": {
+            "extra": 2065,
+            "prima": 1820,
+            "av": 1640
+          }
+        },
+        {
+          "profile": "Имитация бруса крашеная",
+          "thickness": 16,
+          "width": "145",
+          "widthWork": "140",
+          "length": "6000",
+          "wood": "ель/сосна",
+          "prices": {
+            "av": 1260
+          }
+        },
+        {
+          "profile": "Имитация бруса крашеная",
+          "thickness": 20,
+          "width": "145",
+          "widthWork": "140",
+          "length": "6000",
+          "wood": "ель/сосна",
+          "prices": {
+            "av": 1320
+          }
+        },
+        {
+          "profile": "Имитация бруса крашеная",
+          "thickness": 20,
+          "width": "145",
+          "widthWork": "140",
+          "length": "4000",
+          "wood": "лиственница",
+          "prices": {
+            "extra": 2400,
+            "prima": 2065,
+            "av": 1670
+          }
+        },
+        {
+          "profile": "Доска пола крашеная",
+          "thickness": 35,
+          "width": "135",
+          "widthWork": "130",
+          "length": "6000",
+          "wood": "ель/сосна",
+          "prices": {
+            "av": 1680
+          }
+        },
+        {
+          "profile": "Доска пола крашеная",
+          "thickness": 35,
+          "width": "135",
+          "widthWork": "130",
+          "length": "6000",
+          "wood": "лиственница",
+          "prices": {
+            "extra": 3485,
+            "prima": 3045,
+            "av": 2260
+          }
+        },
+        {
+          "profile": "Прямой планкен крашеный",
+          "thickness": 20,
+          "width": "120",
+          "widthWork": "120",
+          "length": "6000",
+          "wood": "ель/сосна",
+          "prices": {
+            "av": 1320
+          }
+        },
+        {
+          "profile": "Прямой планкен крашеный",
+          "thickness": 20,
+          "width": "145",
+          "widthWork": "145",
+          "length": "6000",
+          "wood": "ель/сосна",
+          "prices": {
+            "av": 1320
+          }
+        },
+        {
+          "profile": "Прямой планкен крашеный",
+          "thickness": 20,
+          "width": "120",
+          "widthWork": "120",
+          "length": "4000",
+          "wood": "лиственница",
+          "prices": {
+            "extra": 2350,
+            "prima": 2065,
+            "av": 1650
+          }
+        },
+        {
+          "profile": "Прямой планкен крашеный",
+          "thickness": 20,
+          "width": "140",
+          "widthWork": "140",
+          "length": "4000",
+          "wood": "лиственница",
+          "prices": {
+            "extra": 2350,
+            "prima": 2065,
+            "av": 1650
+          }
+        },
+        {
+          "profile": "Косой планкен крашеный",
+          "thickness": 20,
+          "width": "120",
+          "widthWork": "105",
+          "length": "6000",
+          "wood": "ель/сосна",
+          "prices": {
+            "av": 1320
+          }
+        },
+        {
+          "profile": "Косой планкен крашеный",
+          "thickness": 20,
+          "width": "145",
+          "widthWork": "130",
+          "length": "6000",
+          "wood": "ель/сосна",
+          "prices": {
+            "av": 1320
+          }
+        },
+        {
+          "profile": "Косой планкен крашеный",
+          "thickness": 20,
+          "width": "130",
+          "widthWork": "115",
+          "length": "5000",
+          "wood": "лиственница",
+          "prices": {
+            "extra": 2350,
+            "prima": 2065,
+            "av": 1650
+          }
+        },
+        {
+          "profile": "Косой планкен крашеный",
+          "thickness": 20,
+          "width": "140",
+          "widthWork": "125",
+          "length": "5000",
+          "wood": "лиственница",
+          "prices": {
+            "extra": 2350,
+            "prima": 2065,
+            "av": 1650
+          }
+        }
+      ]
+    },
+    {
+      "id": "terrace",
+      "title": "Терраса",
+      "subtitle": "Sirca / Talatu · цена за 1 м²",
+      "items": [
+        {
+          "profile": "Террасная доска Вельвет крашеный",
+          "thickness": 28,
+          "width": "140",
+          "widthWork": "140",
+          "length": "4000",
+          "wood": "лиственница",
+          "prices": {
+            "extra": 2670,
+            "prima": 2340,
+            "av": 1780
+          }
+        },
+        {
+          "profile": "Палубная доска Гладкая крашеная",
+          "thickness": 28,
+          "width": "140",
+          "widthWork": "140",
+          "length": "4000",
+          "wood": "лиственница",
+          "prices": {
+            "extra": 2670,
+            "prima": 2340,
+            "av": 1780
+          }
+        }
+      ]
+    },
+    {
+      "id": "fasad-update",
+      "title": "Обновление фасада",
+      "subtitle": "Sirca / Talatu · цена за 1 м²",
+      "items": [
+        {
+          "profile": "Прямой планкен крашеный",
+          "thickness": 20,
+          "width": "120",
+          "widthWork": "120",
+          "length": "6000",
+          "wood": "ель/сосна",
+          "prices": {
+            "av": 1320
+          }
+        },
+        {
+          "profile": "Прямой планкен крашеный",
+          "thickness": 20,
+          "width": "140",
+          "widthWork": "140",
+          "length": "6000",
+          "wood": "ель/сосна",
+          "prices": {
+            "av": 1320
+          }
+        },
+        {
+          "profile": "Прямой планкен крашеный",
+          "thickness": 20,
+          "width": "120",
+          "widthWork": "120",
+          "length": "4000",
+          "wood": "лиственница",
+          "prices": {
+            "extra": 2450,
+            "prima": 2165,
+            "av": 1750
+          }
+        },
+        {
+          "profile": "Прямой планкен крашеный",
+          "thickness": 20,
+          "width": "140",
+          "widthWork": "140",
+          "length": "4000",
+          "wood": "лиственница",
+          "prices": {
+            "extra": 2450,
+            "prima": 2165,
+            "av": 1750
+          }
+        },
+        {
+          "profile": "Косой планкен крашеный",
+          "thickness": 20,
+          "width": "120",
+          "widthWork": "105",
+          "length": "6000",
+          "wood": "ель/сосна",
+          "prices": {
+            "av": 1320
+          }
+        },
+        {
+          "profile": "Косой планкен крашеный",
+          "thickness": 20,
+          "width": "145",
+          "widthWork": "130",
+          "length": "6000",
+          "wood": "ель/сосна",
+          "prices": {
+            "av": 1320
+          }
+        },
+        {
+          "profile": "Косой планкен крашеный",
+          "thickness": 20,
+          "width": "130",
+          "widthWork": "115",
+          "length": "5000",
+          "wood": "лиственница",
+          "prices": {
+            "extra": 2450,
+            "prima": 2165,
+            "av": 1750
+          }
+        },
+        {
+          "profile": "Косой планкен крашеный",
+          "thickness": 20,
+          "width": "140",
+          "widthWork": "125",
+          "length": "5000",
+          "wood": "лиственница",
+          "prices": {
+            "extra": 2450,
+            "prima": 2165,
+            "av": 1750
+          }
+        },
+        {
+          "profile": "Имитация бруса крашеная",
+          "thickness": 20,
+          "width": "145",
+          "widthWork": "140",
+          "length": "6000",
+          "wood": "ель/сосна",
+          "prices": {
+            "av": 1320
+          }
+        },
+        {
+          "profile": "Имитация бруса крашеная",
+          "thickness": 28,
+          "width": "190",
+          "widthWork": "185",
+          "length": "6000",
+          "wood": "ель/сосна",
+          "prices": {
+            "av": 1520
+          }
+        },
+        {
+          "profile": "Имитация бруса крашеная",
+          "thickness": 20,
+          "width": "140",
+          "widthWork": "135",
+          "length": "4000",
+          "wood": "лиственница",
+          "prices": {
+            "extra": 2500,
+            "prima": 2165,
+            "av": 1770
+          }
+        }
+      ]
+    }
+  ]
+}

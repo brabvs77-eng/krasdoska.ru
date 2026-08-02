@@ -1,6 +1,8 @@
+import { CatalogPriceCalculator } from "@/components/sections/CatalogPriceCalculator";
 import { CatalogShowcaseSection } from "@/components/sections/CatalogShowcaseSection";
 import { MarketingPageFooter } from "@/components/sections/MarketingPageFooter";
 import { PageHero } from "@/components/sections/PageHero";
+import { getCatalogPrices } from "@/lib/catalog-prices";
 import { buildPageMetadata } from "@/lib/metadata";
 import { getExcerpt, getPage } from "@/lib/content";
 
@@ -17,15 +19,17 @@ export async function generateMetadata() {
 
 export default function CatalogPage() {
   const page = getPage("katalog");
+  const prices = getCatalogPrices();
 
   return (
     <>
       <PageHero
         title={page?.title ?? "Каталог крашеной доски"}
         description="Все виды продукции в наличии и под заказ. Не нашли нужный размер? — Звоните, подберём."
-        action={{ href: "/#form", label: "Заказать звонок" }}
+        action={{ href: "#kalkulyator", label: "Рассчитать стоимость" }}
       />
       <CatalogShowcaseSection />
+      <CatalogPriceCalculator data={prices} />
       <MarketingPageFooter />
     </>
   );
