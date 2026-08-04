@@ -28,7 +28,10 @@ jobs:
       # Accept common private-key secret names.
       DEPLOY_KEY: ${{ secrets.ISTRA_SSH_PRIVATE_KEY || secrets.SSH_PRIVATE_KEY || secrets.ISTRA_SSH_KEY || secrets.SSH_KEY }}
     steps:
+      - uses: actions/checkout@v4
+
       - name: Check deploy secrets
+        working-directory: .
         run: |
           set -euo pipefail
           missing=0
@@ -54,8 +57,6 @@ jobs:
               exit 1
               ;;
           esac
-
-      - uses: actions/checkout@v4
 
       - name: Upload refs cache key
         id: uploads-cache-key
