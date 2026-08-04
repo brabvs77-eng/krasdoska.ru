@@ -36,8 +36,24 @@ jobs:
         run: |
           set -euo pipefail
           if [ -z "${DEPLOY_KEY// }" ] && [ -n "${SSH_KEY_B64// }" ]; then
-            echo "Decoding SSH_KEY_B64..."
-            DEPLOY_KEY="$(printf '%s' "$SSH_KEY_B64" | tr -d '\n\r ' | base64 -d)"
+            raw="$(printf '%s' "$SSH_KEY_B64" | tr -d '\r')"
+            case "$raw" in
+              *"BEGIN"*PRIVATE*KEY*)
+                echo "SSH_KEY_B64 already contains a PEM private key — using as-is"
+                DEPLOY_KEY="$raw"
+                ;;
+              *)
+                echo "Decoding SSH_KEY_B64..."
+                cleaned="$(printf '%s' "$raw" | tr -d '\n\t ')"
+                if ! DEPLOY_KEY="$(printf '%s' "$cleaned" | base64 --decode --ignore-garbage 2>/dev/null)"; then
+                  if ! DEPLOY_KEY="$(printf '%s' "$cleaned" | base64 -d 2>/dev/null)"; then
+                    echo "::error::SSH_KEY_B64 is not valid base64. Encode with: base64 -w0 < private_key"
+                    echo "::error::Or paste the PEM key into ISTRA_SSH_PRIVATE_KEY / SSH_PRIVATE_KEY instead."
+                    exit 1
+                  fi
+                fi
+                ;;
+            esac
             {
               echo "DEPLOY_KEY<<EOF"
               printf '%s\n' "$DEPLOY_KEY"
