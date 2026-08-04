@@ -25,65 +25,74 @@ jobs:
       DEPLOY_USER: ${{ secrets.ISTRA_SSH_USER || secrets.SSH_USER }}
       DEPLOY_PORT: ${{ secrets.ISTRA_SSH_PORT || secrets.SSH_PORT || 22 }}
       DEPLOY_WEBROOT: ${{ secrets.ISTRA_WEBROOT || '/var/www/istra-kraski.ru' }}
-      # PEM key secrets, or base64 via SSH_KEY_B64 / ISTRA_SSH_KEY_B64.
       DEPLOY_KEY: ${{ secrets.ISTRA_SSH_PRIVATE_KEY || secrets.SSH_PRIVATE_KEY || secrets.ISTRA_SSH_KEY || secrets.SSH_KEY }}
       SSH_KEY_B64: ${{ secrets.SSH_KEY_B64 || secrets.ISTRA_SSH_KEY_B64 }}
+      SSH_KEY_PATH: /home/runner/.ssh/istra_deploy_key
     steps:
       - uses: actions/checkout@v4
 
-      - name: Check deploy secrets
+      - name: Prepare SSH key
         working-directory: .
         run: |
           set -euo pipefail
-          if [ -z "${DEPLOY_KEY// }" ] && [ -n "${SSH_KEY_B64// }" ]; then
-            raw="$(printf '%s' "$SSH_KEY_B64" | tr -d '\r')"
-            case "$raw" in
-              *"BEGIN"*PRIVATE*KEY*)
-                echo "SSH_KEY_B64 already contains a PEM private key — using as-is"
-                DEPLOY_KEY="$raw"
-                ;;
-              *)
-                echo "Decoding SSH_KEY_B64..."
-                cleaned="$(printf '%s' "$raw" | tr -d '\n\t ')"
-                if ! DEPLOY_KEY="$(printf '%s' "$cleaned" | base64 --decode --ignore-garbage 2>/dev/null)"; then
-                  if ! DEPLOY_KEY="$(printf '%s' "$cleaned" | base64 -d 2>/dev/null)"; then
-                    echo "::error::SSH_KEY_B64 is not valid base64. Encode with: base64 -w0 < private_key"
-                    echo "::error::Or paste the PEM key into ISTRA_SSH_PRIVATE_KEY / SSH_PRIVATE_KEY instead."
-                    exit 1
-                  fi
-                fi
-                ;;
-            esac
-            {
-              echo "DEPLOY_KEY<<EOF"
-              printf '%s\n' "$DEPLOY_KEY"
-              echo "EOF"
-            } >> "$GITHUB_ENV"
-          fi
-
           missing=0
-          for name in DEPLOY_HOST DEPLOY_USER DEPLOY_PORT DEPLOY_WEBROOT DEPLOY_KEY; do
+          for name in DEPLOY_HOST DEPLOY_USER DEPLOY_PORT DEPLOY_WEBROOT; do
             value="${!name}"
             if [ -z "${value// }" ]; then
-              echo "::error::$name is empty — set the matching GitHub Actions secret"
+              echo "::error::$name is empty"
               missing=1
             else
               echo "$name: ok (length ${#value})"
             fi
           done
-          if [ "$missing" -ne 0 ]; then
-            echo "::error::Need host/user + SSH_KEY_B64 (or ISTRA_SSH_PRIVATE_KEY / SSH_PRIVATE_KEY)"
+          if [[ "$DEPLOY_USER" == *@* ]]; then
+            echo "::warning::DEPLOY_USER looks like an email ($DEPLOY_USER length ${#DEPLOY_USER}). SSH needs a Linux username."
+          fi
+
+          key=""
+          if [ -n "${DEPLOY_KEY// }" ]; then
+            key="$DEPLOY_KEY"
+            echo "Using PEM secret"
+          elif [ -n "${SSH_KEY_B64// }" ]; then
+            raw="$(printf '%s' "$SSH_KEY_B64" | tr -d '\r')"
+            case "$raw" in
+              *"BEGIN"*PRIVATE*KEY*)
+                echo "SSH_KEY_B64 contains PEM — using as-is"
+                key="$raw"
+                ;;
+              *)
+                echo "Decoding SSH_KEY_B64..."
+                cleaned="$(printf '%s' "$raw" | tr -d '\n\t ')"
+                key="$(printf '%s' "$cleaned" | base64 --decode --ignore-garbage)"
+                ;;
+            esac
+          else
+            echo "::error::No private key secret. Set SSH_KEY_B64 or ISTRA_SSH_PRIVATE_KEY"
+            missing=1
+          fi
+          [ "$missing" -eq 0 ] || exit 1
+
+          # If the secret stored literal \n sequences, expand them.
+          if [[ "$key" == *'\\n'* ]] || [[ "$key" == *'BEGIN'* && "$key" != *$'\n'* ]]; then
+            key="$(printf '%b' "${key//$'\n'/\\n}")"
+          fi
+          # Normalize Windows line endings and ensure trailing newline.
+          key="$(printf '%s' "$key" | tr -d '\r')"
+          key="${key%"$'\n'"}"$'\n'
+
+          mkdir -p "$(dirname "$SSH_KEY_PATH")"
+          printf '%s' "$key" > "$SSH_KEY_PATH"
+          chmod 600 "$SSH_KEY_PATH"
+
+          if ! ssh-keygen -y -f "$SSH_KEY_PATH" >/tmp/istra_deploy.pub 2>/tmp/istra_keygen.err; then
+            echo "::error::Private key is invalid for OpenSSH:"
+            cat /tmp/istra_keygen.err
             exit 1
           fi
-          case "$DEPLOY_KEY" in
-            *"BEGIN"*PRIVATE*KEY*)
-              echo "DEPLOY_KEY: looks like a private key PEM"
-              ;;
-            *)
-              echo "::error::DEPLOY_KEY does not look like a private key after decode (must include BEGIN ... PRIVATE KEY)"
-              exit 1
-              ;;
-          esac
+          echo "Private key OK"
+          echo "Public fingerprint: $(ssh-keygen -lf /tmp/istra_deploy.pub | awk '{print $1" "$2}')"
+          echo "Public key (add this to ~/.ssh/authorized_keys on the VPS if missing):"
+          cat /tmp/istra_deploy.pub
 
       - name: Upload refs cache key
         id: uploads-cache-key
@@ -114,10 +123,11 @@ jobs:
         with:
           host: ${{ env.DEPLOY_HOST }}
           username: ${{ env.DEPLOY_USER }}
-          key: ${{ env.DEPLOY_KEY }}
+          key_path: ${{ env.SSH_KEY_PATH }}
           port: ${{ env.DEPLOY_PORT }}
           script: |
             set -euo pipefail
+            echo "Logged in as $(whoami)@$(hostname)"
             mkdir -p "${{ env.DEPLOY_WEBROOT }}"
             mkdir -p ~/backups
 
@@ -126,7 +136,7 @@ jobs:
         with:
           host: ${{ env.DEPLOY_HOST }}
           username: ${{ env.DEPLOY_USER }}
-          key: ${{ env.DEPLOY_KEY }}
+          key_path: ${{ env.SSH_KEY_PATH }}
           port: ${{ env.DEPLOY_PORT }}
           script: |
             set -euo pipefail
@@ -142,7 +152,7 @@ jobs:
         with:
           host: ${{ env.DEPLOY_HOST }}
           username: ${{ env.DEPLOY_USER }}
-          key: ${{ env.DEPLOY_KEY }}
+          key_path: ${{ env.SSH_KEY_PATH }}
           port: ${{ env.DEPLOY_PORT }}
           script: |
             set -euo pipefail
@@ -155,7 +165,7 @@ jobs:
         with:
           host: ${{ env.DEPLOY_HOST }}
           username: ${{ env.DEPLOY_USER }}
-          key: ${{ env.DEPLOY_KEY }}
+          key_path: ${{ env.SSH_KEY_PATH }}
           port: ${{ env.DEPLOY_PORT }}
           source: "site/out/"
           target: ${{ env.DEPLOY_WEBROOT }}/
@@ -167,7 +177,7 @@ jobs:
         with:
           host: ${{ env.DEPLOY_HOST }}
           username: ${{ env.DEPLOY_USER }}
-          key: ${{ env.DEPLOY_KEY }}
+          key_path: ${{ env.SSH_KEY_PATH }}
           port: ${{ env.DEPLOY_PORT }}
           script: |
             set -euo pipefail
@@ -175,4 +185,3 @@ jobs:
             chown -R "$(whoami):$(whoami)" "$TARGET" || true
             find "$TARGET" -type d -exec chmod 755 {} +
             find "$TARGET" -type f -exec chmod 644 {} +
-# redeploy 2026-08-04T20:53:20Z
