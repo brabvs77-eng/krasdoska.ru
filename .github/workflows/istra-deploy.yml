@@ -1,0 +1,121 @@
+name: Deploy (istra-kraski.ru)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "site/**"
+      - ".github/workflows/istra-deploy.yml"
+
+concurrency:
+  group: deploy-istra-kraski
+  cancel-in-progress: false
+
+defaults:
+  run:
+    working-directory: site
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    env:
+      FETCH_UPLOADS_MAX_MISS: "0"
+      # Prefer ISTRA_* secrets; fall back to SSH_* if those were reused for the new VPS.
+      DEPLOY_HOST: ${{ secrets.ISTRA_SSH_HOST || secrets.SSH_HOST }}
+      DEPLOY_USER: ${{ secrets.ISTRA_SSH_USER || secrets.SSH_USER }}
+      DEPLOY_PORT: ${{ secrets.ISTRA_SSH_PORT || secrets.SSH_PORT || 22 }}
+      DEPLOY_WEBROOT: ${{ secrets.ISTRA_WEBROOT || '/var/www/istra-kraski.ru' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Upload refs cache key
+        id: uploads-cache-key
+        working-directory: site
+        run: |
+          HASH=$(find lib content components app -type f \( -name '*.ts' -o -name '*.tsx' -o -name '*.json' \) -print0 | sort -z | xargs -0 sha256sum | sha256sum | awk '{print $1}')
+          echo "key=uploads-${HASH}" >> "$GITHUB_OUTPUT"
+
+      - name: Restore uploads cache
+        uses: actions/cache@v4
+        with:
+          path: site/public/uploads
+          key: ${{ runner.os }}-${{ steps.uploads-cache-key.outputs.key }}
+          restore-keys: |
+            ${{ runner.os }}-uploads-
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - run: npm install
+      - run: npm run build
+
+      - name: Ensure webroot exists
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ env.DEPLOY_HOST }}
+          username: ${{ env.DEPLOY_USER }}
+          key: ${{ secrets.ISTRA_SSH_PRIVATE_KEY || secrets.SSH_PRIVATE_KEY }}
+          port: ${{ env.DEPLOY_PORT }}
+          script: |
+            set -euo pipefail
+            mkdir -p "${{ env.DEPLOY_WEBROOT }}"
+            mkdir -p ~/backups
+
+      - name: Backup current site
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ env.DEPLOY_HOST }}
+          username: ${{ env.DEPLOY_USER }}
+          key: ${{ secrets.ISTRA_SSH_PRIVATE_KEY || secrets.SSH_PRIVATE_KEY }}
+          port: ${{ env.DEPLOY_PORT }}
+          script: |
+            set -euo pipefail
+            TARGET="${{ env.DEPLOY_WEBROOT }}"
+            if [ -d "$TARGET" ] && [ "$(ls -A "$TARGET" 2>/dev/null || true)" ]; then
+              BACKUP_DIR=~/backups/istra-kraski-$(date +%Y%m%d-%H%M%S)
+              mkdir -p "$BACKUP_DIR"
+              cp -a "$TARGET" "$BACKUP_DIR/"
+            fi
+
+      - name: Remove old build
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ env.DEPLOY_HOST }}
+          username: ${{ env.DEPLOY_USER }}
+          key: ${{ secrets.ISTRA_SSH_PRIVATE_KEY || secrets.SSH_PRIVATE_KEY }}
+          port: ${{ env.DEPLOY_PORT }}
+          script: |
+            set -euo pipefail
+            TARGET="${{ env.DEPLOY_WEBROOT }}"
+            mkdir -p "$TARGET"
+            find "$TARGET" -mindepth 1 -maxdepth 1 ! -name '.htaccess' -exec rm -rf {} +
+
+      - name: Deploy static build
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ env.DEPLOY_HOST }}
+          username: ${{ env.DEPLOY_USER }}
+          key: ${{ secrets.ISTRA_SSH_PRIVATE_KEY || secrets.SSH_PRIVATE_KEY }}
+          port: ${{ env.DEPLOY_PORT }}
+          source: "site/out/"
+          target: ${{ env.DEPLOY_WEBROOT }}/
+          strip_components: 2
+          overwrite: true
+
+      - name: Fix permissions
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ env.DEPLOY_HOST }}
+          username: ${{ env.DEPLOY_USER }}
+          key: ${{ secrets.ISTRA_SSH_PRIVATE_KEY || secrets.SSH_PRIVATE_KEY }}
+          port: ${{ env.DEPLOY_PORT }}
+          script: |
+            set -euo pipefail
+            TARGET="${{ env.DEPLOY_WEBROOT }}"
+            chown -R "$(whoami):$(whoami)" "$TARGET" || true
+            find "$TARGET" -type d -exec chmod 755 {} +
+            find "$TARGET" -type f -exec chmod 644 {} +
