@@ -25,8 +25,9 @@ jobs:
       DEPLOY_USER: ${{ secrets.ISTRA_SSH_USER || secrets.SSH_USER }}
       DEPLOY_PORT: ${{ secrets.ISTRA_SSH_PORT || secrets.SSH_PORT || 22 }}
       DEPLOY_WEBROOT: ${{ secrets.ISTRA_WEBROOT || '/var/www/istra-kraski.ru' }}
-      # Accept common private-key secret names.
+      # PEM key secrets, or base64 via SSH_KEY_B64 / ISTRA_SSH_KEY_B64.
       DEPLOY_KEY: ${{ secrets.ISTRA_SSH_PRIVATE_KEY || secrets.SSH_PRIVATE_KEY || secrets.ISTRA_SSH_KEY || secrets.SSH_KEY }}
+      SSH_KEY_B64: ${{ secrets.SSH_KEY_B64 || secrets.ISTRA_SSH_KEY_B64 }}
     steps:
       - uses: actions/checkout@v4
 
@@ -34,6 +35,16 @@ jobs:
         working-directory: .
         run: |
           set -euo pipefail
+          if [ -z "${DEPLOY_KEY// }" ] && [ -n "${SSH_KEY_B64// }" ]; then
+            echo "Decoding SSH_KEY_B64..."
+            DEPLOY_KEY="$(printf '%s' "$SSH_KEY_B64" | tr -d '\n\r ' | base64 -d)"
+            {
+              echo "DEPLOY_KEY<<EOF"
+              printf '%s\n' "$DEPLOY_KEY"
+              echo "EOF"
+            } >> "$GITHUB_ENV"
+          fi
+
           missing=0
           for name in DEPLOY_HOST DEPLOY_USER DEPLOY_PORT DEPLOY_WEBROOT DEPLOY_KEY; do
             value="${!name}"
@@ -45,7 +56,7 @@ jobs:
             fi
           done
           if [ "$missing" -ne 0 ]; then
-            echo "::error::Need secrets: ISTRA_SSH_HOST, ISTRA_SSH_USER, ISTRA_SSH_PRIVATE_KEY (or SSH_*), optional ISTRA_SSH_PORT / ISTRA_WEBROOT"
+            echo "::error::Need host/user + SSH_KEY_B64 (or ISTRA_SSH_PRIVATE_KEY / SSH_PRIVATE_KEY)"
             exit 1
           fi
           case "$DEPLOY_KEY" in
@@ -53,7 +64,7 @@ jobs:
               echo "DEPLOY_KEY: looks like a private key PEM"
               ;;
             *)
-              echo "::error::DEPLOY_KEY does not look like a private key (must include BEGIN ... PRIVATE KEY)"
+              echo "::error::DEPLOY_KEY does not look like a private key after decode (must include BEGIN ... PRIVATE KEY)"
               exit 1
               ;;
           esac
