@@ -21,12 +21,40 @@ jobs:
     runs-on: ubuntu-latest
     env:
       FETCH_UPLOADS_MAX_MISS: "0"
-      # Prefer ISTRA_* secrets; fall back to SSH_* if those were reused for the new VPS.
       DEPLOY_HOST: ${{ secrets.ISTRA_SSH_HOST || secrets.SSH_HOST }}
       DEPLOY_USER: ${{ secrets.ISTRA_SSH_USER || secrets.SSH_USER }}
       DEPLOY_PORT: ${{ secrets.ISTRA_SSH_PORT || secrets.SSH_PORT || 22 }}
       DEPLOY_WEBROOT: ${{ secrets.ISTRA_WEBROOT || '/var/www/istra-kraski.ru' }}
+      # Accept common private-key secret names.
+      DEPLOY_KEY: ${{ secrets.ISTRA_SSH_PRIVATE_KEY || secrets.SSH_PRIVATE_KEY || secrets.ISTRA_SSH_KEY || secrets.SSH_KEY }}
     steps:
+      - name: Check deploy secrets
+        run: |
+          set -euo pipefail
+          missing=0
+          for name in DEPLOY_HOST DEPLOY_USER DEPLOY_PORT DEPLOY_WEBROOT DEPLOY_KEY; do
+            value="${!name}"
+            if [ -z "${value// }" ]; then
+              echo "::error::$name is empty — set the matching GitHub Actions secret"
+              missing=1
+            else
+              echo "$name: ok (length ${#value})"
+            fi
+          done
+          if [ "$missing" -ne 0 ]; then
+            echo "::error::Need secrets: ISTRA_SSH_HOST, ISTRA_SSH_USER, ISTRA_SSH_PRIVATE_KEY (or SSH_*), optional ISTRA_SSH_PORT / ISTRA_WEBROOT"
+            exit 1
+          fi
+          case "$DEPLOY_KEY" in
+            *"BEGIN"*PRIVATE*KEY*)
+              echo "DEPLOY_KEY: looks like a private key PEM"
+              ;;
+            *)
+              echo "::error::DEPLOY_KEY does not look like a private key (must include BEGIN ... PRIVATE KEY)"
+              exit 1
+              ;;
+          esac
+
       - uses: actions/checkout@v4
 
       - name: Upload refs cache key
@@ -58,7 +86,7 @@ jobs:
         with:
           host: ${{ env.DEPLOY_HOST }}
           username: ${{ env.DEPLOY_USER }}
-          key: ${{ secrets.ISTRA_SSH_PRIVATE_KEY || secrets.SSH_PRIVATE_KEY }}
+          key: ${{ env.DEPLOY_KEY }}
           port: ${{ env.DEPLOY_PORT }}
           script: |
             set -euo pipefail
@@ -70,7 +98,7 @@ jobs:
         with:
           host: ${{ env.DEPLOY_HOST }}
           username: ${{ env.DEPLOY_USER }}
-          key: ${{ secrets.ISTRA_SSH_PRIVATE_KEY || secrets.SSH_PRIVATE_KEY }}
+          key: ${{ env.DEPLOY_KEY }}
           port: ${{ env.DEPLOY_PORT }}
           script: |
             set -euo pipefail
@@ -86,7 +114,7 @@ jobs:
         with:
           host: ${{ env.DEPLOY_HOST }}
           username: ${{ env.DEPLOY_USER }}
-          key: ${{ secrets.ISTRA_SSH_PRIVATE_KEY || secrets.SSH_PRIVATE_KEY }}
+          key: ${{ env.DEPLOY_KEY }}
           port: ${{ env.DEPLOY_PORT }}
           script: |
             set -euo pipefail
@@ -99,7 +127,7 @@ jobs:
         with:
           host: ${{ env.DEPLOY_HOST }}
           username: ${{ env.DEPLOY_USER }}
-          key: ${{ secrets.ISTRA_SSH_PRIVATE_KEY || secrets.SSH_PRIVATE_KEY }}
+          key: ${{ env.DEPLOY_KEY }}
           port: ${{ env.DEPLOY_PORT }}
           source: "site/out/"
           target: ${{ env.DEPLOY_WEBROOT }}/
@@ -111,7 +139,7 @@ jobs:
         with:
           host: ${{ env.DEPLOY_HOST }}
           username: ${{ env.DEPLOY_USER }}
-          key: ${{ secrets.ISTRA_SSH_PRIVATE_KEY || secrets.SSH_PRIVATE_KEY }}
+          key: ${{ env.DEPLOY_KEY }}
           port: ${{ env.DEPLOY_PORT }}
           script: |
             set -euo pipefail
@@ -119,7 +147,3 @@ jobs:
             chown -R "$(whoami):$(whoami)" "$TARGET" || true
             find "$TARGET" -type d -exec chmod 755 {} +
             find "$TARGET" -type f -exec chmod 644 {} +
-
-# redeploy trigger 2026-08-04T18:54:02Z
-# redeploy 2026-08-04T19:10:38Z
-# redeploy 2026-08-04T19:19:15Z
