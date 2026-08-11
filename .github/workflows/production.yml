@@ -28,7 +28,7 @@ jobs:
       DEPLOY_WEBROOT: ${{ secrets.SSH_WEBROOT || secrets.ISTRA_WEBROOT || secrets.DEPLOY_WEBROOT || '/var/www/u3070106/data/www/krashenayadoska.ru' }}
       DEPLOY_KEY: ${{ secrets.SSH_PRIVATE_KEY || secrets.ISTRA_SSH_PRIVATE_KEY || secrets.SSH_KEY || secrets.ISTRA_SSH_KEY }}
       SSH_KEY_B64: ${{ secrets.SSH_KEY_B64 || secrets.ISTRA_SSH_KEY_B64 }}
-      SSH_KEY_PATH: /home/runner/.ssh/krashenayadoska_deploy_key
+      SSH_KEY_PATH: ${{ github.workspace }}/.deploy_key
     steps:
       - uses: actions/checkout@v4
 
@@ -83,6 +83,12 @@ jobs:
           mkdir -p "$(dirname "$SSH_KEY_PATH")"
           printf '%s' "$key" > "$SSH_KEY_PATH"
           chmod 600 "$SSH_KEY_PATH"
+          # Keep decoded key available for actions that need `key:` (Docker SCP).
+          {
+            echo "DEPLOY_KEY<<EOF"
+            printf '%s\n' "$key"
+            echo "EOF"
+          } >> "$GITHUB_ENV"
 
           if ! ssh-keygen -y -f "$SSH_KEY_PATH" >/tmp/deploy.pub 2>/tmp/keygen.err; then
             echo "::error::Private key is invalid for OpenSSH:"
@@ -163,12 +169,14 @@ jobs:
         with:
           host: ${{ env.DEPLOY_HOST }}
           username: ${{ env.DEPLOY_USER }}
-          key_path: ${{ env.SSH_KEY_PATH }}
+          key: ${{ env.DEPLOY_KEY }}
           port: ${{ env.DEPLOY_PORT }}
           source: "site/out/"
           target: ${{ env.DEPLOY_WEBROOT }}/
           strip_components: 2
           overwrite: true
+          timeout: 120s
+          command_timeout: 20m
 
       - name: Fix permissions
         uses: appleboy/ssh-action@v1.2.0
