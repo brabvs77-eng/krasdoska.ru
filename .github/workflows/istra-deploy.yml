@@ -1,12 +1,8 @@
 name: Deploy (istra-kraski.ru)
 
 on:
+  # Manual only — production deploy to krashenayadoska.ru is production.yml
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - "site/**"
-      - ".github/workflows/istra-deploy.yml"
 
 concurrency:
   group: deploy-istra-kraski
