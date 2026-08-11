@@ -74,7 +74,7 @@ export function Footer() {
             точной информации обращайтесь по указанным в контактах телефонам.
           </p>
           <a
-            href="https://yandex.ru/maps/org/krashenaya_doska/"
+            href="https://yandex.ru/maps/org/krashenaya_doska/147741933843/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex h-fit items-center gap-3 rounded-xl border border-white/15 bg-white/5 px-4 py-3"
