@@ -201,6 +201,21 @@ jobs:
           timeout: 120s
           command_timeout: 20m
 
+      # Large / manually curated mp4s (may be pruned from Next out/ for CF size limits)
+      - name: Deploy video uploads
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ env.DEPLOY_HOST }}
+          username: ${{ env.DEPLOY_USER }}
+          key: ${{ env.DEPLOY_KEY }}
+          port: ${{ env.DEPLOY_PORT }}
+          source: "site/public/uploads/2026/03/*.mp4"
+          target: ${{ env.DEPLOY_WEBROOT }}/uploads/2026/03/
+          strip_components: 5
+          overwrite: true
+          timeout: 120s
+          command_timeout: 20m
+
       - name: Fix permissions
         uses: appleboy/ssh-action@v1.2.0
         with:
