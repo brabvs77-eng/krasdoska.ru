@@ -5,6 +5,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import { getCatalogPrices } from "@/lib/catalog-prices";
 import { buildPageMetadata } from "@/lib/metadata";
 import { getExcerpt, getPage } from "@/lib/content";
+import { SERVICES_TECHNOLOGY_VIDEO } from "@/lib/technology";
 
 export async function generateMetadata() {
   const page = getPage("uslugi");
@@ -26,6 +27,20 @@ export default function ServicesPage() {
         action={{ href: "#kalkulyator", label: "Рассчитать стоимость" }}
         breadcrumbs={[{ label: "Главная", href: "/" }, { label: "Услуги" }]}
       />
+      <section className="section-dark border-b border-white/10 py-12 sm:py-14">
+        <div className="container-content">
+          <div className="overflow-hidden rounded-2xl bg-neutral-900 shadow-lg">
+            <video
+              className="aspect-video w-full"
+              controls
+              preload="metadata"
+              playsInline
+            >
+              <source src={SERVICES_TECHNOLOGY_VIDEO} type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </section>
       <ServicesPreviewSection variant="marketing" />
       <CatalogPriceCalculator data={prices} />
       <MarketingPageFooter />
