@@ -24,7 +24,7 @@ jobs:
       DEPLOY_HOST: ${{ secrets.ISTRA_SSH_HOST || secrets.SSH_HOST }}
       DEPLOY_USER: ${{ secrets.ISTRA_SSH_USER || secrets.SSH_USER }}
       DEPLOY_PORT: ${{ secrets.ISTRA_SSH_PORT || secrets.SSH_PORT || 22 }}
-      DEPLOY_WEBROOT: ${{ secrets.ISTRA_WEBROOT || '/var/www/istra-kraski.ru' }}
+      DEPLOY_WEBROOT: ${{ secrets.ISTRA_WEBROOT || '/var/www/istra_kraski_usr/data/www/istra-kraski.ru' }}
       DEPLOY_KEY: ${{ secrets.ISTRA_SSH_PRIVATE_KEY || secrets.SSH_PRIVATE_KEY || secrets.ISTRA_SSH_KEY || secrets.SSH_KEY }}
       SSH_KEY_B64: ${{ secrets.SSH_KEY_B64 || secrets.ISTRA_SSH_KEY_B64 }}
       SSH_KEY_PATH: /home/runner/.ssh/istra_deploy_key
