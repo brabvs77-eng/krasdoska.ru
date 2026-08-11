@@ -188,6 +188,11 @@ jobs:
           script: |
             set -euo pipefail
             TARGET="${{ env.DEPLOY_WEBROOT }}"
-            chown -R "$(whoami):$(whoami)" "$TARGET" || true
+            # FastPanel site user — required for disable_symlinks if_not_owner
+            if id u3070106 >/dev/null 2>&1; then
+              chown -R u3070106:u3070106 "$TARGET" || true
+            else
+              chown -R "$(whoami):$(whoami)" "$TARGET" || true
+            fi
             find "$TARGET" -type d -exec chmod 755 {} +
             find "$TARGET" -type f -exec chmod 644 {} +
