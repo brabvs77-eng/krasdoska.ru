@@ -1,90 +1,16 @@
-name: Deploy (develop → kraskadoska.ru)
+name: Preview (disabled)
 
+# Auto-deploy to kraskadoska.ru / other domains is disabled.
+# Production deploys only via production.yml → krashenayadoska.ru on push to main.
 on:
-  push:
-    branches: [develop]
-    paths:
-      - "site/**"
-      - ".github/workflows/preview.yml"
   workflow_dispatch:
 
-concurrency:
-  group: deploy-kraskadoska-develop
-  cancel-in-progress: false
-
-defaults:
-  run:
-    working-directory: site
-
 jobs:
-  build-and-deploy:
+  notice:
     runs-on: ubuntu-latest
-    env:
-      FETCH_UPLOADS_MAX_MISS: "0"
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Upload refs cache key
-        id: uploads-cache-key
-        working-directory: site
+      - name: Deploy target notice
         run: |
-          HASH=$(find lib content components app -type f \( -name '*.ts' -o -name '*.tsx' -o -name '*.json' \) -print0 | sort -z | xargs -0 sha256sum | sha256sum | awk '{print $1}')
-          echo "key=uploads-${HASH}" >> "$GITHUB_OUTPUT"
-
-      - name: Restore uploads cache
-        uses: actions/cache@v4
-        with:
-          path: site/public/uploads
-          key: ${{ runner.os }}-${{ steps.uploads-cache-key.outputs.key }}
-          restore-keys: |
-            ${{ runner.os }}-uploads-
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: npm
-          cache-dependency-path: site/package-lock.json
-
-      - run: npm install
-      - run: npm run build
-
-      - name: Backup current site
-        uses: appleboy/ssh-action@v1.2.0
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            BACKUP_DIR=~/backups/kraskadoska-$(date +%Y%m%d-%H%M%S)
-            mkdir -p "$BACKUP_DIR"
-            cp -a /var/www/u3070106/data/www/kraskadoska.ru "$BACKUP_DIR/" || true
-
-      - name: Remove old build
-        uses: appleboy/ssh-action@v1.2.0
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            TARGET=/var/www/u3070106/data/www/kraskadoska.ru
-            find "$TARGET" -mindepth 1 -maxdepth 1 ! -name '.htaccess' -exec rm -rf {} +
-
-      - name: Deploy static build
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "site/out/"
-          target: /var/www/u3070106/data/www/kraskadoska.ru/
-          strip_components: 2
-          overwrite: true
-
-      - name: Fix permissions
-        uses: appleboy/ssh-action@v1.2.0
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            chown -R u3070106:u3070106 /var/www/u3070106/data/www/kraskadoska.ru
+          echo "Preview deploy is disabled."
+          echo "Push to main to deploy https://krashenayadoska.ru via Production Deploy."
+          exit 0

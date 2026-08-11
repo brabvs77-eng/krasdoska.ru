@@ -24,8 +24,8 @@ jobs:
       DEPLOY_HOST: ${{ secrets.SSH_HOST || secrets.ISTRA_SSH_HOST }}
       DEPLOY_USER: ${{ secrets.SSH_USER || secrets.ISTRA_SSH_USER }}
       DEPLOY_PORT: ${{ secrets.SSH_PORT || secrets.ISTRA_SSH_PORT || 22 }}
-      # Prefer explicit webroot secret; default to Beget-style path for krashenayadoska.ru
-      DEPLOY_WEBROOT: ${{ secrets.SSH_WEBROOT || secrets.ISTRA_WEBROOT || secrets.DEPLOY_WEBROOT || '/var/www/u3070106/data/www/krashenayadoska.ru' }}
+      # Only krashenayadoska.ru — do not fall back to istra / other webroots
+      DEPLOY_WEBROOT: ${{ secrets.SSH_WEBROOT || '/var/www/u3070106/data/www/krashenayadoska.ru' }}
       DEPLOY_KEY: ${{ secrets.SSH_PRIVATE_KEY || secrets.ISTRA_SSH_PRIVATE_KEY || secrets.SSH_KEY || secrets.ISTRA_SSH_KEY }}
       SSH_KEY_B64: ${{ secrets.SSH_KEY_B64 || secrets.ISTRA_SSH_KEY_B64 }}
       SSH_KEY_PATH: ${{ github.workspace }}/.deploy_key
@@ -47,6 +47,15 @@ jobs:
             fi
           done
           echo "DEPLOY_WEBROOT path: $DEPLOY_WEBROOT"
+          case "$DEPLOY_WEBROOT" in
+            *krashenayadoska.ru*)
+              echo "Target domain path OK (krashenayadoska.ru)"
+              ;;
+            *)
+              echo "::error::DEPLOY_WEBROOT must point at krashenayadoska.ru (got: $DEPLOY_WEBROOT)"
+              missing=1
+              ;;
+          esac
           if [[ "$DEPLOY_USER" == *@* ]]; then
             echo "::warning::DEPLOY_USER looks like an email. SSH needs a Linux username."
           fi
@@ -83,7 +92,6 @@ jobs:
           mkdir -p "$(dirname "$SSH_KEY_PATH")"
           printf '%s' "$key" > "$SSH_KEY_PATH"
           chmod 600 "$SSH_KEY_PATH"
-          # Keep decoded key available for actions that need `key:` (Docker SCP).
           {
             echo "DEPLOY_KEY<<EOF"
             printf '%s\n' "$key"
@@ -151,7 +159,7 @@ jobs:
               cp -a "$TARGET" "$BACKUP_DIR/"
             fi
 
-      - name: Remove old build
+      - name: Remove old build (keep large mp4 uploads)
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ env.DEPLOY_HOST }}
@@ -162,7 +170,22 @@ jobs:
             set -euo pipefail
             TARGET="${{ env.DEPLOY_WEBROOT }}"
             mkdir -p "$TARGET"
+            KEEP=~/backups/_keep-mp4-$$
+            rm -rf "$KEEP"
+            mkdir -p "$KEEP"
+            if [ -d "$TARGET/uploads" ]; then
+              while IFS= read -r -d '' f; do
+                rel="${f#"$TARGET"/}"
+                mkdir -p "$KEEP/$(dirname "$rel")"
+                cp -a "$f" "$KEEP/$rel"
+              done < <(find "$TARGET/uploads" -type f -name '*.mp4' -print0 2>/dev/null || true)
+            fi
             find "$TARGET" -mindepth 1 -maxdepth 1 ! -name '.htaccess' -exec rm -rf {} +
+            if [ -d "$KEEP/uploads" ]; then
+              mkdir -p "$TARGET/uploads"
+              cp -a "$KEEP/uploads/." "$TARGET/uploads/"
+            fi
+            rm -rf "$KEEP"
 
       - name: Deploy static build
         uses: appleboy/scp-action@v0.1.7
