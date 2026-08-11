@@ -21,11 +21,9 @@ const MAX_AUTO_BYTES = Number(process.env.FETCH_UPLOADS_MAX_MB ?? 24) * 1024 * 1
  * а отдаём с origin через public/_redirects (302 на krashenayadoska.ru).
  * Такие пути не скачиваем, не считаем как miss и вырезаем при прунинге.
  */
+/** Oversized for CF Pages / Next out — copied separately in production.yml */
 const EXCLUDE_FROM_BUILD = new Set([
   "/uploads/2026/03/video_2026-03-13_23-56-23.mp4",
-  "/uploads/2026/03/na-tehnolog-2.mp4",
-  "/uploads/2026/03/na tehnolog 2.mp4",
-  "/uploads/2026/03/na%20tehnolog%202.mp4",
 ]);
 
 export function collectUploadRefs() {
