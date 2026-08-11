@@ -47,17 +47,11 @@ jobs:
       - run: npm install
       - run: npm run build
 
-      - name: Pack static site
-        working-directory: .
-        run: |
-          cd site/out
-          zip -r -q "$GITHUB_WORKSPACE/istra-kraski-static-site.zip" .
-          ls -lh "$GITHUB_WORKSPACE/istra-kraski-static-site.zip"
-
-      - name: Upload ZIP artifact
+      - name: Upload static site artifact
         uses: actions/upload-artifact@v4
         with:
           name: istra-kraski-static-site
-          path: istra-kraski-static-site.zip
+          path: site/out/
           retention-days: 14
           if-no-files-found: error
+          compression-level: 6
