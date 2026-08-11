@@ -1,6 +1,7 @@
 # Крупное видео не в сборке CF Pages — 302 на self-host (krashenayadoska.ru)
 /uploads/2026/03/video_2026-03-13_23-56-23.mp4 https://krashenayadoska.ru/uploads/2026/03/video_2026-03-13_23-56-23.mp4 302
-/uploads/2026/03/na-tehnolog-2.mp4 https://krashenayadoska.ru/uploads/2026/03/na-tehnolog-2.mp4 302
+/uploads/2026/03/na-tehnolog-2.mp4 https://krashenayadoska.ru/uploads/2026/03/na%20tehnolog%202.mp4 302
+/uploads/2026/03/na%20tehnolog%202.mp4 https://krashenayadoska.ru/uploads/2026/03/na%20tehnolog%202.mp4 302
 
 /blog-post/:slug /blog/:slug 301
 /palitra/ral/ /palitra/palitra-ral/ 301

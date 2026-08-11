@@ -4,11 +4,14 @@ export const TECHNOLOGY_VIDEO =
     ? "https://krashenayadoska.ru/uploads/2026/03/video_2026-03-13_23-56-23.mp4"
     : "/uploads/2026/03/video_2026-03-13_23-56-23.mp4";
 
-/** Horizontal process video on /uslugi/ — upload to the same folder as TECHNOLOGY_VIDEO. */
+/**
+ * Horizontal process video on /uslugi/.
+ * On disk the file is named with spaces: `na tehnolog 2.mp4` (URL-encoded below).
+ */
 export const SERVICES_TECHNOLOGY_VIDEO =
   process.env.CF_PAGES === "1"
-    ? "https://krashenayadoska.ru/uploads/2026/03/na-tehnolog-2.mp4"
-    : "/uploads/2026/03/na-tehnolog-2.mp4";
+    ? "https://krashenayadoska.ru/uploads/2026/03/na%20tehnolog%202.mp4"
+    : "/uploads/2026/03/na%20tehnolog%202.mp4";
 
 export const TECHNOLOGY_IMAGE = "/uploads/2025/04/photo_2025-05-17_23-20-04.webp";
 
