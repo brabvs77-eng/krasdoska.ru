@@ -24,6 +24,7 @@ export const SiteSettingsSchema = z.object({
     yandexMetrikaId: z.string(),
     googleAnalyticsId: z.string(),
     marquizId: z.string(),
+    widsterWidgetId: z.string().optional(),
     formEndpoint: z.string().optional(),
   }),
   navigation: z.array(NavItemSchema),

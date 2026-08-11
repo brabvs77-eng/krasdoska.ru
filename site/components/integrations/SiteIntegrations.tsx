@@ -5,6 +5,7 @@ export function SiteIntegrations() {
   const { integrations } = getSiteSettings();
   const metrikaId = integrations.yandexMetrikaId?.trim();
   const gaId = integrations.googleAnalyticsId?.trim();
+  const widsterId = integrations.widsterWidgetId?.trim();
 
   return (
     <>
@@ -44,6 +45,20 @@ gtag('js', new Date());
 gtag('config', ${JSON.stringify(gaId)});`}
           </Script>
         </>
+      )}
+      {widsterId && (
+        <Script id="widster-widget" strategy="afterInteractive">
+          {`(function(d, w){
+  if (w.__widsterLoaded) return;
+  w.__widsterLoaded = true;
+  w.wwidget = ${JSON.stringify(widsterId)};
+  var s = d.createElement('script');
+  s.async = true;
+  s.src = 'https://widster.ru/embed/' + w.wwidget;
+  s.charset = 'UTF-8';
+  (d.head || d.body).appendChild(s);
+})(document, window);`}
+        </Script>
       )}
     </>
   );
