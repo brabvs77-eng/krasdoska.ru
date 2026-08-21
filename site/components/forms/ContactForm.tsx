@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { trackMetrikaGoal } from "@/lib/analytics";
 
 type ContactFormProps = {
   title?: string;
@@ -57,6 +58,7 @@ export function ContactForm({
           throw new Error("form-submit-failed");
         }
 
+        trackMetrikaGoal("lead_form", { source: "endpoint" });
         setSent(true);
         return;
       } catch {
@@ -70,6 +72,7 @@ export function ContactForm({
     }
 
     openMailto(name, phone, message);
+    trackMetrikaGoal("lead_form", { source: "mailto" });
     setSent(true);
     setSubmitting(false);
   };

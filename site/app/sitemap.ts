@@ -23,6 +23,8 @@ const staticRoutes = [
   "/kontakty/",
   "/tehnologija-nanesenija-kraski/",
   "/politika-konfidencialnosti/",
+  "/zavodskaya-pokraska/",
+  "/proizvodstvo-istra/",
 ];
 
 function routeEntry(base: string, path: string, priority = 0.7): MetadataRoute.Sitemap[number] {

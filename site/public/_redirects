@@ -3,6 +3,21 @@
 /uploads/2026/03/na-tehnolog-2.mp4 https://krashenayadoska.ru/uploads/2026/03/na-tehnolog-2.mp4 302
 
 /blog-post/:slug /blog/:slug 301
+
+# WP category archives → каталог Next
+/category/krashenaja-vagonka/ /katalog/krashenaja-vagonka/ 301
+/category/vagonka/krashenaja-vagonka/ /katalog/krashenaja-vagonka/ 301
+/category/vagonka/ /katalog/vagonka/ 301
+/category/planken/ /katalog/planken/ 301
+/category/krashenaja-imitacija-brusa/ /katalog/krashenaja-imitacija-brusa/ 301
+/category/imitacija-brusa/ /katalog/imitacija-brusa/ 301
+/category/skandinavskaja-doska/ /katalog/skandinavskaja-doska/ 301
+/category/terrasnaja-doska/ /katalog/terrasnaja-doska/ 301
+/category/krashenaja-doska/ /katalog/krashenaja-doska/ 301
+/category/:parent/:slug/ /katalog/:slug/ 301
+/category/:slug/ /katalog/:slug/ 301
+/category/ /katalog/ 301
+
 /palitra/ral/ /palitra/palitra-ral/ 301
 /palitra/ral /palitra/palitra-ral/ 301
 /palitra/ncs/ /palitra/palitra-ncs/ 301
