@@ -20,11 +20,11 @@ export const PROFILE_SECTION_IMAGES = {
 
 const PROFILE_KEYWORDS: { match: RegExp; image: string }[] = [
   { match: /блок[-\s]?хаус|block[-\s]?haus/i, image: PROFILE_SECTION_IMAGES.blokHaus },
-  { match: /вельвет|velvet/i, image: PROFILE_SECTION_IMAGES.terrasaVelvet },
+  { match: /вельвет|velvet|ёлочк|елочк/i, image: PROFILE_SECTION_IMAGES.terrasaVelvet },
   { match: /палубн/i, image: PROFILE_SECTION_IMAGES.palubnaya },
   { match: /паркет/i, image: PROFILE_SECTION_IMAGES.parketnaja },
-  { match: /массив/i, image: PROFILE_SECTION_IMAGES.massivPola },
-  { match: /доска\s*пола|пола\b/i, image: PROFILE_SECTION_IMAGES.doskaPola },
+  { match: /массив\s*пола/i, image: PROFILE_SECTION_IMAGES.massivPola },
+  { match: /доска\s*пола/i, image: PROFILE_SECTION_IMAGES.doskaPola },
   { match: /скошен|косой|kosoy|skoshen/i, image: PROFILE_SECTION_IMAGES.plankenKosoy },
   { match: /прямой\s*планкен|планкен\s*прямой/i, image: PROFILE_SECTION_IMAGES.plankenPryamoy },
   { match: /карел/i, image: PROFILE_SECTION_IMAGES.imitacijaBrusaKarelia },

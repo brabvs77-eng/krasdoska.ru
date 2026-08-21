@@ -106,7 +106,7 @@ export const CATALOG_PREVIEW: CatalogPreviewItem[] = [
     slug: "krashenaja-doska",
     href: "/katalog/krashenaja-doska/",
     title: "Крашеная доска пола",
-    image: `${CATALOG}/palubnaja-doska.webp`,
+    image: `${CATALOG}/doska-pola.webp`,
   },
   {
     slug: "krashenaja-doska",
@@ -124,7 +124,7 @@ export const CATALOG_PREVIEW: CatalogPreviewItem[] = [
     slug: "krashenaja-doska",
     href: "/katalog/krashenaja-doska/",
     title: "Крашеный массив пола",
-    image: `${CATALOG}/parketnaja-doska.webp`,
+    image: `${CATALOG}/massiv-pola.webp`,
   },
   {
     slug: "terrasnaja-doska",
