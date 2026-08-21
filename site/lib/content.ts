@@ -4,6 +4,12 @@ import { getCatalogShowcaseForSlug } from "./catalog-showcase";
 import { normalizeWpHtml } from "./wp-content";
 
 const CONTENT_DIR = path.join(process.cwd(), "content");
+export type BlogAuthor = {
+  name: string;
+  role?: string;
+  bio?: string;
+};
+
 export type ContentItem = {
   id: string;
   slug: string;
@@ -12,8 +18,33 @@ export type ContentItem = {
   content?: string;
   link?: string;
   image?: string;
+  publishedAt?: string;
+  author?: BlogAuthor;
   seo?: { title?: string; description?: string };
 };
+
+const BLOG_PUBLISH_NOW = process.env.BLOG_PUBLISH_NOW
+  ? new Date(process.env.BLOG_PUBLISH_NOW)
+  : new Date();
+
+export function isBlogPublished(
+  item: Pick<ContentItem, "publishedAt">,
+  now: Date = BLOG_PUBLISH_NOW,
+): boolean {
+  if (!item.publishedAt) return true;
+  return new Date(item.publishedAt) <= now;
+}
+
+export function formatBlogDate(iso?: string): string | undefined {
+  if (!iso) return undefined;
+  const date = new Date(iso);
+  if (Number.isNaN(date.getTime())) return undefined;
+  return new Intl.DateTimeFormat("ru-RU", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }).format(date);
+}
 
 export type CatalogCategory = {
   slug: string;
@@ -172,18 +203,30 @@ export function getProductStaticParams(): { slug: string; productSlug: string }[
   }));
 }
 
+function sortBlogPosts(a: ContentItem, b: ContentItem): number {
+  const dateA = a.publishedAt ? new Date(a.publishedAt).getTime() : 0;
+  const dateB = b.publishedAt ? new Date(b.publishedAt).getTime() : 0;
+  if (dateB !== dateA) return dateB - dateA;
+  return a.title.localeCompare(b.title, "ru");
+}
+
 export function getBlogSlugs(): string[] {
-  return readJsonDir("blog");
+  return readAllJson<ContentItem>("blog")
+    .filter((item) => isBlogPublished(item))
+    .sort(sortBlogPosts)
+    .map((post) => post.slug);
 }
 
 export function getBlogPost(slug: string): ContentItem | null {
-  return readJsonFile<ContentItem>("blog", slug);
+  const post = readJsonFile<ContentItem>("blog", slug);
+  if (!post || !isBlogPublished(post)) return null;
+  return post;
 }
 
 export function getAllBlogPosts(): ContentItem[] {
-  return readAllJson<ContentItem>("blog").sort((a, b) =>
-    a.title.localeCompare(b.title, "ru"),
-  );
+  return readAllJson<ContentItem>("blog")
+    .filter((item) => isBlogPublished(item))
+    .sort(sortBlogPosts);
 }
 
 export function getProjectSlugs(): string[] {
