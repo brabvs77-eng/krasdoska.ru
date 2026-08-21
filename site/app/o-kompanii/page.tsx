@@ -7,8 +7,10 @@ import { getExcerpt, getPage } from "@/lib/content";
 export async function generateMetadata() {
   const page = getPage("o-kompanii");
   return buildPageMetadata({
-    title: page?.seo?.title ?? page?.title ?? "О компании",
-    description: page ? getExcerpt(page) : "ООО «Крашеная доска» — производитель крашеной доски.",
+    title: "О компании — производство крашеной доски в Истре | Крашеная доска",
+    description:
+      page?.excerpt ??
+      "ООО «Крашеная доска»: заводская покраска в Истре, линия до 912 м²/смену, Sirca, гарантия 3 года. Доставка по Москве и регионам.",
     path: "/o-kompanii/",
   });
 }
