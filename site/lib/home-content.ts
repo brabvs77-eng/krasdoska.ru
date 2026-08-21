@@ -2,16 +2,16 @@ export const HOME_BLOG_SLUGS = [
   "chto-vygodnee-krasit-samomu-ili-na-proizvodstve",
   "brend",
   "dostavka-v-regiony",
-  "vosstanovlenie-i-pokraska-derevjanny-3",
+  "hvoya-preimushchestva-dlya-fasada",
 ] as const;
 
+/** @deprecated Use formatBlogDate(post.publishedAt) from content items */
 export const HOME_BLOG_DATES: Record<string, string> = {
   "chto-vygodnee-krasit-samomu-ili-na-proizvodstve": "22 июля, 2026",
   brend: "24 декабря, 2025",
   "dostavka-v-regiony": "16 июля, 2025",
-  "vosstanovlenie-i-pokraska-derevjanny-3": "10 апреля, 2025",
-  "vosstanovlenie-i-pokraska-derevjannyh-polov-sovety-jekspertov-po-obnovleniju-interera-9":
-    "10 апреля, 2025",
+  "hvoya-preimushchestva-dlya-fasada": "10 апреля, 2025",
+  "oficialnyy-diler-sirca": "10 апреля, 2025",
 };
 
 export const HOME_PROJECT_SLUGS = [

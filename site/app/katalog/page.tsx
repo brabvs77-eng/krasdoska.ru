@@ -28,8 +28,8 @@ export default function CatalogPage() {
         description="Все виды продукции в наличии и под заказ. Не нашли нужный размер? — Звоните, подберём."
         action={{ href: "#kalkulyator", label: "Рассчитать стоимость" }}
       />
-      <CatalogShowcaseSection />
       <CatalogPriceCalculator data={prices} />
+      <CatalogShowcaseSection />
       <MarketingPageFooter />
     </>
   );

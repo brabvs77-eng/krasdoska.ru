@@ -2,8 +2,7 @@ import { ContentList } from "@/components/content/ContentList";
 import { MarketingPageFooter } from "@/components/sections/MarketingPageFooter";
 import { PageHero } from "@/components/sections/PageHero";
 import { buildPageMetadata } from "@/lib/metadata";
-import { getAllBlogPosts, getExcerpt } from "@/lib/content";
-import { HOME_BLOG_DATES } from "@/lib/home-content";
+import { formatBlogDate, getAllBlogPosts, getExcerpt } from "@/lib/content";
 import { getContentImage } from "@/lib/product-media";
 
 export const metadata = buildPageMetadata({
@@ -29,7 +28,7 @@ export default function BlogPage() {
               excerpt: getExcerpt(post),
               image: getContentImage(post),
               href: `/blog/${post.slug}/`,
-              meta: HOME_BLOG_DATES[post.slug],
+              meta: formatBlogDate(post.publishedAt),
             }))}
             emptyMessage="Статьи появятся после миграции контента."
           />

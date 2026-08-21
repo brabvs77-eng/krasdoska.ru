@@ -3,7 +3,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { ProductCard } from "@/components/cards/ProductCard";
 import { ContentList } from "@/components/content/ContentList";
-import { getBlogPost, getExcerpt, getProject } from "@/lib/content";
+import { formatBlogDate, getBlogPost, getExcerpt, getProject } from "@/lib/content";
 import { HOME_BLOG_DATES, HOME_BLOG_SLUGS, HOME_PROJECT_SLUGS, HOME_PROJECT_TAGS } from "@/lib/home-content";
 import { getContentImage } from "@/lib/product-media";
 import { getSectionImageForProfile } from "@/lib/profile-sections";
@@ -573,7 +573,7 @@ export function HomeBlogSection() {
             excerpt: getExcerpt(post),
             image: getContentImage(post),
             href: `/blog/${post.slug}/`,
-            meta: HOME_BLOG_DATES[post.slug],
+            meta: formatBlogDate(post.publishedAt) ?? HOME_BLOG_DATES[post.slug],
           }))}
         />
         <div className="mt-10 flex justify-center">

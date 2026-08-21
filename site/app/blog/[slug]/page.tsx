@@ -1,3 +1,4 @@
+import { ArticleAuthor } from "@/components/content/ArticleAuthor";
 import { DiyVsFactoryArticle } from "@/components/blog/DiyVsFactoryArticle";
 import { ArticleShell } from "@/components/content/ArticleShell";
 import { HtmlContent } from "@/components/content/HtmlContent";
@@ -6,7 +7,7 @@ import { MarketingPageFooter } from "@/components/sections/MarketingPageFooter";
 import { PageHero } from "@/components/sections/PageHero";
 import { enhanceArticleHtml, extractArticleToc } from "@/lib/article-html";
 import { buildPageMetadata } from "@/lib/metadata";
-import { getBlogPost, getBlogSlugs, getExcerpt } from "@/lib/content";
+import { formatBlogDate, getBlogPost, getBlogSlugs, getExcerpt } from "@/lib/content";
 import { getContentImage } from "@/lib/product-media";
 
 const FEATURED_ARTICLE_SLUG = "chto-vygodnee-krasit-samomu-ili-na-proizvodstve";
@@ -48,6 +49,7 @@ export default async function BlogPostPage({ params }: Props) {
   const cover = getContentImage(post);
   const enhanced = enhanceArticleHtml(post.content ?? "", cover);
   const toc = extractArticleToc(enhanced);
+  const publishedLabel = formatBlogDate(post.publishedAt);
 
   return (
     <>
@@ -63,6 +65,9 @@ export default async function BlogPostPage({ params }: Props) {
             ]}
           />
           <div className="mt-8">
+            {post.author ? (
+              <ArticleAuthor author={post.author} publishedLabel={publishedLabel} />
+            ) : null}
             {isFeatured && cover ? (
               <DiyVsFactoryArticle coverSrc={cover} title={post.title} />
             ) : (
