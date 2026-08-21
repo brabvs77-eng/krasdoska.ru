@@ -59,3 +59,16 @@
 | `/blog/krashenaya-doska-dlya-stroiteley-i-dizaynerov/` | 2026-08-21 15:00 |
 
 Расписание: поле `publishedAt` в JSON, фильтр в `getAllBlogPosts()` / `getBlogSlugs()`. Статья появляется после следующей сборки сайта, когда `publishedAt <= now`.
+
+## Фаза 5 — региональная серия «Доставка в [город]»
+
+| URL | Дата |
+|-----|------|
+| `/blog/dostavka-krashenoy-doski-v-moskvu/` | 2026-08-21 09:00 |
+| `/blog/dostavka-krashenoy-doski-v-sankt-peterburg/` | 2026-08-21 11:00 |
+| `/blog/dostavka-krashenoy-doski-v-kalugu/` | 2026-08-21 13:00 |
+| `/blog/dostavka-krashenoy-doski-v-tver/` | 2026-08-21 15:00 |
+| `/blog/dostavka-krashenoy-doski-v-vladimir/` | 2026-08-21 17:00 |
+| `/blog/dostavka-krashenoy-doski-v-nizhniy-novgorod/` | 2026-08-21 19:00 |
+
+Скрипт генерации: `site/scripts/create-regional-delivery-articles.mjs`
