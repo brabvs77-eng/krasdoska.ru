@@ -70,3 +70,27 @@
 | `/blog/kejs-pokrashka-podshivki-kleenyy-brus/` | 2026-08-21 19:00 |
 
 Расписание: поле `publishedAt` в JSON, фильтр в `getAllBlogPosts()` / `getBlogSlugs()`. Статья появляется после следующей сборки сайта, когда `publishedAt <= now`.
+
+## Фаза 5 — региональная серия «Доставка в [город]»
+
+| URL | Дата |
+|-----|------|
+| `/blog/dostavka-krashenoy-doski-v-moskvu/` | 2026-08-21 09:00 |
+| `/blog/dostavka-krashenoy-doski-v-sankt-peterburg/` | 2026-08-21 11:00 |
+| `/blog/dostavka-krashenoy-doski-v-kalugu/` | 2026-08-21 13:00 |
+| `/blog/dostavka-krashenoy-doski-v-tver/` | 2026-08-21 15:00 |
+| `/blog/dostavka-krashenoy-doski-v-vladimir/` | 2026-08-21 17:00 |
+| `/blog/dostavka-krashenoy-doski-v-nizhniy-novgorod/` | 2026-08-21 19:00 |
+
+### Фаза 5б — расширение серии
+
+| URL | Дата |
+|-----|------|
+| `/blog/dostavka-krashenoy-doski-v-kazan/` | 2026-08-21 21:00 |
+| `/blog/dostavka-krashenoy-doski-v-krasnodar/` | 2026-08-21 22:00 |
+| `/blog/dostavka-krashenoy-doski-v-yaroslavl/` | 2026-08-21 23:00 |
+| `/blog/dostavka-krashenoy-doski-v-ryazan/` | 2026-08-22 00:00 |
+| `/blog/dostavka-krashenoy-doski-v-rostov-na-donu/` | 2026-08-22 01:00 |
+| `/blog/dostavka-krashenoy-doski-v-sochi/` | 2026-08-22 02:00 |
+
+Скрипт генерации: `site/scripts/create-regional-delivery-articles.mjs` (флаг `--only=slug1,slug2` для выборочной генерации)
