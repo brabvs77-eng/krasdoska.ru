@@ -181,6 +181,7 @@ export function getAllProducts(): CatalogProduct[] {
 const CATEGORY_PRODUCT_ALIASES: Record<string, string[]> = {
   vagonka: ["vagonka", "krashenaja-vagonka"],
   "krashenaja-vagonka": ["vagonka", "krashenaja-vagonka"],
+  "fasadnaja-doska": ["krashenaja-doska", "fasadnaja-doska"],
 };
 
 export function matchesCategory(product: CatalogProduct, categorySlug: string): boolean {

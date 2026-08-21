@@ -30,23 +30,23 @@ export type HeroSlide = {
 
 export const HERO_SLIDES: HeroSlide[] = [
   {
-    title: "Идеальный цвет\nдля каждой детали",
-    subtitle: "Лучшие идеи — Лучшее решение — Лучшие результаты",
+    eyebrow: "Производство в Истре, Московская область",
+    title: "Крашеная доска с заводской покраской",
+    subtitle:
+      "От 1 436 руб/м² с покраской. Линия до 912 м² за смену. Гарантия на покрытие — 3 года. Срок от 5 рабочих дней.",
     image: HERO_SLIDE_IMAGES.idealColor,
   },
   {
-    title: "Профессиональная покраска деревянных домов",
+    title: "Покраска на линии, а не на стройке",
+    subtitle:
+      "Шлифовка, грунт, два финишных слоя, сушка при +18…+22 °C. Межслойная пауза — от 4 до 8 часов по паспорту ЛКМ.",
     image: HERO_SLIDE_IMAGES.housePainting,
   },
   {
-    title: "Персональный подход",
-    subtitle: "Ваш комфорт — Наша приоритетная задача",
+    title: "Более 2 000 оттенков",
+    subtitle:
+      "Каталоги RAL, NCS, BIOFA, Osmo и выкрасы KD на древесине. До 3 бесплатных образцов на вашей доске.",
     image: HERO_SLIDE_IMAGES.personalApproach,
-  },
-  {
-    title: "Исключительное качество",
-    subtitle: "Гарантия долговечности и эстетики",
-    image: HERO_SLIDE_IMAGES.quality,
   },
 ];
 
@@ -114,8 +114,8 @@ export const CATALOG_PREVIEW: CatalogPreviewItem[] = [
     image: `${UPLOADS}/2025/04/photo_2025-04-26_23-26-37-225x300.webp`,
   },
   {
-    slug: "krashenaja-doska",
-    href: "/katalog/krashenaja-doska/",
+    slug: "fasadnaja-doska",
+    href: "/katalog/fasadnaja-doska/",
     title: "Крашеная фасадная доска",
     image: `${UPLOADS}/2025/04/photo_2025-04-26_23-26-46-225x300.webp`,
   },

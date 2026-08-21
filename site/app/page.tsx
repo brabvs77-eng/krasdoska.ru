@@ -12,7 +12,7 @@ import {
 } from "@/components/sections/HomeSections";
 import { HeroSlider } from "@/components/sections/HeroSlider";
 import { buildPageMetadata } from "@/lib/metadata";
-import { getExcerpt, getPage } from "@/lib/content";
+import { getPage } from "@/lib/content";
 import { HERO_SLIDES } from "@/lib/media";
 
 export async function generateMetadata() {
@@ -20,8 +20,7 @@ export async function generateMetadata() {
   return buildPageMetadata({
     title: page?.seo?.title ?? page?.title ?? "Главная",
     description:
-      getExcerpt(page) ??
-      "Производитель крашеной доски в Москве и Истре. Каталог, услуги покраски, палитра цветов, проекты и блог.",
+      "Крашеная доска с заводской покраской в Истре: от 1 436 руб/м², линия до 912 м² за смену, гарантия 3 года. Вагонка, планкен, фасад, терраса. Доставка по России.",
     path: "/",
   });
 }

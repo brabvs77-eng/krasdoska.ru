@@ -10,7 +10,7 @@ const LEGACY_PATH_MAP: Record<string, string> = {
   "/planken/": "/katalog/planken/",
   "/doska-pola/": "/katalog/krashenaja-doska/",
   "/parketnaja-doska/": "/katalog/krashenaja-doska/",
-  "/fasadnaja-doska/": "/katalog/krashenaja-doska/",
+  "/fasadnaja-doska/": "/katalog/fasadnaja-doska/",
   "/massiv-pola/": "/katalog/krashenaja-doska/",
   "/palubnaja-doska/": "/katalog/krashenaja-doska/",
   "/blok-haus/": "/katalog/imitacija-brusa/",
