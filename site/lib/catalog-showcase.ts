@@ -1,4 +1,5 @@
 const UPLOADS = "/uploads";
+const CATALOG = `${UPLOADS}/catalog`;
 
 export type CatalogSpec = {
   label: string;
@@ -20,7 +21,7 @@ export const CATALOG_SHOWCASE: CatalogShowcaseItem[] = [
     tagline:
       "Профили UYS, UYV, UYW, KM, UTS. От 1 800 руб/м² с заводской покраской. Ширина 90–196 мм, длина 6 000 мм.",
     href: "/katalog/skandinavskaja-doska/",
-    image: `${UPLOADS}/2025/11/capture_251107_215619-2.webp`,
+    image: `${CATALOG}/skandinavskaja-doska.webp`,
     priceFrom: "от 1800 руб/м²",
     specs: [
       { label: "Сорт", value: "AB" },
@@ -39,7 +40,7 @@ export const CATALOG_SHOWCASE: CatalogShowcaseItem[] = [
     tagline:
       "Северная сосна 23×196 мм с трёхслойной покраской, устойчивой к ультрафиолету. От 1 700 руб/м².",
     href: "/katalog/fasadnaja-doska/",
-    image: `${UPLOADS}/2025/11/capture_251107_215619-2.webp`,
+    image: `${CATALOG}/fasadnaja-doska.webp`,
     priceFrom: "от 1700 руб/м²",
     specs: [
       { label: "Сорт", value: "AB" },
@@ -57,7 +58,7 @@ export const CATALOG_SHOWCASE: CatalogShowcaseItem[] = [
     tagline:
       "Профиль «Штиль» из ангарской сосны, хвои и лиственницы. От 1 850 руб/м² с заводской покраской. Ширина 90–145 мм, длина до 6 000 мм.",
     href: "/katalog/krashenaja-vagonka/",
-    image: `${UPLOADS}/2025/11/14.webp`,
+    image: `${CATALOG}/krashenaja-vagonka.webp`,
     priceFrom: "от 1850 руб/м²",
     specs: [
       { label: "Сорт", value: "Экстра / A / B / AB / ABC" },
@@ -75,7 +76,7 @@ export const CATALOG_SHOWCASE: CatalogShowcaseItem[] = [
     tagline:
       "Крашеный блок-хаус Ø90–190 мм из сосны и лиственницы. От 1 436 руб/м² с заводской покраской. Для фасадов, бань и интерьеров.",
     href: "/katalog/imitacija-brusa/",
-    image: `${UPLOADS}/2025/11/14.webp`,
+    image: `${CATALOG}/blok-haus.webp`,
     priceFrom: "от 1436 руб/м²",
     specs: [
       { label: "Сорт", value: "АВ" },
@@ -93,7 +94,7 @@ export const CATALOG_SHOWCASE: CatalogShowcaseItem[] = [
     tagline:
       "Карельский и скандинавский профили. От 1 436 руб/м² с заводской покраской. Сосна, ель, лиственница. Для фасадов и интерьеров.",
     href: "/katalog/krashenaja-imitacija-brusa/",
-    image: `${UPLOADS}/2025/11/14.webp`,
+    image: `${CATALOG}/imitacija-brusa-karel.webp`,
     priceFrom: "от 1436 руб/м²",
     specs: [
       { label: "Сорт", value: "Экстра / A / B / AB" },
@@ -110,7 +111,7 @@ export const CATALOG_SHOWCASE: CatalogShowcaseItem[] = [
     tagline:
       "Лиственница, термососна, кедр. Профили «Вельвет» и «Ёлочка». От 2 500 руб/м² с влагостойкой покраской. Для бассейнов и причалов.",
     href: "/katalog/krashenaja-doska/",
-    image: `${UPLOADS}/2025/11/capture_251107_215619-2.webp`,
+    image: `${CATALOG}/palubnaja-doska.webp`,
     priceFrom: "от 2500 руб/м²",
     specs: [
       { label: "Сорт", value: "Экстра / A / AB" },
@@ -124,7 +125,7 @@ export const CATALOG_SHOWCASE: CatalogShowcaseItem[] = [
   {
     title: "Крашеная имитация бруса",
     href: "/katalog/krashenaja-imitacija-brusa/",
-    image: `${UPLOADS}/2025/11/14.webp`,
+    image: `${CATALOG}/imitacija-brusa.webp`,
     priceFrom: "от 1436 руб/м²",
     specs: [
       { label: "Сорт", value: "Экстра / A / B / AB" },
@@ -138,7 +139,7 @@ export const CATALOG_SHOWCASE: CatalogShowcaseItem[] = [
   {
     title: "Крашеная паркетная доска",
     href: "/katalog/krashenaja-doska/",
-    image: `${UPLOADS}/2025/11/capture_251107_215619-2.webp`,
+    image: `${CATALOG}/parketnaja-doska.webp`,
     priceFrom: "от 1800 руб/м²",
     specs: [
       { label: "Сорт", value: "Экстра / Селект / Натурал / АВ / Рустик" },
@@ -153,7 +154,7 @@ export const CATALOG_SHOWCASE: CatalogShowcaseItem[] = [
     tagline:
       "Лиственница и хвоя. Профили «Евровельвет» и «Вельвет». От 2 800 руб/м² с УФ-стойкой покраской. Для террас и открытых зон.",
     href: "/katalog/terrasnaja-doska/",
-    image: `${UPLOADS}/2025/11/capture_251107_215619-2.webp`,
+    image: `${CATALOG}/terrasnaja-doska.webp`,
     priceFrom: "от 2800 руб/м²",
     specs: [
       { label: "Сорт", value: "Экстра / A / B / AB" },
@@ -167,7 +168,7 @@ export const CATALOG_SHOWCASE: CatalogShowcaseItem[] = [
   {
     title: "Крашеный планкен",
     href: "/katalog/planken/",
-    image: `${UPLOADS}/2025/11/capture_251107_215619-2.webp`,
+    image: `${CATALOG}/planken.webp`,
     priceFrom: "от 2050 руб/м²",
     specs: [
       { label: "Сорт", value: "Экстра / A / B / AB" },
@@ -185,7 +186,19 @@ const SHOWCASE_SLUG_ALIASES: Record<string, string> = {
   vagonka: "krashenaja-vagonka",
 };
 
+const SHOWCASE_PRIMARY_TITLE: Record<string, string> = {
+  "krashenaja-imitacija-brusa": "Крашеная имитация бруса — карельский профиль",
+  "krashenaja-doska": "Крашеная палубная доска",
+};
+
 export function getCatalogShowcaseForSlug(slug: string): CatalogShowcaseItem | undefined {
   const resolved = SHOWCASE_SLUG_ALIASES[slug] ?? slug;
-  return CATALOG_SHOWCASE.find((item) => item.href === `/katalog/${resolved}/`);
+  const href = `/katalog/${resolved}/`;
+  const preferredTitle = SHOWCASE_PRIMARY_TITLE[resolved];
+  if (preferredTitle) {
+    return CATALOG_SHOWCASE.find(
+      (item) => item.href === href && item.title === preferredTitle,
+    );
+  }
+  return CATALOG_SHOWCASE.find((item) => item.href === href);
 }
