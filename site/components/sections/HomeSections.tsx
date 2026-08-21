@@ -258,15 +258,15 @@ const services = [
     image: SERVICE_IMAGES.spray,
   },
   {
-    href: "/tehnologija-nanesenija-kraski/",
+    href: "/uslugi/nanesenie-masla-i-voska/",
     title: "Нанесение масла, воска на пиломатериалы",
-    cta: "Подробнее",
+    cta: "Подробнее об услуге",
     image: SERVICE_IMAGES.oil,
   },
   {
-    href: "/kontakty/",
-    title: "Реставрация",
-    cta: "Подробнее",
+    href: "/uslugi/restavracija-derevyannyh-poverhnostej/",
+    title: "Реставрация деревянных поверхностей",
+    cta: "Подробнее об услуге",
     image: SERVICE_IMAGES.restoration,
   },
 ];
