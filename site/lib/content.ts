@@ -250,7 +250,11 @@ export function getPage(slug: string): ContentItem | null {
   return { ...page, content: normalizeWpHtml(page.content) };
 }
 
-const SERVICE_SLUGS = ["pokraska-dereva-na-stanke-metodom-raspyleni"];
+const SERVICE_SLUGS = [
+  "pokraska-dereva-na-stanke-metodom-raspyleni",
+  "nanesenie-masla-i-voska",
+  "restavracija-derevyannyh-poverhnostej",
+];
 
 export function getServiceSlugs(): string[] {
   return SERVICE_SLUGS;
