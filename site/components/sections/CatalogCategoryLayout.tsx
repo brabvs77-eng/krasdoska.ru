@@ -3,10 +3,12 @@ import Link from "next/link";
 import { ProductCard } from "@/components/cards/ProductCard";
 import { HtmlContent } from "@/components/content/HtmlContent";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
+import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { MarketingPageFooter } from "@/components/sections/MarketingPageFooter";
 import { PageHero } from "@/components/sections/PageHero";
 import type { CatalogCategory, CatalogProduct } from "@/lib/content";
 import type { CatalogShowcaseItem } from "@/lib/catalog-showcase";
+import { getCategoryFaq } from "@/lib/category-faq";
 import { getCatalogImage } from "@/lib/media";
 import { getProductImage } from "@/lib/product-media";
 import { getProductSectionImage } from "@/lib/profile-sections";
@@ -27,6 +29,7 @@ export function CatalogCategoryLayout({
   products,
 }: CatalogCategoryLayoutProps) {
   const image = showcase?.image ?? getCatalogImage(slug);
+  const categoryFaq = getCategoryFaq(slug);
 
   return (
     <>
@@ -122,6 +125,18 @@ export function CatalogCategoryLayout({
           </Link>
         </div>
       </section>
+
+      {categoryFaq && categoryFaq.length > 0 && (
+        <section className="section-dark border-t border-white/10 py-12 sm:py-16">
+          <div className="container-content">
+            <FaqAccordion
+              items={categoryFaq}
+              title={`Вопросы о ${title.toLowerCase()}`}
+              variant="dark"
+            />
+          </div>
+        </section>
+      )}
 
       <MarketingPageFooter />
     </>
