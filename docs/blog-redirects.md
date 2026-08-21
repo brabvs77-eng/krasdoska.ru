@@ -31,11 +31,22 @@
 
 | URL | Дата публикации | Статус |
 |-----|---------------|--------|
-| `/blog/krashenaya-vagonka-kak-vybrat/` | 2026-08-22 09:00 | по расписанию |
-| `/blog/ukryvnaya-vs-lessiruyushchaya-vs-maslo/` | 2026-08-22 15:00 | по расписанию |
-| `/blog/planken-listvennitsa-pryamoy-i-skoshennyy/` | 2026-08-23 09:00 | по расписанию |
-| `/blog/shemy-pokraski-sirca-kakoy-tarif/` | 2026-08-23 15:00 | по расписанию |
-| `/blog/skandinavskaya-doska-chto-eto-uys-uys/` | 2026-08-24 09:00 | по расписанию |
-| `/blog/kak-zakazat-vykras-i-podobrat-cvet/` | 2026-08-24 15:00 | по расписанию |
+| `/blog/krashenaya-vagonka-kak-vybrat/` | 2026-08-14 09:00 | опубликовано |
+| `/blog/ukryvnaya-vs-lessiruyushchaya-vs-maslo/` | 2026-08-14 15:00 | опубликовано |
+| `/blog/planken-listvennitsa-pryamoy-i-skoshennyy/` | 2026-08-15 09:00 | опубликовано |
+| `/blog/shemy-pokraski-sirca-kakoy-tarif/` | 2026-08-15 15:00 | опубликовано |
+| `/blog/skandinavskaya-doska-chto-eto-uys-uys/` | 2026-08-16 09:00 | опубликовано |
+| `/blog/kak-zakazat-vykras-i-podobrat-cvet/` | 2026-08-16 12:00 | опубликовано |
+
+## Фаза 2 (опубликовано)
+
+| URL | Дата |
+|-----|------|
+| `/blog/imitaciya-brusa-interer-vs-fasad/` | 2026-08-17 09:00 |
+| `/blog/terrasnaya-doska-maslo-talatu-vs-kraska/` | 2026-08-17 15:00 |
+| `/blog/pokraska-fasada-doma-poshagovo/` | 2026-08-18 09:00 |
+| `/blog/sosna-eli-listvennitsa-dlya-fasada/` | 2026-08-18 15:00 |
+| `/blog/oshibki-pokraski-dereva-na-obekte/` | 2026-08-19 09:00 |
+| `/blog/srok-sluzhby-zavodskogo-pokrytiya/` | 2026-08-19 15:00 |
 
 Расписание: поле `publishedAt` в JSON, фильтр в `getAllBlogPosts()` / `getBlogSlugs()`. Статья появляется после следующей сборки сайта, когда `publishedAt <= now`.
