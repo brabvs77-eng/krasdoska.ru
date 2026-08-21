@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ProductCard } from "@/components/cards/ProductCard";
 import { HtmlContent } from "@/components/content/HtmlContent";
+import { PageJsonLd } from "@/components/integrations/PageJsonLd";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { MarketingPageFooter } from "@/components/sections/MarketingPageFooter";
@@ -12,6 +13,11 @@ import { getCategoryFaq } from "@/lib/category-faq";
 import { getCatalogImage } from "@/lib/media";
 import { getProductImage } from "@/lib/product-media";
 import { getProductSectionImage } from "@/lib/profile-sections";
+import {
+  buildBreadcrumbListJsonLd,
+  buildCategoryProductJsonLd,
+  buildFaqPageJsonLd,
+} from "@/lib/schema";
 
 type CatalogCategoryLayoutProps = {
   slug: string;
@@ -30,16 +36,34 @@ export function CatalogCategoryLayout({
 }: CatalogCategoryLayoutProps) {
   const image = showcase?.image ?? getCatalogImage(slug);
   const categoryFaq = getCategoryFaq(slug);
+  const categoryPath = `/katalog/${slug}/`;
+  const description =
+    showcase?.tagline ??
+    category?.description ??
+    "Продукция в наличии и под заказ с профессиональной покраской на производстве.";
+
+  const jsonLd = [
+    buildBreadcrumbListJsonLd([
+      { name: "Главная", path: "/" },
+      { name: "Каталог", path: "/katalog/" },
+      { name: title, path: categoryPath },
+    ]),
+    buildCategoryProductJsonLd({
+      name: title,
+      description,
+      image,
+      path: categoryPath,
+      priceFrom: showcase?.priceFrom,
+    }),
+    ...(categoryFaq?.length ? [buildFaqPageJsonLd(categoryFaq)] : []),
+  ];
 
   return (
     <>
+      <PageJsonLd data={jsonLd} />
       <PageHero
         title={title}
-        description={
-          showcase?.tagline ??
-          category?.description ??
-          "Продукция в наличии и под заказ с профессиональной покраской на производстве."
-        }
+        description={description}
         action={{ href: "/#form", label: "Заказать звонок" }}
       />
 

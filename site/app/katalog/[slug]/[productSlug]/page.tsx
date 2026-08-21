@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { HtmlContent } from "@/components/content/HtmlContent";
+import { PageJsonLd } from "@/components/integrations/PageJsonLd";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { MarketingPageFooter } from "@/components/sections/MarketingPageFooter";
 import { PageHero } from "@/components/sections/PageHero";
@@ -11,8 +12,13 @@ import {
   getProductStaticParams,
   matchesCategory,
 } from "@/lib/content";
+import { getCatalogShowcaseForSlug } from "@/lib/catalog-showcase";
 import { getProductImage } from "@/lib/product-media";
 import { getProductSectionImage } from "@/lib/profile-sections";
+import {
+  buildBreadcrumbListJsonLd,
+  buildCategoryProductJsonLd,
+} from "@/lib/schema";
 
 type Props = { params: Promise<{ slug: string; productSlug: string }> };
 
@@ -50,10 +56,31 @@ export default async function CatalogProductPage({ params }: Props) {
 
   const image = getProductImage(product);
   const sectionImage = getProductSectionImage(product);
+  const excerpt = getExcerpt(product);
+  const productPath = `/katalog/${slug}/${productSlug}/`;
+  const showcase = getCatalogShowcaseForSlug(slug);
+
+  const jsonLd = [
+    buildBreadcrumbListJsonLd([
+      { name: "Главная", path: "/" },
+      { name: "Каталог", path: "/katalog/" },
+      { name: categoryTitle, path: `/katalog/${slug}/` },
+      { name: product.title, path: productPath },
+    ]),
+    buildCategoryProductJsonLd({
+      name: product.title,
+      description: excerpt,
+      image,
+      path: productPath,
+      priceFrom: showcase?.priceFrom,
+      sku: product.id,
+    }),
+  ];
 
   return (
     <>
-      <PageHero title={product.title} description={getExcerpt(product)} />
+      <PageJsonLd data={jsonLd} />
+      <PageHero title={product.title} description={excerpt} />
       <article className="section-dark py-12 sm:py-16">
         <div className="container-content">
           <Breadcrumbs
