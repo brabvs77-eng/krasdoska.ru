@@ -58,4 +58,15 @@
 | `/blog/krashenaya-doska-karkasnyy-dom/` | 2026-08-21 09:00 |
 | `/blog/krashenaya-doska-dlya-stroiteley-i-dizaynerov/` | 2026-08-21 15:00 |
 
+## Фаза 4 (опубликовано)
+
+| URL | Дата |
+|-----|------|
+| `/blog/restavratsiya-vs-pokraska-s-nulya/` | 2026-08-21 09:00 |
+| `/blog/montazh-krashenoy-doski/` | 2026-08-21 11:00 |
+| `/blog/palitra-kd-kak-chitat-kody/` | 2026-08-21 13:00 |
+| `/blog/ekologichnost-lkm-dlya-doma/` | 2026-08-21 15:00 |
+| `/blog/kejs-fasad-planken-listvennitsy/` | 2026-08-21 17:00 |
+| `/blog/kejs-pokrashka-podshivki-kleenyy-brus/` | 2026-08-21 19:00 |
+
 Расписание: поле `publishedAt` в JSON, фильтр в `getAllBlogPosts()` / `getBlogSlugs()`. Статья появляется после следующей сборки сайта, когда `publishedAt <= now`.
