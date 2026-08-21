@@ -123,6 +123,38 @@ export const CATALOG_SHOWCASE: CatalogShowcaseItem[] = [
     ],
   },
   {
+    title: "Крашеная доска пола",
+    tagline:
+      "Шпунт-паз из сосны, ели и лиственницы. От 1 800 руб/м² с заводской покраской. Для жилых интерьеров и коммерческих помещений.",
+    href: "/katalog/krashenaja-doska/",
+    image: `${CATALOG}/doska-pola.webp`,
+    priceFrom: "от 1800 руб/м²",
+    specs: [
+      { label: "Сорт", value: "Экстра / A / B / AB" },
+      { label: "Порода", value: "Сосна / ель / лиственница" },
+      { label: "Поверхность", value: "Строганая, шлифованная" },
+      { label: "Толщина", value: "20 / 28 / 35 мм" },
+      { label: "Ширина", value: "90 / 110 / 135 / 145 мм" },
+      { label: "Длина", value: "2000 / 3000 / 4000 / 6000 мм" },
+    ],
+  },
+  {
+    title: "Крашеный массив пола",
+    tagline:
+      "Цельная древесина дуба, ясеня и сосны. От 2 200 руб/м² с заводской покраской. Широкие доски для премиальных интерьеров.",
+    href: "/katalog/krashenaja-doska/",
+    image: `${CATALOG}/massiv-pola.webp`,
+    priceFrom: "от 2200 руб/м²",
+    specs: [
+      { label: "Сорт", value: "Селект / Натурал / АВ" },
+      { label: "Порода", value: "Дуб / ясень / сосна" },
+      { label: "Поверхность", value: "Шлифованная, готовая к укладке" },
+      { label: "Толщина", value: "15 / 18 / 20 / 22 мм" },
+      { label: "Ширина", value: "120 / 140 / 180 / 220 мм" },
+      { label: "Длина", value: "600 / 1200 / 1800 / 2400 мм" },
+    ],
+  },
+  {
     title: "Крашеная имитация бруса",
     href: "/katalog/krashenaja-imitacija-brusa/",
     image: `${CATALOG}/imitacija-brusa.webp`,
@@ -138,6 +170,8 @@ export const CATALOG_SHOWCASE: CatalogShowcaseItem[] = [
   },
   {
     title: "Крашеная паркетная доска",
+    tagline:
+      "Многослойная и штучная паркетная доска из дуба и ясеня. От 1 800 руб/м² с заводской покраской. Ёлочка, палубная и прямая укладка.",
     href: "/katalog/krashenaja-doska/",
     image: `${CATALOG}/parketnaja-doska.webp`,
     priceFrom: "от 1800 руб/м²",
