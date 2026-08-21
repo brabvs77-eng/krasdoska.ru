@@ -49,4 +49,13 @@
 | `/blog/oshibki-pokraski-dereva-na-obekte/` | 2026-08-19 09:00 |
 | `/blog/srok-sluzhby-zavodskogo-pokrytiya/` | 2026-08-19 15:00 |
 
+## Фаза 3 (опубликовано)
+
+| URL | Дата |
+|-----|------|
+| `/blog/brashirovanie-i-pokraska-doski/` | 2026-08-20 09:00 |
+| `/blog/pokraska-zimoy-v-tsehu-vs-na-obekte/` | 2026-08-20 15:00 |
+| `/blog/krashenaya-doska-karkasnyy-dom/` | 2026-08-21 09:00 |
+| `/blog/krashenaya-doska-dlya-stroiteley-i-dizaynerov/` | 2026-08-21 15:00 |
+
 Расписание: поле `publishedAt` в JSON, фильтр в `getAllBlogPosts()` / `getBlogSlugs()`. Статья появляется после следующей сборки сайта, когда `publishedAt <= now`.
