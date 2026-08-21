@@ -1,4 +1,5 @@
 const UPLOADS = "/uploads";
+const CATALOG = `${UPLOADS}/catalog`;
 
 /** Shared page headers — WP frist-screen.png as-is (true black, no lift) */
 export const PAGE_HERO_BG = `${UPLOADS}/2025/04/page-hero-frist-screen-black.webp`;
@@ -81,73 +82,73 @@ export const CATALOG_PREVIEW: CatalogPreviewItem[] = [
     slug: "krashenaja-vagonka",
     href: "/katalog/krashenaja-vagonka/",
     title: "Крашеная вагонка",
-    image: `${UPLOADS}/2025/04/photo_2025-04-26_23-25-05-225x300.webp`,
+    image: `${CATALOG}/krashenaja-vagonka.webp`,
   },
   {
     slug: "krashenaja-imitacija-brusa",
     href: "/katalog/krashenaja-imitacija-brusa/",
     title: "Крашеная имитация бруса",
-    image: `${UPLOADS}/2025/04/photo_2025-04-26_23-25-21-225x300.webp`,
+    image: `${CATALOG}/imitacija-brusa.webp`,
   },
   {
     slug: "planken",
     href: "/katalog/planken/",
     title: "Крашеный планкен",
-    image: `${UPLOADS}/2025/04/photo_2025-04-26_23-25-38-225x300.webp`,
+    image: `${CATALOG}/planken.webp`,
   },
   {
     slug: "skandinavskaja-doska",
     href: "/katalog/skandinavskaja-doska/",
     title: "Крашеная скандинавская доска",
-    image: `${UPLOADS}/2025/04/photo_2025-04-26_23-25-51-225x300.webp`,
+    image: `${CATALOG}/skandinavskaja-doska.webp`,
   },
   {
     slug: "krashenaja-doska",
     href: "/katalog/krashenaja-doska/",
     title: "Крашеная доска пола",
-    image: `${UPLOADS}/2025/04/photo_2025-04-26_23-26-02-225x300.webp`,
+    image: `${CATALOG}/palubnaja-doska.webp`,
   },
   {
     slug: "krashenaja-doska",
     href: "/katalog/krashenaja-doska/",
     title: "Крашеная паркетная доска",
-    image: `${UPLOADS}/2025/04/photo_2025-04-26_23-26-37-225x300.webp`,
+    image: `${CATALOG}/parketnaja-doska.webp`,
   },
   {
     slug: "krashenaja-doska",
     href: "/katalog/krashenaja-doska/",
     title: "Крашеная фасадная доска",
-    image: `${UPLOADS}/2025/04/photo_2025-04-26_23-26-46-225x300.webp`,
+    image: `${CATALOG}/fasadnaja-doska.webp`,
   },
   {
     slug: "krashenaja-doska",
     href: "/katalog/krashenaja-doska/",
     title: "Крашеный массив пола",
-    image: `${UPLOADS}/2025/04/photo_2025-04-26_23-26-58-225x300.webp`,
+    image: `${CATALOG}/parketnaja-doska.webp`,
   },
   {
     slug: "terrasnaja-doska",
     href: "/katalog/terrasnaja-doska/",
     title: "Крашеная террасная доска",
-    image: `${UPLOADS}/2025/04/photo_2025-04-26_23-27-07-225x300.webp`,
+    image: `${CATALOG}/terrasnaja-doska.webp`,
   },
   {
     slug: "krashenaja-doska",
     href: "/katalog/krashenaja-doska/",
     title: "Палубная доска",
-    image: `${UPLOADS}/2025/04/photo_2025-04-26_23-27-21-225x300.webp`,
+    image: `${CATALOG}/palubnaja-doska.webp`,
   },
   {
     slug: "krashenaja-imitacija-brusa",
     href: "/katalog/krashenaja-imitacija-brusa/",
     title: "Имитация бруса — карельский профиль",
-    image: `${UPLOADS}/2025/04/photo_2025-04-26_23-27-40-225x300.webp`,
+    image: `${CATALOG}/imitacija-brusa-karel.webp`,
   },
   {
     slug: "imitacija-brusa",
     href: "/katalog/imitacija-brusa/",
     title: "Блок-хаус",
-    image: `${UPLOADS}/2025/04/photo_2025-04-26_23-27-56-225x300.webp`,
+    image: `${CATALOG}/blok-haus.webp`,
   },
 ];
 
@@ -207,6 +208,12 @@ export function firstImageFromHtml(html?: string): string | undefined {
   return match[1].replace(/https?:\/\/krashenayadoska\.ru\/wp-content\/uploads\//i, `${UPLOADS}/`);
 }
 
-export function getCatalogImage(slug: string): string | undefined {
+export function getCatalogImage(slug: string, title?: string): string | undefined {
+  if (title) {
+    const byTitle = CATALOG_PREVIEW.find(
+      (item) => item.slug === slug && item.title === title,
+    );
+    if (byTitle) return byTitle.image;
+  }
   return CATALOG_PREVIEW.find((item) => item.slug === slug)?.image;
 }
