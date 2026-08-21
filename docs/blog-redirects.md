@@ -93,4 +93,15 @@
 | `/blog/dostavka-krashenoy-doski-v-rostov-na-donu/` | 2026-08-22 01:00 |
 | `/blog/dostavka-krashenoy-doski-v-sochi/` | 2026-08-22 02:00 |
 
+### Фаза 5в — расширение серии (2)
+
+| URL | Дата |
+|-----|------|
+| `/blog/dostavka-krashenoy-doski-v-voronezh/` | 2026-08-22 09:00 |
+| `/blog/dostavka-krashenoy-doski-v-samara/` | 2026-08-22 11:00 |
+| `/blog/dostavka-krashenoy-doski-v-tulu/` | 2026-08-22 13:00 |
+| `/blog/dostavka-krashenoy-doski-v-smolensk/` | 2026-08-22 15:00 |
+| `/blog/dostavka-krashenoy-doski-v-ufu/` | 2026-08-22 17:00 |
+| `/blog/dostavka-krashenoy-doski-v-perm/` | 2026-08-22 19:00 |
+
 Скрипт генерации: `site/scripts/create-regional-delivery-articles.mjs` (флаг `--only=slug1,slug2` для выборочной генерации)
