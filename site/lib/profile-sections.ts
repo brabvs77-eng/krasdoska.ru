@@ -44,6 +44,7 @@ const CATEGORY_SECTION: Record<string, string> = {
   planken: PROFILE_SECTION_IMAGES.plankenKosoy,
   "terrasnaja-doska": PROFILE_SECTION_IMAGES.terrasaVelvet,
   "krashenaja-doska": PROFILE_SECTION_IMAGES.palubnaya,
+  "fasadnaja-doska": PROFILE_SECTION_IMAGES.doskaKm,
   "skandinavskaja-doska": PROFILE_SECTION_IMAGES.doskaKm,
 };
 
