@@ -54,6 +54,8 @@ export const CATALOG_SHOWCASE: CatalogShowcaseItem[] = [
   },
   {
     title: "Крашеная вагонка",
+    tagline:
+      "Профиль «Штиль» из ангарской сосны, хвои и лиственницы. От 1 850 руб/м² с заводской покраской. Ширина 90–145 мм, длина до 6 000 мм.",
     href: "/katalog/krashenaja-vagonka/",
     image: `${UPLOADS}/2025/11/14.webp`,
     priceFrom: "от 1850 руб/м²",
@@ -70,7 +72,8 @@ export const CATALOG_SHOWCASE: CatalogShowcaseItem[] = [
   },
   {
     title: "Имитация бруса",
-    tagline: "Профиль UTVF для внутренней отделки — шлифовка, воск и лак в цеху",
+    tagline:
+      "Крашеный блок-хаус Ø90–190 мм из сосны и лиственницы. От 1 436 руб/м² с заводской покраской. Для фасадов, бань и интерьеров.",
     href: "/katalog/imitacija-brusa/",
     image: `${UPLOADS}/2025/11/14.webp`,
     priceFrom: "от 1436 руб/м²",
@@ -87,6 +90,8 @@ export const CATALOG_SHOWCASE: CatalogShowcaseItem[] = [
   },
   {
     title: "Крашеная имитация бруса — карельский профиль",
+    tagline:
+      "Карельский и скандинавский профили. От 1 436 руб/м² с заводской покраской. Сосна, ель, лиственница. Для фасадов и интерьеров.",
     href: "/katalog/krashenaja-imitacija-brusa/",
     image: `${UPLOADS}/2025/11/14.webp`,
     priceFrom: "от 1436 руб/м²",
@@ -102,6 +107,8 @@ export const CATALOG_SHOWCASE: CatalogShowcaseItem[] = [
   },
   {
     title: "Крашеная палубная доска",
+    tagline:
+      "Лиственница, термососна, кедр. Профили «Вельвет» и «Ёлочка». От 2 500 руб/м² с влагостойкой покраской. Для бассейнов и причалов.",
     href: "/katalog/krashenaja-doska/",
     image: `${UPLOADS}/2025/11/capture_251107_215619-2.webp`,
     priceFrom: "от 2500 руб/м²",
@@ -143,6 +150,8 @@ export const CATALOG_SHOWCASE: CatalogShowcaseItem[] = [
   },
   {
     title: "Крашеная террасная доска",
+    tagline:
+      "Лиственница и хвоя. Профили «Евровельвет» и «Вельвет». От 2 800 руб/м² с УФ-стойкой покраской. Для террас и открытых зон.",
     href: "/katalog/terrasnaja-doska/",
     image: `${UPLOADS}/2025/11/capture_251107_215619-2.webp`,
     priceFrom: "от 2800 руб/м²",
