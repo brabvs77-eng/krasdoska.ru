@@ -25,6 +25,10 @@ export function CookieNotice() {
       <p className="text-sm text-neutral-700">
         Мы используем cookie для аналитики и улучшения сайта. Продолжая пользоваться сайтом, вы
         соглашаетесь с{" "}
+        <Link href="/politika-obrabotki-personalnyh-dannyh/" className="text-brand underline">
+          политикой обработки персональных данных
+        </Link>{" "}
+        и{" "}
         <Link href="/politika-konfidencialnosti/" className="text-brand underline">
           политикой конфиденциальности
         </Link>
