@@ -66,7 +66,7 @@ export const COLORS_BG = `${UPLOADS}/2025/03/Frame-19.webp`;
 // Parity: реальные фото услуг из оригинала (krashenayadoska.ru)
 export const SERVICE_IMAGES = {
   spray: `${UPLOADS}/2025/04/photo_2025-05-17_23-20-04.webp`,
-  oil: `${UPLOADS}/2025/04/c5d08fd6-5703-4394-80a9-1384f4ee39da.webp`,
+  oil: `${UPLOADS}/2026/08/maslo-vosk-hero.webp`,
   restoration: `${UPLOADS}/2026/08/restavracija-hero.webp`,
 } as const;
 
