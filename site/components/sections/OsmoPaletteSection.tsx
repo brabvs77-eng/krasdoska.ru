@@ -128,6 +128,7 @@ export function OsmoPaletteSection({ data }: OsmoPaletteSectionProps) {
               <Image
                 src={PALETTE_HERO_IMAGE}
                 alt="Заводская покраска пиломатериалов"
+                title="Заводская покраска пиломатериалов"
                 fill
                 sizes="360px"
                 className="object-cover"

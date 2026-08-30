@@ -306,6 +306,7 @@ export function PaintSchemesSection({ data }: Props) {
                 <Image
                   src={example.src}
                   alt={example.alt}
+                  title={example.alt}
                   fill
                   sizes="(max-width: 768px) 50vw, 33vw"
                   className="object-cover transition duration-500 group-hover:scale-105"

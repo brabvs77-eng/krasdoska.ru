@@ -87,7 +87,8 @@ export function ContentList({
               <div className="relative aspect-[16/10] overflow-hidden bg-surface-muted">
                 <Image
                   src={item.image}
-                  alt=""
+                  alt={item.title}
+                  title={item.title}
                   fill
                   sizes="(max-width: 640px) 85vw, 360px"
                   className="object-cover transition duration-300 group-hover:scale-105"

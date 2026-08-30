@@ -359,6 +359,7 @@ function Photo({
       <Image
         src={src}
         alt={alt}
+        title={alt}
         fill
         sizes={sizes}
         className="object-cover object-top"
@@ -550,11 +551,11 @@ export function AboutCompanyContent() {
                       group.images.length === 2 ? "sm:grid-cols-2" : "max-w-[280px]"
                     }`}
                   >
-                    {group.images.map((src) => (
+                    {group.images.map((src, imageIndex) => (
                       <Photo
                         key={src}
                         src={src}
-                        alt={group.title}
+                        alt={`${group.title} — фото ${imageIndex + 1}`}
                         sizes="(max-width: 768px) 280px, 240px"
                       />
                     ))}
@@ -570,11 +571,11 @@ export function AboutCompanyContent() {
                     ))}
                   </div>
                   <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
-                    {group.images.map((src) => (
+                    {group.images.map((src, imageIndex) => (
                       <div key={src} className="max-w-[280px] sm:max-w-none">
                         <Photo
                           src={src}
-                          alt={group.title}
+                          alt={`${group.title} — фото ${imageIndex + 1}`}
                           sizes="(max-width: 640px) 280px, (max-width: 1024px) 45vw, 280px"
                         />
                       </div>

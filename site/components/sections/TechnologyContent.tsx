@@ -42,6 +42,7 @@ export function TechnologyContent({ page }: TechnologyContentProps) {
               <Image
                 src={TECHNOLOGY_IMAGE}
                 alt="Рифлёная доска крупным планом — объёмная фактура без потери качества"
+                title="Рифлёная доска крупным планом"
                 fill
                 sizes="(max-width: 768px) 100vw, 1200px"
                 className="object-cover"

@@ -118,7 +118,8 @@ export function ProjectLayout({ project }: ProjectLayoutProps) {
                 <div className="relative h-14 w-28">
                   <Image
                     src={project.logo}
-                    alt="Партнёр проекта"
+                    alt={`Логотип партнёра проекта «${project.title}»`}
+                    title={`Партнёр проекта «${project.title}»`}
                     fill
                     sizes="112px"
                     className="object-contain"
@@ -147,12 +148,13 @@ export function ProjectLayout({ project }: ProjectLayoutProps) {
                 </div>
                 {extraGallery.length > 0 ? (
                   <div className="mt-4 grid gap-4 sm:grid-cols-2">
-                    {extraGallery.map((src) => (
+                    {extraGallery.map((src, imageIndex) => (
                       <figure key={src} className="article-figure">
                         <div className="relative aspect-[16/10] overflow-hidden border border-white/10">
                           <Image
                             src={src}
-                            alt={project.title}
+                            alt={`${project.title} — фото ${imageIndex + 1}`}
+                            title={`${project.title} — фото ${imageIndex + 1}`}
                             fill
                             sizes="(max-width: 640px) 100vw, 50vw"
                             className="object-cover"
@@ -176,12 +178,13 @@ export function ProjectLayout({ project }: ProjectLayoutProps) {
                   <span>Галерея</span>
                 </h2>
                 <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                  {allGallery.map((src) => (
+                  {allGallery.map((src, imageIndex) => (
                     <figure key={src} className="article-figure">
                       <div className="relative aspect-[16/10] overflow-hidden border border-white/10">
                         <Image
                           src={src}
-                          alt={project.title}
+                          alt={`${project.title} — фото ${imageIndex + 1}`}
+                          title={`${project.title} — фото ${imageIndex + 1}`}
                           fill
                           sizes="(max-width: 640px) 100vw, 50vw"
                           className="object-cover"

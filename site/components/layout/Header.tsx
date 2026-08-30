@@ -86,6 +86,7 @@ export function Header() {
             <Image
               src={logo}
               alt={site.name}
+              title={site.name}
               width={48}
               height={48}
               className="h-11 w-auto max-w-[180px] object-contain brightness-0 invert"

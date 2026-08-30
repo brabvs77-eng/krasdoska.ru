@@ -20,6 +20,7 @@ export function Hero({ title, subtitle, primaryCta, secondaryCta }: HeroProps) {
         sizes="100vw"
         className="object-cover"
         unoptimized
+        aria-hidden
       />
       <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/95 via-brand/85 to-brand/60" />
       <div className="container-content relative py-16 sm:py-20 lg:py-28">

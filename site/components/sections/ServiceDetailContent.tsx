@@ -63,6 +63,7 @@ export function ServiceDetailContent({ service, breadcrumbs }: Props) {
               <Image
                 src={service.heroImage}
                 alt={service.title}
+                title={service.title}
                 fill
                 sizes="560px"
                 className="object-cover"
@@ -107,6 +108,7 @@ export function ServiceDetailContent({ service, breadcrumbs }: Props) {
             <Image
               src={service.wideImage}
               alt={service.title}
+              title={service.title}
               fill
               sizes="100vw"
               className="object-cover"
@@ -130,6 +132,7 @@ export function ServiceDetailContent({ service, breadcrumbs }: Props) {
             <Image
               src={service.techImage}
               alt={service.title}
+              title={service.title}
               fill
               sizes="380px"
               className="object-cover"
@@ -149,6 +152,7 @@ export function ServiceDetailContent({ service, breadcrumbs }: Props) {
                   <Image
                     src={feature.image}
                     alt={feature.title}
+                    title={feature.title}
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover"
@@ -200,7 +204,8 @@ export function ServiceDetailContent({ service, breadcrumbs }: Props) {
                   <div className="relative aspect-[3/4] overflow-hidden rounded-lg">
                     <Image
                       src={swatch.image}
-                      alt={swatch.code}
+                      alt={`Цвет ${swatch.code}`}
+                      title={swatch.code}
                       fill
                       sizes="(max-width: 640px) 33vw, 16vw"
                       className="object-cover"

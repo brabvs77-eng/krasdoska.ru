@@ -5,6 +5,7 @@ type HtmlContentProps = {
   className?: string;
   stripLeadingH1?: boolean;
   stripTrailingCta?: boolean;
+  imageContext?: string;
 };
 
 export function HtmlContent({
@@ -12,8 +13,9 @@ export function HtmlContent({
   className = "",
   stripLeadingH1,
   stripTrailingCta,
+  imageContext,
 }: HtmlContentProps) {
-  const normalized = normalizeWpHtml(html, { stripLeadingH1, stripTrailingCta });
+  const normalized = normalizeWpHtml(html, { stripLeadingH1, stripTrailingCta, imageContext });
   if (!normalized?.trim()) return null;
   return (
     <div

@@ -21,6 +21,8 @@ export function ProductCard({
 }: ProductCardProps) {
   const isDark = variant === "dark";
 
+  const productAlt = imageAlt ?? `Крашеная доска: ${title}`;
+
   return (
     <Link href={href} className="group flex h-full flex-col">
       <div
@@ -31,7 +33,8 @@ export function ProductCard({
         <div className="relative aspect-[225/300]">
           <Image
             src={image}
-            alt={imageAlt ?? title}
+            alt={productAlt}
+            title={productAlt}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
             className="object-cover transition duration-300 group-hover:scale-105"
@@ -65,6 +68,7 @@ export function ProductCard({
             <Image
               src={sectionImage}
               alt={`Сечение: ${title}`}
+              title={`Сечение: ${title}`}
               fill
               sizes="(max-width: 640px) 100vw, 33vw"
               className="object-contain object-center"

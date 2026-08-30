@@ -73,6 +73,7 @@ export function PaletteDetailSection({ data }: PaletteDetailSectionProps) {
                 <Image
                   src={asideImage}
                   alt={data.title}
+                  title={data.title}
                   fill
                   sizes="360px"
                   className="object-cover"

@@ -18,6 +18,7 @@ export function Footer() {
             <Image
               src="/logotype.svg"
               alt={site.name}
+              title={site.name}
               width={180}
               height={56}
               className="h-14 w-auto max-w-[200px] object-contain brightness-0 invert"

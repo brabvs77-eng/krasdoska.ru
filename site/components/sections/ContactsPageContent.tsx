@@ -150,6 +150,7 @@ export function ContactsPageContent() {
                   <Image
                     src={DELIVERY_TRUCK_IMAGE}
                     alt="Доставка крашеной доски"
+                    title="Доставка крашеной доски"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"

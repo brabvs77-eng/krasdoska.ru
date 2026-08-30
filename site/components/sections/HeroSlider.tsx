@@ -30,12 +30,14 @@ export function HeroSlider({ slides }: HeroSliderProps) {
           <Image
             key={item.image}
             src={item.image}
-            alt=""
+            alt={item.title.replace(/\s*\n\s*/g, " ")}
+            title={item.title.replace(/\s*\n\s*/g, " ")}
             fill
             priority={i === 0}
             sizes="100vw"
             className={`object-cover transition-opacity duration-700 ${i === index ? "opacity-100" : "opacity-0"}`}
             unoptimized
+            aria-hidden={i !== index}
           />
         ))}
       </div>

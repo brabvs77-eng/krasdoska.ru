@@ -95,6 +95,7 @@ export function ImageLightbox({ items, index, onClose, onChange }: ImageLightbox
           <Image
             src={item.src}
             alt={item.alt}
+            title={item.alt}
             fill
             sizes="100vw"
             className="object-contain"

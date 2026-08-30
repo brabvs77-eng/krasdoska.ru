@@ -71,6 +71,7 @@ export default async function CatalogProductPage({ params }: Props) {
                 <Image
                   src={image}
                   alt={product.title}
+                  title={product.title}
                   fill
                   sizes="360px"
                   className="object-cover"
@@ -86,6 +87,7 @@ export default async function CatalogProductPage({ params }: Props) {
                     <Image
                       src={sectionImage}
                       alt={`Сечение профиля: ${product.title}`}
+                      title={`Сечение профиля: ${product.title}`}
                       fill
                       sizes="360px"
                       className="object-contain object-left"
@@ -97,6 +99,7 @@ export default async function CatalogProductPage({ params }: Props) {
             </div>
             <HtmlContent
               html={product.content}
+              imageContext={product.title}
               className="text-white/85 [&_h2]:text-white [&_h3]:text-white [&_h4]:text-white [&_a]:text-accent [&_strong]:text-white"
             />
           </div>
