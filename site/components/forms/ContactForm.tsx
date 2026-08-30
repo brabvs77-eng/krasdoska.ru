@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, type FormEvent } from "react";
 import { trackMetrikaGoal } from "@/lib/analytics";
 
@@ -145,7 +146,13 @@ export function ContactForm({
             className="mt-0.5 h-4 w-4 shrink-0 accent-accent"
           />
           <span>
-            Нажимая кнопку «Отправить», вы соглашаетесь на обработку персональных данных
+            Нажимая кнопку «Отправить», вы соглашаетесь на{" "}
+            <Link
+              href="/politika-obrabotki-personalnyh-dannyh/"
+              className="text-accent underline hover:text-white"
+            >
+              обработку персональных данных
+            </Link>
           </span>
         </label>
       </div>
