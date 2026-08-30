@@ -23,6 +23,7 @@ const staticRoutes = [
   "/kontakty/",
   "/tehnologija-nanesenija-kraski/",
   "/politika-konfidencialnosti/",
+  "/politika-obrabotki-personalnyh-dannyh/",
   "/zavodskaya-pokraska/",
   "/proizvodstvo-istra/",
 ];

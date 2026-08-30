@@ -92,12 +92,18 @@ export function Footer() {
           </a>
         </div>
 
-        <div className="mt-10 border-t border-white/10 pt-6">
+        <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-white/10 pt-6">
           <Link
             href="/politika-konfidencialnosti/"
             className="text-sm text-white/55 hover:text-white"
           >
             Политика конфиденциальности
+          </Link>
+          <Link
+            href="/politika-obrabotki-personalnyh-dannyh/"
+            className="text-sm text-white/55 hover:text-white"
+          >
+            Политика обработки персональных данных
           </Link>
         </div>
       </div>
