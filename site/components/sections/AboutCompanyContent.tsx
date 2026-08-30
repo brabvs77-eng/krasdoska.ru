@@ -229,7 +229,7 @@ const directors = [
   {
     name: "Андрей Сергеевич",
     role: "технолог производства",
-    image: "/uploads/2025/04/frame-10-2.webp",
+    image: "/uploads/2026/08/andrey-sergeevich-technolog.webp",
     reverse: true,
     isLead: false,
     paragraphs: [

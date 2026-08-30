@@ -121,6 +121,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-uploads-
 
+      - name: Restore git-tracked uploads over cache
+        run: git checkout HEAD -- public/uploads/
+
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
