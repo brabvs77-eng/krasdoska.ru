@@ -67,7 +67,7 @@ export const COLORS_BG = `${UPLOADS}/2025/03/Frame-19.webp`;
 export const SERVICE_IMAGES = {
   spray: `${UPLOADS}/2025/04/photo_2025-05-17_23-20-04.webp`,
   oil: `${UPLOADS}/2026/08/maslo-vosk-hero.webp`,
-  restoration: `${UPLOADS}/2025/04/photo_2025-05-18_00-25-01.webp`,
+  restoration: `${UPLOADS}/2026/08/restavracija-hero.webp`,
 } as const;
 
 export type CatalogPreviewItem = {
