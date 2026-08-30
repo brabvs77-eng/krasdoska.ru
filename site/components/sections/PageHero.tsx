@@ -36,6 +36,7 @@ export function PageHero({
         sizes="100vw"
         className="object-cover object-center"
         unoptimized
+        aria-hidden
       />
       <div className={overlays[overlay]} />
       <div className="container-content relative py-20 pt-28 text-white sm:py-24 sm:pt-32 lg:py-28 lg:pt-36">

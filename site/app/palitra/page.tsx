@@ -70,6 +70,7 @@ export default function PalettePage() {
           sizes="100vw"
           className="object-cover"
           unoptimized
+          aria-hidden
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/20 to-transparent" />
         <div className="container-content relative text-white">
@@ -118,6 +119,7 @@ export default function PalettePage() {
                     <Image
                       src={item.image}
                       alt={item.title}
+                      title={item.title}
                       fill
                       sizes="(max-width: 640px) 100vw, 33vw"
                       className="object-cover"
@@ -163,6 +165,7 @@ export default function PalettePage() {
           sizes="100vw"
           className="object-cover opacity-25"
           unoptimized
+          aria-hidden
         />
         <div className="absolute inset-0 bg-brand-dark/80" />
         <div className="container-content relative flex justify-center">

@@ -179,6 +179,7 @@ export function ProductionIntroSection() {
               <Image
                 src={PRODUCTION_IMAGE}
                 alt="Производство крашеной доски"
+                title="Производство крашеной доски"
                 fill
                 sizes="400px"
                 className="object-cover"
@@ -196,7 +197,8 @@ export function ProductionIntroSection() {
               <div className="relative h-12 w-12">
                 <Image
                   src={ADVANTAGE_ICONS[index]}
-                  alt=""
+                  alt={item.title}
+                  title={item.title}
                   fill
                   sizes="48px"
                   className="object-contain"
@@ -300,12 +302,21 @@ export function ServicesPreviewSection({ variant = "home" }: ServicesPreviewSect
             sizes="40vw"
             className="object-cover opacity-45 mix-blend-multiply"
             unoptimized
+            aria-hidden
           />
         </div>
       ) : (
         /* Parity: чёткое фото леса справа — заходит ЗА карточки и вниз в секцию «Цвета» */
         <div aria-hidden="true" className="pointer-events-none absolute right-0 top-1/2 z-0 hidden h-[820px] w-[46%] overflow-hidden lg:block">
-          <Image src={COLORS_BG} alt="" fill sizes="46vw" className="object-cover object-top" unoptimized />
+          <Image
+            src={COLORS_BG}
+            alt=""
+            fill
+            sizes="46vw"
+            className="object-cover object-top"
+            unoptimized
+            aria-hidden
+          />
         </div>
       )}
       <div className="container-content relative z-10">
@@ -320,6 +331,7 @@ export function ServicesPreviewSection({ variant = "home" }: ServicesPreviewSect
               <Image
                 src={item.image}
                 alt={item.title}
+                title={item.title}
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
                 className="object-cover transition duration-500 group-hover:scale-105"
@@ -367,7 +379,8 @@ export function ColorsSection() {
               <div className="relative mx-auto aspect-square max-w-[150px] overflow-hidden rounded-2xl border border-white/15 bg-black shadow-lg">
                 <Image
                   src={swatch.image}
-                  alt={swatch.code}
+                  alt={`Цвет ${swatch.code}`}
+                  title={swatch.code}
                   fill
                   sizes="150px"
                   className="object-cover transition duration-300 group-hover:scale-105"
@@ -395,6 +408,7 @@ export function PartnersSection() {
         sizes="100vw"
         className="object-cover opacity-20"
         unoptimized
+        aria-hidden
       />
       <div className="container-content relative">
         <h2 className="section-title">Партнеры и бренды</h2>
@@ -411,6 +425,7 @@ export function PartnersSection() {
                 <Image
                   src={partner.image}
                   alt={partner.name}
+                  title={partner.name}
                   fill
                   sizes="(max-width: 640px) 50vw, 25vw"
                   className="object-contain"
@@ -503,6 +518,7 @@ export function BottomBarSection() {
         sizes="100vw"
         className="object-cover opacity-40"
         unoptimized
+        aria-hidden
       />
       <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/95 via-brand-dark/80 to-brand-dark/45" />
       <div className="container-content relative">

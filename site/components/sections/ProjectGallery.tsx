@@ -28,6 +28,7 @@ export function ProjectGallery({ images, title }: ProjectGalleryProps) {
           key={src}
           src={src}
           alt={`${title} — фото ${i + 1}`}
+          title={`${title} — фото ${i + 1}`}
           fill
           priority={i === 0}
           sizes="(max-width: 1024px) 100vw, 900px"

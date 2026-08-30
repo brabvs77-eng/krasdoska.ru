@@ -16,6 +16,7 @@ export function CatalogShowcaseSection() {
                 <Image
                   src={item.image}
                   alt={item.title}
+                  title={item.title}
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"

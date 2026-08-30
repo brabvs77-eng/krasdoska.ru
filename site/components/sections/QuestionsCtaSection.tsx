@@ -24,6 +24,7 @@ export function QuestionsCtaPanel({ className = "" }: QuestionsCtaPanelProps) {
         sizes="(max-width: 1024px) 100vw, 1100px"
         className="object-cover object-right"
         unoptimized
+        aria-hidden
       />
       <div
         aria-hidden

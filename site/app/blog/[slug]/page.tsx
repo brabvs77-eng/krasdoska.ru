@@ -78,7 +78,7 @@ export default async function BlogPostPage({ params }: Props) {
                 orangeFrame
                 coverVariant={slug === "brend" ? "portrait" : "landscape"}
               >
-                <HtmlContent html={enhanced} className="article-prose" />
+                <HtmlContent html={enhanced} imageContext={post.title} className="article-prose" />
               </ArticleShell>
             )}
           </div>

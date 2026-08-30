@@ -75,6 +75,7 @@ export function OsmoSwatchGrid({ items, sectionId, compareMode = false }: OsmoSw
                   <Image
                     src={item.image}
                     alt={caption}
+                    title={caption}
                     fill
                     sizes={
                       compareMode

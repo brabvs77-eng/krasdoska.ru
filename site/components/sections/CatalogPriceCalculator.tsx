@@ -160,6 +160,7 @@ export function CatalogPriceCalculator({ data }: Props) {
                     <Image
                       src={sectionImage}
                       alt={`Сечение: ${activeProfile}`}
+                      title={`Сечение: ${activeProfile}`}
                       fill
                       sizes="(max-width: 1024px) 100vw, 50vw"
                       className="object-contain object-left"

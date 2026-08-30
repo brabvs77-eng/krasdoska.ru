@@ -180,7 +180,7 @@ function ArticleFigure({
   return (
     <figure className="diy-figure">
       <div className="diy-figure__frame">
-        <Image src={src} alt={alt} fill sizes="(max-width: 900px) 100vw, 720px" className="object-cover" unoptimized />
+        <Image src={src} alt={alt} title={alt} fill sizes="(max-width: 900px) 100vw, 720px" className="object-cover" unoptimized />
       </div>
       <figcaption>{caption}</figcaption>
     </figure>

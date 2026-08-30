@@ -30,6 +30,7 @@ export function CommercialLandingContent({ landing }: Props) {
               <Image
                 src={landing.heroImage}
                 alt={landing.title}
+                title={landing.title}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"

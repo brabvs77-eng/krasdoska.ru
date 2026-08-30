@@ -70,7 +70,84 @@ type NormalizeWpHtmlOptions = {
   stripLeadingH1?: boolean;
   stripTrailingCta?: boolean;
   stripLeadingGallery?: boolean;
+  /** Page/product/category title used to fill empty image alt and title attributes. */
+  imageContext?: string;
 };
+
+function escapeHtmlAttr(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;");
+}
+
+function stripHtmlTags(value: string): string {
+  return value.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+}
+
+function deriveImageAlt(src: string, html: string, imgTag: string, contextTitle?: string): string {
+  const filename = src.split("/").pop()?.split("?")[0]?.toLowerCase() ?? "";
+
+  if (filename.includes("planken-prjamoj")) return "Сечение прямого планкена";
+  if (filename.includes("planken-skoshenyj")) return "Сечение скошенного планкена";
+
+  const profileMatch = filename.match(/profil-([a-z0-9]+)\./);
+  if (profileMatch) {
+    return `Профиль ${profileMatch[1].toUpperCase()} скандинавской доски`;
+  }
+
+  if (filename.includes("5641")) return "Сечение профиля";
+  if (filename.includes("capture_")) {
+    return contextTitle ? `${contextTitle} — пример отделки` : "Пример отделки крашеной доской";
+  }
+  if (filename.includes("kachestvennaja-obrabotka")) {
+    return "Качественная обработка деревянных изделий";
+  }
+
+  const idx = html.indexOf(imgTag);
+  if (idx > 0) {
+    const before = html.slice(0, idx);
+    const headings = [...before.matchAll(/<h([234])[^>]*>([\s\S]*?)<\/h\1>/gi)];
+    const lastHeading = headings.at(-1);
+    if (lastHeading) {
+      const text = stripHtmlTags(lastHeading[2]);
+      if (text) return text;
+    }
+  }
+
+  return contextTitle ? `${contextTitle} — иллюстрация` : "Иллюстрация крашеной доски";
+}
+
+function ensureImageAccessibility(html: string, contextTitle?: string): string {
+  let result = html.replace(/alt="alt="([^"]*)""/gi, 'alt="$1"');
+
+  result = result.replace(/<img\b[^>]*>/gi, (imgTag) => {
+    const srcMatch = imgTag.match(/\bsrc="([^"]+)"/i);
+    const altMatch = imgTag.match(/\balt="([^"]*)"/i);
+    const hasAltAttr = /\balt=/i.test(imgTag);
+    const currentAlt = altMatch?.[1]?.trim() ?? "";
+
+    let alt = currentAlt;
+    if (!hasAltAttr || !alt) {
+      alt = deriveImageAlt(srcMatch?.[1] ?? "", result, imgTag, contextTitle);
+    }
+
+    let nextTag = imgTag;
+    if (!hasAltAttr) {
+      nextTag = nextTag.replace(/\/?>$/, ` alt="${escapeHtmlAttr(alt)}"$&`);
+    } else if (!currentAlt) {
+      nextTag = nextTag.replace(/\balt=""/i, `alt="${escapeHtmlAttr(alt)}"`);
+    }
+
+    if (!/\btitle=/i.test(nextTag)) {
+      nextTag = nextTag.replace(/\s*\/?>$/, ` title="${escapeHtmlAttr(alt)}"$&`);
+    }
+
+    return nextTag;
+  });
+
+  return result;
+}
 
 export function normalizeWpHtml(
   html?: string,
@@ -95,5 +172,6 @@ export function normalizeWpHtml(
     normalized = stripTrailingCtaBlock(normalized);
   }
 
-  return embedMediaUrls(rewriteInternalLinks(normalized));
+  normalized = embedMediaUrls(rewriteInternalLinks(normalized));
+  return ensureImageAccessibility(normalized, options?.imageContext);
 }
