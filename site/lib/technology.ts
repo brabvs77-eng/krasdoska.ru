@@ -15,6 +15,14 @@ export const SERVICES_TECHNOLOGY_VIDEO =
 
 export const TECHNOLOGY_IMAGE = "/uploads/2025/04/photo_2025-05-17_23-20-04.webp";
 
+/** Second process video — after the «Остались вопросы?» CTA on /tehnologija-nanesenija-kraski/. */
+export const TECHNOLOGY_VIDEO_2 =
+  process.env.CF_PAGES === "1"
+    ? "https://krashenayadoska.ru/uploads/2026/09/tehnologija-2.mp4"
+    : "/uploads/2026/09/tehnologija-2.mp4";
+
+export const TECHNOLOGY_VIDEO_2_POSTER = "/uploads/2026/09/tehnologija-2-poster.webp";
+
 export type ProductionPhaseId =
   | "prepare"
   | "primer"
