@@ -8,6 +8,8 @@ import {
   TECHNOLOGY_FAQ,
   TECHNOLOGY_IMAGE,
   TECHNOLOGY_VIDEO,
+  TECHNOLOGY_VIDEO_2,
+  TECHNOLOGY_VIDEO_2_POSTER,
 } from "@/lib/technology";
 
 type TechnologyContentProps = {
@@ -64,6 +66,19 @@ export function TechnologyContent({ page }: TechnologyContentProps) {
         </div>
       </article>
       <CtaSection />
+      <section className="section-dark container-content py-12">
+        <div className="overflow-hidden rounded-2xl bg-neutral-900 shadow-lg">
+          <video
+            className="aspect-video w-full"
+            controls
+            preload="metadata"
+            playsInline
+            poster={TECHNOLOGY_VIDEO_2_POSTER}
+          >
+            <source src={TECHNOLOGY_VIDEO_2} type="video/mp4" />
+          </video>
+        </div>
+      </section>
     </>
   );
 }
