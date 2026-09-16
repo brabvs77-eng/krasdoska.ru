@@ -70,6 +70,10 @@
 /krashenaja-vagonka-shtil-iz-angarskoj-sosny-brashirovannaja-okrashennaja-sort-avs-115-14-4000-mm/ /katalog/krashenaja-vagonka/krashenaja-vagonka-shtil-iz-angarskoj-sosny-brashirovannaja-okrashennaja-sort-avs-115-14-4000-mm/ 301
 /krashenaja-imitacija-brusa-iz-sosny-brashirovannaja-sort-av-145-20-6000-mm/ /katalog/krashenaja-imitacija-brusa/krashenaja-imitacija-brusa-iz-sosny-brashirovannaja-sort-av-145-20-6000-mm/ 301
 
+# Project slug migration (SEO-friendly URLs)
+/project/preobrazim-derevo-pokraska-i-restavracija-derevjannyh-poverhnostej/ /project/pokrashka-podshivki-kleenyy-brus/ 301
+/project/preobrazim-derevo-pokraska-i-restavracija-derevjannyh-poverhnostej /project/pokrashka-podshivki-kleenyy-brus/ 301
+
 # Blog slug migration (legacy WordPress URLs)
 /blog/vosstanovlenie-i-pokraska-derevjannyh-polov-sovety-jekspertov-po-obnovleniju-interera/ /blog/planken-dlya-hvoynoy-drevesiny/ 301
 /blog/vosstanovlenie-i-pokraska-derevjannyh-polov-sovety-jekspertov-po-obnovleniju-interera /blog/planken-dlya-hvoynoy-drevesiny/ 301

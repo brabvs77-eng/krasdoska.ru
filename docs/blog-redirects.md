@@ -113,4 +113,16 @@
 | `/blog/krashenaya-imitaciya-brusa-kupit/` | 2026-09-17 09:00 | `uploads/blog/2026/09/krashenaya-imitaciya-brusa-kupit.webp` |
 | `/blog/krashenyy-planken-kupit-moskva/` | 2026-09-17 15:00 | `uploads/blog/2026/09/krashenyy-planken-kupit-moskva.webp` |
 | `/blog/krashenaya-fasadnaya-doska/` | 2026-09-18 09:00 | `uploads/blog/2026/09/krashenaya-fasadnaya-doska.webp` |
-| `/blog/blok-haus-krashenyy/` | 2026-09-18 15:00 | `uploads/blog/2026/09/blok-haus-krashenyy.webp` |
+| `/blog/blok-haus-krashenyy/` | 2026-09-16 12:00 | `uploads/blog/2026/09/blok-haus-krashenyy.webp` |
+
+## P1 — палубная доска (опубликовано)
+
+| URL | Дата | Изображение |
+|-----|------|-------------|
+| `/blog/palubnaya-doska-zavodskaya-pokraska/` | 2026-09-16 14:00 | `uploads/blog/2026/09/palubnaya-doska-zavodskaya-pokraska.webp` |
+
+## Редиректы проектов
+
+| Старый URL | Новый URL |
+|------------|-----------|
+| `/project/preobrazim-derevo-pokraska-i-restavracija-derevjannyh-poverhnostej/` | `/project/pokrashka-podshivki-kleenyy-brus/` |

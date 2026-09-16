@@ -14,7 +14,7 @@
 
 | Тип | Кол-во | Статус |
 |-----|-------:|--------|
-| Статьи блога (`site/content/blog/`) | **61** | Опубликованы (фазы 1–6, частично) |
+| Статьи блога (`site/content/blog/`) | **62** | Опубликованы (фазы 1–6 + P1) |
 | Брифы (`docs/briefs/`) | **40** | Все реализованы в блоге |
 | Legacy-статьи (миграция WP, без брифа) | **17** | Редиректы настроены; текст не проходил пайплайн |
 | Категории каталога | **9** | Контент из WP; часть усилена (планкен — цены в description) |
@@ -235,8 +235,8 @@
 
 | # | Тема | Зачем |
 |---|------|-------|
-| 6 | Кейс: нормальный slug вместо `preobrazim-derevo…` | 10 проектов — SEO-мусор в URL |
-| 7 | `palubnaya-doska-zavodskaya-pokraska` | Категория без контента |
+| 6 | Кейс: нормальный slug вместо `preobrazim-derevo…` | 10 проектов — SEO-мусор в URL | ✅ `pokrashka-podshivki-kleenyy-brus` (1/9) |
+| 7 | `palubnaya-doska-zavodskaya-pokraska` | Категория без контента | ✅ 2026-09-16 |
 | 8 | `krashenaya-doska-dlya-bani` | Long-tail, сезон |
 | 9 | `antiseptik-i-grunt-zavodskaya-pokraska` | Технология / доверие |
 | 10 | `dostavka-krashenoy-doski-v-ekaterinburg` | Только если GSC покажет спрос на регионы |
