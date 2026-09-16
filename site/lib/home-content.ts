@@ -23,7 +23,7 @@ export const HOME_PROJECT_SLUGS = [
   "preobrazim-derevo-pokraska-i-restavracija-derevjannyh-poverhnostej-4",
   "preobrazim-derevo-pokraska-i-restavracija-derevjannyh-poverhnostej-3",
   "preobrazim-derevo-pokraska-i-restavracija-derevjannyh-poverhnostej-2",
-  "preobrazim-derevo-pokraska-i-restavracija-derevjannyh-poverhnostej",
+  "pokrashka-podshivki-kleenyy-brus",
   "preobrazim-derevo-pokraska-i-restavr",
 ] as const;
 
@@ -37,6 +37,6 @@ export const HOME_PROJECT_TAGS: Record<string, string> = {
   "preobrazim-derevo-pokraska-i-restavracija-derevjannyh-poverhnostej-4": "покраска, покрытие",
   "preobrazim-derevo-pokraska-i-restavracija-derevjannyh-poverhnostej-3": "покраска, покрытие",
   "preobrazim-derevo-pokraska-i-restavracija-derevjannyh-poverhnostej-2": "покраска, покрытие",
-  "preobrazim-derevo-pokraska-i-restavracija-derevjannyh-poverhnostej": "покраска, покрытие",
+  "pokrashka-podshivki-kleenyy-brus": "покраска, подшивка, клееный брус",
   "preobrazim-derevo-pokraska-i-restavr": "покраска, покрытие, шлифовка",
 };

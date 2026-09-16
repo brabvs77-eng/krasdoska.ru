@@ -39,6 +39,23 @@ const CATEGORY_RELATED: Record<string, RelatedArticle[]> = {
       description: "Какое покрытие выбрать для вагонки в бане или интерьере",
     },
   ],
+  "krashenaja-doska": [
+    {
+      title: "Палубная доска с заводской покраской",
+      href: "/blog/palubnaya-doska-zavodskaya-pokraska/",
+      description: "Профили Вельвет и Ёлочка, цены от 2 500 ₽/м², условия гарантии",
+    },
+    {
+      title: "Террасная доска: масло Talatu или краска",
+      href: "/blog/terrasnaya-doska-maslo-talatu-vs-kraska/",
+      description: "Что выбрать для горизонтального настила у воды",
+    },
+    {
+      title: "Террасная доска с заводской покраской",
+      href: "/blog/terrasnaya-doska-zavodskaya-pokraska/",
+      description: "Схема покрытия, обновление и каталог террасных профилей",
+    },
+  ],
   "krashenaja-imitacija-brusa": [
     {
       title: "Крашеная имитация бруса: где купить и как заказать",
