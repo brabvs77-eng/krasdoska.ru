@@ -1,3 +1,4 @@
+import type { FaqItem } from "./technology";
 import { absoluteUrl, getSiteSettings } from "./site";
 
 export function buildOrganizationJsonLd() {
@@ -67,5 +68,65 @@ export function buildWebSiteJsonLd() {
     description: site.description,
     inLanguage: "ru-RU",
     publisher: { "@id": `${site.url}/#organization` },
+  };
+}
+
+export function buildFaqPageJsonLd(faq: FaqItem[], pagePath: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    url: absoluteUrl(pagePath),
+    mainEntity: faq.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+}
+
+export function buildCatalogProductJsonLd({
+  name,
+  description,
+  image,
+  path,
+  priceFrom,
+}: {
+  name: string;
+  description?: string;
+  image?: string;
+  path: string;
+  priceFrom?: string;
+}) {
+  const { site } = getSiteSettings();
+  const priceMatch = priceFrom?.match(/(\d[\d\s]*)/);
+  const lowPrice = priceMatch ? priceMatch[1].replace(/\s/g, "") : undefined;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name,
+    description,
+    image: image ? absoluteUrl(image) : undefined,
+    url: absoluteUrl(path),
+    brand: {
+      "@type": "Brand",
+      name: site.name,
+    },
+    manufacturer: { "@id": `${site.url}/#organization` },
+    ...(lowPrice
+      ? {
+          offers: {
+            "@type": "AggregateOffer",
+            priceCurrency: "RUB",
+            lowPrice,
+            availability: "https://schema.org/InStock",
+            url: absoluteUrl(path),
+            seller: { "@id": `${site.url}/#organization` },
+          },
+        }
+      : {}),
   };
 }

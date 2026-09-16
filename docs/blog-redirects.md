@@ -105,3 +105,12 @@
 | `/blog/dostavka-krashenoy-doski-v-perm/` | 2026-08-22 19:00 |
 
 Скрипт генерации: `site/scripts/create-regional-delivery-articles.mjs` (флаг `--only=slug1,slug2` для выборочной генерации)
+
+## Фаза 6 — коммерческие статьи P0 (опубликовано)
+
+| URL | Дата | Изображение |
+|-----|------|-------------|
+| `/blog/krashenaya-imitaciya-brusa-kupit/` | 2026-09-17 09:00 | `uploads/blog/2026/09/krashenaya-imitaciya-brusa-kupit.webp` |
+| `/blog/krashenyy-planken-kupit-moskva/` | 2026-09-17 15:00 | `uploads/blog/2026/09/krashenyy-planken-kupit-moskva.webp` |
+| `/blog/krashenaya-fasadnaya-doska/` | 2026-09-18 09:00 | `uploads/blog/2026/09/krashenaya-fasadnaya-doska.webp` |
+| `/blog/blok-haus-krashenyy/` | 2026-09-18 15:00 | `uploads/blog/2026/09/blok-haus-krashenyy.webp` |
