@@ -171,9 +171,9 @@
 
 | URL | Было | Стало / нужно |
 |-----|------|----------------|
-| `/katalog/planken/` | WP HTML, цена в description | ✅ description; ❌ FAQ schema, Product, компактный лендинг |
-| `/katalog/krashenaja-vagonka/` | Слабый сниппет | Title «от X ₽/м²», расчёт, FAQ |
-| `/katalog/krashenaja-imitacija-brusa/` | Поз. ~30–50 | Оффер + кейс + FAQ |
+| `/katalog/planken/` | WP HTML, цена в description | ✅ SEO title, FAQ + Product schema, перелинковка |
+| `/katalog/krashenaja-vagonka/` | Слабый сниппет | ✅ SEO title, FAQ + Product schema, перелинковка |
+| `/katalog/krashenaja-imitacija-brusa/` | Поз. ~30–50 | ✅ SEO title, FAQ + Product schema, перелинковка |
 | `/` | 3+ H1 в legacy content | Один H1, блок цен, ссылки на `/proizvodstvo-istra/` |
 
 **Title (цель):**
@@ -223,11 +223,11 @@
 
 | # | Тема / slug | Зачем | Связка | Статус |
 |---|-------------|-------|--------|--------|
-| 1 | `krashenaya-imitaciya-brusa-kupit` | GSC: коммерция, 0 кликов | → `/katalog/krashenaja-imitacija-brusa/` | ✅ 2026-09-17 |
-| 2 | `krashenyy-planken-kupit-moskva` | 146 показов на планкен | → `/katalog/planken/` | ✅ 2026-09-17 |
-| 3 | `krashenaya-fasadnaya-doska` | Фасадный кластер | → `/katalog/fasadnaja-doska/` | ✅ 2026-09-18 |
-| 4 | `blok-haus-krashenyy` | Категория без статей | → каталог блок-хаус | ✅ 2026-09-18 |
-| 5 | Обновление `brend` | E-E-A-T, патент | → `/o-kompanii/` | ⏳ |
+| 1 | `krashenaya-imitaciya-brusa-kupit` | GSC: коммерция, 0 кликов | → `/katalog/krashenaja-imitacija-brusa/` | ✅ 2026-09-16 |
+| 2 | `krashenyy-planken-kupit-moskva` | 146 показов на планкен | → `/katalog/planken/` | ✅ 2026-09-16 |
+| 3 | `krashenaya-fasadnaya-doska` | Фасадный кластер | → `/katalog/fasadnaja-doska/` | ✅ 2026-09-16 |
+| 4 | `blok-haus-krashenyy` | Категория без статей | → каталог блок-хаус | ✅ 2026-09-16 |
+| 5 | Обновление `brend` | E-E-A-T, патент | → `/o-kompanii/` | ✅ 2026-09-16 |
 
 Изображения: `/uploads/blog/2026/09/{slug}.webp` (уникальные, сгенерированы под тему статьи).
 
@@ -286,8 +286,8 @@ Wordstat / GSC → briefs/{slug}.md → create article → drafts/ → editor-in
 | Клики / 28 дн. | 15 | ≥ 80 |
 | Небрендовые клики | ≈ 0–2 | ≥ 30 |
 | Статьи с ≥ 1 кликом | н/д | ≥ 15 из 57 |
-| P0-лендинги по шаблону B2 | 0 из 3 | 3 из 3 |
-| Legacy-статьи обновлены | 0 из 17 | ≥ 8 из 17 |
+| P0-лендинги по шаблону B2 | 3 из 3 | 3 из 3 (поддержка) |
+| Legacy-статьи обновлены | 1 из 17 (`brend`) | ≥ 8 из 17 |
 | Проекты с SEO-описанием | 0 | 10 |
 
 ---

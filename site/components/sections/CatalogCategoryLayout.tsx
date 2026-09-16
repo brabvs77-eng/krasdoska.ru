@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ProductCard } from "@/components/cards/ProductCard";
 import { HtmlContent } from "@/components/content/HtmlContent";
+import { CategoryPageJsonLd } from "@/components/integrations/CategoryPageJsonLd";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { MarketingPageFooter } from "@/components/sections/MarketingPageFooter";
@@ -9,6 +10,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import type { CatalogCategory, CatalogProduct } from "@/lib/content";
 import type { CatalogShowcaseItem } from "@/lib/catalog-showcase";
 import { getCategoryFaq } from "@/lib/category-faq";
+import { getCategoryRelatedArticles } from "@/lib/category-related";
 import { getCatalogImage } from "@/lib/media";
 import { getProductImage } from "@/lib/product-media";
 import { getProductSectionImage } from "@/lib/profile-sections";
@@ -30,9 +32,19 @@ export function CatalogCategoryLayout({
 }: CatalogCategoryLayoutProps) {
   const image = showcase?.image ?? getCatalogImage(slug);
   const categoryFaq = getCategoryFaq(slug);
+  const relatedArticles = getCategoryRelatedArticles(slug);
+  const categoryPath = `/katalog/${slug}/`;
 
   return (
     <>
+      <CategoryPageJsonLd
+        path={categoryPath}
+        name={title}
+        description={category?.description ?? showcase?.tagline}
+        image={image}
+        priceFrom={showcase?.priceFrom}
+        faq={categoryFaq}
+      />
       <PageHero
         title={title}
         description={
@@ -119,6 +131,27 @@ export function CatalogCategoryLayout({
                   />
                 ))}
               </div>
+            </section>
+          )}
+
+          {relatedArticles && relatedArticles.length > 0 && (
+            <section className="mt-12 rounded-2xl border border-white/10 bg-white/5 p-6">
+              <h2 className="text-xl font-semibold text-white">Полезные материалы</h2>
+              <ul className="mt-4 space-y-3">
+                {relatedArticles.map((article) => (
+                  <li key={article.href}>
+                    <Link
+                      href={article.href}
+                      className="group block rounded-xl border border-white/10 p-4 transition hover:border-accent/40 hover:bg-white/5"
+                    >
+                      <span className="font-medium text-accent group-hover:underline">
+                        {article.title}
+                      </span>
+                      <p className="mt-1 text-sm text-white/70">{article.description}</p>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </section>
           )}
 

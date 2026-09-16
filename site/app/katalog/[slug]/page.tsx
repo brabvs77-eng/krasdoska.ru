@@ -13,8 +13,8 @@ export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const category = getCatalogCategory(slug);
   return buildPageMetadata({
-    title: category?.title ?? slug.replace(/-/g, " "),
-    description: category?.description,
+    title: category?.seo?.title ?? category?.title ?? slug.replace(/-/g, " "),
+    description: category?.seo?.description ?? category?.description,
     path: `/katalog/${slug}/`,
   });
 }
