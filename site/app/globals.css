@@ -594,6 +594,18 @@ body {
     @apply my-0 aspect-[16/10] h-auto w-full border border-white/10 object-cover;
   }
 
+  .article-body .wp-content.article-prose figure.article-reels-video {
+    @apply mx-auto my-6 w-full max-w-[280px];
+  }
+
+  .article-body .wp-content.article-prose figure.article-reels-video video {
+    @apply my-0 aspect-[9/16] h-auto w-full rounded-lg border border-white/10 object-cover;
+  }
+
+  .article-body .wp-content.article-prose figure.article-reels-video figcaption {
+    @apply mt-2 text-sm text-white/60;
+  }
+
   /* About company page */
   .about-heading {
     @apply flex flex-col items-start gap-3;
