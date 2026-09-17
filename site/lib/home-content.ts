@@ -1,12 +1,13 @@
 export const HOME_BLOG_SLUGS = [
+  "oficialnyy-postavshchik-gnature",
   "chto-vygodnee-krasit-samomu-ili-na-proizvodstve",
   "brend",
   "dostavka-v-regiony",
-  "hvoya-preimushchestva-dlya-fasada",
 ] as const;
 
 /** @deprecated Use formatBlogDate(post.publishedAt) from content items */
 export const HOME_BLOG_DATES: Record<string, string> = {
+  "oficialnyy-postavshchik-gnature": "17 сентября, 2026",
   "chto-vygodnee-krasit-samomu-ili-na-proizvodstve": "22 июля, 2026",
   brend: "24 декабря, 2025",
   "dostavka-v-regiony": "16 июля, 2025",
