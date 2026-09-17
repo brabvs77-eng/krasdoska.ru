@@ -7,7 +7,7 @@ export const HOME_BLOG_SLUGS = [
 
 /** @deprecated Use formatBlogDate(post.publishedAt) from content items */
 export const HOME_BLOG_DATES: Record<string, string> = {
-  "open-village-2026-smit-dom": "18 сентября, 2026",
+  "open-village-2026-smit-dom": "17 сентября, 2026",
   "oficialnyy-postavshchik-gnature": "17 сентября, 2026",
   "chto-vygodnee-krasit-samomu-ili-na-proizvodstve": "22 июля, 2026",
   brend: "24 декабря, 2025",
