@@ -226,17 +226,6 @@ const directors = [
       "Бренд запатентован, мы — официальный дилер Sirca. При отгрузке выдаём гарантийный талон на покрытие — 3 года при соблюдении условий монтажа.",
     ],
   },
-  {
-    name: "Андрей Сергеевич",
-    role: "технолог производства",
-    image: "/uploads/2026/08/andrey-sergeevich-technolog.webp",
-    reverse: true,
-    isLead: false,
-    paragraphs: [
-      "12+ лет на окрасочной линии в Истре. Официальный специалист по системам Sirca. Лично контролирует шлифовку, грунтование и межслойную сушку каждой партии.",
-      "Согласует выкрасы, следит за влажностью пиломатериала (10–14 %) и температурой в камере (+18…+22 °C). Линия пропускает до 912 м² готовой доски за смену.",
-    ],
-  },
 ];
 
 const specialists = [
@@ -528,7 +517,7 @@ export function AboutCompanyContent() {
 
       {/* Специалисты */}
       {specialists.map((group) => {
-        const sideBySide = group.images.length <= 2;
+        const sideBySide = group.images.length === 2;
         return (
           <section key={group.title} className="py-14 sm:py-20">
             <div className="container-content">
